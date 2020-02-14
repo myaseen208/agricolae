@@ -23,7 +23,11 @@ navbar:
       href: reference/index.html
     - icon: fa-file-o
       text: Tutorial
-      href: articles/Introagricolae.html
+      menu:
+      - text: "An Introduction to agricolae"
+        href: articles/Introagricolae.html
+      - text: "An Introduction to agricolae"
+        href: articles/IntroagricolaePDF.pdf
     - icon: fa-newspaper-o
       text: News
       href: news/index.html
@@ -33,4 +37,3 @@ navbar:
       href: https://github.com/myaseen208/agricolae
 
 reference:
-

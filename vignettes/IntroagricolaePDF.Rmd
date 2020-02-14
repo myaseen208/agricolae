@@ -4,6 +4,11 @@ author: "Felipe de Mendiburu^1^"
 date: "`r Sys.Date()`"
 geometry: margin=3cm
 output:
+  pdf_document:
+    dev: cairo_pdf
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
   html_document:
     fig_caption: yes
     number_sections: yes
