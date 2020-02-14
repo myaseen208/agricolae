@@ -1,0 +1,9 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^packrat/
+^\.Rprofile$
+^cran-comments\.md$
+^README.Rmd
+^_pkgdown.yml
+^docs/
+^pkgdown/

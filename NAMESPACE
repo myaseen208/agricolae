@@ -1,0 +1,22 @@
+exportPattern("^[[:alpha:]]+")
+S3method(summary,graph.freq)
+S3method(plot,graph.freq)
+S3method(plot,AMMI)
+S3method(plot,group)
+import(klaR)
+import(cluster)
+import(MASS)
+import(nlme)
+import(AlgDesign)
+import(utils)
+importFrom("graphics", "layout", "abline", "arrows", "axis", "barplot", "legend",
+     "lines", "plot", "points", "rect", "segments", "text")
+     importFrom("stats", "AIC", "BIC", "anova", "aov", "as.dendrogram",
+     "as.dist", "as.formula", "chisq.test", "coef", "cutree",
+     "density", "deviance", "df.residual", "dist", "dt",
+     "formula", "hclust", "integrate", "lm", "median", "na.omit",
+     "p.adjust", "pchisq", "pf", "pnorm", "predict", "princomp",
+     "pt", "ptukey", "qchisq", "qf", "qnorm", "qt", "qtukey",
+     "quantile", "residuals", "rnorm", "runif", "sd", "var",
+     "vcov","uniroot")     
+     importFrom("grDevices", "colors")

@@ -1,0 +1,49 @@
+template:
+  params:
+    bootswatch: united
+    ganalytics: UA-116716530-2
+    docsearch:
+      api_key: bdafb7ea4490644e670f470ee3ef537f
+      index_name: DiallelAnalysisR
+
+development:
+  mode: unreleased
+
+url: https://myaseen208.github.io/DiallelAnalysisR/
+
+navbar:
+  title: DiallelAnalysisR
+  type: default
+  left:
+    - icon: fa-home fa-lg
+      text: Home
+      href: index.html
+    - icon: fa-code
+      text: Reference
+      href: reference/index.html
+    - icon: fa-file-o
+      text: Tutorial
+      href: articles/IntroDiallelAnalysisR.html
+    - icon: fa-newspaper-o
+      text: News
+      href: news/index.html
+  right:
+    - icon: fa-github-alt
+      text: Github
+      href: https://github.com/myaseen208/DiallelAnalysisR
+
+reference:
+    - title: Data Sets
+      contents:
+         - '`GriffingData1`'
+         - '`GriffingData2`'
+         - '`GriffingData3`'
+         - '`GriffingData4`'
+         - '`HaymanData`'
+
+
+    - title: Core anlaysis function
+      contents:
+         - '`Griffing`'
+         - '`Hayman`'
+
