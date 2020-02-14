@@ -27,7 +27,7 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/agricolae?color=green)]
 [![Project Status:
 WIP](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2020--02--14-yellowgreen.svg)](https://github.com/myaseen208/agricolae)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2020--02--15-yellowgreen.svg)](https://github.com/myaseen208/agricolae)
 [![Rdoc](http://www.rdocumentation.org/badges/version/agricolae)](http://www.rdocumentation.org/packages/agricolae)
 
 -----
@@ -61,17 +61,6 @@ The development version can be installed from github as follows:
 if (!require("remotes")) install.packages("remotes")
 remotes::install_github("myaseen208/agricolae")
 ```
-
-## Detailed tutorial
-
-For a detailed tutorial (vignette) on how to used this package type:
-
-``` r
-browseVignettes(package = "agricolae")
-```
-
-The vignette for the latest version is also available
-[online](https://myaseen208.github.io/agricolae/articles/Introagricolae.html).
 
 ## What’s new
 
