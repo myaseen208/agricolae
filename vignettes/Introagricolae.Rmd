@@ -8,6 +8,11 @@ output:
     fig_caption: yes
     number_sections: yes
     toc: yes
+  pdf_document:
+    dev: cairo_pdf
+    fig_caption: yes
+    number_sections: yes
+    toc: yes  
 documentclass: article
 header-includes:
 - \usepackage{fancyhdr}
