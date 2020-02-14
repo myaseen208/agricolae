@@ -9,13 +9,19 @@ Depends: R (>= 2.10)
 License: GPL
 Encoding: UTF-8
 LazyData: true
+VignetteBuilder: knitr
 RoxygenNote: 7.0.2
 URL: http://tarwi.lamolina.edu.pe/~fmendiburu
 Imports:
+    AlgDesign,
+    cluster, 
+    graphics,
     klaR,
     MASS, 
-    nlme, 
-    cluster, 
-    AlgDesign, 
-    graphics
-
+    nlme,
+    Rdpack
+Suggests:
+    knitr,
+    rmarkdown,
+    testthat
+RdMacros: Rdpack

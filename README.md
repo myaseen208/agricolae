@@ -91,33 +91,32 @@ news(package = "agricolae")
 
 ## Citing `agricolae`
 
-To cite the methods in the package
-    use:
+To cite the methods in the package use:
 
 ``` r
 citation("agricolae")
 ```
 
-    Warning in citation("agricolae"): no date field in DESCRIPTION file of package
-    'agricolae'
-    Warning in citation("agricolae"): could not determine year for 'agricolae' from
-    package DESCRIPTION file
-    
-    To cite package 'agricolae' in publications use:
-    
-      Felipe de Mendiburu (NA). agricolae: Statistical Procedures for
-      Agricultural Research. R package version 1.3-3.
-      http://tarwi.lamolina.edu.pe/~fmendiburu
-    
-    A BibTeX entry for LaTeX users is
-    
-      @Manual{,
-        title = {agricolae: Statistical Procedures for Agricultural Research},
-        author = {Felipe {de Mendiburu}},
-        note = {R package version 1.3-3},
-        url = {http://tarwi.lamolina.edu.pe/~fmendiburu},
-      }
-    
-    ATTENTION: This citation information has been auto-generated from the
-    package DESCRIPTION file and may need manual editing, see
-    'help("citation")'.
+``` 
+
+To cite the R package 'agricolae' in publications use:
+
+  Felipe de Mendiburu (2020).  agricolae: Statistical Procedures for
+  Agricultural Research.R package version 1.3.3 ,
+  https://myaseen208.github.io/agricolae/https://cran.r-project.org/package=agricolae.
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {agricolae: Statistical Procedures for Agricultural Research},
+    author = {{Felipe de Mendiburu}},
+    year = {2020},
+    note = {R package version 1.3.3},
+    note = {https://myaseen208.github.io/agricolae/ },
+    note = {https://cran.r-project.org/package=agricolae},
+  }
+
+This free and open-source software implements academic research by the
+authors and co-workers. If you use it, please support the project by
+citing the package.
+```

@@ -1,6 +1,88 @@
-AMMI <-
-function(ENV,GEN,REP,Y,MSE = 0,console=FALSE,PC=FALSE)
-{
+#' @name    AMMI
+#' @aliases AMMI
+#' @title AMMI Analysis
+#' @description Additive Main Effects and Multiplicative Interaction Models (AMMI) are widely used 
+#' to analyze main effects and genotype by environment (GEN, ENV) interactions in 
+#' multilocation variety trials. Furthermore, this function generates data to biplot, triplot 
+#' graphs and analysis.
+#' 
+#' @param \strong{ENV} Environment
+#' @param \strong{GEN} Genotype
+#' @param \strong{REP} Replication
+#' @param \strong{Y} Response
+#' @param \strong{MSE} Mean Square Error 
+#' @param \strong{console}  ouput TRUE or FALSE
+#' @param \strong{PC} Principal components ouput TRUE or FALSE
+#' 
+#' @details additional graphics see help(plot.AMMI).
+#' 
+#' @return \strong{ANOVA} analysis of variance general
+#' @return \strong{genXenv} class by, genopyte and environment
+#' @return \strong{analysis} analysis of variance principal components
+#' @return \strong{means} average genotype and environment
+#' @return \strong{biplot} data to produce graphics
+#' @return \strong{PC} class princomp
+#' 
+#' @author
+#' \enumerate{
+#'          \item Felipe de Mendiburu (\email{fmendiburu@@lamolina.edu.pe})
+#'          }
+#'           
+#' @keywords plot
+#' 
+#' @examples
+#' # Full replications
+#' library(agricolae)
+#' # Example 1
+#' data(plrv)
+#' model<- with(plrv,AMMI(Locality, Genotype, Rep, Yield, console=FALSE))
+#' model$ANOVA
+#' # see help(plot.AMMI)
+#' # biplot
+#' plot(model)
+#' # triplot PC 1,2,3
+#' plot(model, type=2, number=TRUE)
+#' # biplot PC1 vs Yield
+#' plot(model, first=0,second=1, number=TRUE)
+#' # Example 2
+#' data(CIC)
+#' data1<-CIC$comas[,c(1,6,7,17,18)]
+#' data2<-CIC$oxapampa[,c(1,6,7,19,20)]
+#' cic <- rbind(data1,data2)
+#' model<-with(cic,AMMI(Locality, Genotype, Rep, relative))
+#' model$ANOVA
+#' plot(model,0,1,angle=20,ecol="brown")
+#' # Example 3
+#' # Only means. Mean square error is well-known.
+#' data(sinRepAmmi)
+#' REP <- 3
+#' MSerror <- 93.24224
+#' #startgraph
+#' model<-with(sinRepAmmi,AMMI(ENV, GEN, REP, YLD, MSerror,PC=TRUE))
+#' # print anova
+#' print(model$ANOVA,na.print = "")
+#' # Biplot with the one restored observed.
+#' plot(model,0,1,type=1)
+#' # with principal components model$PC is class "princomp"
+#' pc<- model$PC
+#' pc$loadings
+#' summary(pc)
+#' biplot(pc)
+#' # Principal components by means of the covariance similar AMMI
+#' # It is to compare results with AMMI
+#' cova<-cov(model$genXenv)
+#' values<-eigen(cova)
+#' total<-sum(values$values)
+#' round(values$values*100/total,2)
+#' # AMMI: 64.81 18.58 13.50  3.11  0.00
+#' 
+AMMI <- function(ENV, GEN, REP, Y, MSE = 0, console = FALSE, PC = FALSE){
+    UseMethod("AMMI")
+}
+#' @export
+#' @rdname AMMI
+
+AMMI.default <- function(ENV, GEN, REP, Y, MSE = 0, console = FALSE, PC = FALSE) {
     name.y <- paste(deparse(substitute(Y)))
     if(console)cat("\nANALYSIS AMMI: ", name.y, "\nClass level information\n")
     ENV <- as.factor(ENV)

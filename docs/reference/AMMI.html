@@ -162,61 +162,55 @@ multilocation variety trials. Furthermore, this function generates data to biplo
 graphs and analysis.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>AMMI</span>(<span class='no'>ENV</span>, <span class='no'>GEN</span>, <span class='no'>REP</span>, <span class='no'>Y</span>, <span class='kw'>MSE</span> <span class='kw'>=</span> <span class='fl'>0</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>FALSE</span>,<span class='kw'>PC</span><span class='kw'>=</span><span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>AMMI</span>(<span class='no'>ENV</span>, <span class='no'>GEN</span>, <span class='no'>REP</span>, <span class='no'>Y</span>, <span class='kw'>MSE</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>console</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>PC</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+
+<span class='co'># S3 method for default</span>
+<span class='fu'>AMMI</span>(<span class='no'>ENV</span>, <span class='no'>GEN</span>, <span class='no'>REP</span>, <span class='no'>Y</span>, <span class='kw'>MSE</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>console</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>PC</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>ENV</th>
+      <th><strong>ENV</strong></th>
       <td><p>Environment</p></td>
     </tr>
     <tr>
-      <th>GEN</th>
+      <th><strong>GEN</strong></th>
       <td><p>Genotype</p></td>
     </tr>
     <tr>
-      <th>REP</th>
+      <th><strong>REP</strong></th>
       <td><p>Replication</p></td>
     </tr>
     <tr>
-      <th>Y</th>
+      <th><strong>Y</strong></th>
       <td><p>Response</p></td>
     </tr>
     <tr>
-      <th>MSE</th>
+      <th><strong>MSE</strong></th>
       <td><p>Mean Square Error</p></td>
     </tr>
     <tr>
-      <th>console</th>
+      <th><strong>console</strong></th>
       <td><p>ouput TRUE or FALSE</p></td>
     </tr>
     <tr>
-      <th>PC</th>
+      <th><strong>PC</strong></th>
       <td><p>Principal components ouput TRUE or FALSE</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p><strong>ANOVA</strong> analysis of variance general</p>
+<p><strong>genXenv</strong> class by, genopyte and environment</p>
+<p><strong>analysis</strong> analysis of variance principal components</p>
+<p><strong>means</strong> average genotype and environment</p>
+<p><strong>biplot</strong> data to produce graphics</p>
+<p><strong>PC</strong> class princomp</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>additional graphics see help(plot.AMMI).</p>
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p></p>
-<dt>ANOVA</dt><dd><p>analysis of variance general</p></dd>
-  <dt>genXenv</dt><dd><p>class by, genopyte and environment</p></dd>
-  <dt>analysis</dt><dd><p>analysis of variance principal components</p></dd>
-  <dt>means</dt><dd><p>average genotype and environment</p></dd>
-  <dt>biplot</dt><dd><p>data to produce graphics</p></dd>
-  <dt>PC</dt><dd><p>class princomp</p></dd>
-
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
-
-    <p>Crossa, J. 1990. Statistical analysis of multilocation trials.
-Advances in Agronomy 44:55-85</p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><code><a href='lineXtester.html'>lineXtester</a></code>,<code><a href='plotAMMI.html'>plot.AMMI</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Full replications</span>
@@ -236,8 +230,8 @@ Advances in Agronomy 44:55-85</p>
 #&gt; ---
 #&gt; Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</div><div class='input'><span class='co'># see help(plot.AMMI)</span>
 <span class='co'># biplot</span>
-<span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>model</span>)</div><div class='img'><img src='AMMI-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># triplot PC 1,2,3 </span>
-<span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>model</span>, <span class='kw'>type</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>number</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='img'><img src='AMMI-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># biplot PC1 vs Yield </span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>model</span>)</div><div class='img'><img src='AMMI-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># triplot PC 1,2,3</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>model</span>, <span class='kw'>type</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>number</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='img'><img src='AMMI-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># biplot PC1 vs Yield</span>
 <span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>model</span>, <span class='kw'>first</span><span class='kw'>=</span><span class='fl'>0</span>,<span class='kw'>second</span><span class='kw'>=</span><span class='fl'>1</span>, <span class='kw'>number</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='img'><img src='AMMI-3.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># Example 2</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>CIC</span>)
 <span class='no'>data1</span><span class='kw'>&lt;-</span><span class='no'>CIC</span>$<span class='no'>comas</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>6</span>,<span class='fl'>7</span>,<span class='fl'>17</span>,<span class='fl'>18</span>)]
@@ -269,7 +263,7 @@ Advances in Agronomy 44:55-85</p>
 #&gt; GEN        49  23488.96    479.36643 5.141087 0.000000e+00
 #&gt; ENV:GEN   196  40728.33    207.79760 2.228578 9.998669e-13
 #&gt; Residuals 490  45688.70     93.24224                      </div><div class='input'><span class='co'># Biplot with the one restored observed.</span>
-<span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>model</span>,<span class='fl'>0</span>,<span class='fl'>1</span>,<span class='kw'>type</span><span class='kw'>=</span><span class='fl'>1</span>)</div><div class='img'><img src='AMMI-5.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># with principal components model$PC is class "princomp" </span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>model</span>,<span class='fl'>0</span>,<span class='fl'>1</span>,<span class='kw'>type</span><span class='kw'>=</span><span class='fl'>1</span>)</div><div class='img'><img src='AMMI-5.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># with principal components model$PC is class "princomp"</span>
 <span class='no'>pc</span><span class='kw'>&lt;-</span> <span class='no'>model</span>$<span class='no'>PC</span>
 <span class='no'>pc</span>$<span class='no'>loadings</span></div><div class='output co'>#&gt; 
 #&gt; Loadings:
@@ -293,21 +287,24 @@ Advances in Agronomy 44:55-85</p>
 <span class='no'>values</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/eigen.html'>eigen</a></span>(<span class='no'>cova</span>)
 <span class='no'>total</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span>(<span class='no'>values</span>$<span class='no'>values</span>)
 <span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span>(<span class='no'>values</span>$<span class='no'>values</span>*<span class='fl'>100</span>/<span class='no'>total</span>,<span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] 64.81 18.58 13.50  3.11  0.00</div><div class='input'># AMMI: 64.81 18.58 13.50  3.11  0.00
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#details">Details</a></li>
       <li><a href="#value">Value</a></li>
-      <li><a href="#references">References</a></li>
-      <li><a href="#see-also">See also</a></li>
+      <li><a href="#details">Details</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 
     <h2>Author</h2>
-    <p>F. de Mendiburu</p>
+    
+<ol>
+<li><p>Felipe de Mendiburu (<a href='mailto:fmendiburu@lamolina.edu.pe'>fmendiburu@lamolina.edu.pe</a>)</p></li>
+</ol>
+
   </div>
 </div>
 

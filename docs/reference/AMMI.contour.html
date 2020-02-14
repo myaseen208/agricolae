@@ -42,8 +42,7 @@
 
 
 <meta property="og:title" content="AMMI contour — AMMI.contour" />
-<meta property="og:description" content="Draws a polygon or a circumference around the center of the Biplot with a 
-  proportional radio at the longest distance of the genotype." />
+<meta property="og:description" content="Draws a polygon or a circumference around the center of the Biplot with a proportional radio at the longest distance of the genotype." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -154,42 +153,43 @@
     </div>
 
     <div class="ref-description">
-    <p>Draws a polygon or a circumference around the center of the Biplot with a 
-  proportional radio at the longest distance of the genotype.</p>
+    <p>Draws a polygon or a circumference around the center of the Biplot with a proportional radio at the longest distance of the genotype.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>AMMI.contour</span>(<span class='no'>model</span>, <span class='no'>distance</span>, <span class='no'>shape</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>AMMI.contour</span>(<span class='no'>model</span>, <span class='no'>distance</span>, <span class='no'>shape</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for contour.default</span>
+<span class='fu'><a href='AMMI.html'>AMMI</a></span>(<span class='no'>model</span>, <span class='no'>distance</span>, <span class='no'>shape</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>model</th>
+      <th><strong>model</strong></th>
       <td><p>Object</p></td>
     </tr>
     <tr>
-      <th>distance</th>
+      <th><strong>distance</strong></th>
       <td><p>Circumference radius &gt;0 and &lt;=1</p></td>
     </tr>
     <tr>
-      <th>shape</th>
+      <th><strong>shape</strong></th>
       <td><p>Numerical, relating to the shape of the polygon outline.</p></td>
     </tr>
     <tr>
-      <th>...</th>
+      <th><strong>...</strong></th>
       <td><p>Parameters corresponding to the R lines function</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p><strong>Genotypes</strong> within and outside the area.</p>
+<p><strong>distance</strong> Distance from genotype to origin (0,0)</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>First, it is necessary to execute the AMMI function.
 It is only valid for the BIPLOT function but not for the TRIPLOT one.</p>
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>Genotypes within and outside the area.</p>
-<dt>distance</dt><dd><p>Distance from genotype to origin (0,0)</p></dd>
-
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
     <p>Complement graphics AMMI</p>
@@ -198,7 +198,8 @@ It is only valid for the BIPLOT function but not for the TRIPLOT one.</p>
     <div class='dont-index'><p><code><a href='AMMI.html'>AMMI</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
+    <pre class="examples"><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='co'># see AMMI.</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>sinRepAmmi</span>)
 <span class='no'>Environment</span> <span class='kw'>&lt;-</span> <span class='no'>sinRepAmmi</span>$<span class='no'>ENV</span>
@@ -206,7 +207,7 @@ It is only valid for the BIPLOT function but not for the TRIPLOT one.</p>
 <span class='no'>Yield</span> <span class='kw'>&lt;-</span> <span class='no'>sinRepAmmi</span>$<span class='no'>YLD</span>
 <span class='no'>REP</span> <span class='kw'>&lt;-</span> <span class='fl'>3</span>
 <span class='no'>MSerror</span> <span class='kw'>&lt;-</span> <span class='fl'>93.24224</span>
-<span class='no'>model</span><span class='kw'>&lt;-</span><span class='fu'><a href='AMMI.html'>AMMI</a></span>(<span class='no'>Environment</span>, <span class='no'>Genotype</span>, <span class='no'>REP</span>, <span class='no'>Yield</span>, <span class='no'>MSerror</span>)
+<span class='no'>model</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='AMMI.html'>AMMI</a></span>(<span class='no'>Environment</span>, <span class='no'>Genotype</span>, <span class='no'>REP</span>, <span class='no'>Yield</span>, <span class='no'>MSerror</span>)
 <span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>model</span>)</div><div class='input'><span class='fu'>AMMI.contour</span>(<span class='no'>model</span>,<span class='kw'>distance</span><span class='kw'>=</span><span class='fl'>0.7</span>,<span class='kw'>shape</span><span class='kw'>=</span><span class='fl'>8</span>,<span class='kw'>col</span><span class='kw'>=</span><span class='st'>"red"</span>,<span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>2</span>,<span class='kw'>lty</span><span class='kw'>=</span><span class='fl'>5</span>)</div><div class='img'><img src='AMMI.contour-1.png' alt='' width='700' height='433' /></div><div class='output co'>#&gt; 
 #&gt; Limit, radio: 2.303589
 #&gt; Genotype  in: 41
@@ -277,15 +278,19 @@ It is only valid for the BIPLOT function but not for the TRIPLOT one.</p>
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#details">Details</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#details">Details</a></li>
       <li><a href="#note">Note</a></li>
       <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 
     <h2>Author</h2>
-    <p>Felipe de Mendiburu</p>
+    
+<ol>
+<li><p>Felipe de Mendiburu (<a href='mailto:fmendiburu@lamolina.edu.pe'>fmendiburu@lamolina.edu.pe</a>)</p></li>
+</ol>
+
   </div>
 </div>
 
