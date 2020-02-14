@@ -221,16 +221,16 @@
 John, J.A. (1981) Efficient Cyclic Design. J. R. Statist. Soc. B, 43, No. 1, pp, 76-80.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='design.ab.html'>design.ab</a></code>, <code><a href='design.alpha.html'>design.alpha</a></code>,<code><a href='design.bib.html'>design.bib</a></code>, 
-<code><a href='design.crd.html'>design.crd</a> </code>, <code><a href='design.split.html'>design.split</a> </code>, <code><a href='design.dau.html'>design.dau</a> </code>,
-<code><a href='design.graeco.html'>design.graeco</a></code>, <code><a href='design.lattice.html'>design.lattice</a></code>, <code><a href='design.lsd.html'>design.lsd</a></code>,
-<code><a href='design.rcbd.html'>design.rcbd</a></code>, <code><a href='design.strip.html'>design.strip</a></code></p></div>
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/design.ab.html'>design.ab</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.alpha.html'>design.alpha</a></code>,<code><a href='https://rdrr.io/pkg/agricolae/man/design.bib.html'>design.bib</a></code>, 
+<code><a href='https://rdrr.io/pkg/agricolae/man/design.crd.html'>design.crd</a> </code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.split.html'>design.split</a> </code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.dau.html'>design.dau</a> </code>,
+<code><a href='https://rdrr.io/pkg/agricolae/man/design.graeco.html'>design.graeco</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.lattice.html'>design.lattice</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.lsd.html'>design.lsd</a></code>,
+<code><a href='https://rdrr.io/pkg/agricolae/man/design.rcbd.html'>design.rcbd</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.strip.html'>design.strip</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='no'>trt</span><span class='kw'>&lt;-</span><span class='no'>letters</span>[<span class='fl'>1</span>:<span class='fl'>8</span>]
 <span class='co'># block size = 2, replication = 6</span>
-<span class='no'>outdesign1</span> <span class='kw'>&lt;-</span> <span class='fu'>design.cyclic</span>(<span class='no'>trt</span>,<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>r</span><span class='kw'>=</span><span class='fl'>6</span>,<span class='kw'>serie</span><span class='kw'>=</span><span class='fl'>2</span>)</div><div class='output co'>#&gt; 
+<span class='no'>outdesign1</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/design.cyclic.html'>design.cyclic</a></span>(<span class='no'>trt</span>,<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>r</span><span class='kw'>=</span><span class='fl'>6</span>,<span class='kw'>serie</span><span class='kw'>=</span><span class='fl'>2</span>)</div><div class='output co'>#&gt; 
 #&gt; cyclic design
 #&gt; Generator block basic:
 #&gt; 1 2 
@@ -316,7 +316,7 @@ John, J.A. (1981) Efficient Cyclic Design. J. R. Statist. Soc. B, 43, No. 1, pp,
 #&gt; 46   314     3    23   e
 #&gt; 47   315     3    24   d
 #&gt; 48   316     3    24   b</div><div class='input'><span class='co'># row-column design</span>
-<span class='no'>outdesign2</span><span class='kw'>&lt;-</span> <span class='fu'>design.cyclic</span>(<span class='no'>trt</span>,<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>r</span><span class='kw'>=</span><span class='fl'>6</span>, <span class='kw'>serie</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>rowcol</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
+<span class='no'>outdesign2</span><span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/design.cyclic.html'>design.cyclic</a></span>(<span class='no'>trt</span>,<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>r</span><span class='kw'>=</span><span class='fl'>6</span>, <span class='kw'>serie</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>rowcol</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
 #&gt; cyclic design
 #&gt; Generator block basic:
 #&gt; 1 2 

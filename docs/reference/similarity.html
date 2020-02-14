@@ -172,13 +172,13 @@
     <p>Distance matrix. Class = dist.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='cv.similarity.html'>cv.similarity</a></code>, <code><a href='resampling.cv.html'>resampling.cv</a> </code></p></div>
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/cv.similarity.html'>cv.similarity</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/resampling.cv.html'>resampling.cv</a> </code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>#example table of molecular markers</span>
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>markers</span>)
-<span class='no'>distance</span><span class='kw'>&lt;-</span><span class='fu'>similarity</span>(<span class='no'>markers</span>)
+<span class='no'>distance</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/similarity.html'>similarity</a></span>(<span class='no'>markers</span>)
 <span class='co'>#startgraph</span>
 <span class='no'>tree</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/stats/hclust.html'>hclust</a></span>(<span class='no'>distance</span>,<span class='kw'>method</span><span class='kw'>=</span><span class='st'>"mcquitty"</span>)
 <span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>tree</span>,<span class='kw'>col</span><span class='kw'>=</span><span class='st'>"blue"</span>)</div><div class='img'><img src='similarity-1.png' alt='' width='700' height='433' /></div><div class='input'>#endgraph

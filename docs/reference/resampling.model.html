@@ -190,14 +190,14 @@
 Phillip I. Good, (2001) Resampling Methods. Birkhauser. Boston . Basel . Berlin</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='simulation.model.html'>simulation.model</a> </code></p></div>
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/simulation.model.html'>simulation.model</a> </code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>#example 1 Simple linear regression</span>
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>clay</span>)
 <span class='no'>model</span><span class='kw'>&lt;-</span><span class='st'>"ralstonia ~ days"</span>
-<span class='no'>analysis</span><span class='kw'>&lt;-</span><span class='fu'>resampling.model</span>(<span class='no'>model</span>,<span class='no'>clay</span>,<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>2</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
+<span class='no'>analysis</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/resampling.model.html'>resampling.model</a></span>(<span class='no'>model</span>,<span class='no'>clay</span>,<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>2</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
 #&gt; Resampling of the experiments
 #&gt; - - - - - - - - - - - - - - 
 #&gt; Proposed model: ralstonia ~ days 
@@ -214,7 +214,7 @@ Phillip I. Good, (2001) Resampling Methods. Birkhauser. Boston . Basel . Berlin<
 <span class='co'>#example 2 Analysis of variance: RCD</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>sweetpotato</span>)
 <span class='no'>model</span><span class='kw'>&lt;-</span><span class='st'>"yield~virus"</span>
-<span class='no'>analysis</span><span class='kw'>&lt;-</span><span class='fu'>resampling.model</span>(<span class='no'>model</span>,<span class='no'>sweetpotato</span>,<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>2</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
+<span class='no'>analysis</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/resampling.model.html'>resampling.model</a></span>(<span class='no'>model</span>,<span class='no'>sweetpotato</span>,<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>2</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
 #&gt; Resampling of the experiments
 #&gt; - - - - - - - - - - - - - - 
 #&gt; Proposed model: yield~virus 
@@ -231,7 +231,7 @@ Phillip I. Good, (2001) Resampling Methods. Birkhauser. Boston . Basel . Berlin<
 <span class='co'>#example 3 Simple linear regression</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>Glycoalkaloids</span>)
 <span class='no'>model</span><span class='kw'>&lt;-</span><span class='st'>"HPLC ~ spectrophotometer"</span>
-<span class='no'>analysis</span><span class='kw'>&lt;-</span><span class='fu'>resampling.model</span>(<span class='no'>model</span>,<span class='no'>Glycoalkaloids</span>,<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>2</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
+<span class='no'>analysis</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/resampling.model.html'>resampling.model</a></span>(<span class='no'>model</span>,<span class='no'>Glycoalkaloids</span>,<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>2</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
 #&gt; Resampling of the experiments
 #&gt; - - - - - - - - - - - - - - 
 #&gt; Proposed model: HPLC ~ spectrophotometer 
@@ -251,7 +251,7 @@ Phillip I. Good, (2001) Resampling Methods. Birkhauser. Boston . Basel . Berlin<
 <span class='no'>potato</span>[,<span class='fl'>1</span>]<span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span>(<span class='no'>potato</span>[,<span class='fl'>1</span>])
 <span class='no'>potato</span>[,<span class='fl'>2</span>]<span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span>(<span class='no'>potato</span>[,<span class='fl'>2</span>])
 <span class='no'>model</span><span class='kw'>&lt;-</span><span class='st'>"cutting~variety + date + variety:date"</span>
-<span class='no'>analysis</span><span class='kw'>&lt;-</span><span class='fu'>resampling.model</span>(<span class='no'>model</span>,<span class='no'>potato</span>,<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>2</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
+<span class='no'>analysis</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/resampling.model.html'>resampling.model</a></span>(<span class='no'>model</span>,<span class='no'>potato</span>,<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>2</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
 #&gt; Resampling of the experiments
 #&gt; - - - - - - - - - - - - - - 
 #&gt; Proposed model: cutting~variety + date + variety:date 

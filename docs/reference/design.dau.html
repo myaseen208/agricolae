@@ -223,17 +223,17 @@ is much smaller than when between two increased ones in different blocks.</p>
 2. In Augmented Designs. Federer, W.T and Raghavarao, D. (1975). Bometrics, vol. 31, No. 1 (mar.., 1975), pp. 29-35</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='design.ab.html'>design.ab</a></code>, <code><a href='design.alpha.html'>design.alpha</a></code>,<code><a href='design.bib.html'>design.bib</a></code>, 
-<code><a href='design.crd.html'>design.crd</a> </code>, <code><a href='design.cyclic.html'>design.cyclic</a> </code>, <code><a href='design.split.html'>design.split</a> </code>,
-<code><a href='design.graeco.html'>design.graeco</a></code>, <code><a href='design.lattice.html'>design.lattice</a></code>, <code><a href='design.lsd.html'>design.lsd</a></code>,
-<code><a href='design.rcbd.html'>design.rcbd</a></code>, <code><a href='design.strip.html'>design.strip</a></code></p></div>
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/design.ab.html'>design.ab</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.alpha.html'>design.alpha</a></code>,<code><a href='https://rdrr.io/pkg/agricolae/man/design.bib.html'>design.bib</a></code>, 
+<code><a href='https://rdrr.io/pkg/agricolae/man/design.crd.html'>design.crd</a> </code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.cyclic.html'>design.cyclic</a> </code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.split.html'>design.split</a> </code>,
+<code><a href='https://rdrr.io/pkg/agricolae/man/design.graeco.html'>design.graeco</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.lattice.html'>design.lattice</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.lsd.html'>design.lsd</a></code>,
+<code><a href='https://rdrr.io/pkg/agricolae/man/design.rcbd.html'>design.rcbd</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.strip.html'>design.strip</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='co'># 4 treatments and 5 blocks</span>
 <span class='no'>T1</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"A"</span>,<span class='st'>"B"</span>,<span class='st'>"C"</span>,<span class='st'>"D"</span>)
 <span class='no'>T2</span><span class='kw'>&lt;-</span><span class='no'>letters</span>[<span class='fl'>20</span>:<span class='fl'>26</span>]
-<span class='no'>outdesign</span> <span class='kw'>&lt;-</span><span class='fu'>design.dau</span>(<span class='no'>T1</span>,<span class='no'>T2</span>, <span class='kw'>r</span><span class='kw'>=</span><span class='fl'>5</span>,<span class='kw'>serie</span><span class='kw'>=</span><span class='fl'>2</span>)
+<span class='no'>outdesign</span> <span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/design.dau.html'>design.dau</a></span>(<span class='no'>T1</span>,<span class='no'>T2</span>, <span class='kw'>r</span><span class='kw'>=</span><span class='fl'>5</span>,<span class='kw'>serie</span><span class='kw'>=</span><span class='fl'>2</span>)
 <span class='co'># field book</span>
 <span class='no'>book</span><span class='kw'>&lt;-</span><span class='no'>outdesign</span>$<span class='no'>book</span>
 <span class='fu'><a href='https://rdrr.io/r/base/by.html'>by</a></span>(<span class='no'>book</span>,<span class='no'>book</span>[<span class='fl'>2</span>],<span class='kw'>function</span>(<span class='no'>x</span>) <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span>(<span class='no'>x</span>[,<span class='fl'>1</span>],<span class='st'>"-"</span>,<span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span>(<span class='no'>x</span>[,<span class='fl'>3</span>])))</div><div class='output co'>#&gt; block: 1
@@ -255,7 +255,7 @@ is much smaller than when between two increased ones in different blocks.</p>
 <span class='co'># Augmented designs in Completely Randomized Design</span>
 <span class='no'>trt</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='no'>T1</span>,<span class='no'>T2</span>)
 <span class='no'>r</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>4</span>,<span class='fl'>4</span>,<span class='fl'>4</span>,<span class='fl'>4</span>,<span class='fl'>1</span>,<span class='fl'>1</span>,<span class='fl'>1</span>,<span class='fl'>1</span>,<span class='fl'>1</span>,<span class='fl'>1</span>,<span class='fl'>1</span>)
-<span class='no'>outdesign</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='design.crd.html'>design.crd</a></span>(<span class='no'>trt</span>,<span class='no'>r</span>)
+<span class='no'>outdesign</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/design.crd.html'>design.crd</a></span>(<span class='no'>trt</span>,<span class='no'>r</span>)
 <span class='no'>outdesign</span>$<span class='no'>book</span></div><div class='output co'>#&gt;    plots r trt
 #&gt; 1    101 1   D
 #&gt; 2    102 1   B

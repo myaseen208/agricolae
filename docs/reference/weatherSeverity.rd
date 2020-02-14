@@ -156,7 +156,7 @@
     <p>Weather and Severity</p>
     </div>
 
-    <pre class="usage"><span class='fu'><a href='weatherSeverity.rd.html'>weatherSeverity</a></span>(<span class='no'>weather</span>,<span class='no'>severity</span>,<span class='no'>dates</span>,<span class='no'>EmergDate</span>,<span class='no'>EndEpidDate</span>,<span class='no'>NoReadingsH</span>,
+    <pre class="usage"><span class='fu'>weatherSeverity</span>(<span class='no'>weather</span>,<span class='no'>severity</span>,<span class='no'>dates</span>,<span class='no'>EmergDate</span>,<span class='no'>EndEpidDate</span>,<span class='no'>NoReadingsH</span>,
 <span class='no'>RHthreshold</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -209,7 +209,7 @@
 change with function as.Date()</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='lateblight.html'>lateblight</a></code></p></div>
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/lateblight.html'>lateblight</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
@@ -224,7 +224,7 @@ change with function as.Date()</p>
 <span class='no'>NoReadingsH</span><span class='kw'>&lt;-</span> <span class='fl'>1</span>
 <span class='no'>RHthreshold</span> <span class='kw'>&lt;-</span> <span class='fl'>90</span>
 <span class='co'>#--------------------------</span>
-<span class='no'>WS</span><span class='kw'>&lt;-</span><span class='fu'><a href='weatherSeverity.rd.html'>weatherSeverity</a></span>(<span class='no'>weather</span>,<span class='no'>severity</span>,<span class='no'>dates</span>,<span class='no'>EmergDate</span>,<span class='no'>EndEpidDate</span>,
+<span class='no'>WS</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/weatherSeverity.html'>weatherSeverity</a></span>(<span class='no'>weather</span>,<span class='no'>severity</span>,<span class='no'>dates</span>,<span class='no'>EmergDate</span>,<span class='no'>EndEpidDate</span>,
 <span class='no'>NoReadingsH</span>,<span class='no'>RHthreshold</span>)</div><div class='output co'>#&gt; <span class='error'>Error in apply(severity[, 4:8], 2, function(x) mean(x, na.rm = TRUE)): object 'severity' not found</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

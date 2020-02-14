@@ -195,12 +195,12 @@ to late blight in potato clones evaluated at eight sites in the United States
 American Journal Potato Research 75, pag 211-217.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='stability.par.html'>stability.par</a> </code></p></div>
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/stability.par.html'>stability.par</a> </code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>haynes</span>)
-<span class='fu'>stability.nonpar</span>(<span class='no'>haynes</span>,<span class='st'>"AUDPC"</span>,<span class='kw'>ranking</span><span class='kw'>=</span><span class='fl'>TRUE</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
+<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/stability.nonpar.html'>stability.nonpar</a></span>(<span class='no'>haynes</span>,<span class='st'>"AUDPC"</span>,<span class='kw'>ranking</span><span class='kw'>=</span><span class='fl'>TRUE</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
 #&gt; Nonparametric Method for Stability Analysis
 #&gt; -------------------------------------------
 #&gt; 
@@ -266,8 +266,8 @@ American Journal Potato Research 75, pag 211-217.</p>
 <span class='no'>means</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/by.html'>by</a></span>(<span class='no'>cic</span>[,<span class='fl'>5</span>], <span class='no'>cic</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>1</span>)], <span class='kw'>function</span>(<span class='no'>x</span>) <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span>(<span class='no'>x</span>,<span class='kw'>na.rm</span><span class='kw'>=</span><span class='fl'>TRUE</span>))
 <span class='no'>means</span> <span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/as.data.frame.html'>as.data.frame</a></span>(<span class='no'>means</span>[,])
 <span class='no'>cic.mean</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>genotype</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/row.names.html'>row.names</a></span>(<span class='no'>means</span>),<span class='no'>means</span>)
-<span class='no'>cic.mean</span><span class='kw'>&lt;-</span><span class='fu'><a href='delete.na.html'>delete.na</a></span>(<span class='no'>cic.mean</span>,<span class='st'>"greater"</span>)
-<span class='no'>out</span><span class='kw'>&lt;-</span><span class='fu'>stability.nonpar</span>(<span class='no'>cic.mean</span>)
+<span class='no'>cic.mean</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/delete.na.html'>delete.na</a></span>(<span class='no'>cic.mean</span>,<span class='st'>"greater"</span>)
+<span class='no'>out</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/stability.nonpar.html'>stability.nonpar</a></span>(<span class='no'>cic.mean</span>)
 <span class='no'>out</span>$<span class='no'>ranking</span></div><div class='output co'>#&gt;                    Mean Rank    s1           Z1       s2           Z2
 #&gt; 762616.258   0.21156667   49 100.0 6.1406218415 5000.000 1.171984e+01
 #&gt; 762619.251   0.09073333    3  58.0 0.7113006387 1682.000 3.490158e-01

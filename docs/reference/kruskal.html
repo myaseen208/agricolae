@@ -211,11 +211,11 @@
     <p>Practical Nonparametrics Statistics. W.J. Conover, 1999</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='BIB.test.html'>BIB.test</a></code>, <code><a href='DAU.test.html'>DAU.test</a></code>, <code><a href='duncan.test.html'>duncan.test</a></code>,
-  <code><a href='durbin.test.html'>durbin.test</a></code>, <code><a href='friedman.html'>friedman</a></code>, <code><a href='HSD.test.html'>HSD.test</a></code>,
-  <code><a href='LSD.test.html'>LSD.test</a></code>, <code><a href='median.rd.html'>Median.test</a></code>, <code><a href='PBIB.test.html'>PBIB.test</a></code>, 
-  <code><a href='REGW.test.html'>REGW.test</a></code>, <code><a href='scheffe.test.html'>scheffe.test</a></code>, <code><a href='SNK.test.html'>SNK.test</a></code>,
-  <code><a href='VanderWarden.html'>waerden.test</a></code>, <code><a href='waller.test.html'>waller.test</a></code>, <code><a href='plot.group.html'>plot.group</a></code></p></div>
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/BIB.test.html'>BIB.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/DAU.test.html'>DAU.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/duncan.test.html'>duncan.test</a></code>,
+  <code><a href='https://rdrr.io/pkg/agricolae/man/durbin.test.html'>durbin.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/friedman.html'>friedman</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/HSD.test.html'>HSD.test</a></code>,
+  <code><a href='https://rdrr.io/pkg/agricolae/man/LSD.test.html'>LSD.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/median.html'>Median.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/PBIB.test.html'>PBIB.test</a></code>, 
+  <code><a href='https://rdrr.io/pkg/agricolae/man/REGW.test.html'>REGW.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/scheffe.test.html'>scheffe.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/SNK.test.html'>SNK.test</a></code>,
+  <code><a href='https://rdrr.io/pkg/agricolae/man/VanderWarden.html'>waerden.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/waller.test.html'>waller.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/plot.group.html'>plot.group</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
@@ -223,8 +223,8 @@
 <span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='no'>corn</span>)</div><div class='output co'>#&gt; 'data.frame':	34 obs. of  3 variables:
 #&gt;  $ method     : int  1 1 1 1 1 1 1 1 1 2 ...
 #&gt;  $ observation: int  83 91 94 89 89 96 91 92 90 91 ...
-#&gt;  $ rx         : num  11 23 28.5 17 17 31.5 23 26 19.5 23 ...</div><div class='input'><span class='no'>comparison</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>corn</span>,<span class='fu'>kruskal</span>(<span class='no'>observation</span>,<span class='no'>method</span>,<span class='kw'>group</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>main</span><span class='kw'>=</span><span class='st'>"corn"</span>))
-<span class='no'>comparison</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>corn</span>,<span class='fu'>kruskal</span>(<span class='no'>observation</span>,<span class='no'>method</span>,<span class='kw'>p.adj</span><span class='kw'>=</span><span class='st'>"bon"</span>,<span class='kw'>group</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='kw'>main</span><span class='kw'>=</span><span class='st'>"corn"</span>))</div></pre>
+#&gt;  $ rx         : num  11 23 28.5 17 17 31.5 23 26 19.5 23 ...</div><div class='input'><span class='no'>comparison</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>corn</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/kruskal.html'>kruskal</a></span>(<span class='no'>observation</span>,<span class='no'>method</span>,<span class='kw'>group</span><span class='kw'>=</span><span class='fl'>TRUE</span>, <span class='kw'>main</span><span class='kw'>=</span><span class='st'>"corn"</span>))
+<span class='no'>comparison</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>corn</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/kruskal.html'>kruskal</a></span>(<span class='no'>observation</span>,<span class='no'>method</span>,<span class='kw'>p.adj</span><span class='kw'>=</span><span class='st'>"bon"</span>,<span class='kw'>group</span><span class='kw'>=</span><span class='fl'>FALSE</span>, <span class='kw'>main</span><span class='kw'>=</span><span class='st'>"corn"</span>))</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <h2>Contents</h2>

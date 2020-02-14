@@ -207,8 +207,8 @@
 #&gt;  $ cultivar   : Factor w/ 56 levels "Amarilis-INIA",..: 1 2 3 4 5 6 7 8 9 10 ...
 #&gt;  $ replication: Factor w/ 3 levels "I","II","III": 1 1 1 1 1 1 1 1 1 1 ...
 #&gt;  $ comas      : num  0.57 0.319 0.5 0.423 0.555 0.305 0.707 0.602 0.655 0.471 ...
-#&gt;  $ oxapampa   : num  0.6 0.661 0.627 0.511 0.683 0.397 0.68 0.618 0.723 0.625 ...</div><div class='input'><span class='no'>means</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='tapply.stat.html'>tapply.stat</a></span>(<span class='no'>ComasOxapampa</span>[,<span class='fl'>3</span>:<span class='fl'>4</span>],<span class='no'>ComasOxapampa</span>$<span class='no'>cultivar</span>,<span class='no'>mean</span>)
-<span class='fu'><a href='correlation.html'>correlation</a></span>(<span class='no'>means</span>$<span class='no'>comas</span>,<span class='no'>means</span>$<span class='no'>oxapampa</span>, <span class='kw'>method</span><span class='kw'>=</span><span class='st'>"kendall"</span>)</div><div class='output co'>#&gt; 
+#&gt;  $ oxapampa   : num  0.6 0.661 0.627 0.511 0.683 0.397 0.68 0.618 0.723 0.625 ...</div><div class='input'><span class='no'>means</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/tapply.stat.html'>tapply.stat</a></span>(<span class='no'>ComasOxapampa</span>[,<span class='fl'>3</span>:<span class='fl'>4</span>],<span class='no'>ComasOxapampa</span>$<span class='no'>cultivar</span>,<span class='no'>mean</span>)
+<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/correlation.html'>correlation</a></span>(<span class='no'>means</span>$<span class='no'>comas</span>,<span class='no'>means</span>$<span class='no'>oxapampa</span>, <span class='kw'>method</span><span class='kw'>=</span><span class='st'>"kendall"</span>)</div><div class='output co'>#&gt; 
 #&gt; Kendall's rank correlation tau
 #&gt; 
 #&gt; data: means$comas and means$oxapampa 

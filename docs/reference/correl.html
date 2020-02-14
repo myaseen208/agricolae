@@ -189,12 +189,12 @@
     <p>Numerical Recipes in C. Second Edition.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='correlation.html'>correlation</a></code></p></div>
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/correlation.html'>correlation</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>soil</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>soil</span>,<span class='fu'>correl</span>(<span class='no'>pH</span>,<span class='no'>clay</span>,<span class='kw'>method</span><span class='kw'>=</span><span class='st'>"kendall"</span>))</div><div class='output co'>#&gt; $stat
+<span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>soil</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/correl.html'>correl</a></span>(<span class='no'>pH</span>,<span class='no'>clay</span>,<span class='kw'>method</span><span class='kw'>=</span><span class='st'>"kendall"</span>))</div><div class='output co'>#&gt; $stat
 #&gt; [1] 3.31896
 #&gt; 
 #&gt; $rho
@@ -202,7 +202,7 @@
 #&gt; 
 #&gt; $pvalue
 #&gt; [1] 0.0009035325
-#&gt; </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>soil</span>,<span class='fu'>correl</span>(<span class='no'>pH</span>,<span class='no'>clay</span>,<span class='kw'>method</span><span class='kw'>=</span><span class='st'>"spearman"</span>))</div><div class='output co'>#&gt; $stat
+#&gt; </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>soil</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/correl.html'>correl</a></span>(<span class='no'>pH</span>,<span class='no'>clay</span>,<span class='kw'>method</span><span class='kw'>=</span><span class='st'>"spearman"</span>))</div><div class='output co'>#&gt; $stat
 #&gt; [1] 5.402257
 #&gt; 
 #&gt; $rho
@@ -210,7 +210,7 @@
 #&gt; 
 #&gt; $pvalue
 #&gt; [1] 0.0002159178
-#&gt; </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>soil</span>,<span class='fu'>correl</span>(<span class='no'>pH</span>,<span class='no'>clay</span>,<span class='kw'>method</span><span class='kw'>=</span><span class='st'>"pearson"</span>))</div><div class='output co'>#&gt; $stat
+#&gt; </div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>soil</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/correl.html'>correl</a></span>(<span class='no'>pH</span>,<span class='no'>clay</span>,<span class='kw'>method</span><span class='kw'>=</span><span class='st'>"pearson"</span>))</div><div class='output co'>#&gt; $stat
 #&gt; [1] 4.655866
 #&gt; 
 #&gt; $rho

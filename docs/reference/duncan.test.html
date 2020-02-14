@@ -219,19 +219,19 @@
    the Ohio State University. USA, 1996. Jason C. Hsu. Chapman Hall/CRC.<br /></p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='BIB.test.html'>BIB.test</a></code>, <code><a href='DAU.test.html'>DAU.test</a></code>, <code><a href='durbin.test.html'>durbin.test</a></code>, 
-  <code><a href='friedman.html'>friedman</a></code>, <code><a href='HSD.test.html'>HSD.test</a></code>, <code><a href='kruskal.html'>kruskal</a></code>, 
-  <code><a href='LSD.test.html'>LSD.test</a></code>, <code><a href='median.rd.html'>Median.test</a></code>, <code><a href='PBIB.test.html'>PBIB.test</a></code>, 
-  <code><a href='REGW.test.html'>REGW.test</a></code>, <code><a href='scheffe.test.html'>scheffe.test</a></code>, <code><a href='SNK.test.html'>SNK.test</a></code>,
-  <code><a href='VanderWarden.html'>waerden.test</a></code>, <code><a href='waller.test.html'>waller.test</a></code>, <code><a href='plot.group.html'>plot.group</a></code></p></div>
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/BIB.test.html'>BIB.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/DAU.test.html'>DAU.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/durbin.test.html'>durbin.test</a></code>, 
+  <code><a href='https://rdrr.io/pkg/agricolae/man/friedman.html'>friedman</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/HSD.test.html'>HSD.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/kruskal.html'>kruskal</a></code>, 
+  <code><a href='https://rdrr.io/pkg/agricolae/man/LSD.test.html'>LSD.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/median.html'>Median.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/PBIB.test.html'>PBIB.test</a></code>, 
+  <code><a href='https://rdrr.io/pkg/agricolae/man/REGW.test.html'>REGW.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/scheffe.test.html'>scheffe.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/SNK.test.html'>SNK.test</a></code>,
+  <code><a href='https://rdrr.io/pkg/agricolae/man/VanderWarden.html'>waerden.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/waller.test.html'>waller.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/plot.group.html'>plot.group</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>sweetpotato</span>)
 <span class='no'>model</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/stats/aov.html'>aov</a></span>(<span class='no'>yield</span>~<span class='no'>virus</span>,<span class='kw'>data</span><span class='kw'>=</span><span class='no'>sweetpotato</span>)
-<span class='no'>out</span> <span class='kw'>&lt;-</span> <span class='fu'>duncan.test</span>(<span class='no'>model</span>,<span class='st'>"virus"</span>,
+<span class='no'>out</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/duncan.test.html'>duncan.test</a></span>(<span class='no'>model</span>,<span class='st'>"virus"</span>,
 <span class='kw'>main</span><span class='kw'>=</span><span class='st'>"Yield of sweetpotato. Dealt with different virus"</span>)
-<span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>out</span>,<span class='kw'>variation</span><span class='kw'>=</span><span class='st'>"IQR"</span>)</div><div class='img'><img src='duncan.test-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'>duncan.test</span>(<span class='no'>model</span>,<span class='st'>"virus"</span>,<span class='kw'>alpha</span><span class='kw'>=</span><span class='fl'>0.01</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>out</span>,<span class='kw'>variation</span><span class='kw'>=</span><span class='st'>"IQR"</span>)</div><div class='img'><img src='duncan.test-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/duncan.test.html'>duncan.test</a></span>(<span class='no'>model</span>,<span class='st'>"virus"</span>,<span class='kw'>alpha</span><span class='kw'>=</span><span class='fl'>0.01</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
 #&gt; Study: model ~ "virus"
 #&gt; 
 #&gt; Duncan's new multiple range test
@@ -262,7 +262,7 @@
 #&gt; fc 12.86667      b</div><div class='input'><span class='co'># version old duncan.test()</span>
 <span class='no'>df</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/stats/df.residual.html'>df.residual</a></span>(<span class='no'>model</span>)
 <span class='no'>MSerror</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/stats/deviance.html'>deviance</a></span>(<span class='no'>model</span>)/<span class='no'>df</span>
-<span class='no'>out</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>sweetpotato</span>,<span class='fu'>duncan.test</span>(<span class='no'>yield</span>,<span class='no'>virus</span>,<span class='no'>df</span>,<span class='no'>MSerror</span>, <span class='kw'>group</span><span class='kw'>=</span><span class='fl'>TRUE</span>))
+<span class='no'>out</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>sweetpotato</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/duncan.test.html'>duncan.test</a></span>(<span class='no'>yield</span>,<span class='no'>virus</span>,<span class='no'>df</span>,<span class='no'>MSerror</span>, <span class='kw'>group</span><span class='kw'>=</span><span class='fl'>TRUE</span>))
 <span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>out</span>,<span class='kw'>horiz</span><span class='kw'>=</span><span class='fl'>TRUE</span>,<span class='kw'>las</span><span class='kw'>=</span><span class='fl'>1</span>)</div><div class='img'><img src='duncan.test-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>out</span>$<span class='no'>groups</span>)</div><div class='output co'>#&gt;       yield groups
 #&gt; oo 36.90000      a
 #&gt; ff 36.33333      a

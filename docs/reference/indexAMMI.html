@@ -196,14 +196,14 @@ Ph.D. Thesis, Department of Agronomy, Faculty of Agriculture of the
 University of the Free State, Bloemfontein, South Africa.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='AMMI.html'>AMMI</a></code>,<code><a href='plotAMMI.html'>plot.AMMI</a></code></p></div>
+    <div class='dont-index'><p><code><a href='AMMI.html'>AMMI</a></code>,<code><a href='https://rdrr.io/pkg/agricolae/man/plotAMMI.html'>plot.AMMI</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='co'># Index AMMI</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>plrv</span>)
 <span class='no'>model</span><span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>plrv</span>,<span class='fu'><a href='AMMI.html'>AMMI</a></span>(<span class='no'>Locality</span>, <span class='no'>Genotype</span>, <span class='no'>Rep</span>, <span class='no'>Yield</span>, <span class='kw'>console</span><span class='kw'>=</span><span class='fl'>FALSE</span>))
-<span class='no'>Idx</span><span class='kw'>&lt;-</span><span class='fu'>index.AMMI</span>(<span class='no'>model</span>)
+<span class='no'>Idx</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/indexAMMI.html'>index.AMMI</a></span>(<span class='no'>model</span>)
 <span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span>(<span class='no'>Idx</span>)</div><div class='output co'>#&gt; [1] "ASV"   "YSI"   "rASV"  "rYSI"  "means"</div><div class='input'><span class='co'># Crops with improved stability according AMMI.</span>
 <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>Idx</span>[<span class='fu'><a href='https://rdrr.io/r/base/order.html'>order</a></span>(<span class='no'>Idx</span>[,<span class='fl'>3</span>]),])</div><div class='output co'>#&gt;               ASV YSI rASV rYSI    means
 #&gt; 402.7   0.2801470  20    1   19 27.47748

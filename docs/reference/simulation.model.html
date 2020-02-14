@@ -206,14 +206,14 @@
 
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='resampling.model.html'>resampling.model</a> </code></p></div>
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/resampling.model.html'>resampling.model</a> </code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='co'>#example 1</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>clay</span>)
 <span class='no'>model</span><span class='kw'>&lt;-</span><span class='st'>"ralstonia ~ days"</span>
-<span class='fu'>simulation.model</span>(<span class='no'>model</span>,<span class='no'>clay</span>,<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>15</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
+<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/simulation.model.html'>simulation.model</a></span>(<span class='no'>model</span>,<span class='no'>clay</span>,<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>15</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
 #&gt; Simulation of experiments
 #&gt; Under the normality assumption
 #&gt; - - - - - - - - - - - - - - - - 
@@ -236,7 +236,7 @@
 #&gt; </div><div class='input'><span class='co'>#example 2</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>sweetpotato</span>)
 <span class='no'>model</span><span class='kw'>&lt;-</span><span class='st'>"yield~virus"</span>
-<span class='fu'>simulation.model</span>(<span class='no'>model</span>,<span class='no'>sweetpotato</span>,<span class='kw'>categorical</span><span class='kw'>=</span><span class='fl'>1</span>,<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>15</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
+<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/simulation.model.html'>simulation.model</a></span>(<span class='no'>model</span>,<span class='no'>sweetpotato</span>,<span class='kw'>categorical</span><span class='kw'>=</span><span class='fl'>1</span>,<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>15</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
 #&gt; Simulation of experiments
 #&gt; Under the normality assumption
 #&gt; - - - - - - - - - - - - - - - - 
@@ -259,7 +259,7 @@
 #&gt; </div><div class='input'><span class='co'>#example 3</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>Glycoalkaloids</span>)
 <span class='no'>model</span><span class='kw'>&lt;-</span><span class='st'>"HPLC ~ spectrophotometer"</span>
-<span class='fu'>simulation.model</span>(<span class='no'>model</span>,<span class='no'>Glycoalkaloids</span>,<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>15</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
+<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/simulation.model.html'>simulation.model</a></span>(<span class='no'>model</span>,<span class='no'>Glycoalkaloids</span>,<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>15</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
 #&gt; Simulation of experiments
 #&gt; Under the normality assumption
 #&gt; - - - - - - - - - - - - - - - - 
@@ -282,7 +282,7 @@
 #&gt; </div><div class='input'><span class='co'>#example 4</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>potato</span>)
 <span class='no'>model</span><span class='kw'>&lt;-</span><span class='st'>"cutting~date+variety"</span>
-<span class='fu'>simulation.model</span>(<span class='no'>model</span>,<span class='no'>potato</span>,<span class='kw'>categorical</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>2</span>,<span class='fl'>3</span>),<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>15</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
+<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/simulation.model.html'>simulation.model</a></span>(<span class='no'>model</span>,<span class='no'>potato</span>,<span class='kw'>categorical</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>2</span>,<span class='fl'>3</span>),<span class='kw'>k</span><span class='kw'>=</span><span class='fl'>15</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; 
 #&gt; Simulation of experiments
 #&gt; Under the normality assumption
 #&gt; - - - - - - - - - - - - - - - - 

@@ -202,7 +202,7 @@ Criterion. conclusion<br /></p>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>frijol</span>)
-<span class='no'>evaluation</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>frijol</span>,<span class='fu'>reg.homog</span>(<span class='no'>technology</span>,<span class='no'>index</span>,<span class='no'>production</span>))</div><div class='output co'>#&gt; 
+<span class='no'>evaluation</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>frijol</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/reg.homog.html'>reg.homog</a></span>(<span class='no'>technology</span>,<span class='no'>index</span>,<span class='no'>production</span>))</div><div class='output co'>#&gt; 
 #&gt; Test of Homogeneity of regressions
 #&gt; 
 #&gt; Total of simple regressions:  4 
@@ -229,7 +229,7 @@ Criterion. conclusion<br /></p>
 <span class='fl'>52</span>,<span class='fl'>45</span>,<span class='fl'>55</span>,<span class='fl'>56</span>,<span class='fl'>61</span>,<span class='fl'>49</span>,<span class='fl'>49</span>,<span class='fl'>42</span>,<span class='fl'>68</span>,<span class='fl'>58</span>,<span class='fl'>52</span>,<span class='fl'>78</span>,<span class='fl'>55</span>,<span class='fl'>70</span>,<span class='fl'>75</span>,<span class='fl'>67</span>,<span class='fl'>57</span>,<span class='fl'>70</span>,<span class='fl'>61</span>,<span class='fl'>58</span>,<span class='fl'>84</span>,<span class='fl'>67</span>,<span class='fl'>47</span>,<span class='fl'>71</span>,<span class='fl'>68</span>,
 <span class='fl'>56</span>,<span class='fl'>72</span>,<span class='fl'>58</span>,<span class='fl'>72</span>,<span class='fl'>62</span>,<span class='fl'>63</span>,<span class='fl'>63</span>,<span class='fl'>68</span>,<span class='fl'>56</span>,<span class='fl'>54</span>,<span class='fl'>66</span>,<span class='fl'>72</span>,<span class='fl'>60</span>,<span class='fl'>72</span>)
 <span class='no'>trt</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span>(<span class='no'>LineNumber</span>,<span class='no'>PlantingDate</span>,<span class='kw'>sep</span><span class='kw'>=</span><span class='st'>"-"</span>)
-<span class='no'>output</span><span class='kw'>&lt;-</span><span class='fu'>reg.homog</span>(<span class='no'>trt</span>,<span class='no'>HeadWt</span>,<span class='no'>Ascorbic</span>)</div><div class='output co'>#&gt; 
+<span class='no'>output</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/reg.homog.html'>reg.homog</a></span>(<span class='no'>trt</span>,<span class='no'>HeadWt</span>,<span class='no'>Ascorbic</span>)</div><div class='output co'>#&gt; 
 #&gt; Test of Homogeneity of regressions
 #&gt; 
 #&gt; Total of simple regressions:  6 

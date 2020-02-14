@@ -206,22 +206,22 @@ significant difference (LSD).</p>
     <p>Practical Nonparametrics Statistics. W.J. Conover, 1999</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='BIB.test.html'>BIB.test</a></code>, <code><a href='DAU.test.html'>DAU.test</a></code>, <code><a href='duncan.test.html'>duncan.test</a></code>,
-  <code><a href='durbin.test.html'>durbin.test</a></code>, <code><a href='friedman.html'>friedman</a></code>, <code><a href='HSD.test.html'>HSD.test</a></code>,
-  <code><a href='kruskal.html'>kruskal</a></code>, <code><a href='LSD.test.html'>LSD.test</a></code>, <code><a href='median.rd.html'>Median.test</a></code>, 
-  <code><a href='PBIB.test.html'>PBIB.test</a></code>, <code><a href='REGW.test.html'>REGW.test</a></code>, <code><a href='scheffe.test.html'>scheffe.test</a></code>, 
-  <code><a href='SNK.test.html'>SNK.test</a></code>, <code><a href='waller.test.html'>waller.test</a></code>, <code><a href='plot.group.html'>plot.group</a></code></p></div>
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/BIB.test.html'>BIB.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/DAU.test.html'>DAU.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/duncan.test.html'>duncan.test</a></code>,
+  <code><a href='https://rdrr.io/pkg/agricolae/man/durbin.test.html'>durbin.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/friedman.html'>friedman</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/HSD.test.html'>HSD.test</a></code>,
+  <code><a href='https://rdrr.io/pkg/agricolae/man/kruskal.html'>kruskal</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/LSD.test.html'>LSD.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/median.html'>Median.test</a></code>, 
+  <code><a href='https://rdrr.io/pkg/agricolae/man/PBIB.test.html'>PBIB.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/REGW.test.html'>REGW.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/scheffe.test.html'>scheffe.test</a></code>, 
+  <code><a href='https://rdrr.io/pkg/agricolae/man/SNK.test.html'>SNK.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/waller.test.html'>waller.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/plot.group.html'>plot.group</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='co'># example 1</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>corn</span>)
-<span class='no'>out1</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>corn</span>,<span class='fu'>waerden.test</span>(<span class='no'>observation</span>,<span class='no'>method</span>,<span class='kw'>group</span><span class='kw'>=</span><span class='fl'>TRUE</span>))
+<span class='no'>out1</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>corn</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/VanderWarden.html'>waerden.test</a></span>(<span class='no'>observation</span>,<span class='no'>method</span>,<span class='kw'>group</span><span class='kw'>=</span><span class='fl'>TRUE</span>))
 <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>out1</span>$<span class='no'>groups</span>)</div><div class='output co'>#&gt;        score groups
 #&gt; 3  1.1234030      a
 #&gt; 1  0.3582343      b
 #&gt; 2 -0.1703415      c
-#&gt; 4 -1.1722899      d</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>out1</span>)</div><div class='img'><img src='VanderWarden-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='no'>out2</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>corn</span>,<span class='fu'>waerden.test</span>(<span class='no'>observation</span>,<span class='no'>method</span>,<span class='kw'>group</span><span class='kw'>=</span><span class='fl'>FALSE</span>))
+#&gt; 4 -1.1722899      d</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>out1</span>)</div><div class='img'><img src='VanderWarden-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='no'>out2</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>corn</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/VanderWarden.html'>waerden.test</a></span>(<span class='no'>observation</span>,<span class='no'>method</span>,<span class='kw'>group</span><span class='kw'>=</span><span class='fl'>FALSE</span>))
 <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>out2</span>$<span class='no'>comparison</span>)</div><div class='output co'>#&gt;       difference pvalue signif.        LCL        UCL
 #&gt; 1 - 2  0.5285759 0.0202       *  0.0883729  0.9687788
 #&gt; 1 - 3 -0.7651686 0.0029      ** -1.2479907 -0.2823465
@@ -230,7 +230,7 @@ significant difference (LSD).</p>
 #&gt; 2 - 4  1.0019484 0.0001     ***  0.5474957  1.4564011
 #&gt; 3 - 4  2.2956928 0.0000     ***  1.7998443  2.7915414</div><div class='input'><span class='co'># example 2</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>sweetpotato</span>)
-<span class='no'>out</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>sweetpotato</span>,<span class='fu'>waerden.test</span>(<span class='no'>yield</span>,<span class='no'>virus</span>,<span class='kw'>alpha</span><span class='kw'>=</span><span class='fl'>0.01</span>,<span class='kw'>group</span><span class='kw'>=</span><span class='fl'>TRUE</span>))
+<span class='no'>out</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>sweetpotato</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/VanderWarden.html'>waerden.test</a></span>(<span class='no'>yield</span>,<span class='no'>virus</span>,<span class='kw'>alpha</span><span class='kw'>=</span><span class='fl'>0.01</span>,<span class='kw'>group</span><span class='kw'>=</span><span class='fl'>TRUE</span>))
 <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>out</span>)</div><div class='output co'>#&gt; $statistics
 #&gt;      Chisq Df    p.chisq  t.value      MSD
 #&gt;   8.409979  3 0.03825667 3.355387 1.322487

@@ -187,26 +187,26 @@
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='co'># case of 1 single factor</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>sweetpotato</span>)
-<span class='fu'>tapply.stat</span>(<span class='no'>sweetpotato</span>[,<span class='fl'>2</span>],<span class='no'>sweetpotato</span>[,<span class='fl'>1</span>],<span class='no'>mean</span>)</div><div class='output co'>#&gt;   sweetpotato[, 1] sweetpotato[, 2]
+<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/tapply.stat.html'>tapply.stat</a></span>(<span class='no'>sweetpotato</span>[,<span class='fl'>2</span>],<span class='no'>sweetpotato</span>[,<span class='fl'>1</span>],<span class='no'>mean</span>)</div><div class='output co'>#&gt;   sweetpotato[, 1] sweetpotato[, 2]
 #&gt; 1               cc         24.40000
 #&gt; 2               fc         12.86667
 #&gt; 3               ff         36.33333
-#&gt; 4               oo         36.90000</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>sweetpotato</span>,<span class='fu'>tapply.stat</span>(<span class='no'>yield</span>,<span class='no'>virus</span>,<span class='no'>sd</span>))</div><div class='output co'>#&gt;   virus    yield
+#&gt; 4               oo         36.90000</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>sweetpotato</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/tapply.stat.html'>tapply.stat</a></span>(<span class='no'>yield</span>,<span class='no'>virus</span>,<span class='no'>sd</span>))</div><div class='output co'>#&gt;   virus    yield
 #&gt; 1    cc 3.609709
 #&gt; 2    fc 2.159475
 #&gt; 3    ff 7.333030
-#&gt; 4    oo 4.300000</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>sweetpotato</span>,<span class='fu'>tapply.stat</span>(<span class='no'>yield</span>,<span class='no'>virus</span>,<span class='kw'>function</span>(<span class='no'>x</span>) <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span>(<span class='no'>x</span>)-<span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>min</a></span>(<span class='no'>x</span>)))</div><div class='output co'>#&gt;   virus yield
+#&gt; 4    oo 4.300000</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>sweetpotato</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/tapply.stat.html'>tapply.stat</a></span>(<span class='no'>yield</span>,<span class='no'>virus</span>,<span class='kw'>function</span>(<span class='no'>x</span>) <span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span>(<span class='no'>x</span>)-<span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>min</a></span>(<span class='no'>x</span>)))</div><div class='output co'>#&gt;   virus yield
 #&gt; 1    cc   6.8
 #&gt; 2    fc   4.3
 #&gt; 3    ff  13.8
-#&gt; 4    oo   8.3</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>sweetpotato</span>,<span class='fu'>tapply.stat</span>(<span class='no'>yield</span>,<span class='no'>virus</span>,
+#&gt; 4    oo   8.3</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>sweetpotato</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/tapply.stat.html'>tapply.stat</a></span>(<span class='no'>yield</span>,<span class='no'>virus</span>,
 <span class='kw'>function</span>(<span class='no'>x</span>) <span class='fu'><a href='https://rdrr.io/r/stats/quantile.html'>quantile</a></span>(<span class='no'>x</span>,<span class='fl'>0.75</span>,<span class='fl'>6</span>)-<span class='fu'><a href='https://rdrr.io/r/stats/quantile.html'>quantile</a></span>(<span class='no'>x</span>,<span class='fl'>0.25</span>,<span class='fl'>6</span>)))</div><div class='output co'>#&gt;   virus yield
 #&gt; 1    cc  3.40
 #&gt; 2    fc  2.15
 #&gt; 3    ff  6.90
 #&gt; 4    oo  4.15</div><div class='input'><span class='co'># other case</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>cotton</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>cotton</span>,<span class='fu'>tapply.stat</span>(<span class='no'>yield</span>,<span class='no'>cotton</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>3</span>,<span class='fl'>4</span>)],<span class='no'>mean</span>))</div><div class='output co'>#&gt;     site lineage epoca     yield
+<span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>cotton</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/tapply.stat.html'>tapply.stat</a></span>(<span class='no'>yield</span>,<span class='no'>cotton</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>3</span>,<span class='fl'>4</span>)],<span class='no'>mean</span>))</div><div class='output co'>#&gt;     site lineage epoca     yield
 #&gt; 1   Lima       1     1 12.500000
 #&gt; 2   Lima       1     2 18.666667
 #&gt; 3   Lima       2     1 12.333333
@@ -222,13 +222,13 @@
 #&gt; 13 Pisco       3     1 15.833333
 #&gt; 14 Pisco       3     2 21.166667
 #&gt; 15 Pisco       4     1 14.666667
-#&gt; 16 Pisco       4     2 20.000000</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>cotton</span>,<span class='fu'>tapply.stat</span>(<span class='no'>yield</span>,<span class='no'>cotton</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>4</span>)],<span class='no'>max</span>))</div><div class='output co'>#&gt;    site epoca yield
+#&gt; 16 Pisco       4     2 20.000000</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>cotton</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/tapply.stat.html'>tapply.stat</a></span>(<span class='no'>yield</span>,<span class='no'>cotton</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>4</span>)],<span class='no'>max</span>))</div><div class='output co'>#&gt;    site epoca yield
 #&gt; 1  Lima     1    15
 #&gt; 2  Lima     2    26
 #&gt; 3 Pisco     1    26
 #&gt; 4 Pisco     2    27</div><div class='input'><span class='co'># Height of pijuayo</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>growth</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>growth</span>,<span class='fu'>tapply.stat</span>(<span class='no'>height</span>, <span class='no'>growth</span>[,<span class='fl'>2</span>:<span class='fl'>1</span>], <span class='kw'>function</span>(<span class='no'>x</span>) <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span>(<span class='no'>x</span>,<span class='kw'>na.rm</span><span class='kw'>=</span><span class='fl'>TRUE</span>)))</div><div class='output co'>#&gt;    slime place    height
+<span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>growth</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/tapply.stat.html'>tapply.stat</a></span>(<span class='no'>height</span>, <span class='no'>growth</span>[,<span class='fl'>2</span>:<span class='fl'>1</span>], <span class='kw'>function</span>(<span class='no'>x</span>) <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span>(<span class='no'>x</span>,<span class='kw'>na.rm</span><span class='kw'>=</span><span class='fl'>TRUE</span>)))</div><div class='output co'>#&gt;    slime place    height
 #&gt; 1      5    L1  8.433333
 #&gt; 2      6    L1 10.950000
 #&gt; 3      6    L2 11.350000

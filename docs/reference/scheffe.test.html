@@ -226,17 +226,17 @@ Steel, R.; Torri,J; Dickey, D.(1997) Principles and Procedures of Statistics
 A Biometrical Approach. pp189</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='BIB.test.html'>BIB.test</a></code>, <code><a href='DAU.test.html'>DAU.test</a></code>, <code><a href='duncan.test.html'>duncan.test</a></code>,
-  <code><a href='durbin.test.html'>durbin.test</a></code>, <code><a href='friedman.html'>friedman</a></code>, <code><a href='HSD.test.html'>HSD.test</a></code>,
-  <code><a href='kruskal.html'>kruskal</a></code>, <code><a href='LSD.test.html'>LSD.test</a></code>, <code><a href='median.rd.html'>Median.test</a></code>, 
-  <code><a href='PBIB.test.html'>PBIB.test</a></code>, <code><a href='REGW.test.html'>REGW.test</a></code>, <code><a href='SNK.test.html'>SNK.test</a></code>,
-  <code><a href='VanderWarden.html'>waerden.test</a></code>, <code><a href='waller.test.html'>waller.test</a></code>, <code><a href='plot.group.html'>plot.group</a></code></p></div>
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/BIB.test.html'>BIB.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/DAU.test.html'>DAU.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/duncan.test.html'>duncan.test</a></code>,
+  <code><a href='https://rdrr.io/pkg/agricolae/man/durbin.test.html'>durbin.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/friedman.html'>friedman</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/HSD.test.html'>HSD.test</a></code>,
+  <code><a href='https://rdrr.io/pkg/agricolae/man/kruskal.html'>kruskal</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/LSD.test.html'>LSD.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/median.html'>Median.test</a></code>, 
+  <code><a href='https://rdrr.io/pkg/agricolae/man/PBIB.test.html'>PBIB.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/REGW.test.html'>REGW.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/SNK.test.html'>SNK.test</a></code>,
+  <code><a href='https://rdrr.io/pkg/agricolae/man/VanderWarden.html'>waerden.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/waller.test.html'>waller.test</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/plot.group.html'>plot.group</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>sweetpotato</span>)
 <span class='no'>model</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/stats/aov.html'>aov</a></span>(<span class='no'>yield</span>~<span class='no'>virus</span>, <span class='kw'>data</span><span class='kw'>=</span><span class='no'>sweetpotato</span>)
-<span class='no'>comparison</span> <span class='kw'>&lt;-</span> <span class='fu'>scheffe.test</span>(<span class='no'>model</span>,<span class='st'>"virus"</span>, <span class='kw'>group</span><span class='kw'>=</span><span class='fl'>TRUE</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>,
+<span class='no'>comparison</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/scheffe.test.html'>scheffe.test</a></span>(<span class='no'>model</span>,<span class='st'>"virus"</span>, <span class='kw'>group</span><span class='kw'>=</span><span class='fl'>TRUE</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>,
 <span class='kw'>main</span><span class='kw'>=</span><span class='st'>"Yield of sweetpotato\nDealt with different virus"</span>)</div><div class='output co'>#&gt; 
 #&gt; Study: Yield of sweetpotato
 #&gt; Dealt with different virus
@@ -268,7 +268,7 @@ A Biometrical Approach. pp189</p>
 <span class='no'>df</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/stats/df.residual.html'>df.residual</a></span>(<span class='no'>model</span>)
 <span class='no'>MSerror</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/stats/deviance.html'>deviance</a></span>(<span class='no'>model</span>)/<span class='no'>df</span>
 <span class='no'>Fc</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/stats/anova.html'>anova</a></span>(<span class='no'>model</span>)[<span class='st'>"virus"</span>,<span class='fl'>4</span>]
-<span class='no'>out</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>sweetpotato</span>,<span class='fu'>scheffe.test</span>(<span class='no'>yield</span>, <span class='no'>virus</span>, <span class='no'>df</span>, <span class='no'>MSerror</span>, <span class='no'>Fc</span>))
+<span class='no'>out</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>sweetpotato</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/scheffe.test.html'>scheffe.test</a></span>(<span class='no'>yield</span>, <span class='no'>virus</span>, <span class='no'>df</span>, <span class='no'>MSerror</span>, <span class='no'>Fc</span>))
 <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>out</span>)</div><div class='output co'>#&gt; $statistics
 #&gt;    MSerror Df        F   Mean      CV  Scheffe CriticalDifference
 #&gt;   22.48917  8 4.066181 27.625 17.1666 3.492641           13.52368

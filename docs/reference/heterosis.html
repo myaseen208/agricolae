@@ -219,7 +219,7 @@ de plantas, 2004". Poster: Congreso de la Sociedad Peruana de Genetica - Peru, 2
 #&gt;  $ v5         : num  102.6 107.4 120.5 83.8 90.4 ...</div><div class='input'><span class='no'>site1</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='no'>heterosis</span>,<span class='no'>heterosis</span>[,<span class='fl'>1</span>]<span class='kw'>==</span><span class='fl'>1</span>)
 <span class='no'>site2</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='no'>heterosis</span>,<span class='no'>heterosis</span>[,<span class='fl'>1</span>]<span class='kw'>==</span><span class='fl'>2</span>)
 <span class='no'>site3</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/subset.html'>subset</a></span>(<span class='no'>heterosis</span>,<span class='no'>heterosis</span>[,<span class='fl'>1</span>]<span class='kw'>==</span><span class='fl'>3</span>)
-<span class='no'>model1</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>site1</span>,<span class='fu'><a href='lineXtester.html'>lineXtester</a></span>(<span class='no'>Replication</span>, <span class='no'>Female</span>, <span class='no'>Male</span>, <span class='no'>v1</span>))</div><div class='output co'>#&gt; 
+<span class='no'>model1</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>site1</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/lineXtester.html'>lineXtester</a></span>(<span class='no'>Replication</span>, <span class='no'>Female</span>, <span class='no'>Male</span>, <span class='no'>v1</span>))</div><div class='output co'>#&gt; 
 #&gt; ANALYSIS LINE x TESTER:  v1 
 #&gt; 
 #&gt; ANOVA with parents and crosses 
@@ -305,9 +305,9 @@ de plantas, 2004". Poster: Congreso de la Sociedad Peruana de Genetica - Peru, 2
 #&gt; Contributions of testers: 16.31736
 #&gt; Contributions of lxt    : 52.92548 </div><div class='input'><span class='no'>DFe</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/df.residual.html'>df.residual</a></span>(<span class='no'>model1</span>)
 <span class='no'>CMe</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/deviance.html'>deviance</a></span>(<span class='no'>model1</span>)/<span class='no'>DFe</span>
-<span class='no'>test1</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>site1</span>,<span class='fu'><a href='HSD.test.html'>HSD.test</a></span>(<span class='no'>v1</span>, <span class='no'>Factor</span>,<span class='no'>DFe</span>,<span class='no'>CMe</span>))
-<span class='no'>test2</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>site1</span>,<span class='fu'><a href='HSD.test.html'>HSD.test</a></span>(<span class='no'>v1</span>, <span class='no'>Treatment</span>,<span class='no'>DFe</span>,<span class='no'>CMe</span>))
-<span class='no'>model22</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>site2</span>,<span class='fu'><a href='lineXtester.html'>lineXtester</a></span>(<span class='no'>Replication</span>, <span class='no'>Female</span>, <span class='no'>Male</span>, <span class='no'>v3</span>))</div><div class='output co'>#&gt; 
+<span class='no'>test1</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>site1</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/HSD.test.html'>HSD.test</a></span>(<span class='no'>v1</span>, <span class='no'>Factor</span>,<span class='no'>DFe</span>,<span class='no'>CMe</span>))
+<span class='no'>test2</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>site1</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/HSD.test.html'>HSD.test</a></span>(<span class='no'>v1</span>, <span class='no'>Treatment</span>,<span class='no'>DFe</span>,<span class='no'>CMe</span>))
+<span class='no'>model22</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>site2</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/lineXtester.html'>lineXtester</a></span>(<span class='no'>Replication</span>, <span class='no'>Female</span>, <span class='no'>Male</span>, <span class='no'>v3</span>))</div><div class='output co'>#&gt; 
 #&gt; ANALYSIS LINE x TESTER:  v3 
 #&gt; 
 #&gt; ANOVA with parents and crosses 
@@ -391,7 +391,7 @@ de plantas, 2004". Poster: Congreso de la Sociedad Peruana de Genetica - Peru, 2
 #&gt; ===========================================
 #&gt; Contributions of lines  : 22.10567
 #&gt; Contributions of testers: 37.15948
-#&gt; Contributions of lxt    : 40.73486 </div><div class='input'><span class='no'>model3</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>site3</span>,<span class='fu'><a href='lineXtester.html'>lineXtester</a></span>(<span class='no'>Replication</span>, <span class='no'>Female</span>, <span class='no'>Male</span>, <span class='no'>v4</span>))</div><div class='output co'>#&gt; 
+#&gt; Contributions of lxt    : 40.73486 </div><div class='input'><span class='no'>model3</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>site3</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/lineXtester.html'>lineXtester</a></span>(<span class='no'>Replication</span>, <span class='no'>Female</span>, <span class='no'>Male</span>, <span class='no'>v4</span>))</div><div class='output co'>#&gt; 
 #&gt; ANALYSIS LINE x TESTER:  v4 
 #&gt; 
 #&gt; ANOVA with parents and crosses 

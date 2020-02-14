@@ -162,7 +162,7 @@
   generation in R. The seed is by set.seed(seed, kinds).</p>
     </div>
 
-    <pre class="usage"><span class='fu'><a href='design.youden.rd.html'>design.youden</a></span>(<span class='no'>trt</span>, <span class='no'>r</span>, <span class='kw'>serie</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>seed</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>kinds</span> <span class='kw'>=</span> <span class='st'>"Super-Duper"</span>,<span class='kw'>first</span><span class='kw'>=</span><span class='fl'>TRUE</span>
+    <pre class="usage"><span class='fu'>design.youden</span>(<span class='no'>trt</span>, <span class='no'>r</span>, <span class='kw'>serie</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>seed</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>kinds</span> <span class='kw'>=</span> <span class='st'>"Super-Duper"</span>,<span class='kw'>first</span><span class='kw'>=</span><span class='fl'>TRUE</span>
 ,<span class='kw'>randomization</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -217,16 +217,16 @@ Hinkelmann, Klaus and Kempthorne, Oscar. Wiley-Interscience.
 Copyright (2008) by John Wiley and Sons. Inc., Hoboken, new Yersy</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='design.ab.html'>design.ab</a></code>, <code><a href='design.alpha.html'>design.alpha</a></code>,<code><a href='design.bib.html'>design.bib</a></code>, 
-<code><a href='design.crd.html'>design.crd</a> </code>, <code><a href='design.cyclic.html'>design.cyclic</a> </code>, <code><a href='design.dau.html'>design.dau</a> </code>,
-<code><a href='design.graeco.html'>design.graeco</a></code>, <code><a href='design.lattice.html'>design.lattice</a></code>, <code><a href='design.split.html'>design.split</a></code>,
-<code><a href='design.rcbd.html'>design.rcbd</a></code>, <code><a href='design.strip.html'>design.strip</a></code>, <code><a href='design.lsd.html'>design.lsd</a></code></p></div>
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/design.ab.html'>design.ab</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.alpha.html'>design.alpha</a></code>,<code><a href='https://rdrr.io/pkg/agricolae/man/design.bib.html'>design.bib</a></code>, 
+<code><a href='https://rdrr.io/pkg/agricolae/man/design.crd.html'>design.crd</a> </code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.cyclic.html'>design.cyclic</a> </code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.dau.html'>design.dau</a> </code>,
+<code><a href='https://rdrr.io/pkg/agricolae/man/design.graeco.html'>design.graeco</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.lattice.html'>design.lattice</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.split.html'>design.split</a></code>,
+<code><a href='https://rdrr.io/pkg/agricolae/man/design.rcbd.html'>design.rcbd</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.strip.html'>design.strip</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.lsd.html'>design.lsd</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='no'>varieties</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"perricholi"</span>,<span class='st'>"yungay"</span>,<span class='st'>"maria bonita"</span>,<span class='st'>"tomasa"</span>)
 <span class='no'>r</span><span class='kw'>&lt;-</span><span class='fl'>3</span>
-<span class='no'>outdesign</span> <span class='kw'>&lt;-</span><span class='fu'><a href='design.youden.rd.html'>design.youden</a></span>(<span class='no'>varieties</span>,<span class='no'>r</span>,<span class='kw'>serie</span><span class='kw'>=</span><span class='fl'>2</span>,<span class='kw'>seed</span><span class='kw'>=</span><span class='fl'>23</span>)
+<span class='no'>outdesign</span> <span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/design.youden.html'>design.youden</a></span>(<span class='no'>varieties</span>,<span class='no'>r</span>,<span class='kw'>serie</span><span class='kw'>=</span><span class='fl'>2</span>,<span class='kw'>seed</span><span class='kw'>=</span><span class='fl'>23</span>)
 <span class='no'>youden</span> <span class='kw'>&lt;-</span> <span class='no'>outdesign</span>$<span class='no'>book</span>
 <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>outdesign</span>$<span class='no'>sketch</span>)</div><div class='output co'>#&gt;      [,1]           [,2]           [,3]          
 #&gt; [1,] "maria bonita" "tomasa"       "perricholi"  

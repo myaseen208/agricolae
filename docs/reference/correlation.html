@@ -198,13 +198,13 @@
 Biometrics. 1989; 45, 255-268.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='correl.html'>correl</a> </code></p></div>
+    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/correl.html'>correl</a> </code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>soil</span>)
 <span class='co'># example 1</span>
-<span class='no'>analysis</span><span class='kw'>&lt;-</span><span class='fu'>correlation</span>(<span class='no'>soil</span>[,<span class='fl'>2</span>:<span class='fl'>8</span>],<span class='kw'>method</span><span class='kw'>=</span><span class='st'>"pearson"</span>)
+<span class='no'>analysis</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/correlation.html'>correlation</a></span>(<span class='no'>soil</span>[,<span class='fl'>2</span>:<span class='fl'>8</span>],<span class='kw'>method</span><span class='kw'>=</span><span class='st'>"pearson"</span>)
 <span class='no'>analysis</span></div><div class='output co'>#&gt; $correlation
 #&gt;          pH    EC CaCO3    MO  CIC    P    K
 #&gt; pH     1.00  0.55  0.73 -0.33 0.26 0.14 0.59
@@ -236,7 +236,7 @@ Biometrics. 1989; 45, 255-268.</p>
 #&gt; $n.obs
 #&gt; [1] 13
 #&gt; </div><div class='input'><span class='co'># Example 2: correlation between pH, variable 2 and other elements from soil.</span>
-<span class='no'>analysis</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>soil</span>,<span class='fu'>correlation</span>(<span class='no'>pH</span>,<span class='no'>soil</span>[,<span class='fl'>3</span>:<span class='fl'>8</span>],<span class='kw'>method</span><span class='kw'>=</span><span class='st'>"pearson"</span>,<span class='kw'>alternative</span><span class='kw'>=</span><span class='st'>"less"</span>))
+<span class='no'>analysis</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>soil</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/correlation.html'>correlation</a></span>(<span class='no'>pH</span>,<span class='no'>soil</span>[,<span class='fl'>3</span>:<span class='fl'>8</span>],<span class='kw'>method</span><span class='kw'>=</span><span class='st'>"pearson"</span>,<span class='kw'>alternative</span><span class='kw'>=</span><span class='st'>"less"</span>))
 <span class='no'>analysis</span></div><div class='output co'>#&gt; $correlation
 #&gt;      EC CaCO3    MO  CIC    P    K
 #&gt; pH 0.55  0.73 -0.33 0.26 0.14 0.59
@@ -248,7 +248,7 @@ Biometrics. 1989; 45, 255-268.</p>
 #&gt; $n.obs
 #&gt; [1] 13
 #&gt; </div><div class='input'><span class='co'># Example 3: correlation between pH and clay method kendall.</span>
-<span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>soil</span>,<span class='fu'>correlation</span>(<span class='no'>pH</span>,<span class='no'>clay</span>,<span class='kw'>method</span><span class='kw'>=</span><span class='st'>"kendall"</span>, <span class='kw'>alternative</span><span class='kw'>=</span><span class='st'>"two.sided"</span>))</div><div class='output co'>#&gt; 
+<span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>soil</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/correlation.html'>correlation</a></span>(<span class='no'>pH</span>,<span class='no'>clay</span>,<span class='kw'>method</span><span class='kw'>=</span><span class='st'>"kendall"</span>, <span class='kw'>alternative</span><span class='kw'>=</span><span class='st'>"two.sided"</span>))</div><div class='output co'>#&gt; 
 #&gt; Kendall's rank correlation tau
 #&gt; 
 #&gt; data: pH and clay 
