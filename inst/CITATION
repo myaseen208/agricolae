@@ -1,0 +1,35 @@
+citHeader("To cite the R package 'agricolae' in publications use:")
+
+if(!exists("meta") || is.null(meta))
+meta <- packageDescription("agricolae")
+
+year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date)
+if (!length(year)) {
+ year <- format(packageDate("agricolae"), "%Y")
+ }
+
+vers <- paste("R package version", meta$Version)
+
+citEntry(
+  entry  = "Manual"
+, title  = "agricolae: Statistical Procedures for Agricultural Research"
+, author = personList(
+  person(c("Felipe", "de" , "Mendiburu"),  email = "myaseen208@gmail.com", role = c("aut", "cre"))
+            )
+, year = year
+, textVersion = paste(
+       "Felipe de Mendiburu ("
+      , year
+      , ").  agricolae: Statistical Procedures for Agricultural Research."
+      , vers
+      , "
+      , "
+      , "https://myaseen208.github.io/agricolae/"
+      , "https://cran.r-project.org/package=agricolae"
+      , "."
+      , sep = "")
+      , note = {c(paste(vers), "https://myaseen208.github.io/agricolae/ " , "https://cran.r-project.org/package=agricolae")})
+
+citFooter("This free and open-source software implements academic
+research by the authors and co-workers. If you use it, please support
+the project by citing the package.")

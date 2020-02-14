@@ -1,24 +1,26 @@
 
-## `agricolae`: Diallel Analysis with R
+## `agricolae`: Statistical Procedures for Agricultural Research
 
 ###### Version : [1.3.3](https://myaseen208.github.io/agricolae/); Copyright (C) 2019-2020: [UAF](http://uaf.edu.pk//); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
 
-##### *Muhammad Yaseen<sup>1</sup>, and Kent M. Eskridge<sup>2</sup>*
+##### *Felipe de Mendiburu<sup>1</sup>*
 
-1.  Department of Mathematics and Statistics, University of Agriculture
-    Faisalabad, Pakistan.
-2.  Department of Statistics, University of Nebraska Lincoln, NE, USA.
+1.  Professor of the Academic Department of Statistics and Informatics
+    of the Faculty of Economics and Planning.National University Agraria
+    La Molina-PERU.
 
 -----
 
 [![minimal R
-version](https://img.shields.io/badge/R%3E%3D-3.5.0-6666ff.svg)](https://cran.r-project.org/)
+version](https://img.shields.io/badge/R%3E%3D-2.10.0-6666ff.svg)](https://cran.r-project.org/)
 [![License: GPL
 v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version-last-release/agricolae)](https://cran.r-project.org/package=agricolae)
 [![rstudio mirror
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/agricolae?color=green)](https://CRAN.R-project.org/package=agricolae)
 <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/myaseen208/agricolae) -->
+
+[![develVersion](https://img.shields.io/badge/devel%20version-1.3.3-orange.svg)](https://github.com/myaseen208/agricolae)
 
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/myaseen208/agricolae/total.svg)] -->
 
