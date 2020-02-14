@@ -115,8 +115,8 @@ For a complete functionality, `agricolae` requires other packages
 [`MASS`](https://cran.r-project.org/web/packages/MASS/index.html):|	for the generalized inverse used in the function `PBIB.test`
 [`nlme`](https://cran.r-project.org/web/packages/nlme/index.html): | for the methods REML and LM in `PBIB.test`
 [`klaR`](https://cran.r-project.org/web/packages/klaR/index.html):  | for the function `triplot` used in the function `AMMI`
-[`Cluster`](https://cran.r-project.org/web/packages/Cluster/index.html):  | for the use of the function `consensus`
-[`algDesign`](https://cran.r-project.org/web/packages/algDesign/index.html): | for the balanced incomplete block design `design.bib`
+[`cluster`](https://cran.r-project.org/web/packages/cluster/index.html):  | for the use of the function `consensus`
+[`AlgDesign`](https://cran.r-project.org/web/packages/AlgDesign/index.html): | for the balanced incomplete block design `design.bib`
 
 
 # References
