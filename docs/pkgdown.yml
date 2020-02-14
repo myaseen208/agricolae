@@ -3,6 +3,6 @@ pkgdown: 1.4.1.9000
 pkgdown_sha: 134033d9d744c548c6fbe297bc0fbd1a2f498e83
 articles: []
 urls:
-  reference: https://myaseen208.github.io/DiallelAnalysisR//reference
-  article: https://myaseen208.github.io/DiallelAnalysisR//articles
+  reference: https://myaseen208.github.io/agricolae//reference
+  article: https://myaseen208.github.io/agricolae//articles
 

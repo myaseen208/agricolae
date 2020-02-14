@@ -1,22 +1,22 @@
 {
-  "index_name": "DiallelAnalysisR",
+  "index_name": "agricolae",
   "start_urls": [
     {
-      "url": "https://myaseen208.github.io/DiallelAnalysisR//index.html",
+      "url": "https://myaseen208.github.io/agricolae//index.html",
       "selectors_key": "homepage",
       "tags": [
         "homepage"
       ]
     },
     {
-      "url": "https://myaseen208.github.io/DiallelAnalysisR//reference",
+      "url": "https://myaseen208.github.io/agricolae//reference",
       "selectors_key": "reference",
       "tags": [
         "reference"
       ]
     },
     {
-      "url": "https://myaseen208.github.io/DiallelAnalysisR//articles",
+      "url": "https://myaseen208.github.io/agricolae//articles",
       "selectors_key": "articles",
       "tags": [
         "articles"
@@ -30,7 +30,7 @@
     "/articles/index.html"
   ],
   "sitemap_urls": [
-    "https://myaseen208.github.io/DiallelAnalysisR//sitemap.xml"
+    "https://myaseen208.github.io/agricolae//sitemap.xml"
   ],
   "selectors": {
     "homepage": {
