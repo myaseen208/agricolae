@@ -374,19 +374,45 @@ summary {
 <li><a href="#experimental-designs"><span class="toc-section-number">1</span> Experimental Designs</a><ul>
 <li><a href="#completely-randomized-design-crd"><span class="toc-section-number">1.1</span> Completely Randomized Design (CRD)</a></li>
 <li><a href="#randomized-complete-block-design-rcbd"><span class="toc-section-number">1.2</span> Randomized Complete Block Design (RCBD)</a></li>
-<li><a href="#latin-square-design"><span class="toc-section-number">1.3</span> Latin Square Design</a></li>
-<li><a href="#graeco-latin-designs"><span class="toc-section-number">1.4</span> Graeco-Latin Designs</a></li>
-<li><a href="#youden-square-design"><span class="toc-section-number">1.5</span> Youden Square Design</a></li>
-<li><a href="#balanced-incomplete-block-designs-bibd"><span class="toc-section-number">1.6</span> Balanced Incomplete Block Designs (BIBD)</a></li>
-<li><a href="#cyclic-designs"><span class="toc-section-number">1.7</span> Cyclic Designs</a></li>
-<li><a href="#lattice-designs"><span class="toc-section-number">1.8</span> Lattice Designs</a></li>
-<li><a href="#alpha-designs"><span class="toc-section-number">1.9</span> Alpha Designs</a></li>
-<li><a href="#augmented-block-designs"><span class="toc-section-number">1.10</span> Augmented Block Designs</a></li>
-<li><a href="#split-plot-designs"><span class="toc-section-number">1.11</span> Split Plot Designs</a></li>
-<li><a href="#strip-plot-designs"><span class="toc-section-number">1.12</span> Strip-Plot Designs</a></li>
-<li><a href="#factorial"><span class="toc-section-number">1.13</span> Factorial</a></li>
+<li><a href="#latin-square-design"><span class="toc-section-number">1.3</span> Latin Square Design</a><ul>
+<li><a href="#serpentine-enumeration"><span class="toc-section-number">1.3.1</span> Serpentine enumeration</a></li>
 </ul></li>
-<li><a href="#references"><span class="toc-section-number">2</span> References</a></li>
+<li><a href="#graeco-latin-designs"><span class="toc-section-number">1.4</span> Graeco-Latin Designs</a><ul>
+<li><a href="#serpentine-enumeration-1"><span class="toc-section-number">1.4.1</span> Serpentine enumeration</a></li>
+</ul></li>
+<li><a href="#youden-square-design"><span class="toc-section-number">1.5</span> Youden Square Design</a><ul>
+<li><a href="#serpentine-enumeration-2"><span class="toc-section-number">1.5.1</span> Serpentine enumeration</a></li>
+</ul></li>
+<li><a href="#balanced-incomplete-block-designs-bibd"><span class="toc-section-number">1.6</span> Balanced Incomplete Block Designs (BIBD)</a><ul>
+<li><a href="#serpentine-enumeration-3"><span class="toc-section-number">1.6.1</span> Serpentine enumeration</a></li>
+</ul></li>
+<li><a href="#cyclic-designs"><span class="toc-section-number">1.7</span> Cyclic Designs</a><ul>
+<li><a href="#serpentine-enumeration-4"><span class="toc-section-number">1.7.1</span> Serpentine enumeration</a></li>
+</ul></li>
+<li><a href="#lattice-designs"><span class="toc-section-number">1.8</span> Lattice Designs</a><ul>
+<li><a href="#serpentine-enumeration-5"><span class="toc-section-number">1.8.1</span> Serpentine enumeration</a></li>
+</ul></li>
+<li><a href="#alpha-designs"><span class="toc-section-number">1.9</span> Alpha Designs</a><ul>
+<li><a href="#serpentine-enumeration-6"><span class="toc-section-number">1.9.1</span> Serpentine enumeration</a></li>
+</ul></li>
+<li><a href="#augmented-block-designs"><span class="toc-section-number">1.10</span> Augmented Block Designs</a><ul>
+<li><a href="#serpentine-enumeration-7"><span class="toc-section-number">1.10.1</span> Serpentine enumeration</a></li>
+</ul></li>
+<li><a href="#split-plot-designs"><span class="toc-section-number">1.11</span> Split Plot Designs</a><ul>
+<li><a href="#aplication"><span class="toc-section-number">1.11.1</span> Aplication</a></li>
+<li><a href="#in-plots"><span class="toc-section-number">1.11.2</span> In plots:</a></li>
+<li><a href="#in-sub-plots-split-plot"><span class="toc-section-number">1.11.3</span> In sub plots (split plot)</a></li>
+<li><a href="#serpentine-enumeration-8"><span class="toc-section-number">1.11.4</span> Serpentine enumeration</a></li>
+</ul></li>
+<li><a href="#strip-plot-designs"><span class="toc-section-number">1.12</span> Strip-Plot Designs</a><ul>
+<li><a href="#aplication-1"><span class="toc-section-number">1.12.1</span> Aplication</a></li>
+<li><a href="#serpentine-enumeration-9"><span class="toc-section-number">1.12.2</span> Serpentine enumeration</a></li>
+</ul></li>
+<li><a href="#factorial"><span class="toc-section-number">1.13</span> Factorial</a><ul>
+<li><a href="#serpentine-enumeration-10"><span class="toc-section-number">1.13.1</span> Serpentine enumeration</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#references">References</a></li>
 </ul>
 </div>
 
@@ -404,7 +430,7 @@ summary {
 <div id="experimental-designs" class="section level1">
 <h1><span class="header-section-number">1</span> Experimental Designs</h1>
 <p>The package <strong>agricolae</strong> presents special functions for the creation of the field book for experimental designs. Due to the random generation, this package is quite used in agricultural research.</p>
-<p>For this generation, certain parameters are required, as for example the name of each treatment, the number of repetitions, and others, according to the design, ; ; ; . There are other parameters of random generation, as the seed to reproduce the same random generation or the generation method (<a href="http://cran.at.r-project.org/web/packages/agricolae/agricolae.pdf">See the reference manual of <strong>agricolae</strong></a>).</p>
+<p>For this generation, certain parameters are required, as for example the name of each treatment, the number of repetitions, and others, according to the design <span class="citation">(Le Clerg et al., <a href="#ref-LeClLeonErwiWarrAndre:1962" role="doc-biblioref">1962</a>; Cochran and Cox, <a href="#ref-CochCox:1992" role="doc-biblioref">1992</a>; Kuehl, <a href="#ref-kueh:2000" role="doc-biblioref">2000</a>; Montgomery, <a href="#ref-Mont:2002" role="doc-biblioref">2002</a>)</span>. There are other parameters of random generation, as the seed to reproduce the same random generation or the generation method (<a href="http://cran.at.r-project.org/web/packages/agricolae/agricolae.pdf">See the reference manual of <strong>agricolae</strong></a>).</p>
 <p> 
  </p>
 <p><strong>Important parameters in the generation of design:</strong></p>
@@ -491,7 +517,7 @@ summary {
 </table>
 <div id="completely-randomized-design-crd" class="section level2">
 <h2><span class="header-section-number">1.1</span> Completely Randomized Design (CRD)</h2>
-<p>It generates completely a randomized design with equal or different repetition. “Random” uses the methods of number generation in R.The seed is by set.seed(seed, kinds). They only require the names of the treatments and the number of their repetitions and its parameters are:</p>
+<p>It generates completely a randomized design with equal or different repetition. “Random” uses the methods of number generation in <strong>R</strong>.The seed is by <code>set.seed(seed, kinds)</code>. They only require the names of the treatments and the number of their repetitions and its parameters are:</p>
 <pre class="r"><code>str(design.crd)</code></pre>
 <pre><code>function (trt, r, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, randomization = TRUE)  </code></pre>
 <pre class="r"><code>trt &lt;- c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;)
@@ -510,7 +536,7 @@ head(book1)</code></pre>
 </div>
 <div id="randomized-complete-block-design-rcbd" class="section level2">
 <h2><span class="header-section-number">1.2</span> Randomized Complete Block Design (RCBD)</h2>
-<p>It generates field book and sketch to Randomized Complete Block Design. “Random” uses the methods of number generation in R.The seed is by set.seed(seed, kinds). They require the names of the treatments and the number of blocks and its parameters are:</p>
+<p>It generates field book and sketch to Randomized Complete Block Design. “Random” uses the methods of number generation in <strong>R</strong>.The seed is by <code>set.seed(seed, kinds)</code>. They require the names of the treatments and the number of blocks and its parameters are:</p>
 <pre class="r"><code>str(design.rcbd)</code></pre>
 <pre><code>function (trt, r, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, first = TRUE, 
     continue = FALSE, randomization = TRUE)  </code></pre>
@@ -534,7 +560,7 @@ print(outdesign$sketch)</code></pre>
 </div>
 <div id="latin-square-design" class="section level2">
 <h2><span class="header-section-number">1.3</span> Latin Square Design</h2>
-<p>It generates Latin Square Design. “Random” uses the methods of number generation in R.The seed is by set.seed(seed, kinds). They require the names of the treatments and its parameters are:</p>
+<p>It generates Latin Square Design. “Random” uses the methods of number generation in <strong>R</strong>.The seed is by <code>set.seed(seed, kinds)</code>. They require the names of the treatments and its parameters are:</p>
 <pre class="r"><code>str(design.lsd)</code></pre>
 <pre><code>function (trt, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, first = TRUE, 
     randomization = TRUE)  </code></pre>
@@ -546,7 +572,8 @@ print(outdesign$sketch)</code></pre>
 [2,] &quot;D&quot;  &quot;A&quot;  &quot;C&quot;  &quot;B&quot; 
 [3,] &quot;C&quot;  &quot;D&quot;  &quot;B&quot;  &quot;A&quot; 
 [4,] &quot;A&quot;  &quot;B&quot;  &quot;D&quot;  &quot;C&quot; </code></pre>
-<p><strong>Serpentine enumeration:</strong></p>
+<div id="serpentine-enumeration" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Serpentine enumeration</h3>
 <pre class="r"><code>book &lt;- zigzag(outdesign)
 print(matrix(book[,1],byrow = TRUE, ncol = 4))</code></pre>
 <pre><code>     [,1] [,2] [,3] [,4]
@@ -555,11 +582,10 @@ print(matrix(book[,1],byrow = TRUE, ncol = 4))</code></pre>
 [3,]  301  302  303  304
 [4,]  404  403  402  401</code></pre>
 </div>
+</div>
 <div id="graeco-latin-designs" class="section level2">
 <h2><span class="header-section-number">1.4</span> Graeco-Latin Designs</h2>
-<p>A graeco-latin square is a KxK pattern that permits the study of k
-treatments simultaneously with three different blocking variables, each
-at k levels. The function is only for squares of the odd numbers and even numbers (4, 8, 10 and 12). They require the names of the treatments of each factor of study and its parameters are:</p>
+<p>A graeco-latin square is a <span class="math inline">\(k \times k\)</span> pattern that permits the study of <span class="math inline">\(k\)</span> treatments simultaneously with three different blocking variables, each at <span class="math inline">\(k\)</span> levels. The function is only for squares of the odd numbers and even numbers (4, 8, 10 and 12). They require the names of the treatments of each factor of study and its parameters are:</p>
 <pre class="r"><code>str(design.graeco)</code></pre>
 <pre><code>function (trt1, trt2, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, randomization = TRUE)  </code></pre>
 <pre class="r"><code>trt1 &lt;- c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;)
@@ -571,7 +597,8 @@ print(outdesign$sketch)</code></pre>
 [2,] &quot;NA 3&quot; &quot;NA 1&quot; &quot;NA 2&quot; &quot;NA 4&quot;
 [3,] &quot;NA 1&quot; &quot;NA 3&quot; &quot;NA 4&quot; &quot;NA 2&quot;
 [4,] &quot;NA 4&quot; &quot;NA 2&quot; &quot;NA 1&quot; &quot;NA 3&quot;</code></pre>
-<p><strong>Serpentine enumeration:</strong></p>
+<div id="serpentine-enumeration-1" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> Serpentine enumeration</h3>
 <pre class="r"><code>book &lt;- zigzag(outdesign)
 print(matrix(book[,1],byrow = TRUE, ncol = 4))</code></pre>
 <pre><code>     [,1] [,2] [,3] [,4]
@@ -580,9 +607,10 @@ print(matrix(book[,1],byrow = TRUE, ncol = 4))</code></pre>
 [3,]  301  302  303  304
 [4,]  404  403  402  401</code></pre>
 </div>
+</div>
 <div id="youden-square-design" class="section level2">
 <h2><span class="header-section-number">1.5</span> Youden Square Design</h2>
-<p>Such designs are referred to as Youden squares since they were introduced by Youden (1937) after Yates (1936) considered the special case of column equal to number treatment minus 1. “Random” uses the methods of number generation in R. The seed is by set.seed(seed, kinds). They require the names of the treatments of each factor of study and its parameters are:</p>
+<p>Such designs are referred to as Youden squares since they were introduced by Youden (1937) after Yates (1936) considered the special case of column equal to number treatment minus 1. “Random” uses the methods of number generation in <strong>R</strong>. The seed is by <code>set.seed(seed, kinds)</code>. They require the names of the treatments of each factor of study and its parameters are:</p>
 <pre class="r"><code>str(design.youden)</code></pre>
 <pre><code>function (trt, r, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, first = TRUE, 
     randomization = TRUE)  </code></pre>
@@ -616,7 +644,8 @@ print(book) # field book.</code></pre>
 [2,]  201  202  203
 [3,]  301  302  303
 [4,]  401  402  403</code></pre>
-<p><strong>Serpentine enumeration:</strong></p>
+<div id="serpentine-enumeration-2" class="section level3">
+<h3><span class="header-section-number">1.5.1</span> Serpentine enumeration</h3>
 <pre class="r"><code>book &lt;- zigzag(outdesign)
 print(matrix(as.numeric(book[,1]),byrow = TRUE, ncol = r))</code></pre>
 <pre><code>     [,1] [,2] [,3]
@@ -625,9 +654,10 @@ print(matrix(as.numeric(book[,1]),byrow = TRUE, ncol = r))</code></pre>
 [3,]  301  302  303
 [4,]  403  402  401</code></pre>
 </div>
+</div>
 <div id="balanced-incomplete-block-designs-bibd" class="section level2">
 <h2><span class="header-section-number">1.6</span> Balanced Incomplete Block Designs (BIBD)</h2>
-<p>Creates Randomized Balanced Incomplete Block Design. “Random” uses the methods of number generation in R. The seed is by set.seed(seed, kinds).
+<p>Creates Randomized Balanced Incomplete Block Design. “Random” uses the methods of number generation in <strong>R</strong>. The seed is by <code>set.seed(seed, kinds)</code>.
 They require the names of the treatments and the size of the block and its parameters are:</p>
 <pre class="r"><code>str(design.bib)</code></pre>
 <pre><code>function (trt, k, r = NULL, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, 
@@ -678,7 +708,8 @@ $kinds
 [4,] &quot;E&quot;  &quot;C&quot;  &quot;D&quot;  &quot;B&quot; 
 [5,] &quot;D&quot;  &quot;C&quot;  &quot;E&quot;  &quot;A&quot; </code></pre>
 <p>It can be observed that the treatments have four repetitions. The parameter lambda has three repetitions, which means that a couple of treatments are together on three occasions. For example, B and E are found in the blocks I, II and V.</p>
-<p><strong>Serpentine enumeration:</strong></p>
+<div id="serpentine-enumeration-3" class="section level3">
+<h3><span class="header-section-number">1.6.1</span> Serpentine enumeration</h3>
 <pre class="r"><code>book &lt;- zigzag(outdesign)
 matrix(book[,1],byrow = TRUE, ncol = 4)</code></pre>
 <pre><code>     [,1] [,2] [,3] [,4]
@@ -687,6 +718,7 @@ matrix(book[,1],byrow = TRUE, ncol = 4)</code></pre>
 [3,]  301  302  303  304
 [4,]  404  403  402  401
 [5,]  501  502  503  504</code></pre>
+</div>
 </div>
 <div id="cyclic-designs" class="section level2">
 <h2><span class="header-section-number">1.7</span> Cyclic Designs</h2>
@@ -724,8 +756,9 @@ outdesign$sketch[[1]]</code></pre>
 [4,] &quot;C&quot;  &quot;D&quot;  &quot;E&quot; 
 [5,] &quot;E&quot;  &quot;D&quot;  &quot;F&quot; 
 [6,] &quot;D&quot;  &quot;C&quot;  &quot;B&quot; </code></pre>
-<p>12 blocks of 4 treatments each have been generated.
-<strong>Serpentine enumeration:</strong></p>
+<p>12 blocks of 4 treatments each have been generated.</p>
+<div id="serpentine-enumeration-4" class="section level3">
+<h3><span class="header-section-number">1.7.1</span> Serpentine enumeration</h3>
 <pre class="r"><code>book &lt;- zigzag(outdesign)
 array(book$plots,c(3,6,2))-&gt;X
 t(X[,,1])</code></pre>
@@ -745,13 +778,13 @@ t(X[,,1])</code></pre>
 [5,]  213  214  215
 [6,]  218  217  216</code></pre>
 </div>
+</div>
 <div id="lattice-designs" class="section level2">
 <h2><span class="header-section-number">1.8</span> Lattice Designs</h2>
-<p>SIMPLE and TRIPLE lattice designs. It randomizes treatments in k x k lattice. They require a number of treatments of a perfect square; for example 9, 16, 25, 36, 49, etc. and its parameters are:</p>
+<p><strong>SIMPLE</strong> and <strong>TRIPLE</strong> lattice designs. It randomizes treatments in <span class="math inline">\(k \times k\)</span> lattice. They require a number of treatments of a perfect square; for example 9, 16, 25, 36, 49, etc. and its parameters are:</p>
 <pre class="r"><code>str(design.lattice)</code></pre>
 <pre><code>function (trt, r = 3, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, randomization = TRUE)  </code></pre>
-<p>They can generate a simple lattice (2 rep.) or a triple lattice (3 rep.)
-generating a triple lattice design for 9 treatments 3x3</p>
+<p>They can generate a simple lattice (2 rep.) or a triple lattice (3 rep.) generating a triple lattice design for 9 treatments <span class="math inline">\(3 \times 3\)</span></p>
 <pre class="r"><code>trt&lt;-letters[1:9]
 outdesign &lt;-design.lattice(trt, r = 3, serie = 2, seed = 33, 
     kinds =  &quot;Super-Duper&quot;)</code></pre>
@@ -810,7 +843,8 @@ $rep3
 4   104 1     2   f
 5   105 1     2   b
 6   106 1     2   h</code></pre>
-<p><strong>Serpentine enumeration:</strong></p>
+<div id="serpentine-enumeration-5" class="section level3">
+<h3><span class="header-section-number">1.8.1</span> Serpentine enumeration</h3>
 <pre class="r"><code>book &lt;- zigzag(outdesign)
 array(book$plots,c(3,3,3)) -&gt; X
 t(X[,,1])</code></pre>
@@ -829,9 +863,10 @@ t(X[,,1])</code></pre>
 [2,]  306  305  304
 [3,]  307  308  309</code></pre>
 </div>
+</div>
 <div id="alpha-designs" class="section level2">
 <h2><span class="header-section-number">1.9</span> Alpha Designs</h2>
-<p>Generates an alpha designs starting from the alpha design fixing under the series formulated by Patterson and Williams. These designs are generated by the alpha arrangements. They are similar to the lattice designs, but the tables are rectangular s by k (with s blocks and k&lt;s columns. The number of treatments should be equal to s<em>k and all the experimental units r</em>s*k (r replications) and its parameters are:</p>
+<p>Generates an alpha designs starting from the alpha design fixing under the series formulated by Patterson and Williams. These designs are generated by the alpha arrangements. They are similar to the lattice designs, but the tables are rectangular <span class="math inline">\(s\)</span> by <span class="math inline">\(k\)</span> (with <span class="math inline">\(s\)</span> blocks and <span class="math inline">\(k&lt;s\)</span> columns. The number of treatments should be equal to <span class="math inline">\(s \times k\)</span> and all the experimental units <span class="math inline">\(r \times s \times k\)</span> (<span class="math inline">\(r\)</span> replications) and its parameters are:</p>
 <pre class="r"><code>str(design.alpha)</code></pre>
 <pre><code>function (trt, k, r, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, randomization = TRUE)  </code></pre>
 <pre class="r"><code>trt &lt;- letters[1:15]
@@ -886,7 +921,8 @@ t(A[,,1])</code></pre>
 [3,]  207  208  209
 [4,]  210  211  212
 [5,]  213  214  215</code></pre>
-<p><strong>Serpentine enumeration:</strong></p>
+<div id="serpentine-enumeration-6" class="section level3">
+<h3><span class="header-section-number">1.9.1</span> Serpentine enumeration</h3>
 <pre class="r"><code>book &lt;- zigzag(outdesign)
 A&lt;-array(book[,1], c(3,5,2))
 t(A[,,1])</code></pre>
@@ -904,9 +940,10 @@ t(A[,,1])</code></pre>
 [4,]  212  211  210
 [5,]  213  214  215</code></pre>
 </div>
+</div>
 <div id="augmented-block-designs" class="section level2">
 <h2><span class="header-section-number">1.10</span> Augmented Block Designs</h2>
-<p>These are designs for two types of treatments: the control treatments (common) and the increased treatments. The common treatments are applied in complete randomized blocks, and the increased treatments, at random. Each treatment should be applied in any block once only. It is understood that the common treatments are of a greater interest; the standard error of the difference is much smaller than when between two increased ones in different blocks. The function design.dau() achieves this purpose and its parameters are:</p>
+<p>These are designs for two types of treatments: the control treatments (common) and the increased treatments. The common treatments are applied in complete randomized blocks, and the increased treatments, at random. Each treatment should be applied in any block once only. It is understood that the common treatments are of a greater interest; the standard error of the difference is much smaller than when between two increased ones in different blocks. The function <code>design.dau()</code> achieves this purpose and its parameters are:</p>
 <pre class="r"><code>str(design.dau)</code></pre>
 <pre><code>function (trt1, trt2, r, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, name = &quot;trt&quot;, 
     randomization = TRUE)  </code></pre>
@@ -930,7 +967,8 @@ block: 4
 ------------------------------------------------------------ 
 block: 5
 [1] &quot;z&quot; &quot;A&quot; &quot;C&quot; &quot;D&quot; &quot;B&quot;</code></pre>
-<p><strong>Serpentine enumeration:</strong></p>
+<div id="serpentine-enumeration-7" class="section level3">
+<h3><span class="header-section-number">1.10.1</span> Serpentine enumeration</h3>
 <pre class="r"><code>book &lt;- zigzag(outdesign)
 with(book,by(plots, block, as.character))</code></pre>
 <pre><code>block: 1
@@ -957,13 +995,15 @@ block: 5
 6   106     1   A</code></pre>
 <p>For augmented ompletely randomized design, use the function design.crd().</p>
 </div>
+</div>
 <div id="split-plot-designs" class="section level2">
 <h2><span class="header-section-number">1.11</span> Split Plot Designs</h2>
 <p>These designs have two factors, one is applied in plots and is defined as <strong>trt1</strong> in a randomized complete block design; and a second factor as <strong>trt2</strong> , which is applied in the subplots of each plot applied at random. The function design.split() permits to find the experimental plan for this design and its parameters are:</p>
 <pre class="r"><code>str(design.split)</code></pre>
 <pre><code>function (trt1, trt2, r = NULL, design = c(&quot;rcbd&quot;, &quot;crd&quot;, &quot;lsd&quot;), serie = 2, 
     seed = 0, kinds = &quot;Super-Duper&quot;, first = TRUE, randomization = TRUE)  </code></pre>
-<p><strong>Aplication</strong></p>
+<div id="aplication" class="section level3">
+<h3><span class="header-section-number">1.11.1</span> Aplication</h3>
 <pre class="r"><code>trt1&lt;-c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;)
 trt2&lt;-c(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;)
 outdesign &lt;-design.split(trt1,trt2,r=3,serie=2,seed=543)
@@ -980,19 +1020,25 @@ head(book10)</code></pre>
 q&lt;-NULL
 for(i in 1:12) 
 q &lt;- c(q,paste(book10$trt2[3*(i-1)+1],book10$trt2[3*(i-1)+2], book10$trt2[3*(i-1)+3]))</code></pre>
-<p><strong>In plots:</strong></p>
+</div>
+<div id="in-plots" class="section level3">
+<h3><span class="header-section-number">1.11.2</span> In plots:</h3>
 <pre class="r"><code>print(t(matrix(p,c(4,3))))</code></pre>
 <pre><code>     [,1] [,2] [,3] [,4]
 [1,] &quot;D&quot;  &quot;B&quot;  &quot;A&quot;  &quot;C&quot; 
 [2,] &quot;B&quot;  &quot;C&quot;  &quot;A&quot;  &quot;D&quot; 
 [3,] &quot;D&quot;  &quot;B&quot;  &quot;A&quot;  &quot;C&quot; </code></pre>
-<p><strong>In sub plots (split plot)</strong></p>
+</div>
+<div id="in-sub-plots-split-plot" class="section level3">
+<h3><span class="header-section-number">1.11.3</span> In sub plots (split plot)</h3>
 <pre class="r"><code>print(t(matrix(q,c(4,3))))</code></pre>
 <pre><code>     [,1]    [,2]    [,3]    [,4]   
 [1,] &quot;b a c&quot; &quot;a b c&quot; &quot;c a b&quot; &quot;c b a&quot;
 [2,] &quot;b c a&quot; &quot;a b c&quot; &quot;b c a&quot; &quot;a c b&quot;
 [3,] &quot;c a b&quot; &quot;b c a&quot; &quot;c a b&quot; &quot;a c b&quot;</code></pre>
-<p><strong>Serpentine enumeration:</strong></p>
+</div>
+<div id="serpentine-enumeration-8" class="section level3">
+<h3><span class="header-section-number">1.11.4</span> Serpentine enumeration</h3>
 <pre class="r"><code>book &lt;- zigzag(outdesign)
 head(book,5)</code></pre>
 <pre><code>  plots splots block trt1 trt2
@@ -1002,12 +1048,14 @@ head(book,5)</code></pre>
 4   102      1     1    B    a
 5   102      2     1    B    b</code></pre>
 </div>
+</div>
 <div id="strip-plot-designs" class="section level2">
 <h2><span class="header-section-number">1.12</span> Strip-Plot Designs</h2>
 <p>These designs are used when there are two types of treatments (factors) and are applied separately in large plots, called bands, in a vertical and horizontal direction of the block, obtaining the divided blocks. Each block constitutes a repetition and its parameters are:</p>
 <pre class="r"><code>str(design.strip)</code></pre>
 <pre><code>function (trt1, trt2, r, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, randomization = TRUE)  </code></pre>
-<p><strong>Aplication</strong></p>
+<div id="aplication-1" class="section level3">
+<h3><span class="header-section-number">1.12.1</span> Aplication</h3>
 <pre class="r"><code>trt1&lt;-c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;)
 trt2&lt;-c(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;)
 outdesign &lt;-design.strip(trt1,trt2,r=3,serie=2,seed=543)
@@ -1041,7 +1089,9 @@ print(B1)</code></pre>
 [2,] &quot;B c&quot; &quot;B b&quot; &quot;B a&quot;
 [3,] &quot;D c&quot; &quot;D b&quot; &quot;D a&quot;
 [4,] &quot;C c&quot; &quot;C b&quot; &quot;C a&quot;</code></pre>
-<p><strong>Serpentine enumeration:</strong></p>
+</div>
+<div id="serpentine-enumeration-9" class="section level3">
+<h3><span class="header-section-number">1.12.2</span> Serpentine enumeration</h3>
 <pre class="r"><code>book &lt;- zigzag(outdesign)
 head(book)</code></pre>
 <pre><code>  plots block trt1 trt2
@@ -1071,15 +1121,16 @@ t(X[,,1])</code></pre>
 [3,]  307  308  309
 [4,]  312  311  310</code></pre>
 </div>
+</div>
 <div id="factorial" class="section level2">
 <h2><span class="header-section-number">1.13</span> Factorial</h2>
 <p>The full factorial of n factors applied to an experimental design (CRD, RCBD and LSD) is common and this procedure in <strong>agricolae</strong> applies the factorial to one of these three designs and its parameters are:</p>
 <pre class="r"><code>str(design.ab)</code></pre>
 <pre><code>function (trt, r = NULL, serie = 2, design = c(&quot;rcbd&quot;, &quot;crd&quot;, &quot;lsd&quot;), seed = 0, 
     kinds = &quot;Super-Duper&quot;, first = TRUE, randomization = TRUE)  </code></pre>
-<p>To generate the factorial, you need to create a vector of levels of each factor, the method automatically generates up to 25 factors and “r” repetitions.</p>
+<p>To generate the factorial, you need to create a vector of levels of each factor, the method automatically generates up to 25 factors and <span class="math inline">\(r\)</span> repetitions.</p>
 <pre class="r"><code>trt &lt;- c (4,2,3) # three factors with  4,2 and 3 levels.</code></pre>
-<p>to crd and rcbd designs, it is necessary to value “r” as the number of repetitions, this can be a vector if unequal to equal or constant repetition (recommended).</p>
+<p>to crd and rcbd designs, it is necessary to value <span class="math inline">\(r\)</span> as the number of repetitions, this can be a vector if unequal to equal or constant repetition (recommended).</p>
 <pre class="r"><code>trt&lt;-c(3,2) # factorial 3x2
 outdesign &lt;-design.ab(trt, r=3, serie=2)
 book12 &lt;- outdesign$book
@@ -1091,7 +1142,8 @@ head(book12) # print of the field book</code></pre>
 4   104     1 1 2
 5   105     1 1 1
 6   106     1 3 1</code></pre>
-<p><strong>Serpentine enumeration:</strong></p>
+<div id="serpentine-enumeration-10" class="section level3">
+<h3><span class="header-section-number">1.13.1</span> Serpentine enumeration</h3>
 <pre class="r"><code>book &lt;- zigzag(outdesign)
 head(book)</code></pre>
 <pre><code>  plots block A B
@@ -1101,7 +1153,7 @@ head(book)</code></pre>
 4   104     1 1 2
 5   105     1 1 1
 6   106     1 3 1</code></pre>
-<p>factorial 2 x 2 x 2 with 5 replications in completely randomized design.</p>
+<p>factorial <span class="math inline">\(2 \times 2 \times 2\)</span> with 5 replications in completely randomized design.</p>
 <pre class="r"><code>trt&lt;-c(2,2,2)
 crd&lt;-design.ab(trt, r=5, serie=2,design=&quot;crd&quot;)
 names(crd)</code></pre>
@@ -1140,8 +1192,23 @@ $applied
 6   106 2 1 2 1</code></pre>
 </div>
 </div>
-<div id="references" class="section level1">
-<h1><span class="header-section-number">2</span> References</h1>
+</div>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references">
+<div id="ref-CochCox:1992">
+<p>Cochran, W. G., and Cox, G. M. (1992). <em>Experimental Designs</em>. John Wiley &amp; Sons, New York.</p>
+</div>
+<div id="ref-kueh:2000">
+<p>Kuehl, R. O. (2000). <em>Designs of Experiments: Statistical Principles of Research Design and Analysis</em>. Duxbury Press.</p>
+</div>
+<div id="ref-LeClLeonErwiWarrAndre:1962">
+<p>Le Clerg, E. L., Leonard, W. H., Erwin, L., Warren, H. L., and Andrew, G. C. (1962). <em>Field Plot Techniques</em>. Burgess Publishing Company, Minneapolis, Minnesota.</p>
+</div>
+<div id="ref-Mont:2002">
+<p>Montgomery, D. C. (2002). <em>Design and Analysis of Experiments</em>. John Wiley &amp; Sons, New York.</p>
+</div>
+</div>
 </div>
 
 

@@ -90,6 +90,7 @@ library(agricolae)
 The package **agricolae**  provides some complementary functions to the **R**  program, specifically for the management of the histogram and function *hist*.
 
 ## Histogram
+
 The histogram is constructed with the function *graph.freq* and is associated to other functions: *polygon.freq, table.freq, stat.freq*. See Figures: \@ref(fig:DescriptStats2), \@ref(fig:DescriptStats6) and \@ref(fig:DescriptStats7)  for more details. 
 
 Example.  Data generated in **R** . (students' weight).
@@ -117,6 +118,7 @@ par(oldpar)
 ## Statistics and Frequency tables
 
 Statistics: mean, median, mode and standard deviation of the grouped data.
+
 ```{r DescriptStats3}
 stat.freq(h1)
 ```
@@ -203,5 +205,3 @@ print(summary(h5),row.names=FALSE)
 ```
 
 
-
-# References

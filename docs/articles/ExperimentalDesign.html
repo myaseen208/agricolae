@@ -167,7 +167,7 @@
 <h1 class="hasAnchor">
 <a href="#experimental-designs" class="anchor"></a>Experimental Designs</h1>
 <p>The package <strong>agricolae</strong> presents special functions for the creation of the field book for experimental designs. Due to the random generation, this package is quite used in agricultural research.</p>
-<p>For this generation, certain parameters are required, as for example the name of each treatment, the number of repetitions, and others, according to the design, ; ; ; . There are other parameters of random generation, as the seed to reproduce the same random generation or the generation method (<a href="http://cran.at.r-project.org/web/packages/agricolae/agricolae.pdf">See the reference manual of <strong>agricolae</strong></a>).</p>
+<p>For this generation, certain parameters are required, as for example the name of each treatment, the number of repetitions, and others, according to the design <span class="citation">(Le Clerg et al., <a href="#ref-LeClLeonErwiWarrAndre:1962" role="doc-biblioref">1962</a>; Cochran and Cox, <a href="#ref-CochCox:1992" role="doc-biblioref">1992</a>; Kuehl, <a href="#ref-kueh:2000" role="doc-biblioref">2000</a>; Montgomery, <a href="#ref-Mont:2002" role="doc-biblioref">2002</a>)</span>. There are other parameters of random generation, as the seed to reproduce the same random generation or the generation method (<a href="http://cran.at.r-project.org/web/packages/agricolae/agricolae.pdf">See the reference manual of <strong>agricolae</strong></a>).</p>
 <p>   </p>
 <p><strong>Important parameters in the generation of design:</strong></p>
 <!-- -->
@@ -249,7 +249,7 @@
 <div id="completely-randomized-design-crd" class="section level2">
 <h2 class="hasAnchor">
 <a href="#completely-randomized-design-crd" class="anchor"></a>Completely Randomized Design (CRD)</h2>
-<p>It generates completely a randomized design with equal or different repetition. “Random” uses the methods of number generation in R.The seed is by set.seed(seed, kinds). They only require the names of the treatments and the number of their repetitions and its parameters are:</p>
+<p>It generates completely a randomized design with equal or different repetition. “Random” uses the methods of number generation in <strong>R</strong>.The seed is by <code><a href="https://rdrr.io/r/base/Random.html">set.seed(seed, kinds)</a></code>. They only require the names of the treatments and the number of their repetitions and its parameters are:</p>
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">design.crd</span>)</pre></body></html></div>
 <pre><code>function (trt, r, serie = 2, seed = 0, kinds = "Super-Duper", randomization = TRUE)  </code></pre>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="no">trt</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>)
@@ -269,7 +269,7 @@
 <div id="randomized-complete-block-design-rcbd" class="section level2">
 <h2 class="hasAnchor">
 <a href="#randomized-complete-block-design-rcbd" class="anchor"></a>Randomized Complete Block Design (RCBD)</h2>
-<p>It generates field book and sketch to Randomized Complete Block Design. “Random” uses the methods of number generation in R.The seed is by set.seed(seed, kinds). They require the names of the treatments and the number of blocks and its parameters are:</p>
+<p>It generates field book and sketch to Randomized Complete Block Design. “Random” uses the methods of number generation in <strong>R</strong>.The seed is by <code><a href="https://rdrr.io/r/base/Random.html">set.seed(seed, kinds)</a></code>. They require the names of the treatments and the number of blocks and its parameters are:</p>
 <div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">design.rcbd</span>)</pre></body></html></div>
 <pre><code>function (trt, r, serie = 2, seed = 0, kinds = "Super-Duper", first = TRUE, 
     continue = FALSE, randomization = TRUE)  </code></pre>
@@ -294,7 +294,7 @@
 <div id="latin-square-design" class="section level2">
 <h2 class="hasAnchor">
 <a href="#latin-square-design" class="anchor"></a>Latin Square Design</h2>
-<p>It generates Latin Square Design. “Random” uses the methods of number generation in R.The seed is by set.seed(seed, kinds). They require the names of the treatments and its parameters are:</p>
+<p>It generates Latin Square Design. “Random” uses the methods of number generation in <strong>R</strong>.The seed is by <code><a href="https://rdrr.io/r/base/Random.html">set.seed(seed, kinds)</a></code>. They require the names of the treatments and its parameters are:</p>
 <div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">design.lsd</span>)</pre></body></html></div>
 <pre><code>function (trt, serie = 2, seed = 0, kinds = "Super-Duper", first = TRUE, 
     randomization = TRUE)  </code></pre>
@@ -306,7 +306,9 @@
 [2,] "D"  "A"  "C"  "B" 
 [3,] "C"  "D"  "B"  "A" 
 [4,] "A"  "B"  "D"  "C" </code></pre>
-<p><strong>Serpentine enumeration:</strong></p>
+<div id="serpentine-enumeration" class="section level3">
+<h3 class="hasAnchor">
+<a href="#serpentine-enumeration" class="anchor"></a>Serpentine enumeration</h3>
 <div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="no">book</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/zigzag.html">zigzag</a></span>(<span class="no">outdesign</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="no">book</span>[,<span class="fl">1</span>],<span class="kw">byrow</span> <span class="kw">=</span> <span class="fl">TRUE</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">4</span>))</pre></body></html></div>
 <pre><code>     [,1] [,2] [,3] [,4]
@@ -315,10 +317,11 @@
 [3,]  301  302  303  304
 [4,]  404  403  402  401</code></pre>
 </div>
+</div>
 <div id="graeco-latin-designs" class="section level2">
 <h2 class="hasAnchor">
 <a href="#graeco-latin-designs" class="anchor"></a>Graeco-Latin Designs</h2>
-<p>A graeco-latin square is a KxK pattern that permits the study of k treatments simultaneously with three different blocking variables, each at k levels. The function is only for squares of the odd numbers and even numbers (4, 8, 10 and 12). They require the names of the treatments of each factor of study and its parameters are:</p>
+<p>A graeco-latin square is a <span class="math inline">\(k \times k\)</span> pattern that permits the study of <span class="math inline">\(k\)</span> treatments simultaneously with three different blocking variables, each at <span class="math inline">\(k\)</span> levels. The function is only for squares of the odd numbers and even numbers (4, 8, 10 and 12). They require the names of the treatments of each factor of study and its parameters are:</p>
 <div class="sourceCode" id="cb17"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">design.graeco</span>)</pre></body></html></div>
 <pre><code>function (trt1, trt2, serie = 2, seed = 0, kinds = "Super-Duper", randomization = TRUE)  </code></pre>
 <div class="sourceCode" id="cb19"><html><body><pre class="r"><span class="no">trt1</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>, <span class="st">"D"</span>)
@@ -330,7 +333,9 @@
 [2,] "NA 3" "NA 1" "NA 2" "NA 4"
 [3,] "NA 1" "NA 3" "NA 4" "NA 2"
 [4,] "NA 4" "NA 2" "NA 1" "NA 3"</code></pre>
-<p><strong>Serpentine enumeration:</strong></p>
+<div id="serpentine-enumeration-1" class="section level3">
+<h3 class="hasAnchor">
+<a href="#serpentine-enumeration-1" class="anchor"></a>Serpentine enumeration</h3>
 <div class="sourceCode" id="cb21"><html><body><pre class="r"><span class="no">book</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/zigzag.html">zigzag</a></span>(<span class="no">outdesign</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="no">book</span>[,<span class="fl">1</span>],<span class="kw">byrow</span> <span class="kw">=</span> <span class="fl">TRUE</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">4</span>))</pre></body></html></div>
 <pre><code>     [,1] [,2] [,3] [,4]
@@ -339,10 +344,11 @@
 [3,]  301  302  303  304
 [4,]  404  403  402  401</code></pre>
 </div>
+</div>
 <div id="youden-square-design" class="section level2">
 <h2 class="hasAnchor">
 <a href="#youden-square-design" class="anchor"></a>Youden Square Design</h2>
-<p>Such designs are referred to as Youden squares since they were introduced by Youden (1937) after Yates (1936) considered the special case of column equal to number treatment minus 1. “Random” uses the methods of number generation in R. The seed is by set.seed(seed, kinds). They require the names of the treatments of each factor of study and its parameters are:</p>
+<p>Such designs are referred to as Youden squares since they were introduced by Youden (1937) after Yates (1936) considered the special case of column equal to number treatment minus 1. “Random” uses the methods of number generation in <strong>R</strong>. The seed is by <code><a href="https://rdrr.io/r/base/Random.html">set.seed(seed, kinds)</a></code>. They require the names of the treatments of each factor of study and its parameters are:</p>
 <div class="sourceCode" id="cb23"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">design.youden</span>)</pre></body></html></div>
 <pre><code>function (trt, r, serie = 2, seed = 0, kinds = "Super-Duper", first = TRUE, 
     randomization = TRUE)  </code></pre>
@@ -376,7 +382,9 @@
 [2,]  201  202  203
 [3,]  301  302  303
 [4,]  401  402  403</code></pre>
-<p><strong>Serpentine enumeration:</strong></p>
+<div id="serpentine-enumeration-2" class="section level3">
+<h3 class="hasAnchor">
+<a href="#serpentine-enumeration-2" class="anchor"></a>Serpentine enumeration</h3>
 <div class="sourceCode" id="cb31"><html><body><pre class="r"><span class="no">book</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/zigzag.html">zigzag</a></span>(<span class="no">outdesign</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span>(<span class="no">book</span>[,<span class="fl">1</span>]),<span class="kw">byrow</span> <span class="kw">=</span> <span class="fl">TRUE</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="no">r</span>))</pre></body></html></div>
 <pre><code>     [,1] [,2] [,3]
@@ -385,10 +393,11 @@
 [3,]  301  302  303
 [4,]  403  402  401</code></pre>
 </div>
+</div>
 <div id="balanced-incomplete-block-designs-bibd" class="section level2">
 <h2 class="hasAnchor">
 <a href="#balanced-incomplete-block-designs-bibd" class="anchor"></a>Balanced Incomplete Block Designs (BIBD)</h2>
-<p>Creates Randomized Balanced Incomplete Block Design. “Random” uses the methods of number generation in R. The seed is by set.seed(seed, kinds). They require the names of the treatments and the size of the block and its parameters are:</p>
+<p>Creates Randomized Balanced Incomplete Block Design. “Random” uses the methods of number generation in <strong>R</strong>. The seed is by <code><a href="https://rdrr.io/r/base/Random.html">set.seed(seed, kinds)</a></code>. They require the names of the treatments and the size of the block and its parameters are:</p>
 <div class="sourceCode" id="cb33"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">design.bib</span>)</pre></body></html></div>
 <pre><code>function (trt, k, r = NULL, serie = 2, seed = 0, kinds = "Super-Duper", 
     maxRep = 20, randomization = TRUE)  </code></pre>
@@ -438,7 +447,9 @@ $kinds
 [4,] "E"  "C"  "D"  "B" 
 [5,] "D"  "C"  "E"  "A" </code></pre>
 <p>It can be observed that the treatments have four repetitions. The parameter lambda has three repetitions, which means that a couple of treatments are together on three occasions. For example, B and E are found in the blocks I, II and V.</p>
-<p><strong>Serpentine enumeration:</strong></p>
+<div id="serpentine-enumeration-3" class="section level3">
+<h3 class="hasAnchor">
+<a href="#serpentine-enumeration-3" class="anchor"></a>Serpentine enumeration</h3>
 <div class="sourceCode" id="cb43"><html><body><pre class="r"><span class="no">book</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/zigzag.html">zigzag</a></span>(<span class="no">outdesign</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="no">book</span>[,<span class="fl">1</span>],<span class="kw">byrow</span> <span class="kw">=</span> <span class="fl">TRUE</span>, <span class="kw">ncol</span> <span class="kw">=</span> <span class="fl">4</span>)</pre></body></html></div>
 <pre><code>     [,1] [,2] [,3] [,4]
@@ -447,6 +458,7 @@ $kinds
 [3,]  301  302  303  304
 [4,]  404  403  402  401
 [5,]  501  502  503  504</code></pre>
+</div>
 </div>
 <div id="cyclic-designs" class="section level2">
 <h2 class="hasAnchor">
@@ -485,7 +497,10 @@ Replication: 6 </code></pre>
 [4,] "C"  "D"  "E" 
 [5,] "E"  "D"  "F" 
 [6,] "D"  "C"  "B" </code></pre>
-<p>12 blocks of 4 treatments each have been generated. <strong>Serpentine enumeration:</strong></p>
+<p>12 blocks of 4 treatments each have been generated.</p>
+<div id="serpentine-enumeration-4" class="section level3">
+<h3 class="hasAnchor">
+<a href="#serpentine-enumeration-4" class="anchor"></a>Serpentine enumeration</h3>
 <div class="sourceCode" id="cb53"><html><body><pre class="r"><span class="no">book</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/zigzag.html">zigzag</a></span>(<span class="no">outdesign</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/array.html">array</a></span>(<span class="no">book</span>$<span class="no">plots</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">6</span>,<span class="fl">2</span>))<span class="kw">-&gt;</span><span class="no">X</span>
 <span class="fu"><a href="https://rdrr.io/r/base/t.html">t</a></span>(<span class="no">X</span>[,,<span class="fl">1</span>])</pre></body></html></div>
@@ -505,13 +520,14 @@ Replication: 6 </code></pre>
 [5,]  213  214  215
 [6,]  218  217  216</code></pre>
 </div>
+</div>
 <div id="lattice-designs" class="section level2">
 <h2 class="hasAnchor">
 <a href="#lattice-designs" class="anchor"></a>Lattice Designs</h2>
-<p>SIMPLE and TRIPLE lattice designs. It randomizes treatments in k x k lattice. They require a number of treatments of a perfect square; for example 9, 16, 25, 36, 49, etc. and its parameters are:</p>
+<p><strong>SIMPLE</strong> and <strong>TRIPLE</strong> lattice designs. It randomizes treatments in <span class="math inline">\(k \times k\)</span> lattice. They require a number of treatments of a perfect square; for example 9, 16, 25, 36, 49, etc. and its parameters are:</p>
 <div class="sourceCode" id="cb57"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">design.lattice</span>)</pre></body></html></div>
 <pre><code>function (trt, r = 3, serie = 2, seed = 0, kinds = "Super-Duper", randomization = TRUE)  </code></pre>
-<p>They can generate a simple lattice (2 rep.) or a triple lattice (3 rep.) generating a triple lattice design for 9 treatments 3x3</p>
+<p>They can generate a simple lattice (2 rep.) or a triple lattice (3 rep.) generating a triple lattice design for 9 treatments <span class="math inline">\(3 \times 3\)</span></p>
 <div class="sourceCode" id="cb59"><html><body><pre class="r"><span class="no">trt</span><span class="kw">&lt;-</span><span class="no">letters</span>[<span class="fl">1</span>:<span class="fl">9</span>]
 <span class="no">outdesign</span> <span class="kw">&lt;-</span><span class="fu"><a href="../reference/design.lattice.html">design.lattice</a></span>(<span class="no">trt</span>, <span class="kw">r</span> <span class="kw">=</span> <span class="fl">3</span>, <span class="kw">serie</span> <span class="kw">=</span> <span class="fl">2</span>, <span class="kw">seed</span> <span class="kw">=</span> <span class="fl">33</span>,
     <span class="kw">kinds</span> <span class="kw">=</span>  <span class="st">"Super-Duper"</span>)</pre></body></html></div>
@@ -570,7 +586,9 @@ $rep3
 4   104 1     2   f
 5   105 1     2   b
 6   106 1     2   h</code></pre>
-<p><strong>Serpentine enumeration:</strong></p>
+<div id="serpentine-enumeration-5" class="section level3">
+<h3 class="hasAnchor">
+<a href="#serpentine-enumeration-5" class="anchor"></a>Serpentine enumeration</h3>
 <div class="sourceCode" id="cb67"><html><body><pre class="r"><span class="no">book</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/zigzag.html">zigzag</a></span>(<span class="no">outdesign</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/array.html">array</a></span>(<span class="no">book</span>$<span class="no">plots</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">3</span>,<span class="fl">3</span>)) <span class="kw">-&gt;</span> <span class="no">X</span>
 <span class="fu"><a href="https://rdrr.io/r/base/t.html">t</a></span>(<span class="no">X</span>[,,<span class="fl">1</span>])</pre></body></html></div>
@@ -589,10 +607,11 @@ $rep3
 [2,]  306  305  304
 [3,]  307  308  309</code></pre>
 </div>
+</div>
 <div id="alpha-designs" class="section level2">
 <h2 class="hasAnchor">
 <a href="#alpha-designs" class="anchor"></a>Alpha Designs</h2>
-<p>Generates an alpha designs starting from the alpha design fixing under the series formulated by Patterson and Williams. These designs are generated by the alpha arrangements. They are similar to the lattice designs, but the tables are rectangular s by k (with s blocks and k&lt;s columns. The number of treatments should be equal to s<em>k and all the experimental units r</em>s*k (r replications) and its parameters are:</p>
+<p>Generates an alpha designs starting from the alpha design fixing under the series formulated by Patterson and Williams. These designs are generated by the alpha arrangements. They are similar to the lattice designs, but the tables are rectangular <span class="math inline">\(s\)</span> by <span class="math inline">\(k\)</span> (with <span class="math inline">\(s\)</span> blocks and <span class="math inline">\(k&lt;s\)</span> columns. The number of treatments should be equal to <span class="math inline">\(s \times k\)</span> and all the experimental units <span class="math inline">\(r \times s \times k\)</span> (<span class="math inline">\(r\)</span> replications) and its parameters are:</p>
 <div class="sourceCode" id="cb73"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">design.alpha</span>)</pre></body></html></div>
 <pre><code>function (trt, k, r, serie = 2, seed = 0, kinds = "Super-Duper", randomization = TRUE)  </code></pre>
 <div class="sourceCode" id="cb75"><html><body><pre class="r"><span class="no">trt</span> <span class="kw">&lt;-</span> <span class="no">letters</span>[<span class="fl">1</span>:<span class="fl">15</span>]
@@ -647,7 +666,9 @@ $rep2
 [3,]  207  208  209
 [4,]  210  211  212
 [5,]  213  214  215</code></pre>
-<p><strong>Serpentine enumeration:</strong></p>
+<div id="serpentine-enumeration-6" class="section level3">
+<h3 class="hasAnchor">
+<a href="#serpentine-enumeration-6" class="anchor"></a>Serpentine enumeration</h3>
 <div class="sourceCode" id="cb85"><html><body><pre class="r"><span class="no">book</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/zigzag.html">zigzag</a></span>(<span class="no">outdesign</span>)
 <span class="no">A</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/array.html">array</a></span>(<span class="no">book</span>[,<span class="fl">1</span>], <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">5</span>,<span class="fl">2</span>))
 <span class="fu"><a href="https://rdrr.io/r/base/t.html">t</a></span>(<span class="no">A</span>[,,<span class="fl">1</span>])</pre></body></html></div>
@@ -665,10 +686,11 @@ $rep2
 [4,]  212  211  210
 [5,]  213  214  215</code></pre>
 </div>
+</div>
 <div id="augmented-block-designs" class="section level2">
 <h2 class="hasAnchor">
 <a href="#augmented-block-designs" class="anchor"></a>Augmented Block Designs</h2>
-<p>These are designs for two types of treatments: the control treatments (common) and the increased treatments. The common treatments are applied in complete randomized blocks, and the increased treatments, at random. Each treatment should be applied in any block once only. It is understood that the common treatments are of a greater interest; the standard error of the difference is much smaller than when between two increased ones in different blocks. The function design.dau() achieves this purpose and its parameters are:</p>
+<p>These are designs for two types of treatments: the control treatments (common) and the increased treatments. The common treatments are applied in complete randomized blocks, and the increased treatments, at random. Each treatment should be applied in any block once only. It is understood that the common treatments are of a greater interest; the standard error of the difference is much smaller than when between two increased ones in different blocks. The function <code><a href="../reference/design.dau.html">design.dau()</a></code> achieves this purpose and its parameters are:</p>
 <div class="sourceCode" id="cb89"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">design.dau</span>)</pre></body></html></div>
 <pre><code>function (trt1, trt2, r, serie = 2, seed = 0, kinds = "Super-Duper", name = "trt", 
     randomization = TRUE)  </code></pre>
@@ -692,7 +714,9 @@ block: 4
 ------------------------------------------------------------ 
 block: 5
 [1] "z" "A" "C" "D" "B"</code></pre>
-<p><strong>Serpentine enumeration:</strong></p>
+<div id="serpentine-enumeration-7" class="section level3">
+<h3 class="hasAnchor">
+<a href="#serpentine-enumeration-7" class="anchor"></a>Serpentine enumeration</h3>
 <div class="sourceCode" id="cb93"><html><body><pre class="r"><span class="no">book</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/zigzag.html">zigzag</a></span>(<span class="no">outdesign</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span>(<span class="no">book</span>,<span class="fu"><a href="https://rdrr.io/r/base/by.html">by</a></span>(<span class="no">plots</span>, <span class="no">block</span>, <span class="no">as.character</span>))</pre></body></html></div>
 <pre><code>block: 1
@@ -719,6 +743,7 @@ block: 5
 6   106     1   A</code></pre>
 <p>For augmented ompletely randomized design, use the function design.crd().</p>
 </div>
+</div>
 <div id="split-plot-designs" class="section level2">
 <h2 class="hasAnchor">
 <a href="#split-plot-designs" class="anchor"></a>Split Plot Designs</h2>
@@ -726,7 +751,9 @@ block: 5
 <div class="sourceCode" id="cb97"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">design.split</span>)</pre></body></html></div>
 <pre><code>function (trt1, trt2, r = NULL, design = c("rcbd", "crd", "lsd"), serie = 2, 
     seed = 0, kinds = "Super-Duper", first = TRUE, randomization = TRUE)  </code></pre>
-<p><strong>Aplication</strong></p>
+<div id="aplication" class="section level3">
+<h3 class="hasAnchor">
+<a href="#aplication" class="anchor"></a>Aplication</h3>
 <div class="sourceCode" id="cb99"><html><body><pre class="r"><span class="no">trt1</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"A"</span>,<span class="st">"B"</span>,<span class="st">"C"</span>,<span class="st">"D"</span>)
 <span class="no">trt2</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>)
 <span class="no">outdesign</span> <span class="kw">&lt;-</span><span class="fu"><a href="../reference/design.split.html">design.split</a></span>(<span class="no">trt1</span>,<span class="no">trt2</span>,<span class="kw">r</span><span class="kw">=</span><span class="fl">3</span>,<span class="kw">serie</span><span class="kw">=</span><span class="fl">2</span>,<span class="kw">seed</span><span class="kw">=</span><span class="fl">543</span>)
@@ -743,19 +770,28 @@ block: 5
 <span class="no">q</span><span class="kw">&lt;-</span><span class="kw">NULL</span>
 <span class="kw">for</span>(<span class="no">i</span> <span class="kw">in</span> <span class="fl">1</span>:<span class="fl">12</span>)
 <span class="no">q</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="no">q</span>,<span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="no">book10</span>$<span class="no">trt2</span>[<span class="fl">3</span>*(<span class="no">i</span>-<span class="fl">1</span>)+<span class="fl">1</span>],<span class="no">book10</span>$<span class="no">trt2</span>[<span class="fl">3</span>*(<span class="no">i</span>-<span class="fl">1</span>)+<span class="fl">2</span>], <span class="no">book10</span>$<span class="no">trt2</span>[<span class="fl">3</span>*(<span class="no">i</span>-<span class="fl">1</span>)+<span class="fl">3</span>]))</pre></body></html></div>
-<p><strong>In plots:</strong></p>
+</div>
+<div id="in-plots" class="section level3">
+<h3 class="hasAnchor">
+<a href="#in-plots" class="anchor"></a>In plots:</h3>
 <div class="sourceCode" id="cb102"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/t.html">t</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="no">p</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">4</span>,<span class="fl">3</span>))))</pre></body></html></div>
 <pre><code>     [,1] [,2] [,3] [,4]
 [1,] "D"  "B"  "A"  "C" 
 [2,] "B"  "C"  "A"  "D" 
 [3,] "D"  "B"  "A"  "C" </code></pre>
-<p><strong>In sub plots (split plot)</strong></p>
+</div>
+<div id="in-sub-plots-split-plot" class="section level3">
+<h3 class="hasAnchor">
+<a href="#in-sub-plots-split-plot" class="anchor"></a>In sub plots (split plot)</h3>
 <div class="sourceCode" id="cb104"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/t.html">t</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="no">q</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">4</span>,<span class="fl">3</span>))))</pre></body></html></div>
 <pre><code>     [,1]    [,2]    [,3]    [,4]   
 [1,] "b a c" "a b c" "c a b" "c b a"
 [2,] "b c a" "a b c" "b c a" "a c b"
 [3,] "c a b" "b c a" "c a b" "a c b"</code></pre>
-<p><strong>Serpentine enumeration:</strong></p>
+</div>
+<div id="serpentine-enumeration-8" class="section level3">
+<h3 class="hasAnchor">
+<a href="#serpentine-enumeration-8" class="anchor"></a>Serpentine enumeration</h3>
 <div class="sourceCode" id="cb106"><html><body><pre class="r"><span class="no">book</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/zigzag.html">zigzag</a></span>(<span class="no">outdesign</span>)
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">book</span>,<span class="fl">5</span>)</pre></body></html></div>
 <pre><code>  plots splots block trt1 trt2
@@ -765,13 +801,16 @@ block: 5
 4   102      1     1    B    a
 5   102      2     1    B    b</code></pre>
 </div>
+</div>
 <div id="strip-plot-designs" class="section level2">
 <h2 class="hasAnchor">
 <a href="#strip-plot-designs" class="anchor"></a>Strip-Plot Designs</h2>
 <p>These designs are used when there are two types of treatments (factors) and are applied separately in large plots, called bands, in a vertical and horizontal direction of the block, obtaining the divided blocks. Each block constitutes a repetition and its parameters are:</p>
 <div class="sourceCode" id="cb108"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">design.strip</span>)</pre></body></html></div>
 <pre><code>function (trt1, trt2, r, serie = 2, seed = 0, kinds = "Super-Duper", randomization = TRUE)  </code></pre>
-<p><strong>Aplication</strong></p>
+<div id="aplication-1" class="section level3">
+<h3 class="hasAnchor">
+<a href="#aplication-1" class="anchor"></a>Aplication</h3>
 <div class="sourceCode" id="cb110"><html><body><pre class="r"><span class="no">trt1</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"A"</span>,<span class="st">"B"</span>,<span class="st">"C"</span>,<span class="st">"D"</span>)
 <span class="no">trt2</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>)
 <span class="no">outdesign</span> <span class="kw">&lt;-</span><span class="fu"><a href="../reference/design.strip.html">design.strip</a></span>(<span class="no">trt1</span>,<span class="no">trt2</span>,<span class="kw">r</span><span class="kw">=</span><span class="fl">3</span>,<span class="kw">serie</span><span class="kw">=</span><span class="fl">2</span>,<span class="kw">seed</span><span class="kw">=</span><span class="fl">543</span>)
@@ -805,7 +844,10 @@ block: 5
 [2,] "B c" "B b" "B a"
 [3,] "D c" "D b" "D a"
 [4,] "C c" "C b" "C a"</code></pre>
-<p><strong>Serpentine enumeration:</strong></p>
+</div>
+<div id="serpentine-enumeration-9" class="section level3">
+<h3 class="hasAnchor">
+<a href="#serpentine-enumeration-9" class="anchor"></a>Serpentine enumeration</h3>
 <div class="sourceCode" id="cb118"><html><body><pre class="r"><span class="no">book</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/zigzag.html">zigzag</a></span>(<span class="no">outdesign</span>)
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">book</span>)</pre></body></html></div>
 <pre><code>  plots block trt1 trt2
@@ -835,6 +877,7 @@ block: 5
 [3,]  307  308  309
 [4,]  312  311  310</code></pre>
 </div>
+</div>
 <div id="factorial" class="section level2">
 <h2 class="hasAnchor">
 <a href="#factorial" class="anchor"></a>Factorial</h2>
@@ -842,9 +885,9 @@ block: 5
 <div class="sourceCode" id="cb126"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">design.ab</span>)</pre></body></html></div>
 <pre><code>function (trt, r = NULL, serie = 2, design = c("rcbd", "crd", "lsd"), seed = 0, 
     kinds = "Super-Duper", first = TRUE, randomization = TRUE)  </code></pre>
-<p>To generate the factorial, you need to create a vector of levels of each factor, the method automatically generates up to 25 factors and “r” repetitions.</p>
+<p>To generate the factorial, you need to create a vector of levels of each factor, the method automatically generates up to 25 factors and <span class="math inline">\(r\)</span> repetitions.</p>
 <div class="sourceCode" id="cb128"><html><body><pre class="r"><span class="no">trt</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span> (<span class="fl">4</span>,<span class="fl">2</span>,<span class="fl">3</span>) <span class="co"># three factors with  4,2 and 3 levels.</span></pre></body></html></div>
-<p>to crd and rcbd designs, it is necessary to value “r” as the number of repetitions, this can be a vector if unequal to equal or constant repetition (recommended).</p>
+<p>to crd and rcbd designs, it is necessary to value <span class="math inline">\(r\)</span> as the number of repetitions, this can be a vector if unequal to equal or constant repetition (recommended).</p>
 <div class="sourceCode" id="cb129"><html><body><pre class="r"><span class="no">trt</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">2</span>) <span class="co"># factorial 3x2</span>
 <span class="no">outdesign</span> <span class="kw">&lt;-</span><span class="fu"><a href="../reference/design.ab.html">design.ab</a></span>(<span class="no">trt</span>, <span class="kw">r</span><span class="kw">=</span><span class="fl">3</span>, <span class="kw">serie</span><span class="kw">=</span><span class="fl">2</span>)
 <span class="no">book12</span> <span class="kw">&lt;-</span> <span class="no">outdesign</span>$<span class="no">book</span>
@@ -856,7 +899,9 @@ block: 5
 4   104     1 1 2
 5   105     1 1 1
 6   106     1 3 1</code></pre>
-<p><strong>Serpentine enumeration:</strong></p>
+<div id="serpentine-enumeration-10" class="section level3">
+<h3 class="hasAnchor">
+<a href="#serpentine-enumeration-10" class="anchor"></a>Serpentine enumeration</h3>
 <div class="sourceCode" id="cb131"><html><body><pre class="r"><span class="no">book</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/zigzag.html">zigzag</a></span>(<span class="no">outdesign</span>)
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">book</span>)</pre></body></html></div>
 <pre><code>  plots block A B
@@ -866,7 +911,7 @@ block: 5
 4   104     1 1 2
 5   105     1 1 1
 6   106     1 3 1</code></pre>
-<p>factorial 2 x 2 x 2 with 5 replications in completely randomized design.</p>
+<p>factorial <span class="math inline">\(2 \times 2 \times 2\)</span> with 5 replications in completely randomized design.</p>
 <div class="sourceCode" id="cb133"><html><body><pre class="r"><span class="no">trt</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">2</span>,<span class="fl">2</span>,<span class="fl">2</span>)
 <span class="no">crd</span><span class="kw">&lt;-</span><span class="fu"><a href="../reference/design.ab.html">design.ab</a></span>(<span class="no">trt</span>, <span class="kw">r</span><span class="kw">=</span><span class="fl">5</span>, <span class="kw">serie</span><span class="kw">=</span><span class="fl">2</span>,<span class="kw">design</span><span class="kw">=</span><span class="st">"crd"</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span>(<span class="no">crd</span>)</pre></body></html></div>
@@ -905,9 +950,24 @@ $applied
 6   106 2 1 2 1</code></pre>
 </div>
 </div>
-<div id="references" class="section level1">
+</div>
+<div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h1>
+<div id="refs" class="references">
+<div id="ref-CochCox:1992">
+<p>Cochran, W. G., and Cox, G. M. (1992). <em>Experimental Designs</em>. John Wiley &amp; Sons, New York.</p>
+</div>
+<div id="ref-kueh:2000">
+<p>Kuehl, R. O. (2000). <em>Designs of Experiments: Statistical Principles of Research Design and Analysis</em>. Duxbury Press.</p>
+</div>
+<div id="ref-LeClLeonErwiWarrAndre:1962">
+<p>Le Clerg, E. L., Leonard, W. H., Erwin, L., Warren, H. L., and Andrew, G. C. (1962). <em>Field Plot Techniques</em>. Burgess Publishing Company, Minneapolis, Minnesota.</p>
+</div>
+<div id="ref-Mont:2002">
+<p>Montgomery, D. C. (2002). <em>Design and Analysis of Experiments</em>. John Wiley &amp; Sons, New York.</p>
+</div>
+</div>
 </div>
   </div>
 

@@ -91,7 +91,7 @@ library(agricolae)
 
 The package **agricolae**  presents special functions for the creation of the field book for experimental designs. Due to the random generation, this package is quite used in agricultural research. 
 
-For this generation, certain parameters are required, as for example the name of each treatment, the number of repetitions, and others, according to the design,  \citet{CochCox:1992}; \citet{kueh:2000}; \citet{LeClLeonErwiWarrAndre:1962}; \citet{Mont:2002}. There are other parameters of random generation, as the seed to reproduce the same random generation or the generation method ([See the reference manual of **agricolae**](http://cran.at.r-project.org/web/packages/agricolae/agricolae.pdf)).
+For this generation, certain parameters are required, as for example the name of each treatment, the number of repetitions, and others, according to the design  [@CochCox:1992; @kueh:2000; @LeClLeonErwiWarrAndre:1962; @Mont:2002]. There are other parameters of random generation, as the seed to reproduce the same random generation or the generation method ([See the reference manual of **agricolae**](http://cran.at.r-project.org/web/packages/agricolae/agricolae.pdf)).
 
 &nbsp;
 &nbsp;
@@ -122,7 +122,7 @@ For this generation, certain parameters are required, as for example the name of
 **fieldbook:**  |	 output zigzag, contain field book.
 
 ## Completely Randomized Design (CRD)
-It generates completely a randomized design with equal or different repetition. "Random" uses the methods of number generation in R.The seed is by set.seed(seed, kinds). They only require the names of the treatments and the number of their repetitions and its parameters are:
+It generates completely a randomized design with equal or different repetition. "Random" uses the methods of number generation in **R**.The seed is by `set.seed(seed, kinds)`. They only require the names of the treatments and the number of their repetitions and its parameters are:
 
 ```{r CRD1}
 str(design.crd)
@@ -140,7 +140,7 @@ Excel:write.csv(book1,"book1.csv",row.names=FALSE)
 
 ## Randomized Complete Block Design (RCBD)
 
-It generates field book and sketch to Randomized Complete Block Design. "Random" uses the methods of number generation in R.The seed is by set.seed(seed, kinds). They require the names of the treatments and the number of blocks and its parameters are:
+It generates field book and sketch to Randomized Complete Block Design. "Random" uses the methods of number generation in **R**.The seed is by `set.seed(seed, kinds)`. They require the names of the treatments and the number of blocks and its parameters are:
 
 ```{r RCBD1}
 str(design.rcbd)
@@ -157,7 +157,7 @@ print(matrix(book2[,1],byrow = TRUE, ncol = 5))
 ```
 
 ## Latin Square Design
-It generates Latin Square Design. "Random" uses the methods of number generation in R.The seed is by set.seed(seed, kinds). They require the names of the treatments and its parameters are:
+It generates Latin Square Design. "Random" uses the methods of number generation in **R**.The seed is by `set.seed(seed, kinds)`. They require the names of the treatments and its parameters are:
 
 ```{r Latin1}
 str(design.lsd)
@@ -170,7 +170,7 @@ print(outdesign$sketch)
 ```
 
 
-**Serpentine enumeration:**
+### Serpentine enumeration
 
 ```{r Latin3}
 book <- zigzag(outdesign)
@@ -179,9 +179,7 @@ print(matrix(book[,1],byrow = TRUE, ncol = 4))
 
 
 ## Graeco-Latin Designs
-A graeco-latin square is a KxK pattern that permits the study of k 
-treatments simultaneously with three different blocking variables, each 
-at k levels. The function is only for squares of the odd numbers and even numbers (4, 8, 10 and 12). They require the names of the treatments of each factor of study and its parameters are:
+A graeco-latin square is a $k \times k$ pattern that permits the study of $k$ treatments simultaneously with three different blocking variables, each at $k$ levels. The function is only for squares of the odd numbers and even numbers (4, 8, 10 and 12). They require the names of the treatments of each factor of study and its parameters are:
 
 ```{r GLD1}
 str(design.graeco)
@@ -195,7 +193,7 @@ print(outdesign$sketch)
 ```
 
 
-**Serpentine enumeration:**
+### Serpentine enumeration
 
 ```{r GLD3}
 book <- zigzag(outdesign)
@@ -205,7 +203,7 @@ print(matrix(book[,1],byrow = TRUE, ncol = 4))
 
 ## Youden Square Design
 
-Such designs are referred to as Youden squares since they were introduced by Youden (1937) after Yates (1936) considered the special case of column equal to number treatment minus 1. "Random" uses the methods of number generation in R. The seed is by set.seed(seed, kinds). They require the names of the treatments of each factor of study and its parameters are:
+Such designs are referred to as Youden squares since they were introduced by Youden (1937) after Yates (1936) considered the special case of column equal to number treatment minus 1. "Random" uses the methods of number generation in **R**. The seed is by `set.seed(seed, kinds)`. They require the names of the treatments of each factor of study and its parameters are:
 
 ```{r YSD1}
 str(design.youden)
@@ -221,7 +219,7 @@ print(book) # field book.
 print(matrix(as.numeric(book[,1]),byrow = TRUE, ncol = r))
 ```
 
-**Serpentine enumeration:**
+### Serpentine enumeration
 
 ```{r YSD3}
 book <- zigzag(outdesign)
@@ -230,7 +228,7 @@ print(matrix(as.numeric(book[,1]),byrow = TRUE, ncol = r))
 
 ## Balanced Incomplete Block Designs (BIBD)
 
-Creates Randomized Balanced Incomplete Block Design. "Random" uses the methods of number generation in R. The seed is by set.seed(seed, kinds).
+Creates Randomized Balanced Incomplete Block Design. "Random" uses the methods of number generation in **R**. The seed is by `set.seed(seed, kinds)`.
 They require the names of the treatments and the size of the block and its parameters are:
 
 ```{r BIBD1}
@@ -254,7 +252,8 @@ outdesign$sketch
 
 It can be observed that the treatments have four repetitions. The parameter lambda has three repetitions, which means that a couple of treatments are together on three occasions. For example, B and E are found in the blocks I, II and V.
 
-**Serpentine enumeration:**
+### Serpentine enumeration
+
 ```{r }
 book <- zigzag(outdesign)
 matrix(book[,1],byrow = TRUE, ncol = 4)
@@ -277,7 +276,8 @@ outdesign$sketch[[2]]
 ```
 
 12 blocks of 4 treatments each have been generated.
-**Serpentine enumeration:**
+
+### Serpentine enumeration
 
 ```{r CD3}
 book <- zigzag(outdesign)
@@ -287,14 +287,13 @@ t(X[,,2])
 ```
 
 ## Lattice Designs
-SIMPLE and TRIPLE lattice designs. It randomizes treatments in k x k lattice. They require a number of treatments of a perfect square; for example 9, 16, 25, 36, 49, etc. and its parameters are:
+**SIMPLE** and **TRIPLE** lattice designs. It randomizes treatments in $k \times k$ lattice. They require a number of treatments of a perfect square; for example 9, 16, 25, 36, 49, etc. and its parameters are:
 
 ```{r LD1}
 str(design.lattice)
 ```
 
-They can generate a simple lattice (2 rep.) or a triple lattice (3 rep.)
-generating a triple lattice design for 9 treatments 3x3
+They can generate a simple lattice (2 rep.) or a triple lattice (3 rep.) generating a triple lattice design for 9 treatments $3 \times 3$
 
 ```{r LD2}
 trt<-letters[1:9]
@@ -306,7 +305,7 @@ outdesign$sketch
 head(book7)
 ```
 
-**Serpentine enumeration:**
+### Serpentine enumeration
 
 ```{r LD3}
 book <- zigzag(outdesign)
@@ -317,7 +316,7 @@ t(X[,,3])
 ```
 
 ## Alpha Designs
-Generates an alpha designs starting from the alpha design fixing under  the  series formulated by Patterson and Williams. These designs are  generated by the alpha arrangements. They are similar to the lattice designs,  but the tables are rectangular s by k (with s blocks and k<s columns. The number of  treatments should be equal to s*k and all the experimental units r*s*k (r replications) and its parameters are:
+Generates an alpha designs starting from the alpha design fixing under  the  series formulated by Patterson and Williams. These designs are  generated by the alpha arrangements. They are similar to the lattice designs,  but the tables are rectangular $s$ by $k$ (with $s$ blocks and $k<s$ columns. The number of  treatments should be equal to $s \times k$ and all the experimental units $r \times s \times k$ ($r$ replications) and its parameters are:
 
 ```{r Alpha1}
 str(design.alpha)
@@ -335,7 +334,7 @@ t(A[,,1])
 t(A[,,2])
 ```
 
-**Serpentine enumeration:**
+### Serpentine enumeration
 
 ```{r Alpha3}
 book <- zigzag(outdesign)
@@ -345,7 +344,7 @@ t(A[,,2])
 ```
 
 ## Augmented Block Designs
-These are designs for two types of treatments: the control treatments (common) and the increased treatments. The common treatments are applied in complete randomized blocks, and the increased treatments, at random. Each treatment should be applied in any block once only. It is understood that the common treatments are of a greater interest; the standard error of the difference is much smaller than when between two increased ones in different blocks. The function design.dau() achieves this purpose and its parameters are:
+These are designs for two types of treatments: the control treatments (common) and the increased treatments. The common treatments are applied in complete randomized blocks, and the increased treatments, at random. Each treatment should be applied in any block once only. It is understood that the common treatments are of a greater interest; the standard error of the difference is much smaller than when between two increased ones in different blocks. The function `design.dau()` achieves this purpose and its parameters are:
 
 ```{r ABD1}
 str(design.dau)
@@ -361,7 +360,7 @@ with(book9,by(trt, block,as.character))
 ```
 
 
-**Serpentine enumeration:**
+### Serpentine enumeration
 
 ```{r ABD3}
 book <- zigzag(outdesign)
@@ -378,7 +377,7 @@ These designs have two factors, one is applied in plots and is defined as **trt1
 str(design.split)
 ```
 
-**Aplication**
+### Aplication
 
 ```{r SPD2}
 trt1<-c("A","B","C","D")
@@ -392,19 +391,19 @@ for(i in 1:12)
 q <- c(q,paste(book10$trt2[3*(i-1)+1],book10$trt2[3*(i-1)+2], book10$trt2[3*(i-1)+3]))
 ```
 
-**In plots:**
+### In plots:
 
 ```{r SPD3}
 print(t(matrix(p,c(4,3))))
 ```
 
-**In sub plots (split plot)**
+### In sub plots (split plot)
 
 ```{r SPD4}
 print(t(matrix(q,c(4,3))))
 ```
 
-**Serpentine enumeration:**
+### Serpentine enumeration
 
 ```{r SPD5}
 book <- zigzag(outdesign)
@@ -418,7 +417,7 @@ These designs are used when there are two types of treatments (factors) and are 
 str(design.strip)
 ```
 
-**Aplication**
+### Aplication
 
 ```{r StPD2}
 trt1<-c("A","B","C","D")
@@ -435,7 +434,7 @@ print(B2)
 print(B3)
 ```
 
-**Serpentine enumeration:**
+### Serpentine enumeration
 
 ```{r StPD3}
 book <- zigzag(outdesign)
@@ -452,12 +451,13 @@ The full factorial of n factors applied to an experimental design (CRD, RCBD and
 ```{r Factorial1} 
 str(design.ab)
 ```
-To generate the factorial, you need to create a vector of levels of each factor, the method automatically generates up to 25 factors and "r" repetitions.
+
+To generate the factorial, you need to create a vector of levels of each factor, the method automatically generates up to 25 factors and $r$ repetitions.
 
 ```{r Factorial2}
 trt <- c (4,2,3) # three factors with  4,2 and 3 levels.
 ```
-to crd and rcbd designs, it is necessary to value "r" as the number of repetitions, this can be a vector if unequal to equal or constant repetition (recommended).
+to crd and rcbd designs, it is necessary to value $r$ as the number of repetitions, this can be a vector if unequal to equal or constant repetition (recommended).
 
 ```{r Factorial3}
 trt<-c(3,2) # factorial 3x2
@@ -466,14 +466,14 @@ book12 <- outdesign$book
 head(book12) # print of the field book
 ```
 
-**Serpentine enumeration:**
+### Serpentine enumeration
 
 ```{r Factorial4}
 book <- zigzag(outdesign)
 head(book)
 ```
 
-factorial 2 x 2 x 2 with 5 replications in completely randomized design.
+factorial $2 \times 2 \times 2$ with 5 replications in completely randomized design.
 
 ```{r Factorial5}
 trt<-c(2,2,2)

@@ -151,6 +151,7 @@ library(agricolae) # Load the package to the memory:
 
 In order to continue with the command line, do not forget to close the open windows with any R order.
 For help: 
+
 ```{r eval=FALSE}
 help(graph.freq)
 ? (graph.freq)
