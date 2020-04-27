@@ -1,3 +1,34 @@
+#' Grouping the treatments averages in a comparison with a minimum value
+#' 
+#' When there are treatments and their respective values, these can be compared
+#' with a minimal difference of meaning.
+#' 
+#' 
+#' @param treatment treatment
+#' @param means means of treatment
+#' @param alpha Alpha value, significante value to comparison
+#' @param pvalue Matrix of probabilities to comparison
+#' @param console logical, print output
+#' @return The means and groups for treatments.
+#' @note It is considered 81 labels as maximum for the formation of groups,
+#' greater number will not have label.
+#' @author Felipe de Mendiburu
+#' @keywords manip
+#' @export
+#' @examples
+#' 
+#' library(agricolae)
+#' treatments <- c("A","B","C")
+#' means<-c(2,5,3)
+#' alpha <- 0.05
+#' pvalue<-matrix(1,nrow=3,ncol=3)
+#' pvalue[1,2]<-pvalue[2,1]<-0.03
+#' pvalue[1,3]<-pvalue[3,1]<-0.10
+#' pvalue[2,3]<-pvalue[3,2]<-0.06
+#' out<-orderPvalue(treatments,means,alpha,pvalue,console=TRUE)
+#' barplot(out[,1],names.arg = row.names(out),col=colors()[84:87])
+#' legend("topright",as.character(out$groups),pch=15,col=colors()[84:87],box.col=0)
+#' 
 orderPvalue <-
 function (treatment, means, alpha, pvalue, console) 
 {

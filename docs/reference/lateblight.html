@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -35,7 +39,7 @@
 
 <!-- docsearch -->
 <script src="../docsearch.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.3/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
 <link href="../docsearch.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
@@ -45,7 +49,6 @@
 <meta property="og:description" content="LATEBLIGHT is a mathematical model that simulates the effect of weather,
 host growth and resistance, and fungicide use on asexual development and
 growth of Phytophthora infestans on potato foliage." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -73,7 +76,7 @@ growth of Phytophthora infestans on potato foliage." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -87,7 +90,7 @@ growth of Phytophthora infestans on potato foliage." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">agricolae</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">1.3.3</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">1.4.0</span>
       </span>
     </div>
 
@@ -107,12 +110,28 @@ growth of Phytophthora infestans on potato foliage." />
     Reference
   </a>
 </li>
-<li>
-  <a href="../articles/Introagricolae.html">
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fa fa-file-o"></span>
      
     Tutorial
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/Introduction.html">Introduction to agricolae</a>
+    </li>
+    <li>
+      <a href="../articles/DescriptiveStats.html">Descriptive Statistics with agricolae</a>
+    </li>
+    <li>
+      <a href="../articles/ExperimentalDesign.html">Experimental Design with agricolae</a>
+    </li>
+    <li>
+      <a href="../articles/MultipleComparisons.html">Multiple Comparisons with agricolae</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">
@@ -150,7 +169,7 @@ growth of Phytophthora infestans on potato foliage." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>LATEBLIGHT - Simulator for potato late blight Version LB2004</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/myaseen208/agricolae/blob/master/R/lateblight.R'><code>R/lateblight.R</code></a></small>
     <div class="hidden name"><code>lateblight.Rd</code></div>
     </div>
 
@@ -160,8 +179,20 @@ host growth and resistance, and fungicide use on asexual development and
 growth of Phytophthora infestans on potato foliage.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>lateblight</span>(<span class='no'>WS</span>, <span class='no'>Cultivar</span>, <span class='no'>ApplSys</span>,<span class='no'>InocDate</span>, <span class='no'>LGR</span>, <span class='no'>IniSpor</span>, <span class='no'>SR</span>, <span class='no'>IE</span>, <span class='no'>LP</span>, <span class='no'>InMicCol</span>,
-<span class='kw'>MatTime</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>'EARLYSEASON'</span>,<span class='st'>'MIDSEASON'</span>,<span class='st'>'LATESEASON'</span>),<span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>lateblight</span>(
+  <span class='no'>WS</span>,
+  <span class='no'>Cultivar</span>,
+  <span class='no'>ApplSys</span>,
+  <span class='no'>InocDate</span>,
+  <span class='no'>LGR</span>,
+  <span class='no'>IniSpor</span>,
+  <span class='no'>SR</span>,
+  <span class='no'>IE</span>,
+  <span class='no'>LP</span>,
+  <span class='no'>InMicCol</span>,
+  <span class='kw'>MatTime</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"EARLYSEASON"</span>, <span class='st'>"MIDSEASON"</span>, <span class='st'>"LATESEASON"</span>),
+  <span class='no'>...</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -216,57 +247,64 @@ growth of Phytophthora infestans on potato foliage.</p>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>LATEBLIGHT Version LB2004 was created in October 2004 (Andrade-Piedra et al.,
-2005a, b and c), based on the C-version written by B.E. Ticknor ('BET 21191
-modification of cbm8d29.c'), reported by Doster et al. (1990) and described
-in detail by Fry et al. (1991) (This version is referred as LB1990 by
-Andrade-Piedra et al. [2005a]). The first version of LATEBLIGHT was developed
-by Bruhn and Fry (1981) and described  in detail by Bruhn et al. (1980).</p>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p></p>
+    
+
 <dt>Ofile</dt><dd><p>"Date","nday","MicCol","SimSeverity",...</p></dd>
-  <dt>Gfile</dt><dd><p>"dates","nday","MeanSeverity","StDevSeverity"</p></dd>
+<dt>Gfile</dt><dd><p>"dates","nday","MeanSeverity","StDevSeverity"</p></dd>
 
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Andrade-Piedra, J. L., Hijmans, R. J., Forbes, G. A., Fry, W. E.,
-and Nelson, R. J. 2005a. Simulation of potato late blight in the Andes.
-I: Modification and parameterization of the LATEBLIGHT model. Phytopathology 95:1191-1199.<br />
-Andrade-Piedra, J. L., Hijmans, R. J., Juarez, H. S., Forbes,
-G. A., Shtienberg, D., and Fry, W. E. 2005b. Simulation of potato late blight
-in the Andes. II: Validation of the LATEBLIGHT model. Phytopathology 95:1200-1208.<br />
-Andrade-Piedra, J. L., Forbes, G. A., Shtienberg, D., Grunwald, N. J.,
-Chacon, M. G., Taipe, M. V., Hijmans, R. J., and Fry, W. E. 2005c.
-Qualification of a plant disease simulation model: Performance of the LATEBLIGHT
-model across a broad range of environments. Phytopathology 95:1412-1422.<br />
-Bruhn, J.A., Bruck, R.I., Fry, W.E., Arneson, P.A., and Keokosky, E.V. 1980.
-User's manual for LATEBLIGHT: a plant disease management game. Cornell University,
-Department of Plant Pathology, Ithaca, NY, USA. Mimeo 80-1.<br />
-Bruhn, J.A., and Fry, W.E.  1981.  Analysis of potato late blight epidemiology
-by simulation modeling.  Phytopathology 71:612-616.<br />
-Doster, M. A., Milgroom, M. G., and Fry, W. E. 1990. Quantification of factors
-influencing potato late blight suppression and selection for metalaxyl resistance
-in Phytophthora infestans - A simulation approach. Phytopathology 80:1190-1198.<br />
-Fry, W.E., Milgroom, M.G., Doster, M.A., Bruhn, J.A., and Bruck, R.I.  1991.
-LATEBLIGHT:  a plant disease management game - User Manual.  Version 3.1.
-Microsoft Windows Adaptation by B. E. Ticknor, and P. A. Arneson.  Ithaca,
-Cornell University, Department of Plant Pathology, Ithaca, NY, USA.</p>
+    <p>LATEBLIGHT Version LB2004 was created in October 2004 (Andrade-Piedra et
+al., 2005a, b and c), based on the C-version written by B.E. Ticknor ('BET
+21191 modification of cbm8d29.c'), reported by Doster et al. (1990) and
+described in detail by Fry et al. (1991) (This version is referred as LB1990
+by Andrade-Piedra et al. [2005a]). The first version of LATEBLIGHT was
+developed by Bruhn and Fry (1981) and described in detail by Bruhn et al.
+(1980).</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
     <p>All format data for date is yyyy-mm,dd, for example "2000-04-22".
 change with function as.Date()</p>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Andrade-Piedra, J. L., Hijmans, R. J., Forbes, G. A., Fry, W.
+E., and Nelson, R. J. 2005a. Simulation of potato late blight in the Andes.
+I: Modification and parameterization of the LATEBLIGHT model. Phytopathology
+95:1191-1199.<br /> Andrade-Piedra, J. L., Hijmans, R. J., Juarez, H. S.,
+Forbes, G. A., Shtienberg, D., and Fry, W. E. 2005b. Simulation of potato
+late blight in the Andes. II: Validation of the LATEBLIGHT model.
+Phytopathology 95:1200-1208.<br /> Andrade-Piedra, J. L., Forbes, G. A.,
+Shtienberg, D., Grunwald, N. J., Chacon, M. G., Taipe, M. V., Hijmans, R.
+J., and Fry, W. E. 2005c. Qualification of a plant disease simulation model:
+Performance of the LATEBLIGHT model across a broad range of environments.
+Phytopathology 95:1412-1422.<br /> Bruhn, J.A., Bruck, R.I., Fry, W.E.,
+Arneson, P.A., and Keokosky, E.V. 1980. User's manual for LATEBLIGHT: a
+plant disease management game. Cornell University, Department of Plant
+Pathology, Ithaca, NY, USA. Mimeo 80-1.<br /> Bruhn, J.A., and Fry, W.E.  1981.
+Analysis of potato late blight epidemiology by simulation modeling.
+Phytopathology 71:612-616.<br /> Doster, M. A., Milgroom, M. G., and Fry, W. E.
+1990. Quantification of factors influencing potato late blight suppression
+and selection for metalaxyl resistance in Phytophthora infestans - A
+simulation approach. Phytopathology 80:1190-1198.<br /> Fry, W.E., Milgroom,
+M.G., Doster, M.A., Bruhn, J.A., and Bruck, R.I.  1991. LATEBLIGHT: a plant
+disease management game - User Manual.  Version 3.1. Microsoft Windows
+Adaptation by B. E. Ticknor, and P. A. Arneson.  Ithaca, Cornell University,
+Department of Plant Pathology, Ithaca, NY, USA.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/weatherSeverity.html'>weatherSeverity</a></code></p></div>
+    <div class='dont-index'><p><code><a href='weatherSeverity.html'>weatherSeverity</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
+    <pre class="examples"><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='no'>f</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"external/weather.csv"</span>, <span class='kw'>package</span><span class='kw'>=</span><span class='st'>"agricolae"</span>)
-<span class='no'>weather</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span>(<span class='no'>f</span>,<span class='kw'>header</span><span class='kw'>=</span><span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: file("") only supports open = "w+" and open = "w+b": using the former</span></div><div class='output co'>#&gt; <span class='error'>Error in read.table(file = file, header = header, sep = sep, quote = quote,     dec = dec, fill = fill, comment.char = comment.char, ...): no lines available in input</span></div><div class='input'><span class='no'>f</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"external/severity.csv"</span>, <span class='kw'>package</span><span class='kw'>=</span><span class='st'>"agricolae"</span>)
-<span class='no'>severity</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span>(<span class='no'>f</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: file("") only supports open = "w+" and open = "w+b": using the former</span></div><div class='output co'>#&gt; <span class='error'>Error in read.table(file = file, header = header, sep = sep, quote = quote,     dec = dec, fill = fill, comment.char = comment.char, ...): no lines available in input</span></div><div class='input'><span class='no'>weather</span>[,<span class='fl'>1</span>]<span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='no'>weather</span>[,<span class='fl'>1</span>],<span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"%m/%d/%Y"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in as.Date(weather[, 1], format = "%m/%d/%Y"): object 'weather' not found</span></div><div class='input'><span class='co'># Parameters dates</span>
+<span class='no'>weather</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span>(<span class='no'>f</span>,<span class='kw'>header</span><span class='kw'>=</span><span class='fl'>FALSE</span>)
+<span class='no'>f</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"external/severity.csv"</span>, <span class='kw'>package</span><span class='kw'>=</span><span class='st'>"agricolae"</span>)
+<span class='no'>severity</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span>(<span class='no'>f</span>)
+<span class='no'>weather</span>[,<span class='fl'>1</span>]<span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='no'>weather</span>[,<span class='fl'>1</span>],<span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"%m/%d/%Y"</span>)
+<span class='co'># Parameters dates</span>
 <span class='no'>dates</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"2000-03-25"</span>,<span class='st'>"2000-04-09"</span>,<span class='st'>"2000-04-12"</span>,<span class='st'>"2000-04-16"</span>,<span class='st'>"2000-04-22"</span>)
 <span class='no'>dates</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='no'>dates</span>)
 <span class='no'>EmergDate</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='st'>'2000/01/19'</span>)
@@ -274,8 +312,9 @@ change with function as.Date()</p>
 <span class='no'>dates</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/as.Date.html'>as.Date</a></span>(<span class='no'>dates</span>)
 <span class='no'>NoReadingsH</span><span class='kw'>&lt;-</span> <span class='fl'>1</span>
 <span class='no'>RHthreshold</span> <span class='kw'>&lt;-</span> <span class='fl'>90</span>
-<span class='no'>WS</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/weatherSeverity.html'>weatherSeverity</a></span>(<span class='no'>weather</span>,<span class='no'>severity</span>,<span class='no'>dates</span>,<span class='no'>EmergDate</span>,<span class='no'>EndEpidDate</span>,
-<span class='no'>NoReadingsH</span>,<span class='no'>RHthreshold</span>)</div><div class='output co'>#&gt; <span class='error'>Error in apply(severity[, 4:8], 2, function(x) mean(x, na.rm = TRUE)): object 'severity' not found</span></div><div class='input'><span class='co'># Parameters Lateblight</span>
+<span class='no'>WS</span><span class='kw'>&lt;-</span><span class='fu'><a href='weatherSeverity.html'>weatherSeverity</a></span>(<span class='no'>weather</span>,<span class='no'>severity</span>,<span class='no'>dates</span>,<span class='no'>EmergDate</span>,<span class='no'>EndEpidDate</span>,
+<span class='no'>NoReadingsH</span>,<span class='no'>RHthreshold</span>)
+<span class='co'># Parameters Lateblight</span>
 <span class='no'>InocDate</span><span class='kw'>&lt;-</span><span class='st'>"2000-03-18"</span>
 <span class='no'>LGR</span> <span class='kw'>&lt;-</span> <span class='fl'>0.00410</span>
 <span class='no'>IniSpor</span> <span class='kw'>&lt;-</span> <span class='fl'>0</span>
@@ -287,50 +326,39 @@ change with function as.Date()</p>
 <span class='no'>ApplSys</span> <span class='kw'>&lt;-</span> <span class='st'>"NOFUNGICIDE"</span>
 <span class='no'>main</span><span class='kw'>&lt;-</span><span class='st'>"Cultivar: NICOLA"</span>
 <span class='co'>#--------------------------</span>
-<span class='no'>model</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/lateblight.html'>lateblight</a></span>(<span class='no'>WS</span>, <span class='no'>Cultivar</span>,<span class='no'>ApplSys</span>, <span class='no'>InocDate</span>, <span class='no'>LGR</span>,<span class='no'>IniSpor</span>,<span class='no'>SR</span>,<span class='no'>IE</span>, <span class='no'>LP</span>,
+<span class='no'>model</span><span class='kw'>&lt;-</span><span class='fu'>lateblight</span>(<span class='no'>WS</span>, <span class='no'>Cultivar</span>,<span class='no'>ApplSys</span>, <span class='no'>InocDate</span>, <span class='no'>LGR</span>,<span class='no'>IniSpor</span>,<span class='no'>SR</span>,<span class='no'>IE</span>, <span class='no'>LP</span>,
 <span class='kw'>MatTime</span><span class='kw'>=</span><span class='st'>'LATESEASON'</span>,<span class='no'>InMicCol</span>,<span class='kw'>main</span><span class='kw'>=</span><span class='no'>main</span>,<span class='kw'>type</span><span class='kw'>=</span><span class='st'>"l"</span>,<span class='kw'>xlim</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>65</span>,<span class='fl'>95</span>),<span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>1.5</span>,
-<span class='kw'>xlab</span><span class='kw'>=</span><span class='st'>"Time (days after emergence)"</span>, <span class='kw'>ylab</span><span class='kw'>=</span><span class='st'>"Severity (Percentage)"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in lateblight(WS, Cultivar, ApplSys, InocDate, LGR, IniSpor, SR,     IE, LP, MatTime = "LATESEASON", InMicCol, main = main, type = "l",     xlim = c(65, 95), lwd = 1.5, xlab = "Time (days after emergence)",     ylab = "Severity (Percentage)"): object 'WS' not found</span></div><div class='input'><span class='co'># reproduce graph</span>
-<span class='no'>x</span><span class='kw'>&lt;-</span> <span class='no'>model</span>$<span class='no'>Ofile</span>$<span class='no'>nday</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'model' not found</span></div><div class='input'><span class='no'>y</span><span class='kw'>&lt;-</span> <span class='no'>model</span>$<span class='no'>Ofile</span>$<span class='no'>SimSeverity</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'model' not found</span></div><div class='input'><span class='no'>w</span><span class='kw'>&lt;-</span> <span class='no'>model</span>$<span class='no'>Gfile</span>$<span class='no'>nday</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'model' not found</span></div><div class='input'><span class='no'>z</span><span class='kw'>&lt;-</span> <span class='no'>model</span>$<span class='no'>Gfile</span>$<span class='no'>MeanSeverity</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'model' not found</span></div><div class='input'><span class='no'>Min</span><span class='kw'>&lt;-</span><span class='no'>model</span>$<span class='no'>Gfile</span>$<span class='no'>MinObs</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'model' not found</span></div><div class='input'><span class='no'>Max</span><span class='kw'>&lt;-</span><span class='no'>model</span>$<span class='no'>Gfile</span>$<span class='no'>MaxObs</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'model' not found</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>x</span>,<span class='no'>y</span>,<span class='kw'>type</span><span class='kw'>=</span><span class='st'>"l"</span>,<span class='kw'>xlim</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>65</span>,<span class='fl'>95</span>),<span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>1.5</span>,<span class='kw'>xlab</span><span class='kw'>=</span><span class='st'>"Time (days after emergence)"</span>,
-<span class='kw'>ylab</span><span class='kw'>=</span><span class='st'>"Severity (Percentage)"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in plot(x, y, type = "l", xlim = c(65, 95), lwd = 1.5, xlab = "Time (days after emergence)",     ylab = "Severity (Percentage)"): object 'x' not found</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/points.html'>points</a></span>(<span class='no'>w</span>,<span class='no'>z</span>,<span class='kw'>col</span><span class='kw'>=</span><span class='st'>"blue"</span>,<span class='kw'>cex</span><span class='kw'>=</span><span class='fl'>1</span>,<span class='kw'>pch</span><span class='kw'>=</span><span class='fl'>19</span>)</div><div class='output co'>#&gt; <span class='error'>Error in points(w, z, col = "blue", cex = 1, pch = 19): object 'w' not found</span></div><div class='input'><span class='no'>npoints</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span>(<span class='no'>w</span>)</div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'w' not found</span></div><div class='input'><span class='kw'>for</span> ( <span class='no'>i</span> <span class='kw'>in</span> <span class='fl'>1</span>:<span class='no'>npoints</span>){
+<span class='kw'>xlab</span><span class='kw'>=</span><span class='st'>"Time (days after emergence)"</span>, <span class='kw'>ylab</span><span class='kw'>=</span><span class='st'>"Severity (Percentage)"</span>)</div><div class='img'><img src='lateblight-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># reproduce graph</span>
+<span class='no'>x</span><span class='kw'>&lt;-</span> <span class='no'>model</span>$<span class='no'>Ofile</span>$<span class='no'>nday</span>
+<span class='no'>y</span><span class='kw'>&lt;-</span> <span class='no'>model</span>$<span class='no'>Ofile</span>$<span class='no'>SimSeverity</span>
+<span class='no'>w</span><span class='kw'>&lt;-</span> <span class='no'>model</span>$<span class='no'>Gfile</span>$<span class='no'>nday</span>
+<span class='no'>z</span><span class='kw'>&lt;-</span> <span class='no'>model</span>$<span class='no'>Gfile</span>$<span class='no'>MeanSeverity</span>
+<span class='no'>Min</span><span class='kw'>&lt;-</span><span class='no'>model</span>$<span class='no'>Gfile</span>$<span class='no'>MinObs</span>
+<span class='no'>Max</span><span class='kw'>&lt;-</span><span class='no'>model</span>$<span class='no'>Gfile</span>$<span class='no'>MaxObs</span>
+<span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>x</span>,<span class='no'>y</span>,<span class='kw'>type</span><span class='kw'>=</span><span class='st'>"l"</span>,<span class='kw'>xlim</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>65</span>,<span class='fl'>95</span>),<span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>1.5</span>,<span class='kw'>xlab</span><span class='kw'>=</span><span class='st'>"Time (days after emergence)"</span>,
+<span class='kw'>ylab</span><span class='kw'>=</span><span class='st'>"Severity (Percentage)"</span>)</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/points.html'>points</a></span>(<span class='no'>w</span>,<span class='no'>z</span>,<span class='kw'>col</span><span class='kw'>=</span><span class='st'>"blue"</span>,<span class='kw'>cex</span><span class='kw'>=</span><span class='fl'>1</span>,<span class='kw'>pch</span><span class='kw'>=</span><span class='fl'>19</span>)</div><div class='input'><span class='no'>npoints</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span>(<span class='no'>w</span>)
+<span class='kw'>for</span> ( <span class='no'>i</span> <span class='kw'>in</span> <span class='fl'>1</span>:<span class='no'>npoints</span>){
 <span class='fu'><a href='https://rdrr.io/r/graphics/segments.html'>segments</a></span>(<span class='no'>w</span>[<span class='no'>i</span>],<span class='no'>Min</span>[<span class='no'>i</span>],<span class='no'>w</span>[<span class='no'>i</span>],<span class='no'>Max</span>[<span class='no'>i</span>],<span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>1.5</span>,<span class='kw'>col</span><span class='kw'>=</span><span class='st'>"blue"</span>)
-}</div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'npoints' not found</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/legend.html'>legend</a></span>(<span class='st'>"topleft"</span>,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Disease progress curves"</span>,<span class='st'>"Weather-Severity"</span>),
-<span class='kw'>title</span><span class='kw'>=</span><span class='st'>"Description"</span>,<span class='kw'>lty</span><span class='kw'>=</span><span class='fl'>1</span>,<span class='kw'>pch</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>3</span>,<span class='fl'>19</span>),<span class='kw'>col</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"black"</span>,<span class='st'>"blue"</span>))</div><div class='output co'>#&gt; <span class='error'>Error in strwidth(legend, units = "user", cex = cex, font = text.font): plot.new has not been called yet</span></div><div class='input'>
+}</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/legend.html'>legend</a></span>(<span class='st'>"topleft"</span>,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Disease progress curves"</span>,<span class='st'>"Weather-Severity"</span>),
+<span class='kw'>title</span><span class='kw'>=</span><span class='st'>"Description"</span>,<span class='kw'>lty</span><span class='kw'>=</span><span class='fl'>1</span>,<span class='kw'>pch</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>3</span>,<span class='fl'>19</span>),<span class='kw'>col</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"black"</span>,<span class='st'>"blue"</span>))</div><div class='img'><img src='lateblight-2.png' alt='' width='700' height='433' /></div><div class='input'>
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#details">Details</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#references">References</a></li>
-      <li><a href="#note">Note</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>Jorge L. Andrade-Piedra (1) (j.andrade@cgar.org),
-Gregory A. Forbes (1) (g.forbes@cgiar.org),
-Robert J. Hijmans (2) (rhijmans@ucdavis.edu),
-William E. Fry (3) (wef1@cornell.edu)
-Translation from C language into SAS language:  G.A. Forbes
-Modifications: J.L. Andrade-Piedra  and R.J. Hijmans
-Translation from SAS into R: Felipe de Mendiburu (1)
-(1)	International Potato Center, P.O. Box 1558, Lima 12, Peru
-(2)	University of California, One Shields Avenue, Davis, California 95616, USA
-(3)	Cornell University, 351 Plant Science, Ithaca, NY 14853, USA</p>
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
 
       <footer>
       <div class="copyright">
-  <p>Developed by Felipe de Mendiburu.</p>
+  <p>Developed by Felipe de Mendiburu, Muhammad Yaseen.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>

@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -35,7 +39,7 @@
 
 <!-- docsearch -->
 <script src="../docsearch.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.3/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
 <link href="../docsearch.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
@@ -43,9 +47,8 @@
 
 <meta property="og:title" content="Design of experiments for a factorial — design.ab" />
 <meta property="og:description" content="It generates a design of blocks, randomize and latin square for combined n.
-  factors uses the methods of number generation in R. The seed is by
-  set.seed(seed, kinds)." />
-<meta name="twitter:card" content="summary" />
+factors uses the methods of number generation in R. The seed is by
+set.seed(seed, kinds)." />
 
 
 
@@ -73,7 +76,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -87,7 +90,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">agricolae</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">1.3.3</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">1.4.0</span>
       </span>
     </div>
 
@@ -107,12 +110,28 @@
     Reference
   </a>
 </li>
-<li>
-  <a href="../articles/Introagricolae.html">
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fa fa-file-o"></span>
      
     Tutorial
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/Introduction.html">Introduction to agricolae</a>
+    </li>
+    <li>
+      <a href="../articles/DescriptiveStats.html">Descriptive Statistics with agricolae</a>
+    </li>
+    <li>
+      <a href="../articles/ExperimentalDesign.html">Experimental Design with agricolae</a>
+    </li>
+    <li>
+      <a href="../articles/MultipleComparisons.html">Multiple Comparisons with agricolae</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">
@@ -150,18 +169,26 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Design of experiments for a factorial</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/myaseen208/agricolae/blob/master/R/design.ab.R'><code>R/design.ab.R</code></a></small>
     <div class="hidden name"><code>design.ab.Rd</code></div>
     </div>
 
     <div class="ref-description">
     <p>It generates a design of blocks, randomize and latin square for combined n.
-  factors uses the methods of number generation in R. The seed is by
-  set.seed(seed, kinds).</p>
+factors uses the methods of number generation in R. The seed is by
+set.seed(seed, kinds).</p>
     </div>
 
-    <pre class="usage"><span class='fu'>design.ab</span>(<span class='no'>trt</span>, <span class='no'>r</span>, <span class='kw'>serie</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>design</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"rcbd"</span>,<span class='st'>"crd"</span>,<span class='st'>"lsd"</span>),
-<span class='kw'>seed</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>kinds</span> <span class='kw'>=</span> <span class='st'>"Super-Duper"</span>,<span class='kw'>first</span><span class='kw'>=</span><span class='fl'>TRUE</span>,<span class='kw'>randomization</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>design.ab</span>(
+  <span class='no'>trt</span>,
+  <span class='kw'>r</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>serie</span> <span class='kw'>=</span> <span class='fl'>2</span>,
+  <span class='kw'>design</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"rcbd"</span>, <span class='st'>"crd"</span>, <span class='st'>"lsd"</span>),
+  <span class='kw'>seed</span> <span class='kw'>=</span> <span class='fl'>0</span>,
+  <span class='kw'>kinds</span> <span class='kw'>=</span> <span class='st'>"Super-Duper"</span>,
+  <span class='kw'>first</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>randomization</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -200,33 +227,36 @@
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    
+
+<dt>parameters</dt><dd><p>Design parameters</p></dd> <dt>book</dt><dd><p>Fieldbook</p></dd>
+
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>kinds &lt;- c("Wichmann-Hill", "Marsaglia-Multicarry", "Super-Duper",
-  "Mersenne-Twister", "Knuth-TAOCP", "user-supplied",  "Knuth-TAOCP-2002",
-  "default" )</p>
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p></p>
-<dt>parameters</dt><dd><p>Design parameters</p></dd>
-  <dt>book</dt><dd><p>Fieldbook</p></dd>
-
+"Mersenne-Twister", "Knuth-TAOCP", "user-supplied", "Knuth-TAOCP-2002",
+"default" )</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Introduction to Experimental Statistics. 
-Ching Chun Li. McGraw-Hill Book Company, INC, New. York, 1964</p>
+    <p>Introduction to Experimental Statistics.  Ching Chun Li.
+McGraw-Hill Book Company, INC, New. York, 1964</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/design.split.html'>design.split</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.alpha.html'>design.alpha</a></code>,<code><a href='https://rdrr.io/pkg/agricolae/man/design.bib.html'>design.bib</a></code>, 
-<code><a href='https://rdrr.io/pkg/agricolae/man/design.crd.html'>design.crd</a> </code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.cyclic.html'>design.cyclic</a> </code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.dau.html'>design.dau</a> </code>,
-<code><a href='https://rdrr.io/pkg/agricolae/man/design.graeco.html'>design.graeco</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.lattice.html'>design.lattice</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.lsd.html'>design.lsd</a></code>,
-<code><a href='https://rdrr.io/pkg/agricolae/man/design.rcbd.html'>design.rcbd</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.strip.html'>design.strip</a></code></p></div>
+    <div class='dont-index'><p><code><a href='design.split.html'>design.split</a></code>,
+<code><a href='design.alpha.html'>design.alpha</a></code>,<code><a href='design.bib.html'>design.bib</a></code>, <code><a href='design.crd.html'>design.crd</a>
+</code>, <code><a href='design.cyclic.html'>design.cyclic</a> </code>, <code><a href='design.dau.html'>design.dau</a> </code>,
+<code><a href='design.graeco.html'>design.graeco</a></code>, <code><a href='design.lattice.html'>design.lattice</a></code>,
+<code><a href='design.lsd.html'>design.lsd</a></code>, <code><a href='design.rcbd.html'>design.rcbd</a></code>,
+<code><a href='design.strip.html'>design.strip</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># factorial 3 x 2 with 3 blocks</span>
+    <pre class="examples"><div class='input'>
+<span class='co'># factorial 3 x 2 with 3 blocks</span>
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='no'>trt</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>3</span>,<span class='fl'>2</span>) <span class='co'># factorial 3x2</span>
-<span class='no'>outdesign</span> <span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/design.ab.html'>design.ab</a></span>(<span class='no'>trt</span>, <span class='kw'>r</span><span class='kw'>=</span><span class='fl'>3</span>, <span class='kw'>serie</span><span class='kw'>=</span><span class='fl'>2</span>)
+<span class='no'>outdesign</span> <span class='kw'>&lt;-</span><span class='fu'>design.ab</span>(<span class='no'>trt</span>, <span class='kw'>r</span><span class='kw'>=</span><span class='fl'>3</span>, <span class='kw'>serie</span><span class='kw'>=</span><span class='fl'>2</span>)
 <span class='no'>book</span><span class='kw'>&lt;-</span><span class='no'>outdesign</span>$<span class='no'>book</span>
 <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>book</span>,<span class='fl'>10</span>) <span class='co'># print of the field book</span></div><div class='output co'>#&gt;    plots block A B
 #&gt; 1    101     1 2 2
@@ -240,7 +270,7 @@ Ching Chun Li. McGraw-Hill Book Company, INC, New. York, 1964</p>
 #&gt; 9    109     2 2 1
 #&gt; 10   110     2 1 2</div><div class='input'><span class='co'># factorial 2 x 2 x 2 with 5 replications in completely randomized design.</span>
 <span class='no'>trt</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>2</span>,<span class='fl'>2</span>)
-<span class='no'>outdesign</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/design.ab.html'>design.ab</a></span>(<span class='no'>trt</span>, <span class='kw'>r</span><span class='kw'>=</span><span class='fl'>5</span>, <span class='kw'>serie</span><span class='kw'>=</span><span class='fl'>2</span>,<span class='kw'>design</span><span class='kw'>=</span><span class='st'>"crd"</span>)
+<span class='no'>outdesign</span><span class='kw'>&lt;-</span><span class='fu'>design.ab</span>(<span class='no'>trt</span>, <span class='kw'>r</span><span class='kw'>=</span><span class='fl'>5</span>, <span class='kw'>serie</span><span class='kw'>=</span><span class='fl'>2</span>,<span class='kw'>design</span><span class='kw'>=</span><span class='st'>"crd"</span>)
 <span class='no'>book</span><span class='kw'>&lt;-</span><span class='no'>outdesign</span>$<span class='no'>book</span>
 <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>book</span>)</div><div class='output co'>#&gt;    plots r A B C
 #&gt; 1    101 1 1 1 2
@@ -284,7 +314,7 @@ Ching Chun Li. McGraw-Hill Book Company, INC, New. York, 1964</p>
 #&gt; 39   139 5 2 1 2
 #&gt; 40   140 5 1 2 1</div><div class='input'><span class='co'># factorial 3 x 3 in latin square design.</span>
 <span class='no'>trt</span> <span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>3</span>,<span class='fl'>3</span>)
-<span class='no'>outdesign</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/design.ab.html'>design.ab</a></span>(<span class='no'>trt</span>, <span class='kw'>serie</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>design</span><span class='kw'>=</span><span class='st'>"lsd"</span>)
+<span class='no'>outdesign</span><span class='kw'>&lt;-</span><span class='fu'>design.ab</span>(<span class='no'>trt</span>, <span class='kw'>serie</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>design</span><span class='kw'>=</span><span class='st'>"lsd"</span>)
 <span class='no'>book</span><span class='kw'>&lt;-</span><span class='no'>outdesign</span>$<span class='no'>book</span>
 <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>book</span>)</div><div class='output co'>#&gt;    plots row col A B
 #&gt; 1    101   1   1 3 3
@@ -367,32 +397,24 @@ Ching Chun Li. McGraw-Hill Book Company, INC, New. York, 1964</p>
 #&gt; 78   906   9   6 2 1
 #&gt; 79   907   9   7 1 2
 #&gt; 80   908   9   8 2 3
-#&gt; 81   909   9   9 1 3</div></pre>
+#&gt; 81   909   9   9 1 3</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#details">Details</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#references">References</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>Felipe de Mendiburu</p>
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
 
       <footer>
       <div class="copyright">
-  <p>Developed by Felipe de Mendiburu.</p>
+  <p>Developed by Felipe de Mendiburu, Muhammad Yaseen.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>

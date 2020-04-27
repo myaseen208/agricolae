@@ -1,3 +1,36 @@
+#' Nonadditivity model test
+#' 
+#' The resistance for the transformable nonadditivity, due to J. W. Tukey, is
+#' based on the detection of a curvilinear relation between y-est(y) and
+#' est(y). A freedom degree for the transformable nonadditivity.
+#' 
+#' Only two factor: Block and treatment or factor 1 and factor 2.
+#' 
+#' @param y Answer of the experimental unit
+#' @param factor1 Firts treatment applied to each experimental unit
+#' @param factor2 Second treatment applied to each experimental unit
+#' @param df Degrees of freedom of the experimental error
+#' @param MSerror Means square error of the experimental
+#' @return P, Q and non-additivity analysis of variance
+#' @author Felipe de Mendiburu
+#' @references 1. Steel, R.; Torri,J; Dickey, D.(1997) Principles and
+#' Procedures of Statistics A Biometrical Approach
+#' 
+#' 2. George E.P. Box; J. Stuart Hunter and William G. Hunter.  Statistics for
+#' experimenters.  Wile Series in probability and statistics
+#' @keywords models
+#' @importFrom stats residuals coef
+#' @export
+#' @examples
+#' 
+#' library(agricolae)
+#' data(potato )
+#' potato[,1]<-as.factor(potato[,1])
+#' model<-lm(cutting ~ date + variety,potato)
+#' df<-df.residual(model)
+#' MSerror<-deviance(model)/df
+#' analysis<-with(potato,nonadditivity(cutting, date, variety, df, MSerror))
+#' 
 nonadditivity <-
 function (y,factor1, factor2, df, MSerror)
 {

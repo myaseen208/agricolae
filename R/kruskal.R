@@ -1,3 +1,43 @@
+#' Kruskal Wallis test and multiple comparison of treatments.
+#' 
+#' It makes the multiple comparison with Kruskal-Wallis. The alpha parameter by
+#' default is 0.05. Post hoc test is using the criterium Fisher's least
+#' significant difference. The adjustment methods include the Bonferroni
+#' correction and others.
+#' 
+#' For equal or different repetition.\cr For the adjustment methods, see the
+#' function p.adjusted.\cr p-adj = "none" is t-student.
+#' 
+#' @param y response
+#' @param trt treatment
+#' @param alpha level signification
+#' @param p.adj Method for adjusting p values (see p.adjust)
+#' @param group TRUE or FALSE
+#' @param main Title
+#' @param console logical, print output
+#' @return \item{statistics}{Statistics of the model} \item{parameters}{Design
+#' parameters} \item{means}{Statistical summary of the study variable}
+#' \item{comparison}{Comparison between treatments} \item{groups}{Formation of
+#' treatment groups}
+#' @author Felipe de Mendiburu
+#' @seealso \code{\link{BIB.test}}, \code{\link{DAU.test}},
+#' \code{\link{duncan.test}}, \code{\link{durbin.test}},
+#' \code{\link{friedman}}, \code{\link{HSD.test}}, \code{\link{LSD.test}},
+#' \code{\link{Median.test}}, \code{\link{PBIB.test}}, \code{\link{REGW.test}},
+#' \code{\link{scheffe.test}}, \code{\link{SNK.test}},
+#' \code{\link{waerden.test}}, \code{\link{waller.test}},
+#' \code{\link{plot.group}}
+#' @references Practical Nonparametrics Statistics. W.J. Conover, 1999
+#' @keywords nonparametric
+#' @export
+#' @examples
+#' 
+#' library(agricolae)
+#' data(corn)
+#' str(corn)
+#' comparison<-with(corn,kruskal(observation,method,group=TRUE, main="corn"))
+#' comparison<-with(corn,kruskal(observation,method,p.adj="bon",group=FALSE, main="corn"))
+#' 
 kruskal <-
   function (y, trt, alpha = 0.05, p.adj = c("none", "holm", "hommel", "hochberg", 
     "bonferroni", "BH", "BY", "fdr"), group = TRUE, main = NULL,console=FALSE) 

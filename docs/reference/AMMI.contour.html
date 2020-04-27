@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -35,15 +39,17 @@
 
 <!-- docsearch -->
 <script src="../docsearch.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.3/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
 <link href="../docsearch.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
 
 
 <meta property="og:title" content="AMMI contour — AMMI.contour" />
-<meta property="og:description" content="Draws a polygon or a circumference around the center of the Biplot with a proportional radio at the longest distance of the genotype." />
-<meta name="twitter:card" content="summary" />
+<meta property="og:description" content="Draws a polygon or a circumference around the center of the Biplot with a
+proportional radio at the longest distance of the genotype.
+First, it is necessary to execute the AMMI function. It is only valid for
+the BIPLOT function but not for the TRIPLOT one." />
 
 
 
@@ -71,7 +77,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -85,7 +91,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">agricolae</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">1.3.3</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">1.4.0</span>
       </span>
     </div>
 
@@ -105,12 +111,28 @@
     Reference
   </a>
 </li>
-<li>
-  <a href="../articles/Introagricolae.html">
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fa fa-file-o"></span>
      
     Tutorial
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/Introduction.html">Introduction to agricolae</a>
+    </li>
+    <li>
+      <a href="../articles/DescriptiveStats.html">Descriptive Statistics with agricolae</a>
+    </li>
+    <li>
+      <a href="../articles/ExperimentalDesign.html">Experimental Design with agricolae</a>
+    </li>
+    <li>
+      <a href="../articles/MultipleComparisons.html">Multiple Comparisons with agricolae</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">
@@ -148,48 +170,44 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>AMMI contour</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/myaseen208/agricolae/blob/master/R/AMMI.contour.R'><code>R/AMMI.contour.R</code></a></small>
     <div class="hidden name"><code>AMMI.contour.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Draws a polygon or a circumference around the center of the Biplot with a proportional radio at the longest distance of the genotype.</p>
+    <p>Draws a polygon or a circumference around the center of the Biplot with a
+proportional radio at the longest distance of the genotype.</p>
+<p>First, it is necessary to execute the AMMI function. It is only valid for
+the BIPLOT function but not for the TRIPLOT one.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>AMMI.contour</span>(<span class='no'>model</span>, <span class='no'>distance</span>, <span class='no'>shape</span>, <span class='no'>...</span>)
-
-<span class='co'># S3 method for contour.default</span>
-<span class='fu'><a href='AMMI.html'>AMMI</a></span>(<span class='no'>model</span>, <span class='no'>distance</span>, <span class='no'>shape</span>, <span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>AMMI.contour</span>(<span class='no'>model</span>, <span class='no'>distance</span>, <span class='no'>shape</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th><strong>model</strong></th>
+      <th>model</th>
       <td><p>Object</p></td>
     </tr>
     <tr>
-      <th><strong>distance</strong></th>
+      <th>distance</th>
       <td><p>Circumference radius &gt;0 and &lt;=1</p></td>
     </tr>
     <tr>
-      <th><strong>shape</strong></th>
+      <th>shape</th>
       <td><p>Numerical, relating to the shape of the polygon outline.</p></td>
     </tr>
     <tr>
-      <th><strong>...</strong></th>
+      <th>...</th>
       <td><p>Parameters corresponding to the R lines function</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p><strong>Genotypes</strong> within and outside the area.</p>
+    <p><strong>Genotypes</strong> Genotypes within and outside the area.</p>
 <p><strong>distance</strong> Distance from genotype to origin (0,0)</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>First, it is necessary to execute the AMMI function.
-It is only valid for the BIPLOT function but not for the TRIPLOT one.</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
     <p>Complement graphics AMMI</p>
@@ -207,8 +225,8 @@ It is only valid for the BIPLOT function but not for the TRIPLOT one.</p>
 <span class='no'>Yield</span> <span class='kw'>&lt;-</span> <span class='no'>sinRepAmmi</span>$<span class='no'>YLD</span>
 <span class='no'>REP</span> <span class='kw'>&lt;-</span> <span class='fl'>3</span>
 <span class='no'>MSerror</span> <span class='kw'>&lt;-</span> <span class='fl'>93.24224</span>
-<span class='no'>model</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='AMMI.html'>AMMI</a></span>(<span class='no'>Environment</span>, <span class='no'>Genotype</span>, <span class='no'>REP</span>, <span class='no'>Yield</span>, <span class='no'>MSerror</span>)
-<span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>model</span>)</div><div class='input'><span class='fu'>AMMI.contour</span>(<span class='no'>model</span>,<span class='kw'>distance</span><span class='kw'>=</span><span class='fl'>0.7</span>,<span class='kw'>shape</span><span class='kw'>=</span><span class='fl'>8</span>,<span class='kw'>col</span><span class='kw'>=</span><span class='st'>"red"</span>,<span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>2</span>,<span class='kw'>lty</span><span class='kw'>=</span><span class='fl'>5</span>)</div><div class='img'><img src='AMMI.contour-1.png' alt='' width='700' height='433' /></div><div class='output co'>#&gt; 
+<span class='no'>model</span><span class='kw'>&lt;-</span><span class='fu'><a href='AMMI.html'>AMMI</a></span>(<span class='no'>Environment</span>, <span class='no'>Genotype</span>, <span class='no'>REP</span>, <span class='no'>Yield</span>, <span class='no'>MSerror</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>model</span>)</div><div class='input'><span class='fu'>AMMI.contour</span>(<span class='no'>model</span>,<span class='kw'>distance</span><span class='kw'>=</span><span class='fl'>0.7</span>,<span class='kw'>shape</span><span class='kw'>=</span><span class='fl'>8</span>,<span class='kw'>col</span><span class='kw'>=</span><span class='st'>"red"</span>,<span class='kw'>lwd</span><span class='kw'>=</span><span class='fl'>2</span>,<span class='kw'>lty</span><span class='kw'>=</span><span class='fl'>5</span>)</div><div class='img'><img src='AMMI.contour-1.png' alt='' width='700' height='433' /></div><div class='output co'>#&gt; 
 #&gt; Limit, radio: 2.303589
 #&gt; Genotype  in: 41
 #&gt; Genotype out: 9 
@@ -272,36 +290,31 @@ It is only valid for the BIPLOT function but not for the TRIPLOT one.</p>
 #&gt; 7  1.0677117
 #&gt; 8  2.3695614
 #&gt; 9  3.1242502
-#&gt; </div></pre>
+#&gt; </div><div class='input'>
+
+<span class='no'>AMMI.contour</span> <span class='kw'>&lt;-</span>
+  <span class='kw'>function</span>(<span class='no'>model</span>,<span class='no'>distance</span>,<span class='no'>shape</span>,<span class='no'>...</span>){
+    <span class='fu'><a href='https://rdrr.io/r/base/UseMethod.html'>UseMethod</a></span>(<span class='st'>"AMMI.contour"</span>)
+  }
+
+<span class='co'>#' @export</span>
+<span class='co'>#' @rdname AMMI.contour</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#details">Details</a></li>
-      <li><a href="#note">Note</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    
-<ol>
-<li><p>Felipe de Mendiburu (<a href='mailto:fmendiburu@lamolina.edu.pe'>fmendiburu@lamolina.edu.pe</a>)</p></li>
-</ol>
-
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
 
       <footer>
       <div class="copyright">
-  <p>Developed by Felipe de Mendiburu.</p>
+  <p>Developed by Felipe de Mendiburu, Muhammad Yaseen.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>

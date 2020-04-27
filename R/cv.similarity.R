@@ -1,3 +1,25 @@
+#' Coefficient of the similarity matrix variation
+#' 
+#' This process consists of finding the coefficient of the distances of
+#' similarity of binary tables (1 and 0) as used for scoring molecular marker
+#' data for presence and absence of PCR amplification products.
+#' 
+#' 
+#' @param A matrix of binary data
+#' @return Returns the coefficient of variation of the similarity model
+#' @author Felipe de Mendiburu
+#' @seealso \code{\link{similarity}}, \code{\link{resampling.cv} }
+#' @keywords multivariate
+#' @importFrom stats sd
+#' @export
+#' @examples
+#' 
+#' # molecular markers.
+#' library(agricolae)
+#' data(markers)
+#' cv<-cv.similarity(markers)
+#' 
+#' 
 cv.similarity <-
 function(A) {
 nc<-ncol(A)

@@ -1,3 +1,34 @@
+#' Plotting the ogive from a histogram
+#' 
+#' It plots the cumulative relative .frequencies with the intervals of classes
+#' defined in the histogram.
+#' 
+#' 
+#' @param histogram object created by the function hist() or graph.freq()
+#' @param type what type of plot should be drawn. See plot()
+#' @param xlab x labels
+#' @param ylab y labels
+#' @param axes TRUE or FALSE
+#' @param las numeric in 0,1,2,3; the style of axis labels. see plot()
+#' @param \dots Parameters of the plot()
+#' @return Ogive points.
+#' @author Felipe de Mendiburu
+#' @seealso \code{\link{polygon.freq}}, \code{\link{table.freq}},
+#' \code{\link{stat.freq}}, \code{\link{intervals.freq}},
+#' \code{\link{sturges.freq}}, \code{\link{join.freq}},
+#' \code{\link{graph.freq}}, \code{\link{normal.freq} }
+#' @keywords aplot
+#' @importFrom graphics axis
+#' @export
+#' @examples
+#' 
+#' library(agricolae)
+#' data(growth)
+#' h<-graph.freq(growth$height,plot=FALSE)
+#' points<-ogive.freq(h,col="red",frame=FALSE,
+#' xlab="Height", ylab="Accumulated relative frequency", main="ogive")
+#' plot(points,type="b",pch=16,las=1,bty="l")
+#' 
 ogive.freq <-
 function(histogram,type="",xlab="",ylab="",axes="",las=1,...)
 {

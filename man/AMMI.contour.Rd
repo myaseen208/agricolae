@@ -2,39 +2,36 @@
 % Please edit documentation in R/AMMI.contour.R
 \name{AMMI.contour}
 \alias{AMMI.contour}
-\alias{AMMI.contour.default}
 \title{AMMI contour}
 \usage{
 AMMI.contour(model, distance, shape, ...)
-
-\method{AMMI}{contour.default}(model, distance, shape, ...)
 }
 \arguments{
-\item{\strong{model}}{Object}
+\item{model}{Object}
 
-\item{\strong{distance}}{Circumference radius >0 and <=1}
+\item{distance}{Circumference radius >0 and <=1}
 
-\item{\strong{shape}}{Numerical, relating to the shape of the polygon outline.}
+\item{shape}{Numerical, relating to the shape of the polygon outline.}
 
-\item{\strong{\dots}}{Parameters corresponding to the R lines function}
+\item{\dots}{Parameters corresponding to the R lines function}
 }
 \value{
-\strong{Genotypes} within and outside the area.
+\strong{Genotypes} Genotypes within and outside the area.
 
 \strong{distance} Distance from genotype to origin (0,0)
 }
 \description{
-Draws a polygon or a circumference around the center of the Biplot with a proportional radio at the longest distance of the genotype.
-}
-\details{
-First, it is necessary to execute the AMMI function.
-It is only valid for the BIPLOT function but not for the TRIPLOT one.
+Draws a polygon or a circumference around the center of the Biplot with a
+proportional radio at the longest distance of the genotype.
+
+First, it is necessary to execute the AMMI function. It is only valid for
+the BIPLOT function but not for the TRIPLOT one.
 }
 \note{
 Complement graphics AMMI
 }
 \examples{
-                  
+
 library(agricolae)
 # see AMMI.
 data(sinRepAmmi)
@@ -43,9 +40,18 @@ Genotype <- sinRepAmmi$GEN
 Yield <- sinRepAmmi$YLD
 REP <- 3
 MSerror <- 93.24224
-model <- AMMI(Environment, Genotype, REP, Yield, MSerror)
+model<-AMMI(Environment, Genotype, REP, Yield, MSerror)
 plot(model)
 AMMI.contour(model,distance=0.7,shape=8,col="red",lwd=2,lty=5)
+
+
+AMMI.contour <- 
+  function(model,distance,shape,...){
+    UseMethod("AMMI.contour")
+  }
+
+#' @export
+#' @rdname AMMI.contour
 }
 \seealso{
 \code{\link{AMMI}}
@@ -53,6 +59,7 @@ AMMI.contour(model,distance=0.7,shape=8,col="red",lwd=2,lty=5)
 \author{
 \enumerate{
          \item Felipe de Mendiburu (\email{fmendiburu@lamolina.edu.pe})
+         \item Muhammad Yaseen (\email{myaseen208@gmail.com})
          }
 }
-\keyword{plot}
+\keyword{aplot}

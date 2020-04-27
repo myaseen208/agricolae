@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -35,7 +39,7 @@
 
 <!-- docsearch -->
 <script src="../docsearch.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.3/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
 <link href="../docsearch.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
@@ -46,7 +50,6 @@
 to analyze main effects and genotype by environment (GEN, ENV) interactions in 
 multilocation variety trials. Furthermore, this function generates data to biplot, triplot 
 graphs and analysis." />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -74,7 +77,7 @@ graphs and analysis." />
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -88,7 +91,7 @@ graphs and analysis." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">agricolae</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">1.3.3</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">1.4.0</span>
       </span>
     </div>
 
@@ -108,12 +111,28 @@ graphs and analysis." />
     Reference
   </a>
 </li>
-<li>
-  <a href="../articles/Introagricolae.html">
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fa fa-file-o"></span>
      
     Tutorial
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/Introduction.html">Introduction to agricolae</a>
+    </li>
+    <li>
+      <a href="../articles/DescriptiveStats.html">Descriptive Statistics with agricolae</a>
+    </li>
+    <li>
+      <a href="../articles/ExperimentalDesign.html">Experimental Design with agricolae</a>
+    </li>
+    <li>
+      <a href="../articles/MultipleComparisons.html">Multiple Comparisons with agricolae</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">
@@ -151,7 +170,7 @@ graphs and analysis." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>AMMI Analysis</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/myaseen208/agricolae/blob/master/R/AMMI.R'><code>R/AMMI.R</code></a></small>
     <div class="hidden name"><code>AMMI.Rd</code></div>
     </div>
 
@@ -162,40 +181,37 @@ multilocation variety trials. Furthermore, this function generates data to biplo
 graphs and analysis.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>AMMI</span>(<span class='no'>ENV</span>, <span class='no'>GEN</span>, <span class='no'>REP</span>, <span class='no'>Y</span>, <span class='kw'>MSE</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>console</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>PC</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-
-<span class='co'># S3 method for default</span>
-<span class='fu'>AMMI</span>(<span class='no'>ENV</span>, <span class='no'>GEN</span>, <span class='no'>REP</span>, <span class='no'>Y</span>, <span class='kw'>MSE</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>console</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>PC</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>AMMI</span>(<span class='no'>ENV</span>, <span class='no'>GEN</span>, <span class='no'>REP</span>, <span class='no'>Y</span>, <span class='kw'>MSE</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='kw'>console</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>PC</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th><strong>ENV</strong></th>
+      <th>ENV</th>
       <td><p>Environment</p></td>
     </tr>
     <tr>
-      <th><strong>GEN</strong></th>
+      <th>GEN</th>
       <td><p>Genotype</p></td>
     </tr>
     <tr>
-      <th><strong>REP</strong></th>
+      <th>REP</th>
       <td><p>Replication</p></td>
     </tr>
     <tr>
-      <th><strong>Y</strong></th>
+      <th>Y</th>
       <td><p>Response</p></td>
     </tr>
     <tr>
-      <th><strong>MSE</strong></th>
+      <th>MSE</th>
       <td><p>Mean Square Error</p></td>
     </tr>
     <tr>
-      <th><strong>console</strong></th>
+      <th>console</th>
       <td><p>ouput TRUE or FALSE</p></td>
     </tr>
     <tr>
-      <th><strong>PC</strong></th>
+      <th>PC</th>
       <td><p>Principal components ouput TRUE or FALSE</p></td>
     </tr>
     </table>
@@ -213,109 +229,23 @@ graphs and analysis.</p>
     <p>additional graphics see help(plot.AMMI).</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Full replications</span>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
-<span class='co'># Example 1</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>plrv</span>)
-<span class='no'>model</span><span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>plrv</span>,<span class='fu'>AMMI</span>(<span class='no'>Locality</span>, <span class='no'>Genotype</span>, <span class='no'>Rep</span>, <span class='no'>Yield</span>, <span class='kw'>console</span><span class='kw'>=</span><span class='fl'>FALSE</span>))
-<span class='no'>model</span>$<span class='no'>ANOVA</span></div><div class='output co'>#&gt; Analysis of Variance Table
-#&gt; 
-#&gt; Response: Y
-#&gt;            Df Sum Sq Mean Sq  F value    Pr(&gt;F)    
-#&gt; ENV         5 122284 24456.9 257.0382  9.08e-12 ***
-#&gt; REP(ENV)   12   1142    95.1   2.5694  0.002889 ** 
-#&gt; GEN        27  17533   649.4  17.5359 &lt; 2.2e-16 ***
-#&gt; ENV:GEN   135  23762   176.0   4.7531 &lt; 2.2e-16 ***
-#&gt; Residuals 324  11998    37.0                       
-#&gt; ---
-#&gt; Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</div><div class='input'><span class='co'># see help(plot.AMMI)</span>
-<span class='co'># biplot</span>
-<span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>model</span>)</div><div class='img'><img src='AMMI-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># triplot PC 1,2,3</span>
-<span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>model</span>, <span class='kw'>type</span><span class='kw'>=</span><span class='fl'>2</span>, <span class='kw'>number</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='img'><img src='AMMI-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># biplot PC1 vs Yield</span>
-<span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>model</span>, <span class='kw'>first</span><span class='kw'>=</span><span class='fl'>0</span>,<span class='kw'>second</span><span class='kw'>=</span><span class='fl'>1</span>, <span class='kw'>number</span><span class='kw'>=</span><span class='fl'>TRUE</span>)</div><div class='img'><img src='AMMI-3.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># Example 2</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>CIC</span>)
-<span class='no'>data1</span><span class='kw'>&lt;-</span><span class='no'>CIC</span>$<span class='no'>comas</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>6</span>,<span class='fl'>7</span>,<span class='fl'>17</span>,<span class='fl'>18</span>)]
-<span class='no'>data2</span><span class='kw'>&lt;-</span><span class='no'>CIC</span>$<span class='no'>oxapampa</span>[,<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>6</span>,<span class='fl'>7</span>,<span class='fl'>19</span>,<span class='fl'>20</span>)]
-<span class='no'>cic</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/cbind.html'>rbind</a></span>(<span class='no'>data1</span>,<span class='no'>data2</span>)
-<span class='no'>model</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>cic</span>,<span class='fu'>AMMI</span>(<span class='no'>Locality</span>, <span class='no'>Genotype</span>, <span class='no'>Rep</span>, <span class='no'>relative</span>))</div><div class='output co'>#&gt; 
-#&gt; Warning. The analysis AMMI is not possible.
-#&gt; The number of environments and number of genotypes must be greater than 2</div><div class='input'><span class='no'>model</span>$<span class='no'>ANOVA</span></div><div class='output co'>#&gt; Analysis of Variance Table
-#&gt; 
-#&gt; Response: Y
-#&gt;            Df Sum Sq Mean Sq  F value    Pr(&gt;F)    
-#&gt; ENV         1 6.1839  6.1839 184.8518 0.0001694 ***
-#&gt; REP(ENV)    4 0.1338  0.0335   8.4703 1.293e-06 ***
-#&gt; GEN       126 9.6729  0.0768  19.4377 &lt; 2.2e-16 ***
-#&gt; ENV:GEN   108 1.3479  0.0125   3.1601 &lt; 2.2e-16 ***
-#&gt; Residuals 492 1.9432  0.0039                       
-#&gt; ---
-#&gt; Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>model</span>,<span class='fl'>0</span>,<span class='fl'>1</span>,<span class='kw'>angle</span><span class='kw'>=</span><span class='fl'>20</span>,<span class='kw'>ecol</span><span class='kw'>=</span><span class='st'>"brown"</span>)</div><div class='img'><img src='AMMI-4.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># Example 3</span>
-<span class='co'># Only means. Mean square error is well-known.</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>sinRepAmmi</span>)
-<span class='no'>REP</span> <span class='kw'>&lt;-</span> <span class='fl'>3</span>
-<span class='no'>MSerror</span> <span class='kw'>&lt;-</span> <span class='fl'>93.24224</span>
-<span class='co'>#startgraph</span>
-<span class='no'>model</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>sinRepAmmi</span>,<span class='fu'>AMMI</span>(<span class='no'>ENV</span>, <span class='no'>GEN</span>, <span class='no'>REP</span>, <span class='no'>YLD</span>, <span class='no'>MSerror</span>,<span class='kw'>PC</span><span class='kw'>=</span><span class='fl'>TRUE</span>))
-<span class='co'># print anova</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>model</span>$<span class='no'>ANOVA</span>,<span class='kw'>na.print</span> <span class='kw'>=</span> <span class='st'>""</span>)</div><div class='output co'>#&gt;            Df    Sum Sq      Mean Sq  F value       Pr(&gt;F)
-#&gt; ENV         4 728766.51 182191.62761                      
-#&gt; REP(ENV)   10                                             
-#&gt; GEN        49  23488.96    479.36643 5.141087 0.000000e+00
-#&gt; ENV:GEN   196  40728.33    207.79760 2.228578 9.998669e-13
-#&gt; Residuals 490  45688.70     93.24224                      </div><div class='input'><span class='co'># Biplot with the one restored observed.</span>
-<span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>model</span>,<span class='fl'>0</span>,<span class='fl'>1</span>,<span class='kw'>type</span><span class='kw'>=</span><span class='fl'>1</span>)</div><div class='img'><img src='AMMI-5.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># with principal components model$PC is class "princomp"</span>
-<span class='no'>pc</span><span class='kw'>&lt;-</span> <span class='no'>model</span>$<span class='no'>PC</span>
-<span class='no'>pc</span>$<span class='no'>loadings</span></div><div class='output co'>#&gt; 
-#&gt; Loadings:
-#&gt;    Comp.1 Comp.2 Comp.3 Comp.4 Comp.5
-#&gt; A1  0.243  0.122  0.811  0.262  0.447
-#&gt; A2  0.312  0.120        -0.824  0.447
-#&gt; A3        -0.876 -0.131  0.107  0.447
-#&gt; A4 -0.846  0.287                0.447
-#&gt; A5  0.352  0.348 -0.563  0.489  0.447
-#&gt; 
-#&gt;                Comp.1 Comp.2 Comp.3 Comp.4 Comp.5
-#&gt; SS loadings       1.0    1.0    1.0    1.0    1.0
-#&gt; Proportion Var    0.2    0.2    0.2    0.2    0.2
-#&gt; Cumulative Var    0.2    0.4    0.6    0.8    1.0</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='no'>pc</span>)</div><div class='output co'>#&gt; Importance of components:
-#&gt;                            Comp.1    Comp.2    Comp.3     Comp.4       Comp.5
-#&gt; Standard deviation     13.2655703 7.1030079 6.0540524 2.90561020 1.833059e-08
-#&gt; Proportion of Variance  0.6481067 0.1858144 0.1349855 0.03109348 1.237507e-18
-#&gt; Cumulative Proportion   0.6481067 0.8339211 0.9689065 1.00000000 1.000000e+00</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/stats/biplot.html'>biplot</a></span>(<span class='no'>pc</span>)</div><div class='img'><img src='AMMI-6.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># Principal components by means of the covariance similar AMMI</span>
-<span class='co'># It is to compare results with AMMI</span>
-<span class='no'>cova</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/stats/cor.html'>cov</a></span>(<span class='no'>model</span>$<span class='no'>genXenv</span>)
-<span class='no'>values</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/eigen.html'>eigen</a></span>(<span class='no'>cova</span>)
-<span class='no'>total</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span>(<span class='no'>values</span>$<span class='no'>values</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span>(<span class='no'>values</span>$<span class='no'>values</span>*<span class='fl'>100</span>/<span class='no'>total</span>,<span class='fl'>2</span>)</div><div class='output co'>#&gt; [1] 64.81 18.58 13.50  3.11  0.00</div><div class='input'># AMMI: 64.81 18.58 13.50  3.11  0.00
-
-</div></pre>
+    <pre class="examples"></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#details">Details</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    
-<ol>
-<li><p>Felipe de Mendiburu (<a href='mailto:fmendiburu@lamolina.edu.pe'>fmendiburu@lamolina.edu.pe</a>)</p></li>
-</ol>
-
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
 
       <footer>
       <div class="copyright">
-  <p>Developed by Felipe de Mendiburu.</p>
+  <p>Developed by Felipe de Mendiburu, Muhammad Yaseen.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>

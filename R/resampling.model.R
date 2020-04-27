@@ -1,3 +1,50 @@
+#' Resampling for linear models
+#' 
+#' This process consists of finding the values of P-value by means of a
+#' re-sampling (permutation) process along with the values obtained by variance
+#' analysis.
+#' 
+#' 
+#' @param model model in R
+#' @param data data for the study of the model
+#' @param k number of re-samplings
+#' @param console logical, print output
+#' @return Model solution with resampling.
+#' @author Felipe de Mendiburu
+#' @seealso \code{\link{simulation.model} }
+#' @references Efron, B., Tibshirani, R. (1993) An Introduction to the
+#' Boostrap. Chapman and Hall/CRC Phillip I. Good, (2001) Resampling Methods.
+#' Birkhauser. Boston . Basel . Berlin
+#' @keywords multivariate
+#' @importFrom stats as.formula
+#' @export
+#' @examples
+#' 
+#' #example 1 Simple linear regression
+#' library(agricolae)
+#' data(clay)
+#' model<-"ralstonia ~ days"
+#' analysis<-resampling.model(model,clay,k=2,console=TRUE)
+#' 
+#' #example 2 Analysis of variance: RCD
+#' data(sweetpotato)
+#' model<-"yield~virus"
+#' analysis<-resampling.model(model,sweetpotato,k=2,console=TRUE)
+#' 
+#' #example 3 Simple linear regression
+#' data(Glycoalkaloids)
+#' model<-"HPLC ~ spectrophotometer"
+#' analysis<-resampling.model(model,Glycoalkaloids,k=2,console=TRUE)
+#' 
+#' #example 4 Factorial in RCD
+#' 
+#' data(potato)
+#' potato[,1]<-as.factor(potato[,1])
+#' potato[,2]<-as.factor(potato[,2])
+#' model<-"cutting~variety + date + variety:date"
+#' analysis<-resampling.model(model,potato,k=2,console=TRUE)
+#' 
+#' 
 resampling.model <-
 function(model,data,k,console=FALSE) {
 modelo<-model

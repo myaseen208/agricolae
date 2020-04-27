@@ -1,3 +1,29 @@
+#' Correlation Coefficient
+#' 
+#' An exact correlation for ties or without ties.  Methods of Kendall, Spearman
+#' and Pearson.
+#' 
+#' 
+#' @param x Vector
+#' @param y Vector
+#' @param method "pearson", "kendall", "spearman"
+#' @param alternative "two.sided", "less", "greater"
+#' @return The correlation of x,y vector with the statistical value and its
+#' probability
+#' @author Felipe de Mendiburu
+#' @seealso \code{\link{correlation}}
+#' @references Numerical Recipes in C. Second Edition.
+#' @keywords multivariate
+#' @importFrom stats pt
+#' @export
+#' @examples
+#' 
+#' library(agricolae)
+#' data(soil)
+#' with(soil,correl(pH,clay,method="kendall"))
+#' with(soil,correl(pH,clay,method="spearman"))
+#' with(soil,correl(pH,clay,method="pearson"))
+#' 
 correl <-
 function(x,y,method = "pearson", alternative = "two.sided"){
 x<-1.0*x;y<-1.0*y

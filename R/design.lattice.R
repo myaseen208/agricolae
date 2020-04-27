@@ -1,3 +1,42 @@
+#' Lattice designs
+#' 
+#' SIMPLE and TRIPLE lattice designs. It randomizes treatments in k x k
+#' lattice.
+#' 
+#' kinds <- c("Wichmann-Hill", "Marsaglia-Multicarry", "Super-Duper",
+#' "Mersenne-Twister", "Knuth-TAOCP", "user-supplied", "Knuth-TAOCP-2002",
+#' "default" )
+#' 
+#' @param trt treatments
+#' @param r r=2(simple) or r=3(triple) lattice
+#' @param serie number plot, 1: 11,12; 2: 101,102; 3: 1001,1002
+#' @param seed seed
+#' @param kinds method for to randomize
+#' @param randomization TRUE or FALSE - randomize
+#' @return \item{parameters}{Design parameters} \item{statistics }{Design
+#' statistics} \item{sketch}{Design sketch} \item{book}{Fieldbook}
+#' @author Felipe de Mendiburu
+#' @seealso \code{\link{design.ab}},
+#' \code{\link{design.alpha}},\code{\link{design.bib}}, \code{\link{design.crd}
+#' }, \code{\link{design.cyclic} }, \code{\link{design.dau} },
+#' \code{\link{design.graeco}}, \code{\link{design.split}},
+#' \code{\link{design.lsd}}, \code{\link{design.rcbd}},
+#' \code{\link{design.strip}}
+#' @references FIELD PLOT TECHNIQUE. Erwin L. LeCLERG. 2nd ed., 1962, Burgess
+#' Publishing Company, Minnesota
+#' @keywords design
+#' @importFrom stats runif
+#' @export
+#' @examples
+#' 
+#' library(agricolae)
+#' # triple lattice
+#' trt<-LETTERS[1:9]
+#' outdesign<-design.lattice(trt,r=3,serie=2) # triple lattice design ( 9 trt)
+#' # simple lattice
+#' trt<-1:100
+#' outdesign<-design.lattice(trt,r=2,serie=3) # simple lattice design, 10x10 
+#' 
 design.lattice <-
 function(trt,r=3,serie=2,seed=0,kinds="Super-Duper",randomization=TRUE) {
 number<-10

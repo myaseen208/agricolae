@@ -1,3 +1,29 @@
+#' frequency Table of a Histogram
+#' 
+#' It finds the absolute, relative and accumulated frequencies with the class
+#' intervals defined from a previously calculated histogram by the "hist" of R
+#' function.
+#' 
+#' 
+#' @param object Object by function graph.freq()
+#' @return Frequency table.\cr \item{Lower }{Lower limit class} \item{Upper
+#' }{Upper limit class} \item{Main }{class point} \item{Frequency }{Frequency}
+#' \item{Percentage }{Percentage frequency} \item{CF }{Cumulative frequency}
+#' \item{CPF }{Cumulative Percentage frequency}
+#' @author Felipe de Mendiburu
+#' @seealso \code{\link{polygon.freq}}, \code{\link{stat.freq}},
+#' \code{\link{graph.freq}}, \code{\link{intervals.freq}},
+#' \code{\link{sturges.freq}}, \code{\link{join.freq}},
+#' \code{\link{ogive.freq}}, \code{\link{normal.freq} }
+#' @keywords distribution
+#' @export
+#' @examples
+#' 
+#' library(agricolae)
+#' data(growth)
+#' h2<-with(growth,graph.freq(height,plot=FALSE))
+#' print(table.freq(h2),row.names=FALSE)
+#' 
 table.freq <-
 function(object){
 xx<-object$mids

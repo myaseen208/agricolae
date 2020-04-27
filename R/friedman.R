@@ -1,3 +1,47 @@
+#' Friedman test and multiple comparison of treatments
+#' 
+#' The data consist of b-blocks mutually independent k-variate random variables
+#' Xij, i=1,..,b; j=1,..k. The random variable X is in block i and is
+#' associated with treatment j. It makes the multiple comparison of the
+#' Friedman test with or without ties. A first result is obtained by
+#' friedman.test of R.
+#' 
+#' The post hoc friedman test is using the criterium Fisher's least significant
+#' difference (LSD)
+#' 
+#' @param judge Identification of the judge in the evaluation
+#' @param trt Treatment
+#' @param evaluation Variable
+#' @param alpha Significant test
+#' @param group TRUE or FALSE
+#' @param main Title
+#' @param console logical, print output
+#' @return \item{statistics}{Statistics of the model} \item{parameters}{Design
+#' parameters} \item{means}{Statistical summary of the study variable}
+#' \item{comparison}{Comparison between treatments} \item{groups}{Formation of
+#' treatment groups}
+#' @author Felipe de Mendiburu
+#' @seealso \code{\link{BIB.test}}, \code{\link{DAU.test}},
+#' \code{\link{duncan.test}}, \code{\link{durbin.test}},
+#' \code{\link{HSD.test}}, \code{\link{kruskal}}, \code{\link{LSD.test}},
+#' \code{\link{Median.test}}, \code{\link{PBIB.test}}, \code{\link{REGW.test}},
+#' \code{\link{scheffe.test}}, \code{\link{SNK.test}},
+#' \code{\link{waerden.test}}, \code{\link{waller.test}},
+#' \code{\link{plot.group}}
+#' @references Practical Nonparametrics Statistics. W.J. Conover, 1999
+#' @keywords nonparametric
+#' @importFrom stats quantile pchisq qt pt
+#' @export
+#' @examples
+#' 
+#' library(agricolae)
+#' data(grass)
+#' out<-with(grass,friedman(judge,trt, evaluation,alpha=0.05, group=TRUE,console=TRUE,
+#' main="Data of the book of Conover"))
+#' #startgraph
+#' plot(out,variation="IQR")
+#' #endgraph
+#' 
 friedman <-
   function(judge,trt,evaluation,alpha=0.05,group=TRUE,main=NULL,console=FALSE){
     name.x <- paste(deparse(substitute(judge)))

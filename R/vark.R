@@ -1,3 +1,24 @@
+#' Variance K, ties, Kendall
+#' 
+#' The Kendall method in order to find the K variance.
+#' 
+#' Script in C to R.
+#' 
+#' @param x Vector
+#' @param y vector
+#' @return variance of K for Kendall's tau
+#' @author Felipe de Mendiburu
+#' @seealso cor.matrix, cor.vector, cor.mv
+#' @references Numerical Recipes in C. Second Edition.
+#' @keywords nonparametric
+#' @export
+#' @examples
+#' 
+#' library(agricolae)
+#' x <-c(1,1,1,4,2,2,3,1,3,2,1,1,2,3,2,1,1,2,1,2)
+#' y <-c(1,1,2,3,4,4,2,1,2,3,1,1,3,4,2,1,1,3,1,2)
+#' vark(x,y)
+#' 
 vark <-
 function(x, y)
     {

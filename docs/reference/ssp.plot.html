@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -35,16 +39,15 @@
 
 <!-- docsearch -->
 <script src="../docsearch.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.3/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
 <link href="../docsearch.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
 
 
 <meta property="og:title" content="Split-split-Plot analysis — ssp.plot" />
-<meta property="og:description" content="The variance analysis of a split-split plot design is divided into three parts: 
-  the main-plot, subplot and sub-subplot analysis." />
-<meta name="twitter:card" content="summary" />
+<meta property="og:description" content="The variance analysis of a split-split plot design is divided into three
+parts: the main-plot, subplot and sub-subplot analysis." />
 
 
 
@@ -72,7 +75,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -86,7 +89,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">agricolae</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">1.3.3</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">1.4.0</span>
       </span>
     </div>
 
@@ -106,12 +109,28 @@
     Reference
   </a>
 </li>
-<li>
-  <a href="../articles/Introagricolae.html">
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fa fa-file-o"></span>
      
     Tutorial
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/Introduction.html">Introduction to agricolae</a>
+    </li>
+    <li>
+      <a href="../articles/DescriptiveStats.html">Descriptive Statistics with agricolae</a>
+    </li>
+    <li>
+      <a href="../articles/ExperimentalDesign.html">Experimental Design with agricolae</a>
+    </li>
+    <li>
+      <a href="../articles/MultipleComparisons.html">Multiple Comparisons with agricolae</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">
@@ -149,13 +168,13 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Split-split-Plot analysis</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/myaseen208/agricolae/blob/master/R/ssp.plot.R'><code>R/ssp.plot.R</code></a></small>
     <div class="hidden name"><code>ssp.plot.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The variance analysis of a split-split plot design is divided into three parts: 
-  the main-plot, subplot and sub-subplot analysis.</p>
+    <p>The variance analysis of a split-split plot design is divided into three
+parts: the main-plot, subplot and sub-subplot analysis.</p>
     </div>
 
     <pre class="usage"><span class='fu'>ssp.plot</span>(<span class='no'>block</span>, <span class='no'>pplot</span>, <span class='no'>splot</span>, <span class='no'>ssplot</span>, <span class='no'>Y</span>)</pre>
@@ -185,25 +204,26 @@
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>The split-split-plot design is an extension of the split-plot design
-  to accommodate a third factor: one factor in main-plot, other in subplot 
-  and the third factor in sub-subplot</p>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>ANOVA: Splip Split plot analysis</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>The split-split-plot design is an extension of the split-plot design to
+accommodate a third factor: one factor in main-plot, other in subplot and
+the third factor in sub-subplot</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Statistical procedures for agricultural research.
- Kwanchai A. Gomez, Arturo A. Gomez. Second Edition. 1984.</p>
+    <p>Statistical procedures for agricultural research.  Kwanchai A.
+Gomez, Arturo A. Gomez. Second Edition. 1984.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='https://rdrr.io/pkg/agricolae/man/sp.plot.html'>sp.plot</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/strip.plot.html'>strip.plot</a></code>, <code><a href='https://rdrr.io/pkg/agricolae/man/design.split.html'>design.split</a></code>, 
-<code><a href='https://rdrr.io/pkg/agricolae/man/design.strip.html'>design.strip</a> </code></p></div>
+    <div class='dont-index'><p><code><a href='sp.plot.html'>sp.plot</a></code>, <code><a href='strip.plot.html'>strip.plot</a></code>,
+<code><a href='design.split.html'>design.split</a></code>, <code><a href='design.strip.html'>design.strip</a> </code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># Statistical procedures for agricultural research, pag 143</span>
+    <pre class="examples"><div class='input'>
+<span class='co'># Statistical procedures for agricultural research, pag 143</span>
 <span class='co'># Grain Yields of Three Rice Varieties Grown under </span>
 <span class='co'>#Three Management practices and Five Nitrogen levels; in a</span>
 <span class='co'>#split-split-plot design with nitrogen as main-plot, </span>
@@ -211,34 +231,160 @@
 <span class='co'>#factores, with three replications.</span>
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='no'>f</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"external/ssp.csv"</span>, <span class='kw'>package</span><span class='kw'>=</span><span class='st'>"agricolae"</span>)
-<span class='no'>ssp</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span>(<span class='no'>f</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: file("") only supports open = "w+" and open = "w+b": using the former</span></div><div class='output co'>#&gt; <span class='error'>Error in read.table(file = file, header = header, sep = sep, quote = quote,     dec = dec, fill = fill, comment.char = comment.char, ...): no lines available in input</span></div><div class='input'><span class='no'>model</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>ssp</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/ssp.plot.html'>ssp.plot</a></span>(<span class='no'>block</span>,<span class='no'>nitrogen</span>,<span class='no'>management</span>,<span class='no'>variety</span>,<span class='no'>yield</span>))</div><div class='output co'>#&gt; <span class='error'>Error in with(ssp, ssp.plot(block, nitrogen, management, variety, yield)): object 'ssp' not found</span></div><div class='input'><span class='no'>gla</span><span class='kw'>&lt;-</span><span class='no'>model</span>$<span class='no'>gl.a</span>; <span class='no'>glb</span><span class='kw'>&lt;-</span><span class='no'>model</span>$<span class='no'>gl.b</span>; <span class='no'>glc</span><span class='kw'>&lt;-</span><span class='no'>model</span>$<span class='no'>gl.c</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'model' not found</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'model' not found</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'model' not found</span></div><div class='input'><span class='no'>Ea</span><span class='kw'>&lt;-</span><span class='no'>model</span>$<span class='no'>Ea</span>; <span class='no'>Eb</span><span class='kw'>&lt;-</span><span class='no'>model</span>$<span class='no'>Eb</span>; <span class='no'>Ec</span><span class='kw'>&lt;-</span><span class='no'>model</span>$<span class='no'>Ec</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'model' not found</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'model' not found</span></div><div class='output co'>#&gt; <span class='error'>Error in eval(expr, envir, enclos): object 'model' not found</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span>(<span class='kw'>mfrow</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>3</span>),<span class='kw'>cex</span><span class='kw'>=</span><span class='fl'>0.6</span>)
-<span class='no'>out1</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>ssp</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/LSD.test.html'>LSD.test</a></span>(<span class='no'>yield</span>,<span class='no'>nitrogen</span>,<span class='no'>gla</span>,<span class='no'>Ea</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; <span class='error'>Error in with(ssp, LSD.test(yield, nitrogen, gla, Ea, console = TRUE)): object 'ssp' not found</span></div><div class='input'><span class='no'>out2</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>ssp</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/LSD.test.html'>LSD.test</a></span>(<span class='no'>yield</span>,<span class='no'>management</span>,<span class='no'>glb</span>,<span class='no'>Eb</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; <span class='error'>Error in with(ssp, LSD.test(yield, management, glb, Eb, console = TRUE)): object 'ssp' not found</span></div><div class='input'><span class='no'>out3</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>ssp</span>,<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/LSD.test.html'>LSD.test</a></span>(<span class='no'>yield</span>,<span class='no'>variety</span>,<span class='no'>glc</span>,<span class='no'>Ec</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; <span class='error'>Error in with(ssp, LSD.test(yield, variety, glc, Ec, console = TRUE)): object 'ssp' not found</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>out1</span>,<span class='kw'>xlab</span><span class='kw'>=</span><span class='st'>"Nitrogen"</span>,<span class='kw'>las</span><span class='kw'>=</span><span class='fl'>1</span>,<span class='kw'>variation</span><span class='kw'>=</span><span class='st'>"IQR"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in plot(out1, xlab = "Nitrogen", las = 1, variation = "IQR"): object 'out1' not found</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>out2</span>,<span class='kw'>xlab</span><span class='kw'>=</span><span class='st'>"Management"</span>,<span class='kw'>variation</span><span class='kw'>=</span><span class='st'>"IQR"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in plot(out2, xlab = "Management", variation = "IQR"): object 'out2' not found</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>out3</span>,<span class='kw'>xlab</span><span class='kw'>=</span><span class='st'>"Variety"</span>,<span class='kw'>variation</span><span class='kw'>=</span><span class='st'>"IQR"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in plot(out3, xlab = "Variety", variation = "IQR"): object 'out3' not found</span></div><div class='input'><span class='co'># with aov</span>
-<span class='no'>AOV</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/stats/aov.html'>aov</a></span>(<span class='no'>yield</span> ~  <span class='no'>block</span> + <span class='no'>nitrogen</span>*<span class='no'>management</span>*<span class='no'>variety</span> + <span class='fu'><a href='https://rdrr.io/r/stats/aov.html'>Error</a></span>(<span class='no'>block</span>/<span class='no'>nitrogen</span>/<span class='no'>management</span>),<span class='kw'>data</span><span class='kw'>=</span><span class='no'>ssp</span>)</div><div class='output co'>#&gt; <span class='error'>Error in terms.formula(formula, "Error", data = data): object 'ssp' not found</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='no'>AOV</span>)</div><div class='output co'>#&gt; <span class='error'>Error in summary(AOV): object 'AOV' not found</span></div></pre>
+<span class='no'>ssp</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/utils/read.table.html'>read.csv</a></span>(<span class='no'>f</span>)
+<span class='no'>model</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>ssp</span>,<span class='fu'>ssp.plot</span>(<span class='no'>block</span>,<span class='no'>nitrogen</span>,<span class='no'>management</span>,<span class='no'>variety</span>,<span class='no'>yield</span>))</div><div class='output co'>#&gt; 
+#&gt; ANALYSIS SPLIT-SPLIT PLOT:  yield 
+#&gt; Class level information
+#&gt; 
+#&gt; nitrogen 	:  0 50 80 110 140 
+#&gt; management 	:  m1 m2 m3 
+#&gt; variety 	:  1 2 3 
+#&gt; block 	:  1 2 3 
+#&gt; 
+#&gt; Number of observations:  135 
+#&gt; 
+#&gt; Analysis of Variance Table
+#&gt; 
+#&gt; Response: yield
+#&gt;                             Df  Sum Sq Mean Sq  F value    Pr(&gt;F)    
+#&gt; block                        2   0.732   0.366   0.6578  0.543910    
+#&gt; nitrogen                     4  61.641  15.410  27.6953 9.734e-05 ***
+#&gt; Ea                           8   4.451   0.556                       
+#&gt; management                   2  42.936  21.468  81.9965 2.303e-10 ***
+#&gt; nitrogen:management          8   1.103   0.138   0.5266  0.822648    
+#&gt; Eb                          20   5.236   0.262                       
+#&gt; variety                      2 206.013 103.007 207.8667 &lt; 2.2e-16 ***
+#&gt; variety:nitrogen             8  14.145   1.768   3.5679  0.001916 ** 
+#&gt; variety:management           4   3.852   0.963   1.9432  0.114899    
+#&gt; variety:nitrogen:management 16   3.699   0.231   0.4666  0.953759    
+#&gt; Ec                          60  29.732   0.496                       
+#&gt; ---
+#&gt; Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+#&gt; 
+#&gt; cv(a) = 11.4 %, cv(b) = 7.8 %, cv(c) = 10.7 %, Mean = 6.554415 
+#&gt; </div><div class='input'><span class='no'>gla</span><span class='kw'>&lt;-</span><span class='no'>model</span>$<span class='no'>gl.a</span>; <span class='no'>glb</span><span class='kw'>&lt;-</span><span class='no'>model</span>$<span class='no'>gl.b</span>; <span class='no'>glc</span><span class='kw'>&lt;-</span><span class='no'>model</span>$<span class='no'>gl.c</span>
+<span class='no'>Ea</span><span class='kw'>&lt;-</span><span class='no'>model</span>$<span class='no'>Ea</span>; <span class='no'>Eb</span><span class='kw'>&lt;-</span><span class='no'>model</span>$<span class='no'>Eb</span>; <span class='no'>Ec</span><span class='kw'>&lt;-</span><span class='no'>model</span>$<span class='no'>Ec</span>
+<span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span>(<span class='kw'>mfrow</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>3</span>),<span class='kw'>cex</span><span class='kw'>=</span><span class='fl'>0.6</span>)
+<span class='no'>out1</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>ssp</span>,<span class='fu'><a href='LSD.test.html'>LSD.test</a></span>(<span class='no'>yield</span>,<span class='no'>nitrogen</span>,<span class='no'>gla</span>,<span class='no'>Ea</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; 
+#&gt; Study: yield ~ nitrogen
+#&gt; 
+#&gt; LSD t Test for yield 
+#&gt; 
+#&gt; Mean Square Error:  0.5564188 
+#&gt; 
+#&gt; nitrogen,  means and individual ( 95 %) CI
+#&gt; 
+#&gt;        yield      std  r      LCL      UCL   Min    Max
+#&gt; 0   5.384704 1.206963 27 5.053665 5.715743 3.320  8.020
+#&gt; 50  6.220333 1.615861 27 5.889294 6.551372 3.188  9.942
+#&gt; 80  6.995741 1.371302 27 6.664702 7.326780 4.422  9.320
+#&gt; 110 6.937370 1.474547 27 6.606331 7.268409 4.246  9.660
+#&gt; 140 7.233926 1.968153 27 6.902887 7.564965 3.132 10.360
+#&gt; 
+#&gt; Alpha: 0.05 ; DF Error: 8
+#&gt; Critical Value of t: 2.306004 
+#&gt; 
+#&gt; least Significant Difference: 0.4681598 
+#&gt; 
+#&gt; Treatments with the same letter are not significantly different.
+#&gt; 
+#&gt;        yield groups
+#&gt; 140 7.233926      a
+#&gt; 80  6.995741      a
+#&gt; 110 6.937370      a
+#&gt; 50  6.220333      b
+#&gt; 0   5.384704      c</div><div class='input'><span class='no'>out2</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>ssp</span>,<span class='fu'><a href='LSD.test.html'>LSD.test</a></span>(<span class='no'>yield</span>,<span class='no'>management</span>,<span class='no'>glb</span>,<span class='no'>Eb</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; 
+#&gt; Study: yield ~ management
+#&gt; 
+#&gt; LSD t Test for yield 
+#&gt; 
+#&gt; Mean Square Error:  0.2618167 
+#&gt; 
+#&gt; management,  means and individual ( 95 %) CI
+#&gt; 
+#&gt;       yield      std  r      LCL      UCL   Min    Max
+#&gt; m1 5.900378 1.486531 45 5.741267 6.059488 3.132  9.314
+#&gt; m2 6.486156 1.621936 45 6.327045 6.645266 3.625  9.680
+#&gt; m3 7.276711 1.635020 45 7.117601 7.435822 4.225 10.360
+#&gt; 
+#&gt; Alpha: 0.05 ; DF Error: 20
+#&gt; Critical Value of t: 2.085963 
+#&gt; 
+#&gt; least Significant Difference: 0.2250164 
+#&gt; 
+#&gt; Treatments with the same letter are not significantly different.
+#&gt; 
+#&gt;       yield groups
+#&gt; m3 7.276711      a
+#&gt; m2 6.486156      b
+#&gt; m1 5.900378      c</div><div class='input'><span class='no'>out3</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/with.html'>with</a></span>(<span class='no'>ssp</span>,<span class='fu'><a href='LSD.test.html'>LSD.test</a></span>(<span class='no'>yield</span>,<span class='no'>variety</span>,<span class='no'>glc</span>,<span class='no'>Ec</span>,<span class='kw'>console</span><span class='kw'>=</span><span class='fl'>TRUE</span>))</div><div class='output co'>#&gt; 
+#&gt; Study: yield ~ variety
+#&gt; 
+#&gt; LSD t Test for yield 
+#&gt; 
+#&gt; Mean Square Error:  0.4955415 
+#&gt; 
+#&gt; variety,  means and individual ( 95 %) CI
+#&gt; 
+#&gt;      yield      std  r      LCL      UCL   Min    Max
+#&gt; 1 5.126822 0.971530 45 4.916915 5.336730 3.132  7.309
+#&gt; 2 6.396133 1.065752 45 6.186226 6.606041 4.166  8.950
+#&gt; 3 8.140289 1.314438 45 7.930381 8.350197 5.244 10.360
+#&gt; 
+#&gt; Alpha: 0.05 ; DF Error: 60
+#&gt; Critical Value of t: 2.000298 
+#&gt; 
+#&gt; least Significant Difference: 0.2968543 
+#&gt; 
+#&gt; Treatments with the same letter are not significantly different.
+#&gt; 
+#&gt;      yield groups
+#&gt; 3 8.140289      a
+#&gt; 2 6.396133      b
+#&gt; 1 5.126822      c</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>out1</span>,<span class='kw'>xlab</span><span class='kw'>=</span><span class='st'>"Nitrogen"</span>,<span class='kw'>las</span><span class='kw'>=</span><span class='fl'>1</span>,<span class='kw'>variation</span><span class='kw'>=</span><span class='st'>"IQR"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: NAs introduced by coercion</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>out2</span>,<span class='kw'>xlab</span><span class='kw'>=</span><span class='st'>"Management"</span>,<span class='kw'>variation</span><span class='kw'>=</span><span class='st'>"IQR"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: NAs introduced by coercion</span></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>out3</span>,<span class='kw'>xlab</span><span class='kw'>=</span><span class='st'>"Variety"</span>,<span class='kw'>variation</span><span class='kw'>=</span><span class='st'>"IQR"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: NAs introduced by coercion</span></div><div class='img'><img src='ssp.plot-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># with aov</span>
+<span class='no'>AOV</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/stats/aov.html'>aov</a></span>(<span class='no'>yield</span> ~  <span class='no'>block</span> + <span class='no'>nitrogen</span>*<span class='no'>management</span>*<span class='no'>variety</span> + <span class='fu'><a href='https://rdrr.io/r/stats/aov.html'>Error</a></span>(<span class='no'>block</span>/<span class='no'>nitrogen</span>/<span class='no'>management</span>),<span class='kw'>data</span><span class='kw'>=</span><span class='no'>ssp</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/summary.html'>summary</a></span>(<span class='no'>AOV</span>)</div><div class='output co'>#&gt; 
+#&gt; Error: block
+#&gt;       Df  Sum Sq Mean Sq
+#&gt; block  1 0.07891 0.07891
+#&gt; 
+#&gt; Error: block:nitrogen
+#&gt;          Df Sum Sq Mean Sq
+#&gt; nitrogen  1  52.13   52.13
+#&gt; 
+#&gt; Error: block:nitrogen:management
+#&gt;            Df Sum Sq Mean Sq
+#&gt; management  2  30.57   15.28
+#&gt; 
+#&gt; Error: Within
+#&gt;                              Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+#&gt; nitrogen                      1   4.44    4.44   9.124  0.00309 ** 
+#&gt; management                    2  12.93    6.46  13.292 6.16e-06 ***
+#&gt; variety                       1 204.32  204.32 420.120  &lt; 2e-16 ***
+#&gt; nitrogen:management           2   0.71    0.36   0.731  0.48341    
+#&gt; nitrogen:variety              1   9.22    9.22  18.957 2.85e-05 ***
+#&gt; management:variety            2   0.43    0.21   0.440  0.64531    
+#&gt; nitrogen:management:variety   2   0.84    0.42   0.867  0.42278    
+#&gt; Residuals                   119  57.87    0.49                     
+#&gt; ---
+#&gt; Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#details">Details</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#references">References</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>Felipe de Mendiburu</p>
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
 
       <footer>
       <div class="copyright">
-  <p>Developed by Felipe de Mendiburu.</p>
+  <p>Developed by Felipe de Mendiburu, Muhammad Yaseen.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>

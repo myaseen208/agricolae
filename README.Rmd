@@ -16,12 +16,14 @@ knitr::opts_chunk$set(
 devtools::load_all(".")
 ```
 
-###### Version : [`r getNamespaceVersion("agricolae")`](https://myaseen208.github.io/agricolae/); Copyright (C) 2019-2020: [UAF](http://uaf.edu.pk//); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [`r getNamespaceVersion("agricolae")`](https://myaseen208.github.io/agricolae/);  License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
 
 
-##### *Felipe de Mendiburu^1^*
+##### *Felipe de Mendiburu^1^, Muhammad Yaseen^2^*
 
 1. Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.
+
+2. Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.
 
 
 ***
@@ -72,8 +74,6 @@ For a detailed tutorial (vignette) on how to used this package type:
 ```{r, eval=FALSE}
 browseVignettes(package = "agricolae")
 ```
-
-The vignette for the latest version is also available [online](https://myaseen208.github.io/agricolae/articles/Introagricolae.html).
 
 
 ## What's new

@@ -1,0 +1,169 @@
+---
+title: "Introduction to **agricolae**"
+author: "Felipe de Mendiburu^1^, Muhammad Yaseen^2^"
+date: "`r Sys.Date()`"
+geometry: margin=3cm
+output:
+  html_document:
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+  pdf_document:
+    dev: cairo_pdf
+    fig_caption: yes
+    number_sections: yes
+    toc: yes  
+documentclass: article
+header-includes:
+- \usepackage{fancyhdr}
+- \usepackage{wrapfig}
+- \usepackage{float}
+- \pagestyle{fancy}
+- \fancyfoot[C]{\thepage}
+- \usepackage{hyperref}
+- \hypersetup{colorlinks=true}
+- \hypersetup{linktoc=all}
+- \hypersetup{linkcolor=blue}
+- \usepackage{pdflscape}
+- \usepackage{booktabs}
+- \newcommand{\blandscape}{\begin{landscape}}
+- \newcommand{\elandscape}{\end{landscape}}
+- \renewcommand\thesection{\arabic{section}}
+link-citations: yes
+csl: frontiers.csl
+resource_files:
+- vignettes/rbase.png
+- vignettes/rstudio.png
+- vignettes/rstudio panes.png
+bibliography: Bibliography.bib
+vignette: |
+  %\VignetteIndexEntry{Introduction}
+  %\usepackage[utf8]{inputenc}
+  %\VignetteEngine{knitr::rmarkdown_notangle}
+---
+
+
+```{r  echo=FALSE}
+out_type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+
+r = getOption("repos")
+r["CRAN"] = "https://cran.rstudio.com/"
+#r["CRAN"] = "https://cloud.r-project.org/"
+#r["CRAN"] = "https://ftp.iitm.ac.in/cran/"
+options(repos = r)
+```
+
+```{r results='asis', echo=FALSE}
+switch(out_type,
+    html = {cat("<p>1. Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.</p>
+<p>2. Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.</p>
+                ")},
+    latex = cat("\\begin{center}
+1. Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.
+
+2. Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.
+
+\\end{center}" )
+)
+```
+
+
+```{r include = FALSE}
+knitr::opts_chunk$set(
+    echo    = TRUE
+  , comment = ""
+  , fig.cap = ""
+  )
+library(agricolae)
+```
+
+
+\begin{center}
+\vspace{6pt}
+\hrule
+\end{center}
+
+
+
+# Introduction
+
+The package **agricolae** offers a broad functionality in the design of experiments, especially for experiments in agriculture and improvements of plants, which can also be used for other purposes. It contains the following designs: lattice, alpha, cyclic, balanced incomplete block designs, complete randomized blocks, Latin, Graeco-Latin, augmented block designs, split plot and strip plot. It also has several procedures of experimental data analysis, such as the comparisons of treatments of Waller-Duncan, Bonferroni, Duncan, Student-Newman-Keuls, Scheffe, Ryan, Einot and Gabriel and Welsch multiple range test or the classic LSD and Tukey; and non-parametric comparisons, such as Kruskal-Wallis, Friedman, Durbin, Median and Waerden, stability analysis, and other procedures applied in genetics, as well as procedures in biodiversity and descriptive statistics, @Mend2009
+
+
+## Installation
+The main program of **R** should be already installed in the platform of your computer *(Windows, Linux or MAC)*. If it is not installed yet, you can download it from the R project [https://www.r-project.org/](https://www.r-project.org/) of a repository CRAN.
+
+
+```{r eval=FALSE}
+install.packages("agricolae")
+```
+
+Once the `agricolae` package is installed, it needs to be made accessible to the current **R**   session by the command:
+
+
+```{r results = "hide"}
+library(agricolae)
+```
+
+For online help facilities or the details of a particular command
+(such as the function `waller.test`) you can type:
+
+```{r eval=FALSE}
+help(package="agricolae")
+help(waller.test)
+```
+
+
+For a complete functionality, `agricolae` requires other packages
+
+<!-- --> | <!-- --> 
+---------|---------------------------------------------
+[`MASS`](https://cran.r-project.org/web/packages/MASS/index.html):|	for the generalized inverse used in the function `PBIB.test`
+[`nlme`](https://cran.r-project.org/web/packages/nlme/index.html): | for the methods REML and LM in `PBIB.test`
+[`klaR`](https://cran.r-project.org/web/packages/klaR/index.html):  | for the function `triplot` used in the function `AMMI`
+[`cluster`](https://cran.r-project.org/web/packages/cluster/index.html):  | for the use of the function `consensus`
+[`AlgDesign`](https://cran.r-project.org/web/packages/AlgDesign/index.html): | for the balanced incomplete block design `design.bib`
+
+
+## Use in **R**
+
+Since **agricolae **  is a package of functions, these are operational when they are called directly from the console of **R**  and are integrated to all the base functions of **R**.
+The following orders are frequent: 
+
+```{r }
+detach(package:agricolae) # detach package agricole
+library(agricolae) # Load the package to the memory
+designs<-apropos("design")
+print(designs[substr(designs,1,6)=="design"], row.names=FALSE)
+```
+
+::: {.verbatim data-latex=""}
+For the use of symbols that do not appear in the keyboard in Spanish, such as:
+
+~, [, ], &, ^, |. <, >, {, }, \% or others, use the table ASCII code.
+:::
+
+
+
+```{r}
+library(agricolae) # Load the package to the memory: 
+```
+
+In order to continue with the command line, do not forget to close the open windows with any R order.
+For help: 
+```{r eval=FALSE}
+help(graph.freq)
+? (graph.freq)
+str(normal.freq)
+example(join.freq)
+```
+
+
+## Data set in **agricolae **
+```{r}
+A<-as.data.frame(data(package="agricolae")$results[,3:4])
+A[,2]<-paste(substr(A[,2],1,35),"..",sep=".")
+head(A)
+```
+
+# References

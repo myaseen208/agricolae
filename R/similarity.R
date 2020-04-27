@@ -1,3 +1,25 @@
+#' Matrix of similarity in binary data
+#' 
+#' It finds the similarity matrix of binary tables (1 and 0).
+#' 
+#' 
+#' @param A Matrix, data binary
+#' @return Distance matrix. Class = dist.
+#' @author Felipe de Mendiburu
+#' @seealso \code{\link{cv.similarity}}, \code{\link{resampling.cv} }
+#' @keywords models
+#' @export
+#' @examples
+#' 
+#' #example table of molecular markers
+#' library(agricolae)
+#' data(markers)
+#' distance<-similarity(markers)
+#' #startgraph
+#' tree<-hclust(distance,method="mcquitty")
+#' plot(tree,col="blue")
+#' #endgraph
+#' 
 similarity <-
 function(A) {
 nc<-ncol(A)

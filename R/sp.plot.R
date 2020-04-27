@@ -1,3 +1,34 @@
+#' Splip-Plot analysis
+#' 
+#' The variance analysis of a split plot design is divided into two parts: the
+#' plot-factor analysis and the sub-plot factor analysis.
+#' 
+#' The split-plot design is specifically suited for a two-factor experiment on
+#' of the factors is assigned to main plot (main-plot factor), the second
+#' factor, called the subplot factor, is assigned into subplots.
+#' 
+#' @param block replications
+#' @param pplot main-plot Factor
+#' @param splot sub-plot Factor
+#' @param Y Variable, response
+#' @return ANOVA: Splip plot analysis
+#' @author Felipe de Mendiburu
+#' @seealso \code{\link{ssp.plot}}, \code{\link{strip.plot}},
+#' \code{\link{design.split}}, \code{\link{design.strip} }
+#' @references Statistical procedures for agricultural research.  Kwanchai A.
+#' Gomez, Arturo A. Gomez. Second Edition. 1984.
+#' @keywords models
+#' @export
+#' @examples
+#' 
+#' library(agricolae)
+#' data(plots)
+#' model<-with(plots,sp.plot(block,A,B,yield))
+#' # with aov
+#' plots[,1]<-as.factor(plots[,1])
+#' AOV <- aov(yield ~ block + A*B + Error(block/A),data=plots)
+#' summary(AOV)
+#' 
 sp.plot <-
 function(block, pplot, splot, Y)
 {

@@ -1,3 +1,26 @@
+#' groups of hclust
+#' 
+#' Returns a vector with group memberships. This function is used by the
+#' function consensus of clusters.
+#' 
+#' 
+#' @param hmerge The object is components of the hclust
+#' @return The merge clusters is printed.
+#' @author F. de Mendiburu
+#' @seealso \code{\link{hclust}}, \code{\link{hcut}}, \code{\link{consensus}}
+#' @keywords cluster
+#' @export
+#' @examples
+#' 
+#' library(agricolae)
+#' data(pamCIP)
+#' # only code
+#' rownames(pamCIP)<-substr(rownames(pamCIP),1,6)
+#' distance <- dist(pamCIP,method="binary")
+#' clusters<- hclust( distance, method="complete")
+#' # groups of clusters
+#' hgroups(clusters$merge)
+#' 
 hgroups <-
 function(hmerge) {
 cc<-hmerge

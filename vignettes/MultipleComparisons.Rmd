@@ -1,0 +1,444 @@
+---
+title: "Multiple Comparisons with **agricolae**"
+author: "Felipe de Mendiburu^1^, Muhammad Yaseen^2^"
+date: "`r Sys.Date()`"
+output:
+  bookdown::html_document2:
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+  pdf_document:
+    toc: yes
+  bookdown::pdf_document2:
+    dev: cairo_pdf
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+geometry: margin=3cm
+documentclass: article
+header-includes:
+- \usepackage{fancyhdr}
+- \usepackage{wrapfig}
+- \usepackage{float}
+- \pagestyle{fancy}
+- \fancyfoot[C]{\thepage}
+- \usepackage{hyperref}
+- \hypersetup{colorlinks=true}
+- \hypersetup{linktoc=all}
+- \hypersetup{linkcolor=blue}
+- \usepackage{pdflscape}
+- \usepackage{booktabs}
+- \newcommand{\blandscape}{\begin{landscape}}
+- \newcommand{\elandscape}{\end{landscape}}
+- \renewcommand\thesection{\arabic{section}}
+link-citations: yes
+csl: frontiers.csl
+resource_files:
+- vignettes/rbase.png
+- vignettes/rstudio.png
+- vignettes/rstudio panes.png
+bibliography: Bibliography.bib
+vignette: |
+  %\VignetteIndexEntry{MultipleComparisons}
+  %\usepackage[utf8]{inputenc}
+  %\VignetteEngine{knitr::rmarkdown_notangle}
+---
+
+
+```{r  echo=FALSE}
+out_type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+
+r = getOption("repos")
+r["CRAN"] = "https://cran.rstudio.com/"
+#r["CRAN"] = "https://cloud.r-project.org/"
+#r["CRAN"] = "https://ftp.iitm.ac.in/cran/"
+options(repos = r)
+```
+
+```{r results='asis', echo=FALSE}
+switch(out_type,
+    html = {cat("<p>1. Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.</p>
+<p>2. Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.</p>
+                ")},
+    latex = cat("\\begin{center}
+1. Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.
+
+2. Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.
+
+\\end{center}" )
+)
+```
+
+
+```{r include = FALSE}
+knitr::opts_chunk$set(
+    echo    = TRUE
+  , comment = ""
+  , fig.cap = ""
+  )
+library(agricolae)
+```
+
+
+\begin{center}
+\vspace{6pt}
+\hrule
+\end{center}
+
+
+
+# Multiple Comparisons
+
+For the analyses, the following functions of **agricolae** are used: `LSD.test`,  `HSD.test`, `duncan.test`, `scheffe.test`,  `waller.test`, `SNK.test`, `REGW.test`, \citet{SteeTorrDick:1997}; \citet{Hsu:1996} and  `durbin.test`, `kruskal`, `friedman`,  `waerden.test` and `Median.test`, \citet{Cono:1999}.
+
+For every statistical analysis, the data should be organized in columns. For the demonstration, the **agricolae**  database will be used.
+
+The `sweetpotato` data correspond to a completely random experiment in field with plots of 50 sweet potato plants, subjected to the virus effect and to a control without virus (See the reference manual of the package).
+
+```{r }
+data(sweetpotato)
+model<-aov(yield~virus, data=sweetpotato)
+cv.model(model)
+with(sweetpotato,mean(yield))
+```
+
+**Model parameters: Degrees of freedom and variance of the error:** 
+
+```{r }
+df<-df.residual(model)
+MSerror<-deviance(model)/df
+```
+
+### The Least Significant Difference (LSD)
+
+It includes the multiple comparison through the method of the minimum significant difference (Least Significant Difference), \citet{SteeTorrDick:1997}.
+
+```{r }
+# comparison <- LSD.test(yield,virus,df,MSerror)
+LSD.test(model, "virus",console=TRUE)
+```
+
+In the function `LSD.test`, the multiple comparison was carried out. In order to obtain the probabilities of the comparisons, it should be indicated that groups are not required; thus:
+
+```{r }
+# comparison <- LSD.test(yield, virus,df, MSerror, group=FALSE)
+outLSD <-LSD.test(model, "virus", group=FALSE,console=TRUE)
+```
+
+Signif. codes:
+
+**0 *** 0.001 ** 0.01 * 0.05 . 0.1 ' ' 1**
+
+```{r }
+options(digits=2)
+print(outLSD)
+```
+
+### holm, hommel, hochberg, bonferroni, BH, BY, fdr
+With the function `LSD.test` we can make adjustments to the probabilities found, as for example the adjustment by Bonferroni, holm and other options see Adjust P-values for Multiple Comparisons, function p.adjust(stats), \citet{Rcore:2018}.
+
+```{r }
+LSD.test(model, "virus", group=FALSE, p.adj= "bon",console=TRUE)
+out<-LSD.test(model, "virus", group=TRUE, p.adj= "holm")
+print(out$group)
+out<-LSD.test(model, "virus", group=FALSE, p.adj= "holm")
+print(out$comparison)
+```
+
+Other comparison tests can be applied, such as *duncan, Student-Newman-Keuls, tukey and waller-duncan*
+
+For **Duncan**, use the function `duncan.test`; for **Student-Newman-Keuls**, the function `SNK.test`; for **Tukey**, the function `HSD.test`; for **Scheffe**, the function `scheffe.test` and for **Waller-Duncan**, the function `waller.test`. The arguments are the same. `Waller` also requires the value of F-calculated of the ANOVA treatments. If the model is used as a parameter, this is no longer necessary.
+
+### Duncan's New Multiple-Range Test
+
+It corresponds to the Duncan's Test, \citet{SteeTorrDick:1997}.
+
+```{r }
+duncan.test(model, "virus",console=TRUE)
+```
+
+### Student-Newman-Keuls
+
+Student, Newman and Keuls helped to improve the Newman-Keuls test of 1939, which was known as the Keuls method,  \citet{SteeTorrDick:1997}.
+
+```{r }
+# SNK.test(model, "virus", alpha=0.05,console=TRUE)
+SNK.test(model, "virus", group=FALSE,console=TRUE)
+```
+
+### Ryan, Einot and Gabriel and Welsch
+
+Multiple range tests for all pairwise comparisons, to obtain a confident inequalities multiple range tests, \citet{Hsu:1996}.
+
+```{r }
+# REGW.test(model, "virus", alpha=0.05,console=TRUE)
+REGW.test(model, "virus", group=FALSE,console=TRUE)
+```
+
+### Tukey's W Procedure (HSD)
+
+This studentized range test, created by Tukey in 1953, is known as the Tukey's HSD (Honestly Significant Differences), \citet{SteeTorrDick:1997}.
+
+```{r }
+outHSD<- HSD.test(model, "virus",console=TRUE)
+outHSD
+```
+
+### Tukey (HSD) for different repetition
+
+Include the argument **unbalanced = TRUE**  in the function. Valid for group = TRUE/FALSE
+
+```{r }
+A<-sweetpotato[-c(4,5,7),]
+modelUnbalanced <- aov(yield ~ virus, data=A)
+outUn <-HSD.test(modelUnbalanced, "virus",group=FALSE, unbalanced = TRUE)
+print(outUn$comparison)
+outUn <-HSD.test(modelUnbalanced, "virus",group=TRUE, unbalanced = TRUE)
+print(outUn$groups)
+```
+
+If this argument is not included, the probabilities of significance will not be consistent with the choice of groups.
+
+Illustrative example of this inconsistency:
+
+```{r }
+outUn <-HSD.test(modelUnbalanced, "virus",group=FALSE)
+print(outUn$comparison[,1:2])
+outUn <-HSD.test(modelUnbalanced, "virus",group=TRUE)
+print(outUn$groups)
+```
+
+### Waller-Duncan's Bayesian K-Ratio T-Test
+
+Duncan continued the multiple comparison procedures, introducing the criterion of minimizing both experimental errors; for this, he used the Bayes' theorem, obtaining one new test called Waller-Duncan, \citet{WallDunc:1969}; \citet{SteeTorrDick:1997}.
+
+```{r }
+# variance analysis:
+anova(model)
+with(sweetpotato,waller.test(yield,virus,df,MSerror,Fc= 17.345, group=FALSE,console=TRUE))
+```
+
+In another case with only invoking the model object: 
+```{r }
+outWaller <- waller.test(model, "virus", group=FALSE,console=FALSE)
+```
+
+The found object *outWaller* has information to make other procedures.
+
+```{r }
+names(outWaller)
+print(outWaller$comparison)
+```
+
+It is indicated that the virus effect "ff" is not significant to the control "oo".
+
+```{r }
+outWaller$statistics
+```
+
+## Scheffe's Test
+
+This method, created by Scheffe in 1959, is very general for all the possible contrasts and their confidence intervals. The confidence intervals for the averages are very broad, resulting in a very conservative test for the comparison between treatment averages, \citet{SteeTorrDick:1997}.
+
+```{r }
+# analysis of variance: 
+scheffe.test(model,"virus", group=TRUE,console=TRUE,
+main="Yield of sweetpotato\nDealt with different virus")
+```
+
+The minimum significant value is very high. 
+If you require the approximate probabilities of comparison, you can use the option *group=FALSE*.
+
+```{r }
+outScheffe <- scheffe.test(model,"virus", group=FALSE, console=TRUE)
+```
+
+## Multiple comparison in factorial treatments
+
+In a factorial combined effects of the treatments. Comparetive tests: `LSD, HSD, Waller-Duncan, Duncan, Scheff\'e, SNK` can be applied.
+
+```{r }
+# modelABC <-aov (y ~ A * B * C, data)
+# compare <-LSD.test (modelABC, c ("A", "B", "C"),console=TRUE)
+```
+
+**The comparison is the combination of A:B:C.**
+
+Data RCBD design with a factorial clone x nitrogen. The response variable yield. 
+
+```{r }
+yield <-scan (text =
+ "6 7 9 13 16 20 8 8 9
+  7 8 8 12 17 18 10 9 12
+  9 9 9 14 18 21 11 12 11
+  8 10 10 15 16 22 9 9 9 "
+ )
+block <-gl (4, 9)
+clone <-rep (gl (3, 3, labels = c ("c1", "c2", "c3")), 4)
+nitrogen <-rep (gl (3, 1, labels = c ("n1", "n2", "n3")), 12)
+A <-data.frame (block, clone, nitrogen, yield)
+head (A)
+outAOV <-aov (yield ~ block + clone * nitrogen, data = A)
+```
+
+```{r }
+anova (outAOV)
+outFactorial <-LSD.test (outAOV, c("clone", "nitrogen"), 
+main = "Yield ~ block + nitrogen + clone + clone:nitrogen",console=TRUE)
+```
+
+```{r eval=FALSE}
+oldpar<-par(mar=c(3,3,2,0))
+pic1<-bar.err(outFactorial$means,variation="range",ylim=c(5,25), bar=FALSE,col=0,las=1)
+points(pic1$index,pic1$means,pch=18,cex=1.5,col="blue")
+axis(1,pic1$index,labels=FALSE)
+title(main="average and range\nclon:nitrogen")
+par(oldpar)
+```
+
+## Analysis of Balanced Incomplete Blocks
+
+This analysis can come from balanced or partially balanced designs. The function `BIB.test` is for balanced designs, and `BIB.test`, for partially balanced designs. In the following example, the **agricolae** data will be used, \citet{Josh:1987}.
+
+```{r } 
+# Example linear estimation and design of experiments. (Joshi)
+# Institute of Social Sciences Agra, India
+# 6 varieties of wheat in 10 blocks of 3 plots each.
+block<-gl(10,3)
+variety<-c(1,2,3,1,2,4,1,3,5,1,4,6,1,5,6,2,3,6,2,4,5,2,5,6,3,4,5,3, 4,6)
+Y<-c(69,54,50,77,65,38,72,45,54,63,60,39,70,65,54,65,68,67,57,60,62, 
+59,65,63,75,62,61,59,55,56)
+head(cbind(block,variety,Y))
+BIB.test(block, variety, Y,console=TRUE)
+```
+
+**function (block, trt, Y, test = c("lsd", "tukey", "duncan",  "waller", "snk"), alpha = 0.05, group = TRUE)** LSD, Tukey Duncan, Waller-Duncan and SNK, can be used. The probabilities of the comparison can also be obtained. It should only be indicated: group=FALSE, thus:
+
+```{r }
+out <-BIB.test(block, trt=variety, Y, test="tukey", group=FALSE, console=TRUE)
+names(out)
+rm(block,variety)
+```
+
+**bar.group:** out\$groups
+
+**bar.err:**  out\$means
+
+## Partially Balanced Incomplete Blocks
+
+The function `PBIB.test` \citet{Josh:1987}, can be used for the lattice and alpha designs. 
+
+Consider the following case: Construct the alpha design with 30 treatments, 2 repetitions, and a block size equal to 3.
+
+```{r } 
+# alpha design 
+Genotype<-paste("geno",1:30,sep="")
+r<-2
+k<-3
+plan<-design.alpha(Genotype,k,r,seed=5)
+```
+
+The generated plan is plan$book.
+Suppose that the corresponding observation to each experimental unit is:
+
+```{r }
+yield <-c(5,2,7,6,4,9,7,6,7,9,6,2,1,1,3,2,4,6,7,9,8,7,6,4,3,2,2,1,1, 
+          2,1,1,2,4,5,6,7,8,6,5,4,3,1,1,2,5,4,2,7,6,6,5,6,4,5,7,6,5,5,4)
+```
+
+The data table is constructed for the analysis. In theory, it is presumed that a design is applied and the experiment is carried out; subsequently, the study variables are observed from each experimental unit.
+
+```{r }
+data<-data.frame(plan$book,yield)
+# The analysis: 
+modelPBIB <- with(data,PBIB.test(block, Genotype, replication, yield, k=3, group=TRUE, console=TRUE))
+```
+
+**The adjusted averages can be extracted from the modelPBIB.**
+
+head(modelPBIB\$means)
+
+**The comparisons:** 
+
+head(modelPBIB\$comparison)
+
+The data on the adjusted averages and their variation can be illustrated with the functions plot.group and bar.err. Since the created object is very similar to the objects generated by the multiple comparisons.
+
+Analysis of balanced lattice 3x3, 9 treatments, 4 repetitions.
+
+Create the data in a text file: latice3x3.txt and read with R:
+
+\begin{tabular}
+{|r|r|r|r} \hline 
+\multicolumn{3}{|c|}{sqr block trt yield} \\ \hline\hline
+1     1   1 48.76 & 1     1   4 14.46  & 1     1   3 19.68 \\ 
+1     2   8 10.83 & 1     2   6 30.69  & 1     2   7 31.00 \\
+1     3   5 12.54 & 1     3   9 42.01  & 1     3   2 23.00 \\
+2     4   5 11.07 & 2     4   8 22.00  & 2     4   1 41.00 \\
+2     5   2 22.00 & 2     5   7 42.80  & 2     5   3 12.90 \\
+2     6   9 47.43 & 2     6   6 28.28  & 2     6   4 49.95 \\
+3     7   2 27.67 & 3     7   1 50.00  & 3     7   6 25.00 \\
+3     8   7 30.00 & 3     8   5 24.00  & 3     8   4 45.57 \\
+3     9   3 13.78 & 3     9   8 24.00  & 3     9   9 30.00 \\
+4    10   6 37.00 & 4    10   3 15.42  & 4    10   5 20.00 \\
+4    11   4 42.37 & 4    11   2 30.00  & 4    11   8 18.00 \\
+4    12   9 39.00 & 4    12   7 23.80  & 4    12   1 43.81 \\
+\hline
+\end{tabular}
+
+
+```{r }
+trt<-c(1,8,5,5,2,9,2,7,3,6,4,9,4,6,9,8,7,6,1,5,8,3,2,7,3,7,2,1,3,4,6,4,9,5,8,1)
+yield<-c(48.76,10.83,12.54,11.07,22,47.43,27.67,30,13.78,37,42.37,39,14.46,30.69,42.01,
+22,42.8,28.28,50,24,24,15.42,30,23.8,19.68,31,23,41,12.9,49.95,25,45.57,30,20,18,43.81)
+sqr<-rep(gl(4,3),3)
+block<-rep(1:12,3)
+modelLattice<-PBIB.test(block,trt,sqr,yield,k=3,console=TRUE, method="VC")
+```
+
+**The adjusted averages can be extracted from the modelLattice.**
+
+print(modelLattice\$means)
+
+**The comparisons:** 
+
+head(modelLattice\$comparison)
+
+## Augmented Blocks
+
+The function `DAU.test` can be used for the analysis of the augmented block design.
+The data should be organized in a table, containing the blocks, treatments, and the response.
+```{r }
+block<-c(rep("I",7),rep("II",6),rep("III",7))
+trt<-c("A","B","C","D","g","k","l","A","B","C","D","e","i","A","B", "C",
+"D","f","h","j")
+yield<-c(83,77,78,78,70,75,74,79,81,81,91,79,78,92,79,87,81,89,96, 82)
+head(data.frame(block, trt, yield))
+```
+
+**The treatments are in each block:**
+
+```{r }
+by(trt,block,as.character)
+```
+
+**With their respective responses:**
+
+```{r }
+by(yield,block,as.character)
+```
+
+**Analysis:**
+
+```{r }
+modelDAU<- DAU.test(block,trt,yield,method="lsd",console=TRUE)
+options(digits = 2)
+modelDAU$means
+```
+
+```{r }
+modelDAU<- DAU.test(block,trt,yield,method="lsd",group=FALSE,console=FALSE)
+head(modelDAU$comparison,8)
+```
+
+# References

@@ -1,3 +1,43 @@
+#' Line x Tester Analysis
+#' 
+#' It makes the Line x Tester Genetic Analysis. It also estimates the general
+#' and specific combinatory ability effects and the line and tester genetic
+#' contribution.
+#' 
+#' ANOVA with parents and crosses \cr ANOVA for line X tester analysis \cr
+#' ANOVA for line X tester analysis including parents \cr GCA Effects: Lines
+#' Effects, Testers Effects and SCA Effects. \cr Standard Errors for Combining
+#' Ability Effects. \cr Genetic Components. \cr ...\cr Proportional
+#' contribution of lines, testers and their interactions to total variance
+#' 
+#' @param replications Replications
+#' @param lines Lines
+#' @param testers Testers
+#' @param y Variable, response
+#' @return return anova(formula = Y ~ Replications + Treatments).\cr where the
+#' Treatments contains parents, crosses and crosses vs Parents.\cr The crosses
+#' contains Lines, Testers and its interaction .
+#' @author Felipe de Mendiburu
+#' @seealso \code{\link{AMMI} }
+#' @references Biometrical Methods in Quantitative Genetic Analysis, Singh,
+#' Chaudhary. 1979. Hierarchial and factorial mating designs for quantitative
+#' genetic analysis in tetrasomic potato. R. Ortis; A.Golmirzaie. Theor Appl
+#' Genet (2002) 104:675-679
+#' @keywords models
+#' @export
+#' @examples
+#' 
+#' # see structure line by testers
+#' library(agricolae)
+#' # example 1
+#' data(heterosis)
+#' site1<-subset(heterosis,heterosis[,1]==1)
+#' output1<-with(site1,lineXtester(Replication, Female, Male, v2))
+#' # example 2
+#' data(LxT)
+#' str(LxT)
+#' output2<-with(LxT,lineXtester(replication, line, tester, yield))
+#' 
 lineXtester <-
 function(replications,lines,testers,y)
 {

@@ -1,3 +1,29 @@
+#' order plot in serpentine
+#' 
+#' applied to designs: complete block, latin square, graeco, split plot, strip
+#' plot, lattice, alpha lattice, Augmented block, cyclic, Balanced Incomplete
+#' Block and factorial.
+#' 
+#' 
+#' @param outdesign output design
+#' @return \item{fieldbook}{Remuneration of serpentine plots.}
+#' @author Felipe de Mendiburu
+#' @seealso \code{\link{design.ab}},
+#' \code{\link{design.alpha}},\code{\link{design.bib}},
+#' \code{\link{design.split} }, \code{\link{design.cyclic} },
+#' \code{\link{design.dau} }, \code{\link{design.graeco}},
+#' \code{\link{design.lattice}}, \code{\link{design.lsd}},
+#' \code{\link{design.rcbd}}, \code{\link{design.strip}}
+#' @keywords manip
+#' @export
+#' @examples
+#' 
+#' library(agricolae)
+#' trt<-letters[1:5]
+#' r<-4
+#' outdesign <- design.rcbd(trt,r,seed=9)
+#' fieldbook <- zigzag(outdesign)
+#' 
 zigzag <-
 function(outdesign){
 parameters <- outdesign$parameters

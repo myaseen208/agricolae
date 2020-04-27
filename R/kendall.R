@@ -1,3 +1,25 @@
+#' Correlation of Kendall
+#' 
+#' Correlation of Kendall two set. Compute exact p-value with ties.
+#' 
+#' 
+#' @param data1 vector
+#' @param data2 vector
+#' @return The correlation of data1, data2 vector with the statistical value
+#' and its probability
+#' @author Felipe de Mendiburu
+#' @seealso \code{\link{correlation}}
+#' @references Numerical Recipes in C. Second Edition. Pag 634
+#' @keywords nonparametric
+#' @importFrom stats pnorm
+#' @export
+#' @examples
+#' 
+#' library(agricolae)
+#' x <-c(1,1,1,4,2,2,3,1,3,2,1,1,2,3,2,1,1,2,1,2)
+#' y <-c(1,1,2,3,4,4,2,1,2,3,1,1,3,4,2,1,1,3,1,2)
+#' kendall(x,y)
+#' 
 kendall <-
 function(data1,data2) {
 n<-length(data1)

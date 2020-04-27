@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/v4-shims.min.css" integrity="sha256-A6jcAdwFD48VMjlI3GDxUd+eCQa7/KWy6G9oe/ovaPA=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -35,7 +39,7 @@
 
 <!-- docsearch -->
 <script src="../docsearch.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.3/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
 <link href="../docsearch.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
@@ -43,7 +47,6 @@
 
 <meta property="og:title" content="Random generation by Montecarlo — montecarlo" />
 <meta property="og:description" content="Random generation form data, use function density and parameters" />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -71,7 +74,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -85,7 +88,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">agricolae</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">1.3.3</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">1.4.0</span>
       </span>
     </div>
 
@@ -105,12 +108,28 @@
     Reference
   </a>
 </li>
-<li>
-  <a href="../articles/Introagricolae.html">
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     <span class="fa fa-file-o"></span>
      
     Tutorial
+     
+    <span class="caret"></span>
   </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/Introduction.html">Introduction to agricolae</a>
+    </li>
+    <li>
+      <a href="../articles/DescriptiveStats.html">Descriptive Statistics with agricolae</a>
+    </li>
+    <li>
+      <a href="../articles/ExperimentalDesign.html">Experimental Design with agricolae</a>
+    </li>
+    <li>
+      <a href="../articles/MultipleComparisons.html">Multiple Comparisons with agricolae</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">
@@ -148,7 +167,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Random generation by Montecarlo</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/myaseen208/agricolae/blob/master/R/montecarlo.R'><code>R/montecarlo.R</code></a></small>
     <div class="hidden name"><code>montecarlo.Rd</code></div>
     </div>
 
@@ -163,7 +182,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>vector  or object(hist, graph.freq)</p></td>
+      <td><p>vector or object(hist, graph.freq)</p></td>
     </tr>
     <tr>
       <th>k</th>
@@ -171,7 +190,8 @@
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Other parameters of the function density, only if data is vector</p></td>
+      <td><p>Other parameters of the function density, only if data is
+vector</p></td>
     </tr>
     </table>
 
@@ -183,9 +203,10 @@
     <div class='dont-index'><p><code><a href='https://rdrr.io/r/stats/density.html'>density</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
+    <pre class="examples"><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>agricolae</span>)
 <span class='no'>r</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span>(<span class='fl'>50</span>, <span class='fl'>10</span>,<span class='fl'>2</span>)
-<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/montecarlo.html'>montecarlo</a></span>(<span class='no'>r</span>, <span class='kw'>k</span><span class='kw'>=</span><span class='fl'>100</span>, <span class='kw'>kernel</span><span class='kw'>=</span><span class='st'>"epanechnikov"</span>)</div><div class='output co'>#&gt;   [1] 13.051613  8.468413  9.827569 13.304479  9.922394 15.959574 12.166581
+<span class='fu'>montecarlo</span>(<span class='no'>r</span>, <span class='kw'>k</span><span class='kw'>=</span><span class='fl'>100</span>, <span class='kw'>kernel</span><span class='kw'>=</span><span class='st'>"epanechnikov"</span>)</div><div class='output co'>#&gt;   [1] 13.051613  8.468413  9.827569 13.304479  9.922394 15.959574 12.166581
 #&gt;   [8]  4.232905  8.879321  8.310372 10.017219  9.068971  7.551774 12.672313
 #&gt;  [15]  7.867856 13.936644 12.545880  4.359338  9.448270  7.172474  3.790389
 #&gt;  [22] 12.261406  9.258620  9.954002  7.077649 12.356231 12.703922 12.293014
@@ -201,7 +222,7 @@
 #&gt;  [92] 12.640705 14.252727  8.057506 10.712601 11.724065 10.522951  9.416662
 #&gt;  [99] 12.451056  7.456949</div><div class='input'><span class='co'># other example</span>
 <span class='no'>h</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/graphics/hist.html'>hist</a></span>(<span class='no'>r</span>,<span class='kw'>plot</span><span class='kw'>=</span><span class='fl'>FALSE</span>)
-<span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/montecarlo.html'>montecarlo</a></span>(<span class='no'>h</span>, <span class='kw'>k</span><span class='kw'>=</span><span class='fl'>100</span>)</div><div class='output co'>#&gt;   [1]  8.890895  8.176087 15.853777 13.364009  8.263260  9.892125 11.271305
+<span class='fu'>montecarlo</span>(<span class='no'>h</span>, <span class='kw'>k</span><span class='kw'>=</span><span class='fl'>100</span>)</div><div class='output co'>#&gt;   [1]  8.890895  8.176087 15.853777 13.364009  8.263260  9.892125 11.271305
 #&gt;   [8]  9.137233 15.504633  7.047226  8.177902 10.937915  9.897187  9.228510
 #&gt;  [15] 12.536734  7.281644  6.045639 11.181868 11.712868  9.792405  8.586787
 #&gt;  [22]  9.058353  9.915716 10.601531 11.954634  6.321239 10.213165 12.270448
@@ -219,35 +240,29 @@
 <span class='no'>breaks</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>150</span>, <span class='fl'>200</span>, <span class='fl'>250</span>, <span class='fl'>300</span>)
 <span class='no'>counts</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>10</span>, <span class='fl'>20</span>, <span class='fl'>40</span>, <span class='fl'>30</span>)
 <span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span>(<span class='kw'>mfrow</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>,<span class='fl'>2</span>),<span class='kw'>cex</span><span class='kw'>=</span><span class='fl'>0.8</span>,<span class='kw'>mar</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>3</span>,<span class='fl'>0</span>,<span class='fl'>0</span>))
-<span class='no'>h1</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/graph.freq.html'>graph.freq</a></span>(<span class='kw'>x</span><span class='kw'>=</span><span class='no'>breaks</span>,<span class='kw'>counts</span><span class='kw'>=</span><span class='no'>counts</span>,<span class='kw'>plot</span><span class='kw'>=</span><span class='fl'>FALSE</span>)
-<span class='no'>r</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/montecarlo.html'>montecarlo</a></span>(<span class='no'>h</span>, <span class='kw'>k</span><span class='kw'>=</span><span class='fl'>1000</span>)
-<span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='no'>h1</span>,<span class='kw'>frequency</span> <span class='kw'>=</span> <span class='fl'>3</span>,<span class='kw'>ylim</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>0.008</span>))
+<span class='no'>h1</span><span class='kw'>&lt;-</span><span class='fu'><a href='graph.freq.html'>graph.freq</a></span>(<span class='kw'>x</span><span class='kw'>=</span><span class='no'>breaks</span>,<span class='kw'>counts</span><span class='kw'>=</span><span class='no'>counts</span>,<span class='kw'>plot</span><span class='kw'>=</span><span class='fl'>FALSE</span>)
+<span class='no'>r</span><span class='kw'>&lt;-</span><span class='fu'>montecarlo</span>(<span class='no'>h</span>, <span class='kw'>k</span><span class='kw'>=</span><span class='fl'>1000</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>h1</span>,<span class='kw'>frequency</span> <span class='kw'>=</span> <span class='fl'>3</span>,<span class='kw'>ylim</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>0.008</span>))
 <span class='fu'><a href='https://rdrr.io/r/graphics/text.html'>text</a></span>(<span class='fl'>90</span>,<span class='fl'>0.006</span>,<span class='st'>"Population\n100 obs."</span>)
-<span class='no'>h2</span><span class='kw'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/agricolae/man/graph.freq.html'>graph.freq</a></span>(<span class='no'>r</span>,<span class='no'>breaks</span>,<span class='kw'>frequency</span> <span class='kw'>=</span> <span class='fl'>3</span>,<span class='kw'>ylim</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>0.008</span>))</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/lines.html'>lines</a></span>(<span class='fu'><a href='https://rdrr.io/r/stats/density.html'>density</a></span>(<span class='no'>r</span>),<span class='kw'>col</span><span class='kw'>=</span><span class='st'>"blue"</span>)</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/text.html'>text</a></span>(<span class='fl'>90</span>,<span class='fl'>0.006</span>,<span class='st'>"Montecarlo\n1000 obs."</span>)</div><div class='img'><img src='montecarlo-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='no'>h2</span><span class='kw'>&lt;-</span><span class='fu'><a href='graph.freq.html'>graph.freq</a></span>(<span class='no'>r</span>,<span class='no'>breaks</span>,<span class='kw'>frequency</span> <span class='kw'>=</span> <span class='fl'>3</span>,<span class='kw'>ylim</span><span class='kw'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>,<span class='fl'>0.008</span>))</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/lines.html'>lines</a></span>(<span class='fu'><a href='https://rdrr.io/r/stats/density.html'>density</a></span>(<span class='no'>r</span>),<span class='kw'>col</span><span class='kw'>=</span><span class='st'>"blue"</span>)</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/text.html'>text</a></span>(<span class='fl'>90</span>,<span class='fl'>0.006</span>,<span class='st'>"Montecarlo\n1000 obs."</span>)</div><div class='img'><img src='montecarlo-1.png' alt='' width='700' height='433' /></div><div class='input'>
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#see-also">See also</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
-    <h2>Author</h2>
-    <p>Felipe de Mendiburu</p>
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
 
       <footer>
       <div class="copyright">
-  <p>Developed by Felipe de Mendiburu.</p>
+  <p>Developed by Felipe de Mendiburu, Muhammad Yaseen.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>

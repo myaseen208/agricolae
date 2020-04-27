@@ -1,3 +1,27 @@
+#' Descriptive measures of grouped data
+#' 
+#' By this process the variance and central measures ar found: average, medium
+#' and mode of grouped data.
+#' 
+#' 
+#' @param histogram Object create by function hist()
+#' @return Statistics of grouped data.
+#' @author Felipe de mendiburu
+#' @seealso \code{\link{polygon.freq}}, \code{\link{table.freq}},
+#' \code{\link{graph.freq}}, \code{\link{intervals.freq}},
+#' \code{\link{sturges.freq}}, \code{\link{join.freq}},
+#' \code{\link{ogive.freq}}, \code{\link{normal.freq} }
+#' @keywords univar
+#' @export
+#' @examples
+#' 
+#' library(agricolae)
+#' data(growth)
+#' grouped<-with(growth,hist(height,plot=FALSE))
+#' measures<-stat.freq(grouped)
+#' print(measures)
+#' 
+#' 
 stat.freq <-
 function(histogram) {
 xx <- histogram$mids

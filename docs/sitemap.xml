@@ -43,6 +43,9 @@
     <loc>https://myaseen208.github.io/agricolae//reference/LxT.html</loc>
   </url>
   <url>
+    <loc>https://myaseen208.github.io/agricolae//reference/Median.test.html</loc>
+  </url>
+  <url>
     <loc>https://myaseen208.github.io/agricolae//reference/PBIB.test.html</loc>
   </url>
   <url>
@@ -53,12 +56,6 @@
   </url>
   <url>
     <loc>https://myaseen208.github.io/agricolae//reference/SNK.test.html</loc>
-  </url>
-  <url>
-    <loc>https://myaseen208.github.io/agricolae//reference/VanderWarden.html</loc>
-  </url>
-  <url>
-    <loc>https://myaseen208.github.io/agricolae//reference/agricolae-package.html</loc>
   </url>
   <url>
     <loc>https://myaseen208.github.io/agricolae//reference/audpc.html</loc>
@@ -139,7 +136,7 @@
     <loc>https://myaseen208.github.io/agricolae//reference/design.strip.html</loc>
   </url>
   <url>
-    <loc>https://myaseen208.github.io/agricolae//reference/design.youden.rd</loc>
+    <loc>https://myaseen208.github.io/agricolae//reference/design.youden.html</loc>
   </url>
   <url>
     <loc>https://myaseen208.github.io/agricolae//reference/diffograph.html</loc>
@@ -190,13 +187,13 @@
     <loc>https://myaseen208.github.io/agricolae//reference/huasahuasi.html</loc>
   </url>
   <url>
+    <loc>https://myaseen208.github.io/agricolae//reference/index.AMMI.html</loc>
+  </url>
+  <url>
     <loc>https://myaseen208.github.io/agricolae//reference/index.bio.html</loc>
   </url>
   <url>
     <loc>https://myaseen208.github.io/agricolae//reference/index.smith.html</loc>
-  </url>
-  <url>
-    <loc>https://myaseen208.github.io/agricolae//reference/indexAMMI.html</loc>
   </url>
   <url>
     <loc>https://myaseen208.github.io/agricolae//reference/intervals.freq.html</loc>
@@ -224,9 +221,6 @@
   </url>
   <url>
     <loc>https://myaseen208.github.io/agricolae//reference/markers.html</loc>
-  </url>
-  <url>
-    <loc>https://myaseen208.github.io/agricolae//reference/median.rd</loc>
   </url>
   <url>
     <loc>https://myaseen208.github.io/agricolae//reference/melon.html</loc>
@@ -262,13 +256,13 @@
     <loc>https://myaseen208.github.io/agricolae//reference/path.analysis.html</loc>
   </url>
   <url>
+    <loc>https://myaseen208.github.io/agricolae//reference/plot.AMMI.html</loc>
+  </url>
+  <url>
     <loc>https://myaseen208.github.io/agricolae//reference/plot.graph.freq.html</loc>
   </url>
   <url>
     <loc>https://myaseen208.github.io/agricolae//reference/plot.group.html</loc>
-  </url>
-  <url>
-    <loc>https://myaseen208.github.io/agricolae//reference/plotAMMI.html</loc>
   </url>
   <url>
     <loc>https://myaseen208.github.io/agricolae//reference/plots.html</loc>
@@ -352,13 +346,16 @@
     <loc>https://myaseen208.github.io/agricolae//reference/vark.html</loc>
   </url>
   <url>
+    <loc>https://myaseen208.github.io/agricolae//reference/waerden.test.html</loc>
+  </url>
+  <url>
     <loc>https://myaseen208.github.io/agricolae//reference/waller.html</loc>
   </url>
   <url>
     <loc>https://myaseen208.github.io/agricolae//reference/waller.test.html</loc>
   </url>
   <url>
-    <loc>https://myaseen208.github.io/agricolae//reference/weatherSeverity.rd</loc>
+    <loc>https://myaseen208.github.io/agricolae//reference/weatherSeverity.html</loc>
   </url>
   <url>
     <loc>https://myaseen208.github.io/agricolae//reference/wilt.html</loc>
@@ -370,6 +367,15 @@
     <loc>https://myaseen208.github.io/agricolae//reference/zigzag.html</loc>
   </url>
   <url>
-    <loc>https://myaseen208.github.io/agricolae//articles/Introagricolae.html</loc>
+    <loc>https://myaseen208.github.io/agricolae//articles/DescriptiveStats.html</loc>
+  </url>
+  <url>
+    <loc>https://myaseen208.github.io/agricolae//articles/ExperimentalDesign.html</loc>
+  </url>
+  <url>
+    <loc>https://myaseen208.github.io/agricolae//articles/Introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://myaseen208.github.io/agricolae//articles/MultipleComparisons.html</loc>
   </url>
 </urlset>

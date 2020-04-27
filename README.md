@@ -1,13 +1,16 @@
 
 ## `agricolae`: Statistical Procedures for Agricultural Research
 
-###### Version : [1.3.3](https://myaseen208.github.io/agricolae/); Copyright (C) 2019-2020: [UAF](http://uaf.edu.pk//); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [1.4.0](https://myaseen208.github.io/agricolae/); License: [GPL-2|GPL-3](https://www.r-project.org/Licenses/)
 
-##### *Felipe de Mendiburu<sup>1</sup>*
+##### *Felipe de Mendiburu<sup>1</sup>, Muhammad Yaseen<sup>2</sup>*
 
 1.  Professor of the Academic Department of Statistics and Informatics
     of the Faculty of Economics and Planning.National University Agraria
     La Molina-PERU.
+
+2.  Department of Mathematics and Statistics, University of Agriculture
+    Faisalabad, Pakistan.
 
 -----
 
@@ -27,7 +30,7 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/agricolae?color=green)]
 [![Project Status:
 WIP](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2020--02--15-yellowgreen.svg)](https://github.com/myaseen208/agricolae)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2020--04--27-yellowgreen.svg)](https://github.com/myaseen208/agricolae)
 [![Rdoc](http://www.rdocumentation.org/badges/version/agricolae)](http://www.rdocumentation.org/packages/agricolae)
 
 -----
@@ -70,9 +73,6 @@ For a detailed tutorial (vignette) on how to used this package type:
 browseVignettes(package = "agricolae")
 ```
 
-The vignette for the latest version is also available
-[online](https://myaseen208.github.io/agricolae/articles/Introagricolae.html).
-
 ## What’s new
 
 To know whats new in this version type:
@@ -99,24 +99,23 @@ citation("agricolae")
 
 ``` 
 
-To cite the R package 'agricolae' in publications use:
+To cite package 'agricolae' in publications use:
 
-  Felipe de Mendiburu (2020).  agricolae: Statistical Procedures for
-  Agricultural Research.R package version 1.3.3 ,
-  https://myaseen208.github.io/agricolae/https://cran.r-project.org/package=agricolae.
+  Felipe de Mendiburu (2020). agricolae: Statistical Procedures for
+  Agricultural Research. R package version 1.3-2.
+  https://CRAN.R-project.org/package=agricolae
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {agricolae: Statistical Procedures for Agricultural Research},
-    author = {{Felipe de Mendiburu}},
+    author = {Felipe {de Mendiburu}},
     year = {2020},
-    note = {R package version 1.3.3},
-    note = {https://myaseen208.github.io/agricolae/ },
-    note = {https://cran.r-project.org/package=agricolae},
+    note = {R package version 1.3-2},
+    url = {https://CRAN.R-project.org/package=agricolae},
   }
 
-This free and open-source software implements academic research by the
-authors and co-workers. If you use it, please support the project by
-citing the package.
+ATTENTION: This citation information has been auto-generated from the
+package DESCRIPTION file and may need manual editing, see
+'help("citation")'.
 ```

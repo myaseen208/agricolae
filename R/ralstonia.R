@@ -1,0 +1,31 @@
+#' Data of assessment of the population in the soil R.solanacearum
+#' 
+#' The assessment of the population of R.solanacearum on the floor took place
+#' after 48 hours of infestation, during days 15, 29, 43, 58, and 133 days
+#' after the infestation soil. More information on soil data(soil).
+#' 
+#' Logarithm average counts of colonies on plates containing half of M-SMSA 3
+#' repetitions (3 plates by repetition) incubated at 30 degrees centigrade for
+#' 48 hours. log(1+UFC/g soil)
+#' 
+#' @name ralstonia
+#' @docType data
+#' @format A data frame with 13 observations on the following 8 variables.
+#' \describe{ \item{list("place")}{a factor with levels \code{Chmar} \code{Chz}
+#' \code{Cnt1} \code{Cnt2} \code{Cnt3} \code{Hco1} \code{Hco2} \code{Hco3}
+#' \code{Hyo1} \code{Hyo2} \code{Namora} \code{SR1} \code{SR2}}
+#' \item{list("Day2")}{a numeric vector} \item{list("Day15")}{a numeric vector}
+#' \item{list("Day29")}{a numeric vector} \item{list("Day43")}{a numeric
+#' vector} \item{list("Day58")}{a numeric vector} \item{list("Day73")}{a
+#' numeric vector} \item{list("Day133")}{a numeric vector} }
+#' @references International Potato Center. CIP - Lima Peru.
+#' @source Experimental field, 2004. Data Kindly provided by Dr. Sylvie Priou,
+#' Liliam Gutarra and Pedro Aley.
+#' @keywords datasets
+#' @examples
+#' 
+#' library(agricolae)
+#' data(ralstonia)
+#' str(ralstonia)
+#' 
+NULL

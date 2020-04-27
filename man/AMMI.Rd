@@ -2,27 +2,24 @@
 % Please edit documentation in R/AMMI.R
 \name{AMMI}
 \alias{AMMI}
-\alias{AMMI.default}
 \title{AMMI Analysis}
 \usage{
 AMMI(ENV, GEN, REP, Y, MSE = 0, console = FALSE, PC = FALSE)
-
-\method{AMMI}{default}(ENV, GEN, REP, Y, MSE = 0, console = FALSE, PC = FALSE)
 }
 \arguments{
-\item{\strong{ENV}}{Environment}
+\item{ENV}{Environment}
 
-\item{\strong{GEN}}{Genotype}
+\item{GEN}{Genotype}
 
-\item{\strong{REP}}{Replication}
+\item{REP}{Replication}
 
-\item{\strong{Y}}{Response}
+\item{Y}{Response}
 
-\item{\strong{MSE}}{Mean Square Error}
+\item{MSE}{Mean Square Error}
 
-\item{\strong{console}}{ouput TRUE or FALSE}
+\item{console}{ouput TRUE or FALSE}
 
-\item{\strong{PC}}{Principal components ouput TRUE or FALSE}
+\item{PC}{Principal components ouput TRUE or FALSE}
 }
 \value{
 \strong{ANOVA} analysis of variance general
@@ -47,6 +44,7 @@ graphs and analysis.
 additional graphics see help(plot.AMMI).
 }
 \examples{
+
 # Full replications
 library(agricolae)
 # Example 1
@@ -92,10 +90,20 @@ total<-sum(values$values)
 round(values$values*100/total,2)
 # AMMI: 64.81 18.58 13.50  3.11  0.00
 
+
+AMMI <- 
+    function(ENV, GEN, REP, Y, MSE = 0, console = FALSE, PC = FALSE){
+        UseMethod("AMMI")
+        }
+
+#' @export
+#' @rdname AMMI
+AMMI.default <- 
 }
 \author{
 \enumerate{
          \item Felipe de Mendiburu (\email{fmendiburu@lamolina.edu.pe})
+         \item Muhammad Yaseen (\email{myaseen208@gmail.com})
          }
 }
 \keyword{plot}
