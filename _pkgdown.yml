@@ -1,3 +1,9 @@
+url: https://myaseen208.github.io/agricolae/
+
+home:
+  title: agricolae
+  description: Statistical Procedures for Agricultural Research
+  
 template:
   params:
     bootswatch: united
@@ -6,10 +12,18 @@ template:
       api_key: bdafb7ea4490644e670f470ee3ef537f
       index_name: agricolae
 
+toc:
+  depth: 3
+
+authors:
+  Felipe Mendiburu:
+    href: https://www.researchgate.net/profile/Felipe_Mendiburu
+  Muhammmad Yaseen:
+    href: https://www.researchgate.net/profile/Muhammad_Yaseen10
+    
 development:
   mode: unreleased
 
-url: https://myaseen208.github.io/agricolae/
 
 navbar:
   title: agricolae
@@ -32,12 +46,23 @@ navbar:
         href: articles/ExperimentalDesign.html
       - text: "Multiple Comparisons with agricolae"
         href: articles/MultipleComparisons.html
+      - text: "Non-parametric Comparisons with agricolae"
+        href: articles/Non-parametricComparisons.html
+      - text: "Graphics of the Multiple Comparisons with agricolae"
+        href: articles/GraphicsMultipleComparisons.html
+      - text: "Stability Analysis with agricolae"
+        href: articles/StabilityAnalysis.html
+      - text: "Special Functions in agricolae"
+        href: articles/SpecialFunctions.html
     - icon: fa-newspaper-o
       text: News
       href: news/index.html
   right:
-    - icon: fa-github-alt
-      text: Github
+    - icon: "fa-github"
       href: https://github.com/myaseen208/agricolae
-
+    - text: "RG"
+      href: https://www.researchgate.net/profile/Muhammad_Yaseen10
+    - icon: "fab fa-twitter"
+      href: https://twitter.com/myaseen208
+    
 reference:

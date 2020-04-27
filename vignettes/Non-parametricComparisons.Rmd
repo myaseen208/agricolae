@@ -1,0 +1,246 @@
+---
+title: "Non-parametric Comparisons with **agricolae**"
+author: "Felipe de Mendiburu^1^, Muhammad Yaseen^2^"
+date: "`r Sys.Date()`"
+output:
+  bookdown::html_document2:
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+  pdf_document:
+    toc: yes
+  bookdown::pdf_document2:
+    dev: cairo_pdf
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+geometry: margin=3cm
+documentclass: article
+header-includes:
+- \usepackage{fancyhdr}
+- \usepackage{wrapfig}
+- \usepackage{float}
+- \pagestyle{fancy}
+- \fancyfoot[C]{\thepage}
+- \usepackage{hyperref}
+- \hypersetup{colorlinks=true}
+- \hypersetup{linktoc=all}
+- \hypersetup{linkcolor=blue}
+- \usepackage{pdflscape}
+- \usepackage{booktabs}
+- \newcommand{\blandscape}{\begin{landscape}}
+- \newcommand{\elandscape}{\end{landscape}}
+- \renewcommand\thesection{\arabic{section}}
+link-citations: yes
+csl: frontiers.csl
+resource_files:
+- vignettes/rbase.png
+- vignettes/rstudio.png
+- vignettes/rstudio panes.png
+bibliography: Bibliography.bib
+vignette: |
+  %\VignetteIndexEntry{Non-parametricComparisons}
+  %\usepackage[utf8]{inputenc}
+  %\VignetteEngine{knitr::rmarkdown_notangle}
+---
+
+
+```{r  echo=FALSE}
+out_type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+
+r = getOption("repos")
+r["CRAN"] = "https://cran.rstudio.com/"
+#r["CRAN"] = "https://cloud.r-project.org/"
+#r["CRAN"] = "https://ftp.iitm.ac.in/cran/"
+options(repos = r)
+```
+
+```{r results='asis', echo=FALSE}
+switch(out_type,
+    html = {cat("<p>1. Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.</p>
+    
+<p>2. Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.</p>")},
+    latex = cat("\\begin{center}
+1. Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.
+
+2. Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.
+
+\\end{center}" )
+)
+```
+
+
+```{r include = FALSE}
+knitr::opts_chunk$set(
+    echo    = TRUE
+  , comment = ""
+  , fig.cap = ""
+  )
+library(agricolae)
+```
+
+
+\begin{center}
+\vspace{6pt}
+\hrule
+\end{center}
+
+
+
+# Non-parametric Comparisons
+
+\section {Non-parametric comparisons}
+
+The functions for non-parametric multiple comparisons included in **agricolae**  are: *kruskal, waerden.test, friedman and durbin.test*, \citet{Cono:1999}. 
+
+The post hoc nonparametrics tests (kruskal, friedman, durbin and waerden) are using the criterium Fisher's least significant difference (LSD).
+
+The function *kruskal* is used for N samples (N>2), populations or data coming from a completely random experiment (populations = treatments).
+
+The function *waerden.test*, similar to kruskal-wallis, uses a normal score instead of ranges as kruskal does.
+
+The function *friedman* is used for organoleptic evaluations of different products, made by judges (every judge evaluates all the products). It can also be used for the analysis of treatments of the randomized complete block design, where the response cannot be treated through the analysis of variance.
+
+The function *durbin.test* for the analysis of balanced incomplete block designs is very used for sampling tests, where the judges only evaluate a part of the treatments. 
+
+The function *Median.test* for the analysis the distribution is approximate with chi-squared  ditribution with degree free number of groups minus one. In each comparison a table of 2x2 (pair of groups) and the criterion of greater or lesser value than the median of both are formed, the chi-square test is applied for the calculation of the probability of error that both are independent. This value is compared to the alpha level for group formation.
+
+Montgomery book data, \citet{Mont:2002}.
+Included in the **agricolae**  package 
+
+```{r }
+data(corn)
+str(corn)
+```
+
+\textbf{For the examples, the **agricolae**  package data will be used} 
+\subsection {Kruskal-Wallis}
+It makes the multiple comparison with Kruskal-Wallis. The parameters by default are alpha = 0.05.
+
+```{r }
+str(kruskal)
+```
+
+**Analysis**
+
+```{r }
+outKruskal<-with(corn,kruskal(observation,method,group=TRUE, main="corn", console=TRUE))
+```
+
+The object output has the same structure of the comparisons see the functions plot.group(agricolae), bar.err(agricolae) and bar.group(agricolae).
+
+\subsection {Kruskal-Wallis: adjust P-values}
+
+To see p.adjust.methods()
+
+```{r }
+out<-with(corn,kruskal(observation,method,group=TRUE, main="corn", p.adj="holm"))
+print(out$group)
+out<-with(corn,kruskal(observation,method,group=FALSE, main="corn", p.adj="holm"))
+print(out$comparison)
+```
+
+\subsection {Friedman}
+The data consist of b mutually independent k-variate random variables called b blocks. The random variable is in a block and is associated with treatment. It makes the multiple comparison of the Friedman test with or without ties. A first result is obtained by friedman.test of R.
+
+```{r }
+str(friedman)
+```
+
+**Analysis**
+
+```{r }
+data(grass)
+out<-with(grass,friedman(judge,trt, evaluation,alpha=0.05, group=FALSE,
+main="Data of the book of Conover",console=TRUE))
+```
+
+\subsection {Waerden}
+A nonparametric test for several independent samples. Example applied with the sweet potato data in the **agricolae**  basis.
+
+```{r }
+str(waerden.test)
+```
+
+**Analysis**
+
+```{r }
+data(sweetpotato)
+outWaerden<-with(sweetpotato,waerden.test(yield,virus,alpha=0.01,group=TRUE,console=TRUE))
+```
+
+The comparison probabilities are obtained with the parameter group = **FALSE** 
+```{r }
+
+names(outWaerden)
+
+```
+\textbf{To see outWaerden\$comparison}
+```{r }
+out<-with(sweetpotato,waerden.test(yield,virus,group=FALSE,console=TRUE))
+```
+
+\subsection {Median test}
+A nonparametric test for several independent samples. The median test is designed to examine whether several samples came from populations having the same median, \citet{Cono:1999}. See also Figure \@ref(fig:f14).
+
+In each comparison a table of 2x2 (pair of groups) and the criterion of greater or lesser value than the median of both are formed, the chi-square test is applied for the calculation of the probability of error that both are independent. This value is compared to the alpha level for group formation.
+
+```{r }
+str(Median.test)
+```
+
+```{r }
+str(Median.test)
+```
+
+**Analysis**
+
+```{r }
+data(sweetpotato)
+outMedian<-with(sweetpotato,Median.test(yield,virus,console=TRUE))
+names(outMedian)
+outMedian$statistics
+outMedian$medians
+```
+
+\begin{figure}
+\begin{center}
+
+```{r f14, echo=TRUE, fig=TRUE, width=6, height=4}
+oldpar<-par(mfrow=c(2,2),mar=c(3,3,1,1),cex=0.8)
+# Graphics
+bar.group(outMedian$groups,ylim=c(0,50))
+bar.group(outMedian$groups,xlim=c(0,50),horiz = TRUE)
+plot(outMedian)
+plot(outMedian,variation="IQR",horiz = TRUE)
+par(oldpar)
+```
+
+\caption{Grouping of treatments and its variation, Median method{#fig:f14}}
+\end{center}
+\end{figure}
+
+\subsection {Durbin}
+*durbin.test*; example: Myles Hollander (p. 311) Source: W. Moore and C.I. Bliss. (1942)
+A multiple comparison of the Durbin test for the balanced incomplete blocks for sensorial or categorical evaluation. It forms groups according to the demanded ones for level of significance (alpha); by default, 0.05.
+
+```{r }
+str(durbin.test)
+```
+
+**Analysis**
+
+```{r }
+days <-gl(7,3)
+chemical<-c("A","B","D","A","C","E","C","D","G","A","F","G", "B","C","F", 
+"B","E","G","D","E","F")
+toxic<-c(0.465,0.343,0.396,0.602,0.873,0.634,0.875,0.325,0.330, 0.423,0.987,0.426,
+0.652,1.142,0.989,0.536,0.409,0.309, 0.609,0.417,0.931)
+head(data.frame(days,chemical,toxic))
+out<-durbin.test(days,chemical,toxic,group=FALSE,console=TRUE,
+main="Logarithm of the toxic dose")
+names(out)
+out$statistics
+```
+
+# References

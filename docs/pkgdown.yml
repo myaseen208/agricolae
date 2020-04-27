@@ -4,9 +4,13 @@ pkgdown_sha: cb74ce08c4b25adda98256ea46196b1182f4e0ea
 articles:
   DescriptiveStats: DescriptiveStats.html
   ExperimentalDesign: ExperimentalDesign.html
+  GraphicsMultipleComparisons: GraphicsMultipleComparisons.html
   Introduction: Introduction.html
   MultipleComparisons: MultipleComparisons.html
-last_built: 2020-04-27T08:56Z
+  Non-parametricComparisons: Non-parametricComparisons.html
+  SpecialFunctions: SpecialFunctions.html
+  StabilityAnalysis: StabilityAnalysis.html
+last_built: 2020-04-27T10:32Z
 urls:
   reference: https://myaseen208.github.io/agricolae//reference
   article: https://myaseen208.github.io/agricolae//articles

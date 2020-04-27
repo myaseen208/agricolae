@@ -1,0 +1,701 @@
+---
+title: "Special Functions in **agricolae**"
+author: "Felipe de Mendiburu^1^, Muhammad Yaseen^2^"
+date: "`r Sys.Date()`"
+output:
+  bookdown::html_document2:
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+  pdf_document:
+    toc: yes
+  bookdown::pdf_document2:
+    dev: cairo_pdf
+    fig_caption: yes
+    number_sections: yes
+    toc: yes
+geometry: margin=3cm
+documentclass: article
+header-includes:
+- \usepackage{fancyhdr}
+- \usepackage{wrapfig}
+- \usepackage{float}
+- \pagestyle{fancy}
+- \fancyfoot[C]{\thepage}
+- \usepackage{hyperref}
+- \hypersetup{colorlinks=true}
+- \hypersetup{linktoc=all}
+- \hypersetup{linkcolor=blue}
+- \usepackage{pdflscape}
+- \usepackage{booktabs}
+- \newcommand{\blandscape}{\begin{landscape}}
+- \newcommand{\elandscape}{\end{landscape}}
+- \renewcommand\thesection{\arabic{section}}
+link-citations: yes
+csl: frontiers.csl
+resource_files:
+- vignettes/rbase.png
+- vignettes/rstudio.png
+- vignettes/rstudio panes.png
+bibliography: Bibliography.bib
+vignette: |
+  %\VignetteIndexEntry{SpecialFunctions}
+  %\usepackage[utf8]{inputenc}
+  %\VignetteEngine{knitr::rmarkdown_notangle}
+---
+
+
+```{r  echo=FALSE}
+out_type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+
+r = getOption("repos")
+r["CRAN"] = "https://cran.rstudio.com/"
+#r["CRAN"] = "https://cloud.r-project.org/"
+#r["CRAN"] = "https://ftp.iitm.ac.in/cran/"
+options(repos = r)
+```
+
+```{r results='asis', echo=FALSE}
+switch(out_type,
+    html = {cat("<p>1. Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.</p>
+    
+<p>2. Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.</p>")},
+    latex = cat("\\begin{center}
+1. Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.
+
+2. Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.
+
+\\end{center}" )
+)
+```
+
+
+```{r include = FALSE}
+knitr::opts_chunk$set(
+    echo    = TRUE
+  , comment = ""
+  , fig.cap = ""
+  )
+library(agricolae)
+```
+
+
+\begin{center}
+\vspace{6pt}
+\hrule
+\end{center}
+
+
+
+# Special Functions
+## Consensus of dendrogram
+
+Consensus is the degree or similarity of the vertexes of a tree regarding its branches of the constructed dendrogram. The function to apply is consensus().
+
+The data correspond to a table, with the name of the individuals and the variables in the rows and columns respectively. For the demonstration, we will use the "pamCIP" data of 'agricolae', which correspond to molecular markers of 43 entries of a germplasm bank (rows) and 107 markers (columns).
+
+The program identifies duplicates in the rows and can operate in both cases. The result is a dendrogram, in which the consensus percentage is included, see Figure \@ref(fig:f7).
+
+\begin{figure}
+\begin{center}
+```{r f7, fig=TRUE,width=5, height=2}
+oldpar<-par(cex=0.6,mar=c(3,3,2,1))
+data(pamCIP)
+rownames(pamCIP)<-substr(rownames(pamCIP),1,6)
+output<-consensus(pamCIP,distance="binary", method="complete", nboot=5)
+par(oldpar)
+```
+\caption{Dendrogram, production by consensus{#fig:f7}}
+\end{center}
+\end{figure}
+When the dendrogram is complex, it is convenient to extract part of it with the function hcut(), see Figure \@ref(fig:f8).
+
+\begin{figure}
+\begin{center}
+```{r f8, fig=TRUE,width=5, height=2}
+oldpar<-par(cex=0.6,mar=c(3,3,1.5,1))
+out1<- hcut(output,h=0.4,group=8,type="t",edgePar = list(lty=1:2, col=colors()[c(42,84)]),
+main="group 8" ,col.text="blue",cex.text=1,las=1)
+par(oldpar)
+```
+\caption{Dendrogram, production by hcut(){#fig:f8}}
+\end{center}
+\end{figure}
+
+The obtained object "output" contains information about the process: 
+```{r }
+names(output)
+```
+
+**Construct a classic dendrogram, execute procedure in R**
+
+use the previous result 'output'
+```{r }
+dend <- as.dendrogram(output$dendrogram)
+data <- output$table.dend
+head(output$table.dend)
+```
+```{r eval=FALSE}
+oldpar<-par(mar=c(3,3,1,1),cex=0.6)
+plot(dend,type="r",edgePar = list(lty=1:2, col=colors()[c(42,84)]) ,las=1)
+text(data[,3],data[,4],data[,5],col="blue",cex=1)
+par(oldpar)
+```
+
+## Montecarlo
+
+It is a method for generating random numbers of an unknown distribution. It uses a data set and, through the cumulative behavior of its relative frequency, generates the possible random values that follow the data distribution. These new numbers are used in some simulation process.
+
+The probability density of the original and simulated data can be compared, see Figure \@ref(fig:f9).
+
+```{r }
+data(soil)
+# set.seed(9473)
+simulated <- montecarlo(soil$pH,1000)
+h<-graph.freq(simulated,nclass=7,plot=FALSE)
+```
+
+```{r f9, fig=TRUE, width=4, height=1.5}
+oldpar<-par(mar=c(2,0,2,1),cex=0.6)
+plot(density(soil$pH),axes=FALSE,main="pH density of the soil\ncon Ralstonia",xlab="",lwd=4)
+lines(density(simulated), col="blue", lty=4,lwd=4)
+axis(1,0:12)
+legend("topright",c("Original","Simulated"),lty=c(1,4),col=c("black", "blue"), lwd=4)
+par(oldpar)
+```
+\caption{Distribution of the simulated and the original data{#fig:f9}}
+
+1000 data was simulated, being the frequency table: 
+
+```{r }
+round(table.freq(h),2)
+```
+
+**Some statistics, original data:**
+```{r }
+summary(soil$pH)
+```
+
+**Some statistics, montecarlo simulate data:**
+```{r }
+summary(simulated)
+```
+
+## Re-Sampling in linear model
+
+It uses the permutation method for the calculation of the probabilities of the sources of variation of ANOVA according to the linear regression model or the design used. The principle is that the Y response does not depend on the averages proposed in the model; hence, the Y values can be permutated and many model estimates can be constructed. On the basis of the patterns of the random variables of the elements under study, the probability is calculated in order to measure the significance.
+
+For a variance analysis, the data should be prepared similarly. The function to use is: resampling.model()
+
+
+```{r }
+data(potato)
+potato[,1]<-as.factor(potato[,1])
+potato[,2]<-as.factor(potato[,2])
+model<-"cutting~variety + date + variety:date"
+analysis<-resampling.model(model, potato, k=100)
+Xsol<-as.matrix(round(analysis$solution,2))
+print(Xsol,na.print = "")
+```
+The function resampling.model() can be used when the errors have a different distribution from normal
+
+
+## Simulation in linear model
+
+Under the assumption of normality, the function generates pseudo experimental errors under the proposed model, and determines the proportion of valid results according to the analysis of variance found.
+
+The function is: simulation.model(). The data are prepared in a table, similarly to an analysis of variance. 
+
+Considering the example proposed in the previous procedure:
+
+```{r }
+simModel <- simulation.model(model, potato, k=100,console=TRUE)
+```
+```{r include=FALSE,echo=FALSE}
+ab<-simModel$simulation[3,3]
+```
+
+The validation is referred to the percentage of decision results equal to the result of the ANOVA decision. Thus,  `r ab`\% of the results simulated on the interaction variety*date gave the same result of acceptance or rejection obtained in the ANOVA.
+
+## Path Analysis
+
+It corresponds to the "path analysis" method. The data correspond to correlation matrices of the independent ones with the dependent matrix (XY) and between the independent ones (XX).
+
+It is necessary to assign names to the rows and columns in order to identify the direct and indirect effects.
+
+```{r }
+corr.x<- matrix(c(1,0.5,0.5,1),c(2,2))
+corr.y<- rbind(0.6,0.7)
+names<-c("X1","X2")
+dimnames(corr.x)<-list(names,names)
+dimnames(corr.y)<-list(names,"Y")
+output<-path.analysis(corr.x,corr.y)
+```
+
+```{r }
+output
+```
+
+## Line X Tester
+It corresponds to a crossbreeding analysis of a genetic design. The data should be organized in a table. Only four columns are required: repetition, females, males, and response. In case it corresponds to progenitors, the females or males field will only be filled with the corresponding one. See the heterosis data, \citet{SingChau:1979}.
+
+**Example with the heterosis data, locality 2.** 
+
+\begin{verbatim}
+     Replication   Female   Male   v2
+ 109           1     LT-8  TS-15 2.65
+ 110           1     LT-8 TPS-13 2.26
+ ...
+ 131           1 Achirana TPS-13 3.55
+ 132           1 Achirana TPS-67 3.05
+ ...
+ 140           1 Achirana   <NA> 3.35
+ ...
+ 215           3     <NA> TPS-67 2.91
+\end{verbatim}
+
+where <NA> is empty. 
+
+If it is a progeny, it comes from a "Female" and a "Male."
+If it is a progenitor, it will only be "Female" or "Male."
+
+The following example corresponds to data of the locality 2:
+
+24 progenies
+8 females
+3 males
+3 repetitions
+
+They are 35 treatments (24, 8, 3) applied to three blocks.
+
+```{r }
+rm(list=ls())
+options(digits = 2)
+data(heterosis)
+str(heterosis)
+site2<-subset(heterosis,heterosis[,1]==2)
+site2<-subset(site2[,c(2,5,6,8)],site2[,4]!="Control")
+output1<-with(site2,lineXtester(Replication, Female, Male, v2))
+options(digits = 7)
+```
+
+## Soil Uniformity
+
+The Smith index is an indicator of the uniformity, used to determine the parcel size for research purposes. The data correspond to a matrix or table that contains the response per basic unit, a number of n rows x m columns, and a total of n*m basic units.
+
+For the test, we will use the rice file. The graphic is a result with the adjustment of a model for the plot size and the coefficient of variation, see Figure \@ref(fig:f10).
+
+```{r f10, fig=TRUE, width=4, height=2}
+oldpar<-par(mar=c(3,3,4,1),cex=0.7)
+data(rice)
+table<-index.smith(rice, col="blue",
+ main="Interaction between the CV and the plot size",type="l",xlab="Size")
+par(oldpar)
+```
+
+\caption{Adjustment curve for the optimal size of plot{#fig:f10}}
+
+```{r }
+uniformity <- data.frame(table$uniformity)
+head(uniformity)
+```
+
+## Confidence Limits In Biodiversity Indices
+
+The biodiversity indices are widely used for measuring the presence of living things in an ecological area. Many programs indicate their value. The function of 'agricolae' is also to show the confidence intervals, which can be used for a statistical comparison. Use the bootstrap procedure. The data are organized in a table; the species are placed in a column; and in another one, the number of individuals. The indices that can be calculated with the function index.bio() of 'agricolae' are: "Margalef", "Simpson.Dom", "Simpson.Div", "Berger.Parker", "McIntosh", and "Shannon."
+
+In the example below, we will use the data obtained in the locality of Paracsho, district of Huasahuasi, province of Tarma in the department of Junin.
+
+The evaluation was carried out in the parcels on 17 November 2005, without insecticide application. The counted specimens were the following:
+
+```{r }
+data(paracsho)
+species <- paracsho[79:87,4:6]
+species
+```
+
+**The Shannon index is:**
+
+```{r }
+output <- index.bio(species[,3],method="Shannon",level=95,nboot=200)
+```
+
+## Correlation
+
+The function correlation() of 'agricolae' makes the correlations through the methods of Pearson, Spearman and Kendall for vectors and/or matrices. If they are two vectors, the test is carried out for one or two lines; if it is a matrix one, it determines the probabilities for a difference, whether it is greater or smaller.
+
+For its application, consider the soil data: data(soil)
+
+```{r }
+data(soil)
+correlation(soil[,2:4],method="pearson")
+with(soil,correlation(pH,soil[,3:4],method="pearson"))
+```
+
+## tapply.stat() 
+
+Gets a functional calculation of variables grouped by study factors.
+
+**Application with 'agricolae' data:**
+
+max(yield)-min(yield) by farmer 
+
+```{r }
+data(RioChillon)
+with(RioChillon$babies,tapply.stat(yield,farmer,function(x) max(x)-min(x)))
+```
+
+It corresponds to the range of variation in the farmers' yield. 
+
+The function "tapply" can be used directly or with function. 
+
+If A is a table with columns 1,2 and 3 as category, and 5,6 and 7 as variables, then the following procedures are valid:
+
+tapply.stat(A[,5:7], A[,1:3],mean)
+
+tapply.stat(A[,5:7], A[,1:3],function(x) mean(x,na.rm=TRUE))
+
+tapply.stat(A[,c(7,6)], A[,1:2],function(x) sd(x)*100/mean(x))
+
+
+## Coefficient of variation of an experiment
+
+If "model" is the object resulting from an analysis of variance of the function aov() or lm() of R, then the function cv.model() calculates the 
+\underline{coefficient of variation.}
+
+```{r }
+data(sweetpotato)
+model <- model<-aov(yield ~ virus, data=sweetpotato)
+cv.model(model)
+```
+
+## Skewness and kurtosis
+
+The skewness and kurtosis results, obtained by 'agricolae', are equal to the ones obtained by SAS, MiniTab, SPSS, InfoStat, and Excel.
+
+If x represents a data set:
+
+```{r }
+x<-c(3,4,5,2,3,4,5,6,4,NA,7)
+```
+
+**skewness is calculated with:**
+
+```{r }
+skewness(x)
+```
+
+**and kurtosis with:**
+
+```{r }
+kurtosis(x)
+```
+
+## Tabular value of Waller-Duncan
+
+The function Waller determines the tabular value of Waller-Duncan. For the calculation, value F is necessary, calculated from the analysis of variance of the study factor, with its freedom degrees and the estimate of the variance of the experimental error. Value K, parameter of the function is the ratio between the two types of errors (I and II). To use it, a value associated with the alpha level is assigned. When the alpha level is 0.10, 50 is assigned to K; for 0.05, K=100; and for 0.01, K=500. K can take any value. 
+
+```{r }
+q<-5
+f<-15
+K<-seq(10,1000,100)
+n<-length(K)
+y<-rep(0,3*n)
+dim(y)<-c(n,3)
+for(i in 1:n) y[i,1]<-waller(K[i],q,f,Fc=2)
+for(i in 1:n) y[i,2]<-waller(K[i],q,f,Fc=4)
+for(i in 1:n) y[i,3]<-waller(K[i],q,f,Fc=8)
+```
+
+**Function of Waller to different value of parameters K and Fc** 
+The next procedure illustrates the function for different values of K with freedom degrees of 5 for the numerator and 15 for the denominator, and values of calculated F, equal to 2, 4, and 8.
+
+```{r eval=FALSE}
+oldpar<-par(mar=c(3,3,4,1),cex=0.7)
+plot(K,y[,1],type="l",col="blue",ylab="waller",bty="l")
+lines(K,y[,2],type="l",col="brown",lty=2,lwd=2)
+lines(K,y[,3],type="l",col="green",lty=4,lwd=2)
+legend("topleft",c("2","4","8"),col=c("blue","brown","green"),lty=c(1,8,20),
+lwd=2,title="Fc")
+title(main="Waller in function of K")
+par(oldpar)
+```
+
+**Generating table Waller-Duncan** 
+
+```{r }
+K<-100
+Fc<-1.2
+q<-c(seq(6,20,1),30,40,100)
+f<-c(seq(4,20,2),24,30)
+n<-length(q)
+m<-length(f)
+W.D <-rep(0,n*m)
+dim(W.D)<-c(n,m)
+for (i in 1:n) {
+for (j in 1:m) {
+W.D[i,j]<-waller(K, q[i], f[j], Fc)
+}}
+W.D<-round(W.D,2)
+dimnames(W.D)<-list(q,f)
+cat("table: Waller Duncan k=100, F=1.2")
+print(W.D)
+```
+
+## AUDPC
+
+The area under the disease progress curve (AUDPC), see Figure \@ref(fig:f11) calculates the absolute and relative progress of the disease. It is required to measure the disease in percentage terms during several dates, preferably equidistantly.
+
+```{r }
+days<-c(7,14,21,28,35,42)
+evaluation<-data.frame(E1=10,E2=40,E3=50,E4=70,E5=80,E6=90)
+print(evaluation)
+absolute1 <-audpc(evaluation,days)
+relative1 <-round(audpc(evaluation,days,"relative"),2)
+```
+
+## AUDPS
+
+The Area Under the Disease Progress Stairs (AUDPS), see Figure \@ref(fig:f11). A better estimate of disease progress is the area under the disease progress stairs (AUDPS). The AUDPS approach improves the estimation of disease progress by giving a weight closer to optimal to the first and last observations..
+
+```{r }
+absolute2 <-audps(evaluation,days)
+relative2 <-round(audps(evaluation,days,"relative"),2)
+```
+
+
+```{r f11, echo=FALSE, fig=TRUE, width=8, height=2}
+oldpar<-par(mfrow=c(1,2),mar=c(3,3,1,1),cex=0.7)
+plot(days, evaluation,type="h",ylim=c(0,100),axes=FALSE,col= colors()[42],xlab="Days", ylab="Evaluation")
+lines(days,evaluation,col= colors()[42])
+axis(1,days)
+axis(2,seq(0,100,20),las=2)
+rect(7,0,42,100)
+text(15,80,substitute(paste("Audpc Abs.=",A1),list(A1=absolute1)))
+text(15,70,substitute(paste("Audpc Rel.=",A2),list(A2=relative1)))
+x<-seq(3.5,45.5,7)
+evaluation<-c(evaluation,evaluation[6])
+plot(x, evaluation,type="s",ylim=c(0,100),axes=FALSE,col= colors()[42],xlab="Days", ylab="Evaluation")
+points(x,evaluation,type="h",col= colors()[42])
+points(days,evaluation[-6],pch=16,col=4)
+text(days,5,days,col=4,cex=1)
+axis(1,x,pos=0)
+axis(2,seq(0,100,20),las=2)
+rect(3.5,0,45.5,100)
+text(13,80,substitute(paste("Audps Abs.=",A1),list(A1=absolute2)))
+text(13,70,substitute(paste("Audps Rel.=",A2),list(A2=relative2)))
+```
+
+\caption{Area under the curve (AUDPC) and Area under the Stairs (AUDPS){#fig:f11}}
+
+
+
+## Non-Additivity
+
+Tukey's test for non-additivity is used when there are doubts about the additivity veracity of a model. This test confirms such assumption and it is expected to accept the null hypothesis of the non-additive effect of the model.
+
+For this test, all the experimental data used in the estimation of the linear additive model are required.
+
+Use the function nonadditivity() of 'agricolae'. For its demonstration, the experimental data "potato", of the package 'agricolae', will be used. In this case, the model corresponds to the randomized complete block design, where the treatments are the varieties.
+
+```{r }
+data(potato)
+potato[,1]<-as.factor(potato[,1])
+model<-lm(cutting ~ date + variety,potato)
+df<-df.residual(model)
+MSerror<-deviance(model)/df
+analysis<-with(potato,nonadditivity(cutting, date, variety, df, MSerror))
+```
+
+According to the results, the model is additive because the p.value 0.35 is greater than 0.05.
+
+## LATEBLIGHT
+
+LATEBLIGHT is a mathematical model that simulates the effect of weather, host growth and resistance, and fungicide use on asexual development and growth of Phytophthora infestans on potato foliage, see Figure \@ref(fig:f12)
+
+LATEBLIGHT Version LB2004 was created in October 2004 (Andrade-Piedra et al., 2005a, b and c), based on the C-version written by B.E. Ticknor ('BET 21191 modification of cbm8d29.c'), reported by Doster et al. (1990) and described in detail by Fry et al. (1991) (This version is referred as LB1990 by Andrade-Piedra et al. [2005a]). The first version of LATEBLIGHT was developed by Bruhn and Fry (1981) and described in detail by Bruhn et al. (1980).
+
+```{r }
+options(digits=2)
+f <- system.file("external/weather.csv", package="agricolae")
+weather <- read.csv(f,header=FALSE)
+f <- system.file("external/severity.csv", package="agricolae")
+severity <- read.csv(f)
+weather[,1]<-as.Date(weather[,1],format = "%m/%d/%Y")
+# Parameters dates
+dates<-c("2000-03-25","2000-04-09","2000-04-12","2000-04-16","2000-04-22")
+dates<-as.Date(dates)
+EmergDate <- as.Date("2000/01/19")
+EndEpidDate <- as.Date("2000-04-22")
+dates<-as.Date(dates)
+NoReadingsH<- 1
+RHthreshold <- 90
+WS<-weatherSeverity(weather,severity,dates,EmergDate,EndEpidDate,
+NoReadingsH,RHthreshold)
+# Parameters to Lateblight function
+InocDate<-"2000-03-18"
+LGR <- 0.00410
+IniSpor <- 0
+SR <- 292000000
+IE <- 1.0
+LP <- 2.82
+InMicCol <- 9
+Cultivar <- "NICOLA"
+ApplSys <- "NOFUNGICIDE"
+main<-"Cultivar: NICOLA"
+```
+
+
+```{r f12, fig=TRUE, width=4.5, height=2.5}
+oldpar<-par(mar=c(3,3,4,1),cex=0.7)
+#--------------------------
+model<-lateblight(WS, Cultivar,ApplSys, InocDate, LGR,IniSpor,SR,IE, 
+LP,MatTime='LATESEASON',InMicCol,main=main,type="l",xlim=c(65,95),lwd=1.5,
+xlab="Time (days after emergence)", ylab="Severity (Percentage)")
+par(oldpar)
+```
+
+\caption{lateblight: LATESEASON{#fig:f12}}
+
+
+
+```{r }
+head(model$Gfile)
+str(model$Ofile)
+head(model$Ofile[,1:7])
+```
+
+**Repeating graphic**
+```{r }
+x<- model$Ofile$nday
+y<- model$Ofile$SimSeverity
+w<- model$Gfile$nday
+z<- model$Gfile$MeanSeverity
+Min<-model$Gfile$MinObs
+Max<-model$Gfile$MaxObs
+```
+
+```{r eval=FALSE}
+oldpar<-par(mar=c(3,2.5,1,1),cex=0.7)
+plot(x,y,type="l",xlim=c(65,95),lwd=1.5,xlab="Time (days after emergence)",
+ylab="Severity (Percentage)")
+points(w,z,col="red",cex=1,pch=19); npoints <- length(w)
+for ( i in 1:npoints)segments(w[i],Min[i],w[i],Max[i],lwd=1.5,col="red")
+legend("topleft",c("Disease progress curves","Weather-Severity"),
+title="Description",lty=1,pch=c(3,19),col=c("black","red"))
+par(oldpar)
+```
+
+In **agricolae**  there are two methods for the study of stability and the AMMI model. These are: a parametric model for a simultaneous selection in yield and stability "SHUKLA'S STABILITY VARIANCE AND KANG'S",  \citet{Kang:1993} and a non-parametric method of Haynes, based on the data range.
+
+## Parametric Stability
+
+Use the parametric model, function *stability.par*.
+
+Prepare a data table where the rows and the columns are the genotypes and the environments, respectively. The data should correspond to yield averages or to another measured variable. Determine the variance of the common error for all the environments and the number of repetitions that was evaluated for every genotype. If the repetitions are different, find a harmonious average that will represent the set. Finally, assign a name to each row that will represent the genotype, \citet{Kang:1993}. We will consider five environments in the following example:
+
+```{r }
+options(digit=2)
+f <- system.file("external/dataStb.csv", package="agricolae")
+dataStb<-read.csv(f)
+stability.par(dataStb, rep=4, MSerror=1.8, alpha=0.1, main="Genotype",console=TRUE)
+```
+
+For 17 genotypes, the identification is made by letters.
+An error variance of 2 and 4 repetitions is assumed.
+
+**Analysis**
+```{r }
+output <- stability.par(dataStb, rep=4, MSerror=2)
+names(output)
+print(output$stability)
+```
+The selected genotypes are: A, C, E, G, H, I, J and O. These genotypes have a higher yield and a lower variation. to see output\$analysis, the interaction is significant.
+
+If for example there is an environmental index, it can be added as a covariate In the first five locations. For this case, the altitude of the localities is included. 
+
+```{r }
+data5<-dataStb[,1:5]
+altitude<-c(1200, 1300, 800, 1600, 2400)
+stability <- stability.par(data5,rep=4,MSerror=2, cova=TRUE, name.cov= "altitude",
+file.cov=altitude)
+```
+
+## Non-parametric Stability
+For non-parametric stability, the function in 'agricolae' is stability.nonpar(). 
+The names of the genotypes should be included in the first column, and in the other columns, the response by environments, \citet{HaynLambChriWeinDoucBackSecoFryStev:1998}.
+
+**Analysis**
+```{r }
+data <- data.frame(name=row.names(dataStb), dataStb)
+output<-stability.nonpar(data, "YIELD", ranking=TRUE)
+names(output)
+output$statistics
+```
+
+## AMMI
+The model AMMI uses the biplot constructed through the principal components generated by the interaction environment-genotype. If there is such interaction, the percentage of the two principal components would explain more than the 50\% of the total variation; in such case, the biplot would be a good alternative to study the interaction environment-genotype, \citet{Cros:1990}.
+
+The data for AMMI should come from similar experiments conducted in different environments. Homogeneity of variance of the experimental error, produced in the different environments, is required. The analysis is done by combining the experiments.
+
+The data can be organized in columns, thus: environment, genotype, repetition, and variable.
+
+The data can also be the averages of the genotypes in each environment, but it is necessary to consider a harmonious average for the repetitions and a common variance of the error. The data should be organized in columns: environment, genotype, and variable.
+
+When performing AMMI, this generates the Biplot, Triplot and Influence graphics, see Figure \@ref(fig:f6).
+
+For the application, we consider the data used in the example of parametric stability (study):
+  
+  **AMMI structure**
+```{r }
+  str(AMMI)
+```
+  
+  **plot.AMMI structure, plot()**
+```{r eval=FALSE}
+  str(plot.AMMI)
+```
+  
+  **type: 1=biplot, 2= triplot** 
+```{r }
+data(plrv)
+model<-with(plrv,AMMI(Locality, Genotype, Rep, Yield, console=FALSE))
+names(model)
+model$ANOVA
+model$analysis
+pc <- model$analysis[, 1]
+pc12<-sum(pc[1:2])
+pc123<-sum(pc[1:3])
+```
+  
+
+```{r f6, fig=TRUE,width=3, height=2,results="hide"}
+oldpar<-par(cex=0.4,mar=c(4,4,1,2))
+plot(model,type=1,las=1,xlim=c(-5,6))
+par(oldpar)
+```
+\caption{Biplot{#fig:f6}}
+
+
+
+In this case, the interaction is significant. The first two components explain `r pc12` \%; then the biplot can provide information about the interaction genotype-environment. With the triplot, `r pc123`\% would be explained.
+
+**To triplot require klaR package. in R execute:**
+
+plot(model,type=2,las=1)
+
+## AMMI index and yield stability
+
+Calculate AMMI stability value (ASV) and Yield stability index (YSI), \citet{SabaDehg:2008}; \citet{Purc:1997}.
+
+```{r }
+data(plrv)
+model<- with(plrv,AMMI(Locality, Genotype, Rep, Yield, console=FALSE))
+index<-index.AMMI(model)
+# Crops with improved stability according AMMI.
+print(index[order(index[,3]),])
+# Crops with better response and improved stability according AMMI.
+print(index[order(index[,4]),])
+```
+
+# References

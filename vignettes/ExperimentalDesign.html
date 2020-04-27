@@ -393,12 +393,12 @@ summary {
 <p>
 <ol style="list-style-type: decimal">
 <li>Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.
-</p>
+</p></li>
+</ol>
 <p>
 <ol start="2" style="list-style-type: decimal">
 <li>Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.
 </p></li>
-</ol></li>
 </ol>
 
 <div id="experimental-designs" class="section level1">
@@ -493,9 +493,7 @@ summary {
 <h2><span class="header-section-number">1.1</span> Completely Randomized Design (CRD)</h2>
 <p>It generates completely a randomized design with equal or different repetition. “Random” uses the methods of number generation in R.The seed is by set.seed(seed, kinds). They only require the names of the treatments and the number of their repetitions and its parameters are:</p>
 <pre class="r"><code>str(design.crd)</code></pre>
-<pre><code>function (trt, r, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, randomization = TRUE)  
- - attr(*, &quot;srcref&quot;)= &#39;srcref&#39; int [1:8] 47 1 80 1 1 1 47 80
-  ..- attr(*, &quot;srcfile&quot;)=Classes &#39;srcfilecopy&#39;, &#39;srcfile&#39; &lt;environment: 0x55f13cf7c8c8&gt; </code></pre>
+<pre><code>function (trt, r, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, randomization = TRUE)  </code></pre>
 <pre class="r"><code>trt &lt;- c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;)
 repeticion &lt;- c(4, 3, 4)
 outdesign &lt;- design.crd(trt,r=repeticion,seed=777,serie=0)
@@ -515,9 +513,7 @@ head(book1)</code></pre>
 <p>It generates field book and sketch to Randomized Complete Block Design. “Random” uses the methods of number generation in R.The seed is by set.seed(seed, kinds). They require the names of the treatments and the number of blocks and its parameters are:</p>
 <pre class="r"><code>str(design.rcbd)</code></pre>
 <pre><code>function (trt, r, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, first = TRUE, 
-    continue = FALSE, randomization = TRUE)  
- - attr(*, &quot;srcref&quot;)= &#39;srcref&#39; int [1:8] 51 1 83 1 1 1 51 83
-  ..- attr(*, &quot;srcfile&quot;)=Classes &#39;srcfilecopy&#39;, &#39;srcfile&#39; &lt;environment: 0x55f13b1eb820&gt; </code></pre>
+    continue = FALSE, randomization = TRUE)  </code></pre>
 <pre class="r"><code>trt &lt;- c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;,&quot;D&quot;,&quot;E&quot;)
 repeticion &lt;- 4
 outdesign &lt;- design.rcbd(trt,r=repeticion, seed=-513, serie=2)
@@ -541,9 +537,7 @@ print(outdesign$sketch)</code></pre>
 <p>It generates Latin Square Design. “Random” uses the methods of number generation in R.The seed is by set.seed(seed, kinds). They require the names of the treatments and its parameters are:</p>
 <pre class="r"><code>str(design.lsd)</code></pre>
 <pre><code>function (trt, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, first = TRUE, 
-    randomization = TRUE)  
- - attr(*, &quot;srcref&quot;)= &#39;srcref&#39; int [1:8] 44 1 84 1 1 1 44 84
-  ..- attr(*, &quot;srcfile&quot;)=Classes &#39;srcfilecopy&#39;, &#39;srcfile&#39; &lt;environment: 0x55f13b29a4e0&gt; </code></pre>
+    randomization = TRUE)  </code></pre>
 <pre class="r"><code>trt &lt;- c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;)
 outdesign &lt;- design.lsd(trt, seed=543, serie=2)
 print(outdesign$sketch)</code></pre>
@@ -567,10 +561,7 @@ print(matrix(book[,1],byrow = TRUE, ncol = 4))</code></pre>
 treatments simultaneously with three different blocking variables, each
 at k levels. The function is only for squares of the odd numbers and even numbers (4, 8, 10 and 12). They require the names of the treatments of each factor of study and its parameters are:</p>
 <pre class="r"><code>str(design.graeco)</code></pre>
-<pre><code>function (trt1, trt2, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, 
-    randomization = TRUE)  
- - attr(*, &quot;srcref&quot;)= &#39;srcref&#39; int [1:8] 53 1 145 1 1 1 53 145
-  ..- attr(*, &quot;srcfile&quot;)=Classes &#39;srcfilecopy&#39;, &#39;srcfile&#39; &lt;environment: 0x55f13cb8cd80&gt; </code></pre>
+<pre><code>function (trt1, trt2, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, randomization = TRUE)  </code></pre>
 <pre class="r"><code>trt1 &lt;- c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;)
 trt2 &lt;- 1:4
 outdesign &lt;- design.graeco(trt1,trt2, seed=543, serie=2)
@@ -594,9 +585,7 @@ print(matrix(book[,1],byrow = TRUE, ncol = 4))</code></pre>
 <p>Such designs are referred to as Youden squares since they were introduced by Youden (1937) after Yates (1936) considered the special case of column equal to number treatment minus 1. “Random” uses the methods of number generation in R. The seed is by set.seed(seed, kinds). They require the names of the treatments of each factor of study and its parameters are:</p>
 <pre class="r"><code>str(design.youden)</code></pre>
 <pre><code>function (trt, r, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, first = TRUE, 
-    randomization = TRUE)  
- - attr(*, &quot;srcref&quot;)= &#39;srcref&#39; int [1:8] 50 1 96 1 1 1 50 96
-  ..- attr(*, &quot;srcfile&quot;)=Classes &#39;srcfilecopy&#39;, &#39;srcfile&#39; &lt;environment: 0x55f13b13be08&gt; </code></pre>
+    randomization = TRUE)  </code></pre>
 <pre class="r"><code>varieties&lt;-c(&quot;perricholi&quot;,&quot;yungay&quot;,&quot;maria bonita&quot;,&quot;tomasa&quot;)
 r&lt;-3
 outdesign &lt;-design.youden(varieties,r,serie=2,seed=23)
@@ -642,9 +631,7 @@ print(matrix(as.numeric(book[,1]),byrow = TRUE, ncol = r))</code></pre>
 They require the names of the treatments and the size of the block and its parameters are:</p>
 <pre class="r"><code>str(design.bib)</code></pre>
 <pre><code>function (trt, k, r = NULL, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, 
-    maxRep = 20, randomization = TRUE)  
- - attr(*, &quot;srcref&quot;)= &#39;srcref&#39; int [1:8] 64 1 145 1 1 1 64 145
-  ..- attr(*, &quot;srcfile&quot;)=Classes &#39;srcfilecopy&#39;, &#39;srcfile&#39; &lt;environment: 0x55f13b268e88&gt; </code></pre>
+    maxRep = 20, randomization = TRUE)  </code></pre>
 <pre class="r"><code>trt &lt;- c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot; )
 k &lt;- 4
 outdesign &lt;- design.bib(trt,k, seed=543, serie=2)</code></pre>
@@ -706,9 +693,7 @@ matrix(book[,1],byrow = TRUE, ncol = 4)</code></pre>
 <p>They require the names of the treatments, the size of the block and the number of repetitions. This design is used for 6 to 30 treatments. The repetitions are a multiple of the size of the block; if they are six treatments and the size is 3, then the repetitions can be 6, 9, 12, etc. and its parameters are:</p>
 <pre class="r"><code>str(design.cyclic)</code></pre>
 <pre><code>function (trt, k, r, serie = 2, rowcol = FALSE, seed = 0, kinds = &quot;Super-Duper&quot;, 
-    randomization = TRUE)  
- - attr(*, &quot;srcref&quot;)= &#39;srcref&#39; int [1:8] 51 1 198 1 1 1 51 198
-  ..- attr(*, &quot;srcfile&quot;)=Classes &#39;srcfilecopy&#39;, &#39;srcfile&#39; &lt;environment: 0x55f13ce66cc8&gt; </code></pre>
+    randomization = TRUE)  </code></pre>
 <pre class="r"><code>trt &lt;- c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;, &quot;E&quot;, &quot;F&quot; )
 outdesign &lt;- design.cyclic(trt,k=3, r=6, seed=543, serie=2)</code></pre>
 <pre><code>
@@ -764,10 +749,7 @@ t(X[,,1])</code></pre>
 <h2><span class="header-section-number">1.8</span> Lattice Designs</h2>
 <p>SIMPLE and TRIPLE lattice designs. It randomizes treatments in k x k lattice. They require a number of treatments of a perfect square; for example 9, 16, 25, 36, 49, etc. and its parameters are:</p>
 <pre class="r"><code>str(design.lattice)</code></pre>
-<pre><code>function (trt, r = 3, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, 
-    randomization = TRUE)  
- - attr(*, &quot;srcref&quot;)= &#39;srcref&#39; int [1:8] 41 1 117 1 1 1 41 117
-  ..- attr(*, &quot;srcfile&quot;)=Classes &#39;srcfilecopy&#39;, &#39;srcfile&#39; &lt;environment: 0x55f13c96c840&gt; </code></pre>
+<pre><code>function (trt, r = 3, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, randomization = TRUE)  </code></pre>
 <p>They can generate a simple lattice (2 rep.) or a triple lattice (3 rep.)
 generating a triple lattice design for 9 treatments 3x3</p>
 <pre class="r"><code>trt&lt;-letters[1:9]
@@ -851,10 +833,7 @@ t(X[,,1])</code></pre>
 <h2><span class="header-section-number">1.9</span> Alpha Designs</h2>
 <p>Generates an alpha designs starting from the alpha design fixing under the series formulated by Patterson and Williams. These designs are generated by the alpha arrangements. They are similar to the lattice designs, but the tables are rectangular s by k (with s blocks and k&lt;s columns. The number of treatments should be equal to s<em>k and all the experimental units r</em>s*k (r replications) and its parameters are:</p>
 <pre class="r"><code>str(design.alpha)</code></pre>
-<pre><code>function (trt, k, r, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, 
-    randomization = TRUE)  
- - attr(*, &quot;srcref&quot;)= &#39;srcref&#39; int [1:8] 71 1 213 1 1 1 71 213
-  ..- attr(*, &quot;srcfile&quot;)=Classes &#39;srcfilecopy&#39;, &#39;srcfile&#39; &lt;environment: 0x55f13d083c00&gt; </code></pre>
+<pre><code>function (trt, k, r, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, randomization = TRUE)  </code></pre>
 <pre class="r"><code>trt &lt;- letters[1:15]
 outdesign &lt;- design.alpha(trt,k=3,r=2,seed=543)</code></pre>
 <pre><code>
@@ -929,10 +908,8 @@ t(A[,,1])</code></pre>
 <h2><span class="header-section-number">1.10</span> Augmented Block Designs</h2>
 <p>These are designs for two types of treatments: the control treatments (common) and the increased treatments. The common treatments are applied in complete randomized blocks, and the increased treatments, at random. Each treatment should be applied in any block once only. It is understood that the common treatments are of a greater interest; the standard error of the difference is much smaller than when between two increased ones in different blocks. The function design.dau() achieves this purpose and its parameters are:</p>
 <pre class="r"><code>str(design.dau)</code></pre>
-<pre><code>function (trt1, trt2, r, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, 
-    name = &quot;trt&quot;, randomization = TRUE)  
- - attr(*, &quot;srcref&quot;)= &#39;srcref&#39; int [1:8] 57 1 96 1 1 1 57 96
-  ..- attr(*, &quot;srcfile&quot;)=Classes &#39;srcfilecopy&#39;, &#39;srcfile&#39; &lt;environment: 0x55f13cc03200&gt; </code></pre>
+<pre><code>function (trt1, trt2, r, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, name = &quot;trt&quot;, 
+    randomization = TRUE)  </code></pre>
 <pre class="r"><code>rm(list=ls())
 trt1 &lt;- c(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;)
 trt2 &lt;- c(&quot;t&quot;,&quot;u&quot;,&quot;v&quot;,&quot;w&quot;,&quot;x&quot;,&quot;y&quot;,&quot;z&quot;)
@@ -941,16 +918,16 @@ book9 &lt;- outdesign$book
 with(book9,by(trt, block,as.character))</code></pre>
 <pre><code>block: 1
 [1] &quot;C&quot; &quot;B&quot; &quot;v&quot; &quot;D&quot; &quot;t&quot; &quot;A&quot;
------------------------------------------------------- 
+------------------------------------------------------------ 
 block: 2
 [1] &quot;D&quot; &quot;u&quot; &quot;A&quot; &quot;B&quot; &quot;x&quot; &quot;C&quot;
------------------------------------------------------- 
+------------------------------------------------------------ 
 block: 3
 [1] &quot;B&quot; &quot;y&quot; &quot;C&quot; &quot;A&quot; &quot;D&quot;
------------------------------------------------------- 
+------------------------------------------------------------ 
 block: 4
 [1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;w&quot;
------------------------------------------------------- 
+------------------------------------------------------------ 
 block: 5
 [1] &quot;z&quot; &quot;A&quot; &quot;C&quot; &quot;D&quot; &quot;B&quot;</code></pre>
 <p><strong>Serpentine enumeration:</strong></p>
@@ -958,16 +935,16 @@ block: 5
 with(book,by(plots, block, as.character))</code></pre>
 <pre><code>block: 1
 [1] &quot;101&quot; &quot;102&quot; &quot;103&quot; &quot;104&quot; &quot;105&quot; &quot;106&quot;
------------------------------------------------------- 
+------------------------------------------------------------ 
 block: 2
 [1] &quot;206&quot; &quot;205&quot; &quot;204&quot; &quot;203&quot; &quot;202&quot; &quot;201&quot;
------------------------------------------------------- 
+------------------------------------------------------------ 
 block: 3
 [1] &quot;301&quot; &quot;302&quot; &quot;303&quot; &quot;304&quot; &quot;305&quot;
------------------------------------------------------- 
+------------------------------------------------------------ 
 block: 4
 [1] &quot;405&quot; &quot;404&quot; &quot;403&quot; &quot;402&quot; &quot;401&quot;
------------------------------------------------------- 
+------------------------------------------------------------ 
 block: 5
 [1] &quot;501&quot; &quot;502&quot; &quot;503&quot; &quot;504&quot; &quot;505&quot;</code></pre>
 <pre class="r"><code>head(book)</code></pre>
@@ -984,10 +961,8 @@ block: 5
 <h2><span class="header-section-number">1.11</span> Split Plot Designs</h2>
 <p>These designs have two factors, one is applied in plots and is defined as <strong>trt1</strong> in a randomized complete block design; and a second factor as <strong>trt2</strong> , which is applied in the subplots of each plot applied at random. The function design.split() permits to find the experimental plan for this design and its parameters are:</p>
 <pre class="r"><code>str(design.split)</code></pre>
-<pre><code>function (trt1, trt2, r = NULL, design = c(&quot;rcbd&quot;, &quot;crd&quot;, &quot;lsd&quot;), 
-    serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, first = TRUE, randomization = TRUE)  
- - attr(*, &quot;srcref&quot;)= &#39;srcref&#39; int [1:8] 46 1 102 1 1 1 46 102
-  ..- attr(*, &quot;srcfile&quot;)=Classes &#39;srcfilecopy&#39;, &#39;srcfile&#39; &lt;environment: 0x55f13b1c7418&gt; </code></pre>
+<pre><code>function (trt1, trt2, r = NULL, design = c(&quot;rcbd&quot;, &quot;crd&quot;, &quot;lsd&quot;), serie = 2, 
+    seed = 0, kinds = &quot;Super-Duper&quot;, first = TRUE, randomization = TRUE)  </code></pre>
 <p><strong>Aplication</strong></p>
 <pre class="r"><code>trt1&lt;-c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;)
 trt2&lt;-c(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;)
@@ -1031,10 +1006,7 @@ head(book,5)</code></pre>
 <h2><span class="header-section-number">1.12</span> Strip-Plot Designs</h2>
 <p>These designs are used when there are two types of treatments (factors) and are applied separately in large plots, called bands, in a vertical and horizontal direction of the block, obtaining the divided blocks. Each block constitutes a repetition and its parameters are:</p>
 <pre class="r"><code>str(design.strip)</code></pre>
-<pre><code>function (trt1, trt2, r, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, 
-    randomization = TRUE)  
- - attr(*, &quot;srcref&quot;)= &#39;srcref&#39; int [1:8] 45 1 84 1 1 1 45 84
-  ..- attr(*, &quot;srcfile&quot;)=Classes &#39;srcfilecopy&#39;, &#39;srcfile&#39; &lt;environment: 0x55f13b17abb8&gt; </code></pre>
+<pre><code>function (trt1, trt2, r, serie = 2, seed = 0, kinds = &quot;Super-Duper&quot;, randomization = TRUE)  </code></pre>
 <p><strong>Aplication</strong></p>
 <pre class="r"><code>trt1&lt;-c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;)
 trt2&lt;-c(&quot;a&quot;,&quot;b&quot;,&quot;c&quot;)
@@ -1103,10 +1075,8 @@ t(X[,,1])</code></pre>
 <h2><span class="header-section-number">1.13</span> Factorial</h2>
 <p>The full factorial of n factors applied to an experimental design (CRD, RCBD and LSD) is common and this procedure in <strong>agricolae</strong> applies the factorial to one of these three designs and its parameters are:</p>
 <pre class="r"><code>str(design.ab)</code></pre>
-<pre><code>function (trt, r = NULL, serie = 2, design = c(&quot;rcbd&quot;, &quot;crd&quot;, &quot;lsd&quot;), 
-    seed = 0, kinds = &quot;Super-Duper&quot;, first = TRUE, randomization = TRUE)  
- - attr(*, &quot;srcref&quot;)= &#39;srcref&#39; int [1:8] 51 1 107 1 1 1 51 107
-  ..- attr(*, &quot;srcfile&quot;)=Classes &#39;srcfilecopy&#39;, &#39;srcfile&#39; &lt;environment: 0x55f13b27eca8&gt; </code></pre>
+<pre><code>function (trt, r = NULL, serie = 2, design = c(&quot;rcbd&quot;, &quot;crd&quot;, &quot;lsd&quot;), seed = 0, 
+    kinds = &quot;Super-Duper&quot;, first = TRUE, randomization = TRUE)  </code></pre>
 <p>To generate the factorial, you need to create a vector of levels of each factor, the method automatically generates up to 25 factors and “r” repetitions.</p>
 <pre class="r"><code>trt &lt;- c (4,2,3) # three factors with  4,2 and 3 levels.</code></pre>
 <p>to crd and rcbd designs, it is necessary to value “r” as the number of repetitions, this can be a vector if unequal to equal or constant repetition (recommended).</p>
