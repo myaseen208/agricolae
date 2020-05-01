@@ -20,7 +20,7 @@
 #' @format 
 #' A \code{data.frame} with 432 observations on the following 19 variables.
 #' 
-#'  @details
+#' @details
 #'         \itemize{
 #'         \item{\strong{locality}} a factor with levels, Cajamarca, Lima, Oxapampa in PERU
 #'         \item{\strong{site}} site

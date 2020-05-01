@@ -6,9 +6,24 @@
 \title{Data of Bacterial Wilt (AUDPC) and soil}
 \format{
 A \code{data.frame} with 13 observations on the following 15 variables.
+}
+\source{
+Experimental field, 2004. Data Kindly provided by Dr. Sylvie Priou,
+Liliam Gutarra and Pedro Aley.
+}
+\usage{
+data(wilt)
+}
+\description{
+Percentage of bacterial wilt and area under the curve of disease progression
+(AUDPC) relative tomato plants transplanted in different soil types
+artificially infested with R.solanacearum 133 days before.
 
- @details
-        \itemize{
+Percentajes bacterial wilt. Day7 = evaluated to 7 days, Days11 = evaluated
+to 11 days.  see data(soil) and data(ralstonia)
+}
+\details{
+\itemize{
         \item{\strong{place}} a factor with levels 
               Chmar, Chz, Cnt1, Cnt2, Cnt3, 
               Hco1, Hco2, Hco3, Hyo1, Hyo2, Namora, SR1, and SR2
@@ -27,21 +42,6 @@ A \code{data.frame} with 13 observations on the following 15 variables.
         \item{\strong{AUDPC}} the area under the disease-progress curve
         \item{\strong{relative}}     relative area
         }
-}
-\source{
-Experimental field, 2004. Data Kindly provided by Dr. Sylvie Priou,
-Liliam Gutarra and Pedro Aley.
-}
-\usage{
-data(wilt)
-}
-\description{
-Percentage of bacterial wilt and area under the curve of disease progression
-(AUDPC) relative tomato plants transplanted in different soil types
-artificially infested with R.solanacearum 133 days before.
-
-Percentajes bacterial wilt. Day7 = evaluated to 7 days, Days11 = evaluated
-to 11 days.  see data(soil) and data(ralstonia)
 }
 \examples{
 

@@ -6,19 +6,26 @@
 \title{Data: Rainfall thresholds as support for timing fungicide applications in
 the control of potato late blight in Peru}
 \format{
-The format is: List of 2 ( AUDPC, YIELD ) \describe{
-\item{list("block")}{a factor with levels \code{I} \code{II} \code{III}}
-\item{list("trt")}{a factor with levels \code{40mm} \code{7-days}
-\code{Non-application}} \item{list("clon")}{a factor with levels
-\code{C386209.10} \code{C387164.4} \code{Cruza148} \code{Musuq}
-\code{Yungay}} \item{list("y1da")}{a numeric vector, Kgr./plot}
-\item{list("y2da")}{a numeric vector, Kgr./plot} \item{list("y3ra")}{a
-numeric vector, Kgr./plot} \item{list("d44")}{a numeric vector, 44 days}
-\item{list("d51")}{a numeric vector, 51 days} \item{list("d100")}{a numeric
-vector, 100 days} }
+An object of class \code{list} with two elements: AUDPC and YIELD
+
+ @details
+        \itemize{
+        \item{\strong{block}}  a factor with levels I, II, and III
+        \item{\strong{trt}}  a factor with levels 40mm, 7-days, and Non-application
+        \item{\strong{clon}} a factor with levels C386209.10, C387164.4, Cruza148, Musuq, and Yungay
+        \item{\strong{y1da}} y1da
+        \item{\strong{y2da}} y2da
+        \item{\strong{y3ra}} y3ra
+        \item{\strong{d44}} 44 days
+        \item{\strong{d51}} 51 days
+        \item{\strong{d100}} 100 days
+        }
 }
 \source{
 Experimental field, 2003. Data Kindly provided by Wilmer Perez.
+}
+\usage{
+data(huasahuasi)
 }
 \description{
 Timing fungicide sprays based on accumulated rainfall thresholds can be a
@@ -26,8 +33,7 @@ successful component of integrated management packages that include
 cultivars with moderate or high levels of resistance to late blight. The
 simplicity of measuring accumulated rainfall means that the technology can
 potentially be used by resource-poor farmers in developing countries.
-}
-\details{
+
 The experimental unit was formed by 4 furrows of 1.8 m of length, with
 distance between furrows from 0.90 m and between plants of 0.30 m. In each
 furrow was installed 5 plants. The experiment had 3 repetitions.  From the

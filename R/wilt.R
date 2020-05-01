@@ -14,7 +14,7 @@
 #' @format 
 #' A \code{data.frame} with 13 observations on the following 15 variables.
 #' 
-#'  @details
+#' @details
 #'         \itemize{
 #'         \item{\strong{place}} a factor with levels 
 #'               Chmar, Chz, Cnt1, Cnt2, Cnt3, 
