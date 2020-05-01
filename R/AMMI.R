@@ -82,16 +82,7 @@
 #' # AMMI: 64.81 18.58 13.50  3.11  0.00
 #' 
 #' 
-#' AMMI <- 
-#'     function(ENV, GEN, REP, Y, MSE = 0, console = FALSE, PC = FALSE){
-#'         UseMethod("AMMI")
-#'         }
-#' 
-#' #' @export
-#' #' @rdname AMMI
-#' AMMI.default <- 
-
-AMMI <- 
+AMMI <-
     function(ENV, GEN, REP, Y, MSE = 0, console = FALSE, PC = FALSE){
         name.y <- paste(deparse(substitute(Y)))
         if(console)cat("\nANALYSIS AMMI: ", name.y, "\nClass level information\n")

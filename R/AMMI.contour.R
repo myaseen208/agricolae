@@ -30,6 +30,7 @@
 #' @keywords aplot
 #' 
 #' @importFrom graphics lines
+#' 
 #' @export
 #' 
 #' @examples
@@ -47,16 +48,7 @@
 #' AMMI.contour(model,distance=0.7,shape=8,col="red",lwd=2,lty=5)
 #' 
 #' 
-#' AMMI.contour <- 
-#'   function(model,distance,shape,...){
-#'     UseMethod("AMMI.contour")
-#'   }
 #' 
-#' #' @export
-#' #' @rdname AMMI.contour
-
-
-# AMMI.contour.default <-
 AMMI.contour <-  
 function(model,distance,shape,...)
 {

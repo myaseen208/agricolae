@@ -190,7 +190,7 @@ Method distance: binary
 Method cluster : complete
 rows and cols  : 25 107
 n-bootstrap    : 5
-Run time       : 0.601563 secs </code></pre>
+Run time       : 0.6989639 secs </code></pre>
 <div class="figure">
 <img src="SpecialFunctions_files/figure-html/f7-1.png" alt="Dendrogram, production by `consensus`" width="700"><p class="caption">
 Dendrogram, production by <code>consensus</code>
@@ -216,12 +216,12 @@ Dendrogram, production by <code><a href="../reference/hcut.html">hcut()</a></cod
 <span class="no">data</span> <span class="kw">&lt;-</span> <span class="no">output</span>$<span class="no">table.dend</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">output</span>$<span class="no">table.dend</span>)</pre></body></html></div>
 <pre><code>   X1  X2 xaxis     height percentage groups
-1  -6 -24  7.50 0.02857143         80   6-24
-2  -3  -4 19.50 0.03571429         40    3-4
-3  -2  -8 22.50 0.03846154         80    2-8
-4  -7 -10 10.50 0.03846154         60   7-10
-5 -21   2 18.75 0.07142857         40 3-4-21
-6 -16   3 21.75 0.07407407         80 2-8-16</code></pre>
+1  -6 -24  7.50 0.02857143         40   6-24
+2  -3  -4 19.50 0.03571429         80    3-4
+3  -2  -8 22.50 0.03846154         60    2-8
+4  -7 -10 10.50 0.03846154        100   7-10
+5 -21   2 18.75 0.07142857         60 3-4-21
+6 -16   3 21.75 0.07407407         20 2-8-16</code></pre>
 <div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="no">oldpar</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="kw">mar</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">3</span>,<span class="fl">1</span>,<span class="fl">1</span>),<span class="kw">cex</span><span class="kw">=</span><span class="fl">0.6</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="no">dend</span>,<span class="kw">type</span><span class="kw">=</span><span class="st">"r"</span>,<span class="kw">edgePar</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">lty</span><span class="kw">=</span><span class="fl">1</span>:<span class="fl">2</span>, <span class="kw">col</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/grDevices/colors.html">colors</a></span>()[<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">42</span>,<span class="fl">84</span>)]) ,<span class="kw">las</span><span class="kw">=</span><span class="fl">1</span>)
 <span class="fu"><a href="https://rdrr.io/r/graphics/text.html">text</a></span>(<span class="no">data</span>[,<span class="fl">3</span>],<span class="no">data</span>[,<span class="fl">4</span>],<span class="no">data</span>[,<span class="fl">5</span>],<span class="kw">col</span><span class="kw">=</span><span class="st">"blue"</span>,<span class="kw">cex</span><span class="kw">=</span><span class="fl">1</span>)</pre></body></html></div>
@@ -251,13 +251,13 @@ Distribution of the simulated and the original data
 <p>1000 data was simulated, being the frequency table:</p>
 <div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span>(<span class="fu"><a href="../reference/table.freq.html">table.freq</a></span>(<span class="no">h</span>),<span class="fl">2</span>)</pre></body></html></div>
 <pre><code>  Lower Upper  Main Frequency Percentage   CF   CPF
-1  1.40  2.76  2.08        13        1.3   13   1.3
-2  2.76  4.12  3.44       127       12.7  140  14.0
-3  4.12  5.48  4.80       250       25.0  390  39.0
-4  5.48  6.84  6.16       227       22.7  617  61.7
-5  6.84  8.20  7.52       237       23.7  854  85.4
-6  8.20  9.56  8.88       122       12.2  976  97.6
-7  9.56 10.92 10.24        24        2.4 1000 100.0</code></pre>
+1  1.50  2.83  2.16        20        2.0   20   2.0
+2  2.83  4.16  3.50       141       14.1  161  16.1
+3  4.16  5.49  4.83       245       24.5  406  40.6
+4  5.49  6.82  6.16       183       18.3  589  58.9
+5  6.82  8.15  7.48       223       22.3  812  81.2
+6  8.15  9.48  8.82       159       15.9  971  97.1
+7  9.48 10.81 10.15        29        2.9 1000 100.0</code></pre>
 <p><strong>Some statistics, original data:</strong></p>
 <div class="sourceCode" id="cb17"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(<span class="no">soil</span>$<span class="no">pH</span>)</pre></body></html></div>
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
@@ -265,7 +265,7 @@ Distribution of the simulated and the original data
 <p><strong>Some statistics, montecarlo simulate data:</strong></p>
 <div class="sourceCode" id="cb19"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(<span class="no">simulated</span>)</pre></body></html></div>
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  1.423   4.718   6.090   6.183   7.639  10.895 </code></pre>
+  1.541   4.659   6.178   6.231   7.835  10.757 </code></pre>
 </div>
 <div id="re-sampling-in-linear-model" class="section level2">
 <h2 class="hasAnchor">
@@ -280,9 +280,9 @@ Distribution of the simulated and the original data
 <span class="no">Xsol</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">as.matrix</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span>(<span class="no">analysis</span>$<span class="no">solution</span>,<span class="fl">2</span>))
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">Xsol</span>,<span class="kw">na.print</span> <span class="kw">=</span> <span class="st">""</span>)</pre></body></html></div>
 <pre><code>             Df Sum Sq Mean Sq F value Pr(&gt;F) Resampling
-variety       1  25.09   25.09    7.26   0.02       0.01
-date          2  13.89    6.95    2.01   0.18       0.22
-variety:date  2   4.85    2.43    0.70   0.51       0.54
+variety       1  25.09   25.09    7.26   0.02       0.02
+date          2  13.89    6.95    2.01   0.18       0.21
+variety:date  2   4.85    2.43    0.70   0.51       0.55
 Residuals    12  41.48    3.46                          </code></pre>
 <p>The function <code><a href="../reference/resampling.model.html">resampling.model()</a></code> can be used when the errors have a different distribution from normal.</p>
 </div>
@@ -313,11 +313,11 @@ Validation of the analysis of variancia for the proposed model
 Simulations: 100 
 
              Df   F value % Acceptance % Rejection  Criterion
-variety       1 7.2580377           53          47 acceptable
-date          2 2.0095604           63          37 acceptable
-variety:date  2 0.7020312           70          30 acceptable
+variety       1 7.2580377           59          41 acceptable
+date          2 2.0095604           66          34 acceptable
+variety:date  2 0.7020312           68          32 acceptable
 ---</code></pre>
-<p>The validation is referred to the percentage of decision results equal to the result of the ANOVA decision. Thus, 70% of the results simulated on the interaction variety*date gave the same result of acceptance or rejection obtained in the ANOVA.</p>
+<p>The validation is referred to the percentage of decision results equal to the result of the ANOVA decision. Thus, 68% of the results simulated on the interaction variety*date gave the same result of acceptance or rejection obtained in the ANOVA.</p>
 </div>
 <div id="path-analysis" class="section level2">
 <h2 class="hasAnchor">
@@ -527,7 +527,7 @@ Method: Shannon
 The index: 2.541336 
 
 95 percent confidence interval:
- 2.283752 ; 3.07635 </code></pre>
+ 2.22808 ; 3.076422 </code></pre>
 </div>
 <div id="correlation" class="section level2">
 <h2 class="hasAnchor">

@@ -91,14 +91,6 @@ round(values$values*100/total,2)
 # AMMI: 64.81 18.58 13.50  3.11  0.00
 
 
-AMMI <- 
-    function(ENV, GEN, REP, Y, MSE = 0, console = FALSE, PC = FALSE){
-        UseMethod("AMMI")
-        }
-
-#' @export
-#' @rdname AMMI
-AMMI.default <- 
 }
 \author{
 \enumerate{

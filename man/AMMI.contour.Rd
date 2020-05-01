@@ -45,13 +45,7 @@ plot(model)
 AMMI.contour(model,distance=0.7,shape=8,col="red",lwd=2,lty=5)
 
 
-AMMI.contour <- 
-  function(model,distance,shape,...){
-    UseMethod("AMMI.contour")
-  }
 
-#' @export
-#' @rdname AMMI.contour
 }
 \seealso{
 \code{\link{AMMI}}
