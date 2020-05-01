@@ -5,21 +5,29 @@
 \alias{plrv}
 \title{Data clones from the PLRV population}
 \format{
-A data frame with 504 observations on the following 6 variables.
-\describe{ \item{list("Genotype")}{a factor with levels \code{102.18}
-\code{104.22} \code{121.31} \code{141.28} \code{157.26} \code{163.9}
-\code{221.19} \code{233.11} \code{235.6} \code{241.2} \code{255.7}
-\code{314.12} \code{317.6} \code{319.20} \code{320.16} \code{342.15}
-\code{346.2} \code{351.26} \code{364.21} \code{402.7} \code{405.2}
-\code{406.12} \code{427.7} \code{450.3} \code{506.2} \code{Canchan}
-\code{Desiree} \code{Unica}} \item{list("Locality")}{a factor with levels
-\code{Ayac} \code{Hyo-02} \code{LM-02} \code{LM-03} \code{SR-02}
-\code{SR-03}} \item{list("Rep")}{a numeric vector}
-\item{list("WeightPlant")}{a numeric vector} \item{list("WeightPlot")}{a
-numeric vector} \item{list("Yield")}{a numeric vector} }
+A \code{data.frame} with 504 observations on the following 6 variables.
+
+ @details
+        \itemize{
+        \item{\strong{Genotype}} a factor with levels 
+          102.18, 104.22, 121.31, 141.28, 157.26, 163.9,
+          221.19, 233.11, 235.6, 241.2, 255.7, 314.12,
+          317.6, 319.20, 320.16, 342.15, 346.2, 351.26,
+          364.21, 402.7, 405.2, 406.12, 427.7, 450.3, 506.2,
+          Canchan, Desiree, and Unica
+        \item{\strong{Locality}} a factor with levels 
+                    Ayac, Hyo-02, LM-02, LM-03, SR-02, and SR-03
+        \item{\strong{Rep}} Rep
+        \item{\strong{WeightPlant}} WeightPlant
+        \item{\strong{WeightPlot}} WeightPlot
+        \item{\strong{Yield}}     Yield
+        }
 }
 \source{
 International Potato Center Lima-Peru
+}
+\usage{
+data(plrv)
 }
 \description{
 Six environments: Ayacucho, La Molina 02, San Ramon 02, Huancayo, La Molina

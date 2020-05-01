@@ -1,15 +1,28 @@
-#' Data of potato yield in a different environment
-#' 
+#' @title Data of potato yield in a different environment
+#' @name   genxenv
+#' @docType data
+#' @keywords datasets
+#' @usage data(genxenv)
+#' @description
 #' 50 genotypes and 5 environments.
 #' 
 #' 
-#' @name genxenv
-#' @docType data
-#' @format A data frame with 250 observations on the following 3 variables.
-#' \describe{ \item{list("ENV")}{a numeric vector} \item{list("GEN")}{a numeric
-#' vector} \item{list("YLD")}{a numeric vector} }
-#' @references International Potato Center. CIP - Lima Peru.
-#' @source International Potato Center. CIP - Lima Peru.
+#' @format 
+#'  A \code{data.frame} with 250 observations on the following 3 variables.
+#' 
+#'  @details
+#'         \itemize{
+#'         \item{\strong{ENV}} Environments
+#'         \item{\strong{GEN}} Genotypes
+#'         \item{\strong{YLD}} Yield
+#'         }
+#' 
+#' @references 
+#' International Potato Center. CIP - Lima Peru.
+#' 
+#' @source 
+#' International Potato Center. CIP - Lima Peru.
+#' 
 #' @keywords datasets
 #' @examples
 #' 

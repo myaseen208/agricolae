@@ -5,15 +5,22 @@
 \alias{plots}
 \title{Data for an analysis in split-plot}
 \format{
-A data frame with 18 observations on the following 5 variables.
-\describe{ \item{list("block")}{a numeric vector} \item{list("plot")}{a
-factor with levels \code{p1} \code{p2} \code{p3} \code{p4} \code{p5}
-\code{p6}} \item{list("A")}{a factor with levels \code{a1} \code{a2}}
-\item{list("B")}{a factor with levels \code{b1} \code{b2} \code{b3}}
-\item{list("yield")}{a numeric vector} }
+A \code{data.frame} with 18 observations on the following 5 variables.
+
+ @details
+        \itemize{
+        \item{\strong{block}} block
+        \item{\strong{plot}} a factor with levels p1, p2, p3, p4, p5, and p6
+        \item{\strong{A}} a factor with levels a1, and a2
+        \item{\strong{B}} a factor with levels b1, b2, and b3
+        \item{\strong{yield}} yield
+        }
 }
 \source{
 International Potato Center. CIP
+}
+\usage{
+data(plots)
 }
 \description{
 Experimental data in blocks, factor A in plots and factor B in sub-plots.

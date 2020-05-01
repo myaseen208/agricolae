@@ -12,18 +12,19 @@
 #' function audpc(). help(audpc) Exx: Evaluation in percentaje, xx is days.
 #' ORD1, ORD2, SBLK and row are references location of the plot in the field.
 #'
-#' @format An object of class \code{list} with two elements: comas and oxapampa
+#' @format 
+#' An object of class \code{list} with two elements: comas and oxapampa
 #' 
-#' @details
-#'        \itemize{
-#'        \item{\strong{Locality}} Locality: Comas, Oxapampa
-#'        \item{\strong{Genotype}} Genotype
-#'        \item{\strong{Rep}} Rep
-#'        \item{\strong{E9}} infestans percentage to 9 days
-#'        \item{\strong{AUDPC}} the area under the disease-progress curve
-#'        \item{\strong{Relative}}     relative area
-#'        }
-#'         
+#'  @details
+#'         \itemize{
+#'         \item{\strong{Locality}} Locality: Comas, Oxapampa
+#'         \item{\strong{Genotype}} Genotype
+#'         \item{\strong{Rep}} Rep
+#'         \item{\strong{E9}} infestans percentage to 9 days
+#'         \item{\strong{AUDPC}} the area under the disease-progress curve
+#'         \item{\strong{Relative}}     relative area
+#'         }
+#'          
 #' 
 #' @references 
 #' International Potato Center. CIP - Lima Peru.

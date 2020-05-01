@@ -2,10 +2,21 @@ Package: agricolae
 Type: Package
 Title: Statistical Procedures for Agricultural Research
 Version: 1.4.0
-Authors@R: c(
-              person(c("Felipe", "de" , "Mendiburu"),  email = "fmendiburu@lamolina.edu.pe", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-2725-5911"))
-            , person(c("Muhammad", "Yaseen"),  email = "myaseen208@gmail.com", role = c("aut", "ctb"), comment = c(ORCID = "0000-0002-5923-1714"))
-            )
+Authors@R: 
+    c(
+        person(
+          c("Felipe", "de" , "Mendiburu")
+        , email = "fmendiburu@lamolina.edu.pe"
+        , role = c("aut", "cre", "cph")
+        , comment = c(ORCID = "0000-0003-2725-5911")
+        )
+     , person(
+          c("Muhammad", "Yaseen")
+        , email = "myaseen208@gmail.com"
+        , role = c("aut", "ctb")
+        , comment = c(ORCID = "0000-0002-5923-1714")
+        )
+        )
 Maintainer: Felipe de Mendiburu <fmendiburu@lamolina.edu.pe>
 Description: Original idea was presented in the thesis "A statistical analysis tool for agricultural research" 
              to obtain the degree of Master on science, National Engineering University (UNI), Lima-Peru. 

@@ -1,16 +1,29 @@
-#' Data for AMMI without repetition
-#' 
+#' @title Data for AMMI without repetition
+#' @name   sinRepAmmi
+#' @docType data
+#' @keywords datasets
+#' @usage data(sinRepAmmi)
+#' @description
 #' Data frame for AMMI analysis with 50 genotypes in 5 environments.
 #' 
 #' 
-#' @name sinRepAmmi
-#' @docType data
-#' @format A data frame with 250 observations on the following 3 variables.
-#' \describe{ \item{list("ENV")}{a factor with levels \code{A1} \code{A2}
-#' \code{A3} \code{A4} \code{A5}} \item{list("GEN")}{a numeric vector}
-#' \item{list("YLD")}{a numeric vector} }
-#' @references International Potato Center - Lima Peru.
-#' @source Experimental data.
+#' @format 
+#' A \code{data.frame} with 250 observations on the following 3 variables.
+#'
+#'  @details
+#'         \itemize{
+#'         \item{\strong{ENV}} a factor with levels A1, A2, A3, A4, and A5
+#'         \item{\strong{GEN}} Genotype
+#'         \item{\strong{YLD}} Yield
+#'         }
+#'         
+#' 
+#' @references 
+#' International Potato Center - Lima Peru.
+#' 
+#' @source 
+#' Experimental data.
+#' 
 #' @keywords datasets
 #' @examples
 #' 

@@ -5,26 +5,43 @@
 \alias{soil}
 \title{Data of soil analysis for 13 localities}
 \format{
-A data frame with 13 observations on the following 23 variables.
-\describe{ \item{list("place")}{a factor with levels \code{Chmar} \code{Chz}
-\code{Cnt1} \code{Cnt2} \code{Cnt3} \code{Hco1} \code{Hco2} \code{Hco3}
-\code{Hyo1} \code{Hyo2} \code{Namora} \code{SR1} \code{SR2}}
-\item{list("pH")}{a numeric vector} \item{list("EC")}{a numeric vector,
-electrical conductivity} \item{list("CaCO3")}{a numeric vector}
-\item{list("MO")}{a numeric vector} \item{list("CIC")}{a numeric vector}
-\item{list("P")}{a numeric vector} \item{list("K")}{a numeric vector}
-\item{list("sand")}{a numeric vector} \item{list("slime")}{a numeric vector}
-\item{list("clay")}{a numeric vector} \item{list("Ca")}{a numeric vector}
-\item{list("Mg")}{a numeric vector} \item{list("K2")}{a numeric vector}
-\item{list("Na")}{a numeric vector} \item{list("Al_H")}{a numeric vector}
-\item{list("K_Mg")}{a numeric vector} \item{list("Ca_Mg")}{a numeric vector}
-\item{list("B")}{a numeric vector} \item{list("Cu")}{a numeric vector}
-\item{list("Fe")}{a numeric vector} \item{list("Mn")}{a numeric vector}
-\item{list("Zn")}{a numeric vector} }
+A \code{data.frame} with 13 observations on the following 23 variables.
+ 
+ @details
+        \itemize{
+        \item{\strong{place}} a factor with levels 
+              Chmar, Chz, Cnt1, Cnt2, Cnt3, 
+              Hco1, Hco2, Hco3, Hyo1, Hyo2, Namora, SR1, and SR2
+        \item{\strong{pH}} pH
+        \item{\strong{EC}} electrical conductivity
+        \item{\strong{CaCO3}} CaCO3
+        \item{\strong{MO}} MO 
+        \item{\strong{CIC}} CIC
+        \item{\strong{P}} P
+        \item{\strong{K}} K
+        \item{\strong{sand}} sand
+        \item{\strong{slime}} slime
+        \item{\strong{clay}} clay
+        \item{\strong{Ca}} Ca
+        \item{\strong{Mg}} Mg
+        \item{\strong{K2}} K2
+        \item{\strong{Na}} Na
+        \item{\strong{Al_H}} Al_H
+        \item{\strong{K_Mg}} K_Mg
+        \item{\strong{Ca_Mg}} Ca_Mg
+        \item{\strong{B}} B
+        \item{\strong{Cu}} Cu
+        \item{\strong{Fe}} Fe
+        \item{\strong{Mn}} Mn
+        \item{\strong{Zn}} Zn
+        }
 }
 \source{
 Experimental field, 2004. Data Kindly provided by Dr. Sylvie Priou,
 Liliam Gutarra and Pedro Aley.
+}
+\usage{
+data(soil)
 }
 \description{
 We analyzed the physical and chemical properties of different soils, as full
@@ -36,8 +53,7 @@ which the different soil samples were dried to the environment, screened
 Steam aerator SA150 and SA700, with the possible aim of eliminating bacteria
 saprophytic or antagonists to prevent the growth of bacteria
 (R.solanacearum).
-}
-\details{
+
 Cnt1= Canete, Cnt2=Valle Dulce(Canete), Cnt3=Valle Grande(Canete),
 Chz=Obraje-Carhuaz(Ancash), Chmar=Chucmar-Chota(Huanuco, Hco1=
 Mayobamba-Chinchao(Huanuco), Hco2=Nueva Independencia-Chinchao(Huanuco),

@@ -1,16 +1,27 @@
-#' Data growth of trees
-#' 
+#' @title Data growth of trees
+#' @name   growth
+#' @docType data
+#' @keywords datasets
+#' @usage data(growth)
+#' @description
 #' Data growth of pijuayo trees in several localities.
 #' 
+#' @format 
+#'  A \code{data.frame} with 30 observations on the following 3 variables.
 #' 
-#' @name growth
-#' @docType data
-#' @format A data frame with 30 observations on the following 3 variables.
-#' \describe{ \item{list("place")}{a factor with levels \code{L1} \code{L2}}
-#' \item{list("slime")}{a numeric vector} \item{list("height")}{a numeric
-#' vector} }
-#' @references ICRAF lima Peru.
-#' @source Experimental data (Pucallpa - Peru)
+#'  @details
+#'         \itemize{
+#'         \item{\strong{place}} a factor with levels \code{L1}, and \code{L2}
+#'         \item{\strong{slime}} slime
+#'         \item{\strong{height}} height
+#'         }
+#' 
+#' @references 
+#' ICRAF lima Peru.
+#' 
+#' @source 
+#' Experimental data (Pucallpa - Peru)
+#' 
 #' @keywords datasets
 #' @examples
 #' 

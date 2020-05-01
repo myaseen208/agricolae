@@ -50,7 +50,9 @@
 growing corn resulted in various yields per acre on various plots of ground
 where the four methods were tried. Ordinarily, only one statistical analysis
 is used, but here we will use the kuskal-wallis test so that a rough
-comparison may be made with the mediasn test." />
+comparison may be made with the mediasn test.
+The observations are ranked from the smallest, 77, of rank 1 to the largest
+101, of rank N=34. Ties values receive the averarge rank." />
 
 
 
@@ -205,29 +207,31 @@ growing corn resulted in various yields per acre on various plots of ground
 where the four methods were tried. Ordinarily, only one statistical analysis
 is used, but here we will use the kuskal-wallis test so that a rough
 comparison may be made with the mediasn test.</p>
+<p>The observations are ranked from the smallest, 77, of rank 1 to the largest
+101, of rank N=34. Ties values receive the averarge rank.</p>
     </div>
 
+    <pre class="usage"><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>corn</span>)</pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A data frame with 34 observations on the following 3 variables.</p><dl'>
-<dt>list("method")</dt><dd><p>a numeric vector</p></dd>
-<dt>list("observation")</dt><dd><p>a numeric vector</p></dd> <dt>list("rx")</dt><dd><p>a numeric
-vector</p></dd> 
-</dl>
+    <p>A <code>data.frame</code> with 34 observations on the following 3 variables.</p>
+<p>@details</p><ul>
+<li><p><strong>method</strong> method</p></li>
+<li><p><strong>v</strong> observation</p></li>
+<li><p><strong>rx</strong> rx</p></li>
+<li><p><strong>E9</strong> infestans percentage to 9 days</p></li>
+<li><p><strong>AUDPC</strong> the area under the disease-progress curve</p></li>
+<li><p><strong>Relative</strong>     relative area</p></li>
+</ul>
 
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
     <p>Book: Practical Nonparametric Statistics.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>The observations are ranked from the smallest, 77, of rank 1 to the largest
-101, of rank N=34. Ties values receive the averarge rank.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Practical Nonparametrics Statistics. W.J. Conover. Third
-Edition, 1999.</p>
+    <p>Practical Nonparametrics Statistics. W.J. Conover. Third Edition, 1999.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>

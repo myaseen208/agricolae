@@ -54,7 +54,13 @@ which the different soil samples were dried to the environment, screened
 (mesh 0.5xo, 5 mm) and sterilized by steam 4 to 5 hours with a Lindinger
 Steam aerator SA150 and SA700, with the possible aim of eliminating bacteria
 saprophytic or antagonists to prevent the growth of bacteria
-(R.solanacearum)." />
+(R.solanacearum).
+Cnt1= Canete, Cnt2=Valle Dulce(Canete), Cnt3=Valle Grande(Canete),
+Chz=Obraje-Carhuaz(Ancash), Chmar=Chucmar-Chota(Huanuco, Hco1=
+Mayobamba-Chinchao(Huanuco), Hco2=Nueva Independencia-Chinchao(Huanuco),
+Hco3=San Marcos-Umari(Huanuco), Hyo1=La Victoria-Huancayo(Junin), Hyo1=El
+Tambo-Huancayo(Junin), Namora=Namora(Cajamarca), SR1= El Milagro-San
+Ramon(Junin), Sr2=La Chinchana-San Ramon(Junin)." />
 
 
 
@@ -213,42 +219,52 @@ which the different soil samples were dried to the environment, screened
 Steam aerator SA150 and SA700, with the possible aim of eliminating bacteria
 saprophytic or antagonists to prevent the growth of bacteria
 (R.solanacearum).</p>
-    </div>
-
-
-
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
-
-    <p>A data frame with 13 observations on the following 23 variables.</p><dl'>
-<dt>list("place")</dt><dd><p>a factor with levels <code>Chmar</code> <code>Chz</code>
-<code>Cnt1</code> <code>Cnt2</code> <code>Cnt3</code> <code>Hco1</code> <code>Hco2</code> <code>Hco3</code>
-<code>Hyo1</code> <code>Hyo2</code> <code>Namora</code> <code>SR1</code> <code>SR2</code></p></dd>
-<dt>list("pH")</dt><dd><p>a numeric vector</p></dd> <dt>list("EC")</dt><dd><p>a numeric vector,
-electrical conductivity</p></dd> <dt>list("CaCO3")</dt><dd><p>a numeric vector</p></dd>
-<dt>list("MO")</dt><dd><p>a numeric vector</p></dd> <dt>list("CIC")</dt><dd><p>a numeric vector</p></dd>
-<dt>list("P")</dt><dd><p>a numeric vector</p></dd> <dt>list("K")</dt><dd><p>a numeric vector</p></dd>
-<dt>list("sand")</dt><dd><p>a numeric vector</p></dd> <dt>list("slime")</dt><dd><p>a numeric vector</p></dd>
-<dt>list("clay")</dt><dd><p>a numeric vector</p></dd> <dt>list("Ca")</dt><dd><p>a numeric vector</p></dd>
-<dt>list("Mg")</dt><dd><p>a numeric vector</p></dd> <dt>list("K2")</dt><dd><p>a numeric vector</p></dd>
-<dt>list("Na")</dt><dd><p>a numeric vector</p></dd> <dt>list("Al_H")</dt><dd><p>a numeric vector</p></dd>
-<dt>list("K_Mg")</dt><dd><p>a numeric vector</p></dd> <dt>list("Ca_Mg")</dt><dd><p>a numeric vector</p></dd>
-<dt>list("B")</dt><dd><p>a numeric vector</p></dd> <dt>list("Cu")</dt><dd><p>a numeric vector</p></dd>
-<dt>list("Fe")</dt><dd><p>a numeric vector</p></dd> <dt>list("Mn")</dt><dd><p>a numeric vector</p></dd>
-<dt>list("Zn")</dt><dd><p>a numeric vector</p></dd> 
-</dl>
-
-    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
-
-    <p>Experimental field, 2004. Data Kindly provided by Dr. Sylvie Priou,
-Liliam Gutarra and Pedro Aley.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>Cnt1= Canete, Cnt2=Valle Dulce(Canete), Cnt3=Valle Grande(Canete),
+<p>Cnt1= Canete, Cnt2=Valle Dulce(Canete), Cnt3=Valle Grande(Canete),
 Chz=Obraje-Carhuaz(Ancash), Chmar=Chucmar-Chota(Huanuco, Hco1=
 Mayobamba-Chinchao(Huanuco), Hco2=Nueva Independencia-Chinchao(Huanuco),
 Hco3=San Marcos-Umari(Huanuco), Hyo1=La Victoria-Huancayo(Junin), Hyo1=El
 Tambo-Huancayo(Junin), Namora=Namora(Cajamarca), SR1= El Milagro-San
 Ramon(Junin), Sr2=La Chinchana-San Ramon(Junin).</p>
+    </div>
+
+    <pre class="usage"><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>soil</span>)</pre>
+
+
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>A <code>data.frame</code> with 13 observations on the following 23 variables.</p> 
+<p>@details</p><ul>
+<li><p><strong>place</strong> a factor with levels 
+              Chmar, Chz, Cnt1, Cnt2, Cnt3, 
+              Hco1, Hco2, Hco3, Hyo1, Hyo2, Namora, SR1, and SR2</p></li>
+<li><p><strong>pH</strong> pH</p></li>
+<li><p><strong>EC</strong> electrical conductivity</p></li>
+<li><p><strong>CaCO3</strong> CaCO3</p></li>
+<li><p><strong>MO</strong> MO</p></li>
+<li><p><strong>CIC</strong> CIC</p></li>
+<li><p><strong>P</strong> P</p></li>
+<li><p><strong>K</strong> K</p></li>
+<li><p><strong>sand</strong> sand</p></li>
+<li><p><strong>slime</strong> slime</p></li>
+<li><p><strong>clay</strong> clay</p></li>
+<li><p><strong>Ca</strong> Ca</p></li>
+<li><p><strong>Mg</strong> Mg</p></li>
+<li><p><strong>K2</strong> K2</p></li>
+<li><p><strong>Na</strong> Na</p></li>
+<li><p><strong>Al_H</strong> Al_H</p></li>
+<li><p><strong>K_Mg</strong> K_Mg</p></li>
+<li><p><strong>Ca_Mg</strong> Ca_Mg</p></li>
+<li><p><strong>B</strong> B</p></li>
+<li><p><strong>Cu</strong> Cu</p></li>
+<li><p><strong>Fe</strong> Fe</p></li>
+<li><p><strong>Mn</strong> Mn</p></li>
+<li><p><strong>Zn</strong> Zn</p></li>
+</ul>
+
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p>Experimental field, 2004. Data Kindly provided by Dr. Sylvie Priou,
+Liliam Gutarra and Pedro Aley.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>International Potato Center - Lima, PERU.</p>

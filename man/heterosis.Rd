@@ -5,29 +5,36 @@
 \alias{heterosis}
 \title{Data of potato, Heterosis}
 \format{
-A data frame with 216 observations on the following 11 variables.
-\describe{ \item{list("Place")}{1: La Molina, 2=Huancayo}
-\item{list("Replication")}{a numeric vector} \item{list("Treatment")}{a
-numeric vector} \item{list("Factor")}{a factor with levels \code{Control}
-\code{progenie} \code{progenitor} \code{testigo}} \item{list("Female")}{a
-factor with levels \code{Achirana} \code{LT-8} \code{MF-I} \code{MF-II}
-\code{Serrana} \code{TPS-2} \code{TPS-25} \code{TPS-7}}
-\item{list("Male")}{a factor with levels \code{TPS-13} \code{TPS-67}
-\code{TS-15}} \item{list("v1")}{Yield (Kg/plant)} \item{list("v2")}{Reducing
-sugars (scale):1 low and 5=High} \item{list("v3")}{Tuber dry matter
-(percentage)} \item{list("v4")}{Tuber number/plant}
-\item{list("v5")}{Average tuber weight (g)} }
+A \code{data.frame} with 216 observations on the following 11 variables.
+
+ @details
+        \itemize{
+        \item{\strong{Place}} 1 = La Molina, 2 = Huancayo
+        \item{\strong{Replication}} Replication
+        \item{\strong{Treatment}} Treatment
+        \item{\strong{Factor}} a factor with levels Control, progenie, progenitor, and testigo
+        \item{\strong{Female}} a factor with levels Achirana, LT-8, MF-I, MF-II, 
+                               Serrana, TPS-2, TPS-25, and TPS-7
+        \item{\strong{Male}} a factor with levels TPS-13, TPS-67, and TS-15
+        \item{\strong{v1}} Yield (Kg/plant)
+        \item{\strong{v2}} Reducing sugars (scale):1 low and 5=High
+        \item{\strong{v3}} Tuber dry matter (percentage)
+        \item{\strong{v4}} Tuber number/plant
+        \item{\strong{v5}} Average tuber weight (g)
+        }
 }
 \source{
 International Potato Center(CIP). Lima-Peru. Data Kindly provided by
 of Rolando Cabello.
 }
+\usage{
+data(heterosis)
+}
 \description{
 Determination of heterosis, general combining ability (GCA) and specific
 combining ability in tuber dry matter, reducing sugars and agronomic
 characteristics in TPS families.
-}
-\details{
+
 The study was conducted in 3 environments, La Molina-PERU to 240 masl.
 during autumn-winter and spring, and in Huancayo-PERU 3180 masl., during
 summer.  The experimental material consisted of 24 families half brother in
@@ -56,7 +63,7 @@ model3<-with(site3,lineXtester(Replication, Female, Male, v4))
 
 }
 \references{
-Tesis "Heterosis, habilidad combinatoria general y especifica
+Thesis "Heterosis, habilidad combinatoria general y especifica
 para materia seca, azucares reductores y caracteres agronomicos en familias
 de tuberculos provenientes de semilla sexual de papa. Magister Scientiae
 Rodolfo Valdivia Lorente. Universidad Nacional Agraria La molina-Lima Peru,

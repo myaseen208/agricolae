@@ -1,5 +1,9 @@
-#' Data for Friedman test
-#' 
+#' @title Data for Friedman test
+#' @name   grass
+#' @docType data
+#' @keywords datasets
+#' @usage data(grass)
+#' @description
 #' Twelve homeowners are selected randomly to participate in an experiment with
 #' a plant nursery. Each homeowner is asked to select four fairly identical
 #' areas in his yard and to plant four different types of grasses, one in each
@@ -9,14 +13,22 @@
 #' receiving care of approximately the same degree of skill because the four
 #' plots are presumably cared for by the same homeowern.
 #' 
-#' @name grass
-#' @docType data
-#' @format A data frame with 48 observations on the following 3 variables.
-#' \describe{ \item{list("judge")}{a numeric vector} \item{list("trt")}{a
-#' factor with levels \code{t1} \code{t2} \code{t3} \code{t4}}
-#' \item{list("evaluation")}{a numeric vector} }
-#' @references Practical Nonparametrics Statistics. W.J. Conover, 1999
-#' @source Book: Practical Nonparametrics Statistics, pag 372.
+#' @format 
+#' A \code{data.frame} with 48 observations on the following 3 variables.
+#' 
+#'  @details
+#'         \itemize{
+#'         \item{\strong{judge}} judge
+#'         \item{\strong{trt}} a factor with levels \code{t1}, \code{t2}, \code{t3}, and \code{t4}
+#'         \item{\strong{evaluation}} evaluation
+#'         }
+#' 
+#' @references 
+#' Practical Nonparametrics Statistics. W.J. Conover, 1999
+#' 
+#' @source 
+#' Book: Practical Nonparametrics Statistics, pag 372.
+#' 
 #' @keywords datasets
 #' @examples
 #' 

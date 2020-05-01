@@ -5,13 +5,20 @@
 \alias{sinRepAmmi}
 \title{Data for AMMI without repetition}
 \format{
-A data frame with 250 observations on the following 3 variables.
-\describe{ \item{list("ENV")}{a factor with levels \code{A1} \code{A2}
-\code{A3} \code{A4} \code{A5}} \item{list("GEN")}{a numeric vector}
-\item{list("YLD")}{a numeric vector} }
+A \code{data.frame} with 250 observations on the following 3 variables.
+
+ @details
+        \itemize{
+        \item{\strong{ENV}} a factor with levels A1, A2, A3, A4, and A5
+        \item{\strong{GEN}} Genotype
+        \item{\strong{YLD}} Yield
+        }
 }
 \source{
 Experimental data.
+}
+\usage{
+data(sinRepAmmi)
 }
 \description{
 Data frame for AMMI analysis with 50 genotypes in 5 environments.

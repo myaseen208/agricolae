@@ -5,12 +5,19 @@
 \alias{sweetpotato}
 \title{Data of sweetpotato yield}
 \format{
-A data frame with 12 observations on the following 2 variables.
-\describe{ \item{list("virus")}{a factor with levels \code{cc} \code{fc}
-\code{ff} \code{oo}} \item{list("yield")}{a numeric vector} }
+A \code{data.frame} with 12 observations on the following 2 variables.
+
+ @details
+        \itemize{
+        \item{\strong{virus}} a factor with levels cc, fc, ff, and oo
+        \item{\strong{yield}} yield
+        }
 }
 \source{
 Experimental field.
+}
+\usage{
+data(sweetpotato)
 }
 \description{
 The data correspond to an experiment with costanero sweetpotato made at the

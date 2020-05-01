@@ -5,13 +5,20 @@
 \alias{growth}
 \title{Data growth of trees}
 \format{
-A data frame with 30 observations on the following 3 variables.
-\describe{ \item{list("place")}{a factor with levels \code{L1} \code{L2}}
-\item{list("slime")}{a numeric vector} \item{list("height")}{a numeric
-vector} }
+A \code{data.frame} with 30 observations on the following 3 variables.
+
+ @details
+        \itemize{
+        \item{\strong{place}} a factor with levels \code{L1}, and \code{L2}
+        \item{\strong{slime}} slime
+        \item{\strong{height}} height
+        }
 }
 \source{
 Experimental data (Pucallpa - Peru)
+}
+\usage{
+data(growth)
 }
 \description{
 Data growth of pijuayo trees in several localities.

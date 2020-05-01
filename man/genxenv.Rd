@@ -5,12 +5,20 @@
 \alias{genxenv}
 \title{Data of potato yield in a different environment}
 \format{
-A data frame with 250 observations on the following 3 variables.
-\describe{ \item{list("ENV")}{a numeric vector} \item{list("GEN")}{a numeric
-vector} \item{list("YLD")}{a numeric vector} }
+A \code{data.frame} with 250 observations on the following 3 variables.
+
+ @details
+        \itemize{
+        \item{\strong{ENV}} Environments
+        \item{\strong{GEN}} Genotypes
+        \item{\strong{YLD}} Yield
+        }
 }
 \source{
 International Potato Center. CIP - Lima Peru.
+}
+\usage{
+data(genxenv)
 }
 \description{
 50 genotypes and 5 environments.

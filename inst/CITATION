@@ -14,11 +14,22 @@ citEntry(
   entry  = "Manual"
 , title  = "agricolae: Statistical Procedures for Agricultural Research"
 , author = personList(
-  person(c("Felipe", "de" , "Mendiburu"),  email = "myaseen208@gmail.com", role = c("aut", "cre"))
+     person(
+          c("Felipe", "de" , "Mendiburu")
+        , email = "fmendiburu@lamolina.edu.pe"
+        , role = c("aut", "cre", "cph")
+        , comment = c(ORCID = "0000-0003-2725-5911")
+        )
+     , person(
+          c("Muhammad", "Yaseen")
+        , email = "myaseen208@gmail.com"
+        , role = c("aut", "ctb")
+        , comment = c(ORCID = "0000-0002-5923-1714")
+        )
             )
 , year = year
 , textVersion = paste(
-       "Felipe de Mendiburu ("
+       "Felipe de Mendiburu and Muhammad Yaseen("
       , year
       , ").  agricolae: Statistical Procedures for Agricultural Research."
       , vers

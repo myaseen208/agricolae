@@ -1,5 +1,9 @@
-#' Data of sweetpotato yield
-#' 
+#' @title Data of sweetpotato yield
+#' @name   sweetpotato
+#' @docType data
+#' @keywords datasets
+#' @usage data(sweetpotato)
+#' @description
 #' The data correspond to an experiment with costanero sweetpotato made at the
 #' locality of the Tacna department, southern Peru. The effect of two viruses
 #' (Spfmv and Spcsv) was studied. The treatments were the following: CC (Spcsv)
@@ -11,13 +15,21 @@
 #' these were sown in the field.
 #' 
 #' 
-#' @name sweetpotato
-#' @docType data
-#' @format A data frame with 12 observations on the following 2 variables.
-#' \describe{ \item{list("virus")}{a factor with levels \code{cc} \code{fc}
-#' \code{ff} \code{oo}} \item{list("yield")}{a numeric vector} }
-#' @references International Potato Center. CIP - Lima Peru
-#' @source Experimental field.
+#' @format 
+#' A \code{data.frame} with 12 observations on the following 2 variables.
+#' 
+#'  @details
+#'         \itemize{
+#'         \item{\strong{virus}} a factor with levels cc, fc, ff, and oo
+#'         \item{\strong{yield}} yield
+#'         }
+#' 
+#' @references 
+#' International Potato Center. CIP - Lima Peru
+#' 
+#' @source 
+#' Experimental field.
+#' 
 #' @keywords datasets
 #' @examples
 #' 

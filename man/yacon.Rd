@@ -5,30 +5,38 @@
 \alias{yacon}
 \title{Data Yacon}
 \format{
-A data frame with 432 observations on the following 19 variables.
-\describe{ \item{list("locality")}{a factor with levels, Cajamarca, Lima,
-Oxapampa in PERU} \item{list("site")}{a numeric vector}
-\item{list("dose")}{a factor with levels \code{F0} \code{F150} \code{F80}}
-\item{list("entry")}{a factor with levels \code{AKW5075 } \code{AMM5136}
-\code{AMM5150} \code{AMM5163} \code{ARB5125 } \code{CLLUNC118} \code{P1385}
-\code{SAL136}} \item{list("replication")}{a numeric vector, replications}
-\item{list("height")}{a numeric vector, plant height, centimeters}
-\item{list("stalks")}{a numeric vector, number of stalks}
-\item{list("wfr")}{a numeric vector, weight of fresh roots, grams}
-\item{list("wff")}{a numeric vector, weight of fresh foliage, grams}
-\item{list("wfk")}{a numeric vector, weight fresh kroner, grams}
-\item{list("roots")}{a numeric vector, matter of dried roots, grams}
-\item{list("FOS")}{a numeric vector, fructo-oligosaccharides, percentaje}
-\item{list("glucose")}{a numeric vector, percentaje}
-\item{list("fructose")}{a numeric vector, percentaje}
-\item{list("sucrose")}{a numeric vector, percentaje} \item{list("brix")}{a
-numeric vector, degrees Brix} \item{list("foliage")}{a numeric vector,
-matter dry foliage, grams} \item{list("dry")}{a numeric vector, dry matter
-kroner, grams} \item{list("IH")}{a numeric vector, Index harvest, 0 to 1} }
+A \code{data.frame} with 432 observations on the following 19 variables.
+
+ @details
+        \itemize{
+        \item{\strong{locality}} a factor with levels, Cajamarca, Lima, Oxapampa in PERU
+        \item{\strong{site}} site
+        \item{\strong{dose}} a factor with levels F0, F150, and F80
+        \item{\strong{entry}} a factor with levels AKW5075, AMM5136, AMM5150, AMM5163, 
+                             ARB5125, CLLUNC118, P1385, and SAL136
+        \item{\strong{replication}} replication
+        \item{\strong{height}} plant height, centimeters
+        \item{\strong{stalks}} number of stalks
+        \item{\strong{wfr}} weight of fresh roots, grams
+        \item{\strong{wff}} weight of fresh foliage, grams
+        \item{\strong{wfk}} weight fresh kroner, grams
+        \item{\strong{roots}} matter of dried roots, grams
+        \item{\strong{FOS}} fructo-oligosaccharides, percentage
+        \item{\strong{glucose}} glucose
+        \item{\strong{fructose}} fructose
+        \item{\strong{sucrose}} sucrose
+        \item{\strong{brix}} brix
+        \item{\strong{foliage}} foliage
+        \item{\strong{dry}} dry
+        \item{\strong{IH}} IH
+        }
 }
 \source{
 CIP. Experimental field, 2003, Data Kindly provided by Ivan Manrique
 and Carolina Tasso.
+}
+\usage{
+data(yacon)
 }
 \description{
 The yacon (Smallanthus sonchifolius) is a plant native to the Andes,
@@ -37,8 +45,7 @@ type of carbohydrate that can not be digested by the and the human body that
 have joined several beneficial properties in health, such as improve the
 absorption of calcium, reducing the level of triglycerides and cholesterol
 and stimulate better gastrointestinal function.
-}
-\details{
+
 Proportion or fraction of the plant that is used (seeds, fruit, root) on dry
 basis. Part usable in a proportion of total mass dissected. Plant of frijol,
 weight = 100g and frijol = 50g then, IH = 50/100 = 0.5 or 50 percentaje.

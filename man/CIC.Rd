@@ -6,6 +6,16 @@
 \title{Data for late blight of potatoes}
 \format{
 An object of class \code{list} with two elements: comas and oxapampa
+
+ @details
+        \itemize{
+        \item{\strong{Locality}} Locality: Comas, Oxapampa
+        \item{\strong{Genotype}} Genotype
+        \item{\strong{Rep}} Rep
+        \item{\strong{E9}} infestans percentage to 9 days
+        \item{\strong{AUDPC}} the area under the disease-progress curve
+        \item{\strong{Relative}}     relative area
+        }
 }
 \source{
 Experimental field, 2004-2005. Data Kindly provided by Matilde Orrillo.
@@ -21,16 +31,6 @@ comas: temperature=59.9 Fahrenheit, relative humidity=83.3 oxapampa:
 temperature=64.8 Fahrenheit, relative humidity=86.2 AUDPC and relative see
 function audpc(). help(audpc) Exx: Evaluation in percentaje, xx is days.
 ORD1, ORD2, SBLK and row are references location of the plot in the field.
-}
-\details{
-\itemize{
-       \item{\strong{Locality}} Locality: Comas, Oxapampa
-       \item{\strong{Genotype}} Genotype
-       \item{\strong{Rep}} Rep
-       \item{\strong{E9}} infestans percentage to 9 days
-       \item{\strong{AUDPC}} the area under the disease-progress curve
-       \item{\strong{Relative}}     relative area
-       }
 }
 \examples{
 

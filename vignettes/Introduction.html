@@ -13,7 +13,7 @@
 
 <meta name="date" content="2020-05-01" />
 
-<title>Multiple Comparisons with agricolae</title>
+<title>Introduction to agricolae</title>
 
 <script>/*! jQuery v1.11.3 | (c) 2005, 2015 jQuery Foundation, Inc. | jquery.org/license */
 !function(a,b){"object"==typeof module&&"object"==typeof module.exports?module.exports=a.document?b(a,!0):function(a){if(!a.document)throw new Error("jQuery requires a window with a document");return b(a)}:b(a)}("undefined"!=typeof window?window:this,function(a,b){var c=[],d=c.slice,e=c.concat,f=c.push,g=c.indexOf,h={},i=h.toString,j=h.hasOwnProperty,k={},l="1.11.3",m=function(a,b){return new m.fn.init(a,b)},n=/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,o=/^-ms-/,p=/-([\da-z])/gi,q=function(a,b){return b.toUpperCase()};m.fn=m.prototype={jquery:l,constructor:m,selector:"",length:0,toArray:function(){return d.call(this)},get:function(a){return null!=a?0>a?this[a+this.length]:this[a]:d.call(this)},pushStack:function(a){var b=m.merge(this.constructor(),a);return b.prevObject=this,b.context=this.context,b},each:function(a,b){return m.each(this,a,b)},map:function(a){return this.pushStack(m.map(this,function(b,c){return a.call(b,c,b)}))},slice:function(){return this.pushStack(d.apply(this,arguments))},first:function(){return this.eq(0)},last:function(){return this.eq(-1)},eq:function(a){var b=this.length,c=+a+(0>a?b:0);return this.pushStack(c>=0&&b>c?[this[c]]:[])},end:function(){return this.prevObject||this.constructor(null)},push:f,sort:c.sort,splice:c.splice},m.extend=m.fn.extend=function(){var a,b,c,d,e,f,g=arguments[0]||{},h=1,i=arguments.length,j=!1;for("boolean"==typeof g&&(j=g,g=arguments[h]||{},h++),"object"==typeof g||m.isFunction(g)||(g={}),h===i&&(g=this,h--);i>h;h++)if(null!=(e=arguments[h]))for(d in e)a=g[d],c=e[d],g!==c&&(j&&c&&(m.isPlainObject(c)||(b=m.isArray(c)))?(b?(b=!1,f=a&&m.isArray(a)?a:[]):f=a&&m.isPlainObject(a)?a:{},g[d]=m.extend(j,f,c)):void 0!==c&&(g[d]=c));return g},m.extend({expando:"jQuery"+(l+Math.random()).replace(/\D/g,""),isReady:!0,error:function(a){throw new Error(a)},noop:function(){},isFunction:function(a){return"function"===m.type(a)},isArray:Array.isArray||function(a){return"array"===m.type(a)},isWindow:function(a){return null!=a&&a==a.window},isNumeric:function(a){return!m.isArray(a)&&a-parseFloat(a)+1>=0},isEmptyObject:function(a){var b;for(b in a)return!1;return!0},isPlainObject:function(a){var b;if(!a||"object"!==m.type(a)||a.nodeType||m.isWindow(a))return!1;try{if(a.constructor&&!j.call(a,"constructor")&&!j.call(a.constructor.prototype,"isPrototypeOf"))return!1}catch(c){return!1}if(k.ownLast)for(b in a)return j.call(a,b);for(b in a);return void 0===b||j.call(a,b)},type:function(a){return null==a?a+"":"object"==typeof a||"function"==typeof a?h[i.call(a)]||"object":typeof a},globalEval:function(b){b&&m.trim(b)&&(a.execScript||function(b){a.eval.call(a,b)})(b)},camelCase:function(a){return a.replace(o,"ms-").replace(p,q)},nodeName:function(a,b){return a.nodeName&&a.nodeName.toLowerCase()===b.toLowerCase()},each:function(a,b,c){var d,e=0,f=a.length,g=r(a);if(c){if(g){for(;f>e;e++)if(d=b.apply(a[e],c),d===!1)break}else for(e in a)if(d=b.apply(a[e],c),d===!1)break}else if(g){for(;f>e;e++)if(d=b.call(a[e],e,a[e]),d===!1)break}else for(e in a)if(d=b.call(a[e],e,a[e]),d===!1)break;return a},trim:function(a){return null==a?"":(a+"").replace(n,"")},makeArray:function(a,b){var c=b||[];return null!=a&&(r(Object(a))?m.merge(c,"string"==typeof a?[a]:a):f.call(c,a)),c},inArray:function(a,b,c){var d;if(b){if(g)return g.call(b,a,c);for(d=b.length,c=c?0>c?Math.max(0,d+c):c:0;d>c;c++)if(c in b&&b[c]===a)return c}return-1},merge:function(a,b){var c=+b.length,d=0,e=a.length;while(c>d)a[e++]=b[d++];if(c!==c)while(void 0!==b[d])a[e++]=b[d++];return a.length=e,a},grep:function(a,b,c){for(var d,e=[],f=0,g=a.length,h=!c;g>f;f++)d=!b(a[f],f),d!==h&&e.push(a[f]);return e},map:function(a,b,c){var d,f=0,g=a.length,h=r(a),i=[];if(h)for(;g>f;f++)d=b(a[f],f,c),null!=d&&i.push(d);else for(f in a)d=b(a[f],f,c),null!=d&&i.push(d);return e.apply([],i)},guid:1,proxy:function(a,b){var c,e,f;return"string"==typeof b&&(f=a[b],b=a,a=f),m.isFunction(a)?(c=d.call(arguments,2),e=function(){return a.apply(b||this,c.concat(d.call(arguments)))},e.guid=a.guid=a.guid||m.guid++,e):void 0},now:function(){return+new Date},support:k}),m.each("Boolean Number String Function Array Date RegExp Object Error".split(" "),function(a,b){h["[object "+b+"]"]=b.toLowerCase()});function r(a){var b="length"in a&&a.length,c=m.type(a);return"function"===c||m.isWindow(a)?!1:1===a.nodeType&&b?!0:"array"===c||0===b||"number"==typeof b&&b>0&&b-1 in a}var s=function(a){var b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u="sizzle"+1*new Date,v=a.document,w=0,x=0,y=ha(),z=ha(),A=ha(),B=function(a,b){return a===b&&(l=!0),0},C=1<<31,D={}.hasOwnProperty,E=[],F=E.pop,G=E.push,H=E.push,I=E.slice,J=function(a,b){for(var c=0,d=a.length;d>c;c++)if(a[c]===b)return c;return-1},K="checked|selected|async|autofocus|autoplay|controls|defer|disabled|hidden|ismap|loop|multiple|open|readonly|required|scoped",L="[\\x20\\t\\r\\n\\f]",M="(?:\\\\.|[\\w-]|[^\\x00-\\xa0])+",N=M.replace("w","w#"),O="\\["+L+"*("+M+")(?:"+L+"*([*^$|!~]?=)"+L+"*(?:'((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\"|("+N+"))|)"+L+"*\\]",P=":("+M+")(?:\\((('((?:\\\\.|[^\\\\'])*)'|\"((?:\\\\.|[^\\\\\"])*)\")|((?:\\\\.|[^\\\\()[\\]]|"+O+")*)|.*)\\)|)",Q=new RegExp(L+"+","g"),R=new RegExp("^"+L+"+|((?:^|[^\\\\])(?:\\\\.)*)"+L+"+$","g"),S=new RegExp("^"+L+"*,"+L+"*"),T=new RegExp("^"+L+"*([>+~]|"+L+")"+L+"*"),U=new RegExp("="+L+"*([^\\]'\"]*?)"+L+"*\\]","g"),V=new RegExp(P),W=new RegExp("^"+N+"$"),X={ID:new RegExp("^#("+M+")"),CLASS:new RegExp("^\\.("+M+")"),TAG:new RegExp("^("+M.replace("w","w*")+")"),ATTR:new RegExp("^"+O),PSEUDO:new RegExp("^"+P),CHILD:new RegExp("^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\("+L+"*(even|odd|(([+-]|)(\\d*)n|)"+L+"*(?:([+-]|)"+L+"*(\\d+)|))"+L+"*\\)|)","i"),bool:new RegExp("^(?:"+K+")$","i"),needsContext:new RegExp("^"+L+"*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\("+L+"*((?:-\\d)?\\d*)"+L+"*\\)|)(?=[^-]|$)","i")},Y=/^(?:input|select|textarea|button)$/i,Z=/^h\d$/i,$=/^[^{]+\{\s*\[native \w/,_=/^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/,aa=/[+~]/,ba=/'|\\/g,ca=new RegExp("\\\\([\\da-f]{1,6}"+L+"?|("+L+")|.)","ig"),da=function(a,b,c){var d="0x"+b-65536;return d!==d||c?b:0>d?String.fromCharCode(d+65536):String.fromCharCode(d>>10|55296,1023&d|56320)},ea=function(){m()};try{H.apply(E=I.call(v.childNodes),v.childNodes),E[v.childNodes.length].nodeType}catch(fa){H={apply:E.length?function(a,b){G.apply(a,I.call(b))}:function(a,b){var c=a.length,d=0;while(a[c++]=b[d++]);a.length=c-1}}}function ga(a,b,d,e){var f,h,j,k,l,o,r,s,w,x;if((b?b.ownerDocument||b:v)!==n&&m(b),b=b||n,d=d||[],k=b.nodeType,"string"!=typeof a||!a||1!==k&&9!==k&&11!==k)return d;if(!e&&p){if(11!==k&&(f=_.exec(a)))if(j=f[1]){if(9===k){if(h=b.getElementById(j),!h||!h.parentNode)return d;if(h.id===j)return d.push(h),d}else if(b.ownerDocument&&(h=b.ownerDocument.getElementById(j))&&t(b,h)&&h.id===j)return d.push(h),d}else{if(f[2])return H.apply(d,b.getElementsByTagName(a)),d;if((j=f[3])&&c.getElementsByClassName)return H.apply(d,b.getElementsByClassName(j)),d}if(c.qsa&&(!q||!q.test(a))){if(s=r=u,w=b,x=1!==k&&a,1===k&&"object"!==b.nodeName.toLowerCase()){o=g(a),(r=b.getAttribute("id"))?s=r.replace(ba,"\\$&"):b.setAttribute("id",s),s="[id='"+s+"'] ",l=o.length;while(l--)o[l]=s+ra(o[l]);w=aa.test(a)&&pa(b.parentNode)||b,x=o.join(",")}if(x)try{return H.apply(d,w.querySelectorAll(x)),d}catch(y){}finally{r||b.removeAttribute("id")}}}return i(a.replace(R,"$1"),b,d,e)}function ha(){var a=[];function b(c,e){return a.push(c+" ")>d.cacheLength&&delete b[a.shift()],b[c+" "]=e}return b}function ia(a){return a[u]=!0,a}function ja(a){var b=n.createElement("div");try{return!!a(b)}catch(c){return!1}finally{b.parentNode&&b.parentNode.removeChild(b),b=null}}function ka(a,b){var c=a.split("|"),e=a.length;while(e--)d.attrHandle[c[e]]=b}function la(a,b){var c=b&&a,d=c&&1===a.nodeType&&1===b.nodeType&&(~b.sourceIndex||C)-(~a.sourceIndex||C);if(d)return d;if(c)while(c=c.nextSibling)if(c===b)return-1;return a?1:-1}function ma(a){return function(b){var c=b.nodeName.toLowerCase();return"input"===c&&b.type===a}}function na(a){return function(b){var c=b.nodeName.toLowerCase();return("input"===c||"button"===c)&&b.type===a}}function oa(a){return ia(function(b){return b=+b,ia(function(c,d){var e,f=a([],c.length,b),g=f.length;while(g--)c[e=f[g]]&&(c[e]=!(d[e]=c[e]))})})}function pa(a){return a&&"undefined"!=typeof a.getElementsByTagName&&a}c=ga.support={},f=ga.isXML=function(a){var b=a&&(a.ownerDocument||a).documentElement;return b?"HTML"!==b.nodeName:!1},m=ga.setDocument=function(a){var b,e,g=a?a.ownerDocument||a:v;return g!==n&&9===g.nodeType&&g.documentElement?(n=g,o=g.documentElement,e=g.defaultView,e&&e!==e.top&&(e.addEventListener?e.addEventListener("unload",ea,!1):e.attachEvent&&e.attachEvent("onunload",ea)),p=!f(g),c.attributes=ja(function(a){return a.className="i",!a.getAttribute("className")}),c.getElementsByTagName=ja(function(a){return a.appendChild(g.createComment("")),!a.getElementsByTagName("*").length}),c.getElementsByClassName=$.test(g.getElementsByClassName),c.getById=ja(function(a){return o.appendChild(a).id=u,!g.getElementsByName||!g.getElementsByName(u).length}),c.getById?(d.find.ID=function(a,b){if("undefined"!=typeof b.getElementById&&p){var c=b.getElementById(a);return c&&c.parentNode?[c]:[]}},d.filter.ID=function(a){var b=a.replace(ca,da);return function(a){return a.getAttribute("id")===b}}):(delete d.find.ID,d.filter.ID=function(a){var b=a.replace(ca,da);return function(a){var c="undefined"!=typeof a.getAttributeNode&&a.getAttributeNode("id");return c&&c.value===b}}),d.find.TAG=c.getElementsByTagName?function(a,b){return"undefined"!=typeof b.getElementsByTagName?b.getElementsByTagName(a):c.qsa?b.querySelectorAll(a):void 0}:function(a,b){var c,d=[],e=0,f=b.getElementsByTagName(a);if("*"===a){while(c=f[e++])1===c.nodeType&&d.push(c);return d}return f},d.find.CLASS=c.getElementsByClassName&&function(a,b){return p?b.getElementsByClassName(a):void 0},r=[],q=[],(c.qsa=$.test(g.querySelectorAll))&&(ja(function(a){o.appendChild(a).innerHTML="<a id='"+u+"'></a><select id='"+u+"-\f]' msallowcapture=''><option selected=''></option></select>",a.querySelectorAll("[msallowcapture^='']").length&&q.push("[*^$]="+L+"*(?:''|\"\")"),a.querySelectorAll("[selected]").length||q.push("\\["+L+"*(?:value|"+K+")"),a.querySelectorAll("[id~="+u+"-]").length||q.push("~="),a.querySelectorAll(":checked").length||q.push(":checked"),a.querySelectorAll("a#"+u+"+*").length||q.push(".#.+[+~]")}),ja(function(a){var b=g.createElement("input");b.setAttribute("type","hidden"),a.appendChild(b).setAttribute("name","D"),a.querySelectorAll("[name=d]").length&&q.push("name"+L+"*[*^$|!~]?="),a.querySelectorAll(":enabled").length||q.push(":enabled",":disabled"),a.querySelectorAll("*,:x"),q.push(",.*:")})),(c.matchesSelector=$.test(s=o.matches||o.webkitMatchesSelector||o.mozMatchesSelector||o.oMatchesSelector||o.msMatchesSelector))&&ja(function(a){c.disconnectedMatch=s.call(a,"div"),s.call(a,"[s!='']:x"),r.push("!=",P)}),q=q.length&&new RegExp(q.join("|")),r=r.length&&new RegExp(r.join("|")),b=$.test(o.compareDocumentPosition),t=b||$.test(o.contains)?function(a,b){var c=9===a.nodeType?a.documentElement:a,d=b&&b.parentNode;return a===d||!(!d||1!==d.nodeType||!(c.contains?c.contains(d):a.compareDocumentPosition&&16&a.compareDocumentPosition(d)))}:function(a,b){if(b)while(b=b.parentNode)if(b===a)return!0;return!1},B=b?function(a,b){if(a===b)return l=!0,0;var d=!a.compareDocumentPosition-!b.compareDocumentPosition;return d?d:(d=(a.ownerDocument||a)===(b.ownerDocument||b)?a.compareDocumentPosition(b):1,1&d||!c.sortDetached&&b.compareDocumentPosition(a)===d?a===g||a.ownerDocument===v&&t(v,a)?-1:b===g||b.ownerDocument===v&&t(v,b)?1:k?J(k,a)-J(k,b):0:4&d?-1:1)}:function(a,b){if(a===b)return l=!0,0;var c,d=0,e=a.parentNode,f=b.parentNode,h=[a],i=[b];if(!e||!f)return a===g?-1:b===g?1:e?-1:f?1:k?J(k,a)-J(k,b):0;if(e===f)return la(a,b);c=a;while(c=c.parentNode)h.unshift(c);c=b;while(c=c.parentNode)i.unshift(c);while(h[d]===i[d])d++;return d?la(h[d],i[d]):h[d]===v?-1:i[d]===v?1:0},g):n},ga.matches=function(a,b){return ga(a,null,null,b)},ga.matchesSelector=function(a,b){if((a.ownerDocument||a)!==n&&m(a),b=b.replace(U,"='$1']"),!(!c.matchesSelector||!p||r&&r.test(b)||q&&q.test(b)))try{var d=s.call(a,b);if(d||c.disconnectedMatch||a.document&&11!==a.document.nodeType)return d}catch(e){}return ga(b,n,null,[a]).length>0},ga.contains=function(a,b){return(a.ownerDocument||a)!==n&&m(a),t(a,b)},ga.attr=function(a,b){(a.ownerDocument||a)!==n&&m(a);var e=d.attrHandle[b.toLowerCase()],f=e&&D.call(d.attrHandle,b.toLowerCase())?e(a,b,!p):void 0;return void 0!==f?f:c.attributes||!p?a.getAttribute(b):(f=a.getAttributeNode(b))&&f.specified?f.value:null},ga.error=function(a){throw new Error("Syntax error, unrecognized expression: "+a)},ga.uniqueSort=function(a){var b,d=[],e=0,f=0;if(l=!c.detectDuplicates,k=!c.sortStable&&a.slice(0),a.sort(B),l){while(b=a[f++])b===a[f]&&(e=d.push(f));while(e--)a.splice(d[e],1)}return k=null,a},e=ga.getText=function(a){var b,c="",d=0,f=a.nodeType;if(f){if(1===f||9===f||11===f){if("string"==typeof a.textContent)return a.textContent;for(a=a.firstChild;a;a=a.nextSibling)c+=e(a)}else if(3===f||4===f)return a.nodeValue}else while(b=a[d++])c+=e(b);return c},d=ga.selectors={cacheLength:50,createPseudo:ia,match:X,attrHandle:{},find:{},relative:{">":{dir:"parentNode",first:!0}," ":{dir:"parentNode"},"+":{dir:"previousSibling",first:!0},"~":{dir:"previousSibling"}},preFilter:{ATTR:function(a){return a[1]=a[1].replace(ca,da),a[3]=(a[3]||a[4]||a[5]||"").replace(ca,da),"~="===a[2]&&(a[3]=" "+a[3]+" "),a.slice(0,4)},CHILD:function(a){return a[1]=a[1].toLowerCase(),"nth"===a[1].slice(0,3)?(a[3]||ga.error(a[0]),a[4]=+(a[4]?a[5]+(a[6]||1):2*("even"===a[3]||"odd"===a[3])),a[5]=+(a[7]+a[8]||"odd"===a[3])):a[3]&&ga.error(a[0]),a},PSEUDO:function(a){var b,c=!a[6]&&a[2];return X.CHILD.test(a[0])?null:(a[3]?a[2]=a[4]||a[5]||"":c&&V.test(c)&&(b=g(c,!0))&&(b=c.indexOf(")",c.length-b)-c.length)&&(a[0]=a[0].slice(0,b),a[2]=c.slice(0,b)),a.slice(0,3))}},filter:{TAG:function(a){var b=a.replace(ca,da).toLowerCase();return"*"===a?function(){return!0}:function(a){return a.nodeName&&a.nodeName.toLowerCase()===b}},CLASS:function(a){var b=y[a+" "];return b||(b=new RegExp("(^|"+L+")"+a+"("+L+"|$)"))&&y(a,function(a){return b.test("string"==typeof a.className&&a.className||"undefined"!=typeof a.getAttribute&&a.getAttribute("class")||"")})},ATTR:function(a,b,c){return function(d){var e=ga.attr(d,a);return null==e?"!="===b:b?(e+="","="===b?e===c:"!="===b?e!==c:"^="===b?c&&0===e.indexOf(c):"*="===b?c&&e.indexOf(c)>-1:"$="===b?c&&e.slice(-c.length)===c:"~="===b?(" "+e.replace(Q," ")+" ").indexOf(c)>-1:"|="===b?e===c||e.slice(0,c.length+1)===c+"-":!1):!0}},CHILD:function(a,b,c,d,e){var f="nth"!==a.slice(0,3),g="last"!==a.slice(-4),h="of-type"===b;return 1===d&&0===e?function(a){return!!a.parentNode}:function(b,c,i){var j,k,l,m,n,o,p=f!==g?"nextSibling":"previousSibling",q=b.parentNode,r=h&&b.nodeName.toLowerCase(),s=!i&&!h;if(q){if(f){while(p){l=b;while(l=l[p])if(h?l.nodeName.toLowerCase()===r:1===l.nodeType)return!1;o=p="only"===a&&!o&&"nextSibling"}return!0}if(o=[g?q.firstChild:q.lastChild],g&&s){k=q[u]||(q[u]={}),j=k[a]||[],n=j[0]===w&&j[1],m=j[0]===w&&j[2],l=n&&q.childNodes[n];while(l=++n&&l&&l[p]||(m=n=0)||o.pop())if(1===l.nodeType&&++m&&l===b){k[a]=[w,n,m];break}}else if(s&&(j=(b[u]||(b[u]={}))[a])&&j[0]===w)m=j[1];else while(l=++n&&l&&l[p]||(m=n=0)||o.pop())if((h?l.nodeName.toLowerCase()===r:1===l.nodeType)&&++m&&(s&&((l[u]||(l[u]={}))[a]=[w,m]),l===b))break;return m-=e,m===d||m%d===0&&m/d>=0}}},PSEUDO:function(a,b){var c,e=d.pseudos[a]||d.setFilters[a.toLowerCase()]||ga.error("unsupported pseudo: "+a);return e[u]?e(b):e.length>1?(c=[a,a,"",b],d.setFilters.hasOwnProperty(a.toLowerCase())?ia(function(a,c){var d,f=e(a,b),g=f.length;while(g--)d=J(a,f[g]),a[d]=!(c[d]=f[g])}):function(a){return e(a,0,c)}):e}},pseudos:{not:ia(function(a){var b=[],c=[],d=h(a.replace(R,"$1"));return d[u]?ia(function(a,b,c,e){var f,g=d(a,null,e,[]),h=a.length;while(h--)(f=g[h])&&(a[h]=!(b[h]=f))}):function(a,e,f){return b[0]=a,d(b,null,f,c),b[0]=null,!c.pop()}}),has:ia(function(a){return function(b){return ga(a,b).length>0}}),contains:ia(function(a){return a=a.replace(ca,da),function(b){return(b.textContent||b.innerText||e(b)).indexOf(a)>-1}}),lang:ia(function(a){return W.test(a||"")||ga.error("unsupported lang: "+a),a=a.replace(ca,da).toLowerCase(),function(b){var c;do if(c=p?b.lang:b.getAttribute("xml:lang")||b.getAttribute("lang"))return c=c.toLowerCase(),c===a||0===c.indexOf(a+"-");while((b=b.parentNode)&&1===b.nodeType);return!1}}),target:function(b){var c=a.location&&a.location.hash;return c&&c.slice(1)===b.id},root:function(a){return a===o},focus:function(a){return a===n.activeElement&&(!n.hasFocus||n.hasFocus())&&!!(a.type||a.href||~a.tabIndex)},enabled:function(a){return a.disabled===!1},disabled:function(a){return a.disabled===!0},checked:function(a){var b=a.nodeName.toLowerCase();return"input"===b&&!!a.checked||"option"===b&&!!a.selected},selected:function(a){return a.parentNode&&a.parentNode.selectedIndex,a.selected===!0},empty:function(a){for(a=a.firstChild;a;a=a.nextSibling)if(a.nodeType<6)return!1;return!0},parent:function(a){return!d.pseudos.empty(a)},header:function(a){return Z.test(a.nodeName)},input:function(a){return Y.test(a.nodeName)},button:function(a){var b=a.nodeName.toLowerCase();return"input"===b&&"button"===a.type||"button"===b},text:function(a){var b;return"input"===a.nodeName.toLowerCase()&&"text"===a.type&&(null==(b=a.getAttribute("type"))||"text"===b.toLowerCase())},first:oa(function(){return[0]}),last:oa(function(a,b){return[b-1]}),eq:oa(function(a,b,c){return[0>c?c+b:c]}),even:oa(function(a,b){for(var c=0;b>c;c+=2)a.push(c);return a}),odd:oa(function(a,b){for(var c=1;b>c;c+=2)a.push(c);return a}),lt:oa(function(a,b,c){for(var d=0>c?c+b:c;--d>=0;)a.push(d);return a}),gt:oa(function(a,b,c){for(var d=0>c?c+b:c;++d<b;)a.push(d);return a})}},d.pseudos.nth=d.pseudos.eq;for(b in{radio:!0,checkbox:!0,file:!0,password:!0,image:!0})d.pseudos[b]=ma(b);for(b in{submit:!0,reset:!0})d.pseudos[b]=na(b);function qa(){}qa.prototype=d.filters=d.pseudos,d.setFilters=new qa,g=ga.tokenize=function(a,b){var c,e,f,g,h,i,j,k=z[a+" "];if(k)return b?0:k.slice(0);h=a,i=[],j=d.preFilter;while(h){(!c||(e=S.exec(h)))&&(e&&(h=h.slice(e[0].length)||h),i.push(f=[])),c=!1,(e=T.exec(h))&&(c=e.shift(),f.push({value:c,type:e[0].replace(R," ")}),h=h.slice(c.length));for(g in d.filter)!(e=X[g].exec(h))||j[g]&&!(e=j[g](e))||(c=e.shift(),f.push({value:c,type:g,matches:e}),h=h.slice(c.length));if(!c)break}return b?h.length:h?ga.error(a):z(a,i).slice(0)};function ra(a){for(var b=0,c=a.length,d="";c>b;b++)d+=a[b].value;return d}function sa(a,b,c){var d=b.dir,e=c&&"parentNode"===d,f=x++;return b.first?function(b,c,f){while(b=b[d])if(1===b.nodeType||e)return a(b,c,f)}:function(b,c,g){var h,i,j=[w,f];if(g){while(b=b[d])if((1===b.nodeType||e)&&a(b,c,g))return!0}else while(b=b[d])if(1===b.nodeType||e){if(i=b[u]||(b[u]={}),(h=i[d])&&h[0]===w&&h[1]===f)return j[2]=h[2];if(i[d]=j,j[2]=a(b,c,g))return!0}}}function ta(a){return a.length>1?function(b,c,d){var e=a.length;while(e--)if(!a[e](b,c,d))return!1;return!0}:a[0]}function ua(a,b,c){for(var d=0,e=b.length;e>d;d++)ga(a,b[d],c);return c}function va(a,b,c,d,e){for(var f,g=[],h=0,i=a.length,j=null!=b;i>h;h++)(f=a[h])&&(!c||c(f,d,e))&&(g.push(f),j&&b.push(h));return g}function wa(a,b,c,d,e,f){return d&&!d[u]&&(d=wa(d)),e&&!e[u]&&(e=wa(e,f)),ia(function(f,g,h,i){var j,k,l,m=[],n=[],o=g.length,p=f||ua(b||"*",h.nodeType?[h]:h,[]),q=!a||!f&&b?p:va(p,m,a,h,i),r=c?e||(f?a:o||d)?[]:g:q;if(c&&c(q,r,h,i),d){j=va(r,n),d(j,[],h,i),k=j.length;while(k--)(l=j[k])&&(r[n[k]]=!(q[n[k]]=l))}if(f){if(e||a){if(e){j=[],k=r.length;while(k--)(l=r[k])&&j.push(q[k]=l);e(null,r=[],j,i)}k=r.length;while(k--)(l=r[k])&&(j=e?J(f,l):m[k])>-1&&(f[j]=!(g[j]=l))}}else r=va(r===g?r.splice(o,r.length):r),e?e(null,g,r,i):H.apply(g,r)})}function xa(a){for(var b,c,e,f=a.length,g=d.relative[a[0].type],h=g||d.relative[" "],i=g?1:0,k=sa(function(a){return a===b},h,!0),l=sa(function(a){return J(b,a)>-1},h,!0),m=[function(a,c,d){var e=!g&&(d||c!==j)||((b=c).nodeType?k(a,c,d):l(a,c,d));return b=null,e}];f>i;i++)if(c=d.relative[a[i].type])m=[sa(ta(m),c)];else{if(c=d.filter[a[i].type].apply(null,a[i].matches),c[u]){for(e=++i;f>e;e++)if(d.relative[a[e].type])break;return wa(i>1&&ta(m),i>1&&ra(a.slice(0,i-1).concat({value:" "===a[i-2].type?"*":""})).replace(R,"$1"),c,e>i&&xa(a.slice(i,e)),f>e&&xa(a=a.slice(e)),f>e&&ra(a))}m.push(c)}return ta(m)}function ya(a,b){var c=b.length>0,e=a.length>0,f=function(f,g,h,i,k){var l,m,o,p=0,q="0",r=f&&[],s=[],t=j,u=f||e&&d.find.TAG("*",k),v=w+=null==t?1:Math.random()||.1,x=u.length;for(k&&(j=g!==n&&g);q!==x&&null!=(l=u[q]);q++){if(e&&l){m=0;while(o=a[m++])if(o(l,g,h)){i.push(l);break}k&&(w=v)}c&&((l=!o&&l)&&p--,f&&r.push(l))}if(p+=q,c&&q!==p){m=0;while(o=b[m++])o(r,s,g,h);if(f){if(p>0)while(q--)r[q]||s[q]||(s[q]=F.call(i));s=va(s)}H.apply(i,s),k&&!f&&s.length>0&&p+b.length>1&&ga.uniqueSort(i)}return k&&(w=v,j=t),r};return c?ia(f):f}return h=ga.compile=function(a,b){var c,d=[],e=[],f=A[a+" "];if(!f){b||(b=g(a)),c=b.length;while(c--)f=xa(b[c]),f[u]?d.push(f):e.push(f);f=A(a,ya(e,d)),f.selector=a}return f},i=ga.select=function(a,b,e,f){var i,j,k,l,m,n="function"==typeof a&&a,o=!f&&g(a=n.selector||a);if(e=e||[],1===o.length){if(j=o[0]=o[0].slice(0),j.length>2&&"ID"===(k=j[0]).type&&c.getById&&9===b.nodeType&&p&&d.relative[j[1].type]){if(b=(d.find.ID(k.matches[0].replace(ca,da),b)||[])[0],!b)return e;n&&(b=b.parentNode),a=a.slice(j.shift().value.length)}i=X.needsContext.test(a)?0:j.length;while(i--){if(k=j[i],d.relative[l=k.type])break;if((m=d.find[l])&&(f=m(k.matches[0].replace(ca,da),aa.test(j[0].type)&&pa(b.parentNode)||b))){if(j.splice(i,1),a=f.length&&ra(j),!a)return H.apply(e,f),e;break}}}return(n||h(a,o))(f,b,!p,e,aa.test(a)&&pa(b.parentNode)||b),e},c.sortStable=u.split("").sort(B).join("")===u,c.detectDuplicates=!!l,m(),c.sortDetached=ja(function(a){return 1&a.compareDocumentPosition(n.createElement("div"))}),ja(function(a){return a.innerHTML="<a href='#'></a>","#"===a.firstChild.getAttribute("href")})||ka("type|href|height|width",function(a,b,c){return c?void 0:a.getAttribute(b,"type"===b.toLowerCase()?1:2)}),c.attributes&&ja(function(a){return a.innerHTML="<input/>",a.firstChild.setAttribute("value",""),""===a.firstChild.getAttribute("value")})||ka("value",function(a,b,c){return c||"input"!==a.nodeName.toLowerCase()?void 0:a.defaultValue}),ja(function(a){return null==a.getAttribute("disabled")})||ka(K,function(a,b,c){var d;return c?void 0:a[b]===!0?b.toLowerCase():(d=a.getAttributeNode(b))&&d.specified?d.value:null}),ga}(a);m.find=s,m.expr=s.selectors,m.expr[":"]=m.expr.pseudos,m.unique=s.uniqueSort,m.text=s.getText,m.isXMLDoc=s.isXML,m.contains=s.contains;var t=m.expr.match.needsContext,u=/^<(\w+)\s*\/?>(?:<\/\1>|)$/,v=/^.[^:#\[\.,]*$/;function w(a,b,c){if(m.isFunction(b))return m.grep(a,function(a,d){return!!b.call(a,d,a)!==c});if(b.nodeType)return m.grep(a,function(a){return a===b!==c});if("string"==typeof b){if(v.test(b))return m.filter(b,a,c);b=m.filter(b,a)}return m.grep(a,function(a){return m.inArray(a,b)>=0!==c})}m.filter=function(a,b,c){var d=b[0];return c&&(a=":not("+a+")"),1===b.length&&1===d.nodeType?m.find.matchesSelector(d,a)?[d]:[]:m.find.matches(a,m.grep(b,function(a){return 1===a.nodeType}))},m.fn.extend({find:function(a){var b,c=[],d=this,e=d.length;if("string"!=typeof a)return this.pushStack(m(a).filter(function(){for(b=0;e>b;b++)if(m.contains(d[b],this))return!0}));for(b=0;e>b;b++)m.find(a,d[b],c);return c=this.pushStack(e>1?m.unique(c):c),c.selector=this.selector?this.selector+" "+a:a,c},filter:function(a){return this.pushStack(w(this,a||[],!1))},not:function(a){return this.pushStack(w(this,a||[],!0))},is:function(a){return!!w(this,"string"==typeof a&&t.test(a)?m(a):a||[],!1).length}});var x,y=a.document,z=/^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]*))$/,A=m.fn.init=function(a,b){var c,d;if(!a)return this;if("string"==typeof a){if(c="<"===a.charAt(0)&&">"===a.charAt(a.length-1)&&a.length>=3?[null,a,null]:z.exec(a),!c||!c[1]&&b)return!b||b.jquery?(b||x).find(a):this.constructor(b).find(a);if(c[1]){if(b=b instanceof m?b[0]:b,m.merge(this,m.parseHTML(c[1],b&&b.nodeType?b.ownerDocument||b:y,!0)),u.test(c[1])&&m.isPlainObject(b))for(c in b)m.isFunction(this[c])?this[c](b[c]):this.attr(c,b[c]);return this}if(d=y.getElementById(c[2]),d&&d.parentNode){if(d.id!==c[2])return x.find(a);this.length=1,this[0]=d}return this.context=y,this.selector=a,this}return a.nodeType?(this.context=this[0]=a,this.length=1,this):m.isFunction(a)?"undefined"!=typeof x.ready?x.ready(a):a(m):(void 0!==a.selector&&(this.selector=a.selector,this.context=a.context),m.makeArray(a,this))};A.prototype=m.fn,x=m(y);var B=/^(?:parents|prev(?:Until|All))/,C={children:!0,contents:!0,next:!0,prev:!0};m.extend({dir:function(a,b,c){var d=[],e=a[b];while(e&&9!==e.nodeType&&(void 0===c||1!==e.nodeType||!m(e).is(c)))1===e.nodeType&&d.push(e),e=e[b];return d},sibling:function(a,b){for(var c=[];a;a=a.nextSibling)1===a.nodeType&&a!==b&&c.push(a);return c}}),m.fn.extend({has:function(a){var b,c=m(a,this),d=c.length;return this.filter(function(){for(b=0;d>b;b++)if(m.contains(this,c[b]))return!0})},closest:function(a,b){for(var c,d=0,e=this.length,f=[],g=t.test(a)||"string"!=typeof a?m(a,b||this.context):0;e>d;d++)for(c=this[d];c&&c!==b;c=c.parentNode)if(c.nodeType<11&&(g?g.index(c)>-1:1===c.nodeType&&m.find.matchesSelector(c,a))){f.push(c);break}return this.pushStack(f.length>1?m.unique(f):f)},index:function(a){return a?"string"==typeof a?m.inArray(this[0],m(a)):m.inArray(a.jquery?a[0]:a,this):this[0]&&this[0].parentNode?this.first().prevAll().length:-1},add:function(a,b){return this.pushStack(m.unique(m.merge(this.get(),m(a,b))))},addBack:function(a){return this.add(null==a?this.prevObject:this.prevObject.filter(a))}});function D(a,b){do a=a[b];while(a&&1!==a.nodeType);return a}m.each({parent:function(a){var b=a.parentNode;return b&&11!==b.nodeType?b:null},parents:function(a){return m.dir(a,"parentNode")},parentsUntil:function(a,b,c){return m.dir(a,"parentNode",c)},next:function(a){return D(a,"nextSibling")},prev:function(a){return D(a,"previousSibling")},nextAll:function(a){return m.dir(a,"nextSibling")},prevAll:function(a){return m.dir(a,"previousSibling")},nextUntil:function(a,b,c){return m.dir(a,"nextSibling",c)},prevUntil:function(a,b,c){return m.dir(a,"previousSibling",c)},siblings:function(a){return m.sibling((a.parentNode||{}).firstChild,a)},children:function(a){return m.sibling(a.firstChild)},contents:function(a){return m.nodeName(a,"iframe")?a.contentDocument||a.contentWindow.document:m.merge([],a.childNodes)}},function(a,b){m.fn[a]=function(c,d){var e=m.map(this,b,c);return"Until"!==a.slice(-5)&&(d=c),d&&"string"==typeof d&&(e=m.filter(d,e)),this.length>1&&(C[a]||(e=m.unique(e)),B.test(a)&&(e=e.reverse())),this.pushStack(e)}});var E=/\S+/g,F={};function G(a){var b=F[a]={};return m.each(a.match(E)||[],function(a,c){b[c]=!0}),b}m.Callbacks=function(a){a="string"==typeof a?F[a]||G(a):m.extend({},a);var b,c,d,e,f,g,h=[],i=!a.once&&[],j=function(l){for(c=a.memory&&l,d=!0,f=g||0,g=0,e=h.length,b=!0;h&&e>f;f++)if(h[f].apply(l[0],l[1])===!1&&a.stopOnFalse){c=!1;break}b=!1,h&&(i?i.length&&j(i.shift()):c?h=[]:k.disable())},k={add:function(){if(h){var d=h.length;!function f(b){m.each(b,function(b,c){var d=m.type(c);"function"===d?a.unique&&k.has(c)||h.push(c):c&&c.length&&"string"!==d&&f(c)})}(arguments),b?e=h.length:c&&(g=d,j(c))}return this},remove:function(){return h&&m.each(arguments,function(a,c){var d;while((d=m.inArray(c,h,d))>-1)h.splice(d,1),b&&(e>=d&&e--,f>=d&&f--)}),this},has:function(a){return a?m.inArray(a,h)>-1:!(!h||!h.length)},empty:function(){return h=[],e=0,this},disable:function(){return h=i=c=void 0,this},disabled:function(){return!h},lock:function(){return i=void 0,c||k.disable(),this},locked:function(){return!i},fireWith:function(a,c){return!h||d&&!i||(c=c||[],c=[a,c.slice?c.slice():c],b?i.push(c):j(c)),this},fire:function(){return k.fireWith(this,arguments),this},fired:function(){return!!d}};return k},m.extend({Deferred:function(a){var b=[["resolve","done",m.Callbacks("once memory"),"resolved"],["reject","fail",m.Callbacks("once memory"),"rejected"],["notify","progress",m.Callbacks("memory")]],c="pending",d={state:function(){return c},always:function(){return e.done(arguments).fail(arguments),this},then:function(){var a=arguments;return m.Deferred(function(c){m.each(b,function(b,f){var g=m.isFunction(a[b])&&a[b];e[f[1]](function(){var a=g&&g.apply(this,arguments);a&&m.isFunction(a.promise)?a.promise().done(c.resolve).fail(c.reject).progress(c.notify):c[f[0]+"With"](this===d?c.promise():this,g?[a]:arguments)})}),a=null}).promise()},promise:function(a){return null!=a?m.extend(a,d):d}},e={};return d.pipe=d.then,m.each(b,function(a,f){var g=f[2],h=f[3];d[f[1]]=g.add,h&&g.add(function(){c=h},b[1^a][2].disable,b[2][2].lock),e[f[0]]=function(){return e[f[0]+"With"](this===e?d:this,arguments),this},e[f[0]+"With"]=g.fireWith}),d.promise(e),a&&a.call(e,e),e},when:function(a){var b=0,c=d.call(arguments),e=c.length,f=1!==e||a&&m.isFunction(a.promise)?e:0,g=1===f?a:m.Deferred(),h=function(a,b,c){return function(e){b[a]=this,c[a]=arguments.length>1?d.call(arguments):e,c===i?g.notifyWith(b,c):--f||g.resolveWith(b,c)}},i,j,k;if(e>1)for(i=new Array(e),j=new Array(e),k=new Array(e);e>b;b++)c[b]&&m.isFunction(c[b].promise)?c[b].promise().done(h(b,k,c)).fail(g.reject).progress(h(b,j,i)):--f;return f||g.resolveWith(k,c),g.promise()}});var H;m.fn.ready=function(a){return m.ready.promise().done(a),this},m.extend({isReady:!1,readyWait:1,holdReady:function(a){a?m.readyWait++:m.ready(!0)},ready:function(a){if(a===!0?!--m.readyWait:!m.isReady){if(!y.body)return setTimeout(m.ready);m.isReady=!0,a!==!0&&--m.readyWait>0||(H.resolveWith(y,[m]),m.fn.triggerHandler&&(m(y).triggerHandler("ready"),m(y).off("ready")))}}});function I(){y.addEventListener?(y.removeEventListener("DOMContentLoaded",J,!1),a.removeEventListener("load",J,!1)):(y.detachEvent("onreadystatechange",J),a.detachEvent("onload",J))}function J(){(y.addEventListener||"load"===event.type||"complete"===y.readyState)&&(I(),m.ready())}m.ready.promise=function(b){if(!H)if(H=m.Deferred(),"complete"===y.readyState)setTimeout(m.ready);else if(y.addEventListener)y.addEventListener("DOMContentLoaded",J,!1),a.addEventListener("load",J,!1);else{y.attachEvent("onreadystatechange",J),a.attachEvent("onload",J);var c=!1;try{c=null==a.frameElement&&y.documentElement}catch(d){}c&&c.doScroll&&!function e(){if(!m.isReady){try{c.doScroll("left")}catch(a){return setTimeout(e,50)}I(),m.ready()}}()}return H.promise(b)};var K="undefined",L;for(L in m(k))break;k.ownLast="0"!==L,k.inlineBlockNeedsLayout=!1,m(function(){var a,b,c,d;c=y.getElementsByTagName("body")[0],c&&c.style&&(b=y.createElement("div"),d=y.createElement("div"),d.style.cssText="position:absolute;border:0;width:0;height:0;top:0;left:-9999px",c.appendChild(d).appendChild(b),typeof b.style.zoom!==K&&(b.style.cssText="display:inline;margin:0;border:0;padding:1px;width:1px;zoom:1",k.inlineBlockNeedsLayout=a=3===b.offsetWidth,a&&(c.style.zoom=1)),c.removeChild(d))}),function(){var a=y.createElement("div");if(null==k.deleteExpando){k.deleteExpando=!0;try{delete a.test}catch(b){k.deleteExpando=!1}}a=null}(),m.acceptData=function(a){var b=m.noData[(a.nodeName+" ").toLowerCase()],c=+a.nodeType||1;return 1!==c&&9!==c?!1:!b||b!==!0&&a.getAttribute("classid")===b};var M=/^(?:\{[\w\W]*\}|\[[\w\W]*\])$/,N=/([A-Z])/g;function O(a,b,c){if(void 0===c&&1===a.nodeType){var d="data-"+b.replace(N,"-$1").toLowerCase();if(c=a.getAttribute(d),"string"==typeof c){try{c="true"===c?!0:"false"===c?!1:"null"===c?null:+c+""===c?+c:M.test(c)?m.parseJSON(c):c}catch(e){}m.data(a,b,c)}else c=void 0}return c}function P(a){var b;for(b in a)if(("data"!==b||!m.isEmptyObject(a[b]))&&"toJSON"!==b)return!1;
@@ -363,7 +363,7 @@ summary {
 
 
 
-<h1 class="title toc-ignore">Multiple Comparisons with <strong>agricolae</strong></h1>
+<h1 class="title toc-ignore">Introduction to <strong>agricolae</strong></h1>
 <h4 class="author">Felipe de Mendiburu<sup>1</sup>, Muhammad Yaseen<sup>2</sup></h4>
 <h4 class="date">2020-05-01</h4>
 
@@ -371,20 +371,10 @@ summary {
 
 <div id="TOC">
 <ul>
-<li><a href="#multiple-comparisons"><span class="toc-section-number">1</span> Multiple Comparisons</a><ul>
-<li><a href="#the-least-significant-difference-lsd"><span class="toc-section-number">1.0.1</span> The Least Significant Difference (LSD)</a></li>
-<li><a href="#holm-hommel-hochberg-bonferroni-bh-by-fdr"><span class="toc-section-number">1.0.2</span> holm, hommel, hochberg, bonferroni, BH, BY, fdr</a></li>
-<li><a href="#duncans-new-multiple-range-test"><span class="toc-section-number">1.0.3</span> Duncan’s New Multiple-Range Test</a></li>
-<li><a href="#student-newman-keuls"><span class="toc-section-number">1.0.4</span> Student-Newman-Keuls</a></li>
-<li><a href="#ryan-einot-and-gabriel-and-welsch"><span class="toc-section-number">1.0.5</span> Ryan, Einot and Gabriel and Welsch</a></li>
-<li><a href="#tukeys-w-procedure-hsd"><span class="toc-section-number">1.0.6</span> Tukey’s W Procedure (HSD)</a></li>
-<li><a href="#tukey-hsd-for-different-repetition"><span class="toc-section-number">1.0.7</span> Tukey (HSD) for different repetition</a></li>
-<li><a href="#waller-duncans-bayesian-k-ratio-t-test"><span class="toc-section-number">1.0.8</span> Waller-Duncan’s Bayesian K-Ratio T-Test</a></li>
-<li><a href="#scheffes-test"><span class="toc-section-number">1.1</span> Scheffe’s Test</a></li>
-<li><a href="#multiple-comparison-in-factorial-treatments"><span class="toc-section-number">1.2</span> Multiple comparison in factorial treatments</a></li>
-<li><a href="#analysis-of-balanced-incomplete-blocks"><span class="toc-section-number">1.3</span> Analysis of Balanced Incomplete Blocks</a></li>
-<li><a href="#partially-balanced-incomplete-blocks"><span class="toc-section-number">1.4</span> Partially Balanced Incomplete Blocks</a></li>
-<li><a href="#augmented-blocks"><span class="toc-section-number">1.5</span> Augmented Blocks</a></li>
+<li><a href="#introduction"><span class="toc-section-number">1</span> Introduction</a><ul>
+<li><a href="#installation"><span class="toc-section-number">1.1</span> Installation</a></li>
+<li><a href="#use-in-r"><span class="toc-section-number">1.2</span> Use in <strong>R</strong></a></li>
+<li><a href="#data-set-in-agricolae"><span class="toc-section-number">1.3</span> Data set in <strong>agricolae </strong></a></li>
 </ul></li>
 <li><a href="#references">References</a></li>
 </ul>
@@ -401,1060 +391,105 @@ summary {
 </p></li>
 </ol>
 
-<div id="multiple-comparisons" class="section level1">
-<h1><span class="header-section-number">1</span> Multiple Comparisons</h1>
-<p>For the analyses, the following functions of <strong>agricolae</strong> are used: <code>LSD.test</code>, <code>HSD.test</code>, <code>duncan.test</code>, <code>scheffe.test</code>, <code>waller.test</code>, <code>SNK.test</code>, <code>REGW.test</code>, ;  and <code>durbin.test</code>, <code>kruskal</code>, <code>friedman</code>, <code>waerden.test</code> and <code>Median.test</code>, .</p>
-<p>For every statistical analysis, the data should be organized in columns. For the demonstration, the <strong>agricolae</strong> database will be used.</p>
-<p>The <code>sweetpotato</code> data correspond to a completely random experiment in field with plots of 50 sweet potato plants, subjected to the virus effect and to a control without virus (See the reference manual of the package).</p>
-<pre class="r"><code>data(sweetpotato)
-model&lt;-aov(yield~virus, data=sweetpotato)
-cv.model(model)</code></pre>
-<pre><code>[1] 17.1666</code></pre>
-<pre class="r"><code>with(sweetpotato,mean(yield))</code></pre>
-<pre><code>[1] 27.625</code></pre>
-<p><strong>Model parameters: Degrees of freedom and variance of the error:</strong></p>
-<pre class="r"><code>df&lt;-df.residual(model)
-MSerror&lt;-deviance(model)/df</code></pre>
-<div id="the-least-significant-difference-lsd" class="section level3">
-<h3><span class="header-section-number">1.0.1</span> The Least Significant Difference (LSD)</h3>
-<p>It includes the multiple comparison through the method of the minimum significant difference (Least Significant Difference), .</p>
-<pre class="r"><code># comparison &lt;- LSD.test(yield,virus,df,MSerror)
-LSD.test(model, &quot;virus&quot;,console=TRUE)</code></pre>
-<pre><code>
-Study: model ~ &quot;virus&quot;
-
-LSD t Test for yield 
-
-Mean Square Error:  22.48917 
-
-virus,  means and individual ( 95 %) CI
-
-      yield      std r       LCL      UCL  Min  Max
-cc 24.40000 3.609709 3 18.086268 30.71373 21.7 28.5
-fc 12.86667 2.159475 3  6.552935 19.18040 10.6 14.9
-ff 36.33333 7.333030 3 30.019601 42.64707 28.0 41.8
-oo 36.90000 4.300000 3 30.586268 43.21373 32.1 40.4
-
-Alpha: 0.05 ; DF Error: 8
-Critical Value of t: 2.306004 
-
-least Significant Difference: 8.928965 
-
-Treatments with the same letter are not significantly different.
-
-      yield groups
-oo 36.90000      a
-ff 36.33333      a
-cc 24.40000      b
-fc 12.86667      c</code></pre>
-<p>In the function <code>LSD.test</code>, the multiple comparison was carried out. In order to obtain the probabilities of the comparisons, it should be indicated that groups are not required; thus:</p>
-<pre class="r"><code># comparison &lt;- LSD.test(yield, virus,df, MSerror, group=FALSE)
-outLSD &lt;-LSD.test(model, &quot;virus&quot;, group=FALSE,console=TRUE)</code></pre>
-<pre><code>
-Study: model ~ &quot;virus&quot;
-
-LSD t Test for yield 
-
-Mean Square Error:  22.48917 
-
-virus,  means and individual ( 95 %) CI
-
-      yield      std r       LCL      UCL  Min  Max
-cc 24.40000 3.609709 3 18.086268 30.71373 21.7 28.5
-fc 12.86667 2.159475 3  6.552935 19.18040 10.6 14.9
-ff 36.33333 7.333030 3 30.019601 42.64707 28.0 41.8
-oo 36.90000 4.300000 3 30.586268 43.21373 32.1 40.4
-
-Alpha: 0.05 ; DF Error: 8
-Critical Value of t: 2.306004 
-
-Comparison between treatments means
-
-         difference pvalue signif.        LCL        UCL
-cc - fc  11.5333333 0.0176       *   2.604368  20.462299
-cc - ff -11.9333333 0.0151       * -20.862299  -3.004368
-cc - oo -12.5000000 0.0121       * -21.428965  -3.571035
-fc - ff -23.4666667 0.0003     *** -32.395632 -14.537701
-fc - oo -24.0333333 0.0003     *** -32.962299 -15.104368
-ff - oo  -0.5666667 0.8873          -9.495632   8.362299</code></pre>
-<p>Signif. codes:</p>
-<p><strong>0 </strong>* 0.001 ** 0.01 * 0.05 . 0.1 ’ ’ 1**</p>
-<pre class="r"><code>options(digits=2)
-print(outLSD)</code></pre>
-<pre><code>$statistics
-  MSerror Df Mean CV t.value LSD
-       22  8   28 17     2.3 8.9
-
-$parameters
-        test p.ajusted name.t ntr alpha
-  Fisher-LSD      none  virus   4  0.05
-
-$means
-   yield std r  LCL UCL Min Max Q25 Q50 Q75
-cc    24 3.6 3 18.1  31  22  28  22  23  26
-fc    13 2.2 3  6.6  19  11  15  12  13  14
-ff    36 7.3 3 30.0  43  28  42  34  39  40
-oo    37 4.3 3 30.6  43  32  40  35  38  39
-
-$comparison
-        difference pvalue signif.   LCL   UCL
-cc - fc      11.53 0.0176       *   2.6  20.5
-cc - ff     -11.93 0.0151       * -20.9  -3.0
-cc - oo     -12.50 0.0121       * -21.4  -3.6
-fc - ff     -23.47 0.0003     *** -32.4 -14.5
-fc - oo     -24.03 0.0003     *** -33.0 -15.1
-ff - oo      -0.57 0.8873          -9.5   8.4
-
-$groups
-NULL
-
-attr(,&quot;class&quot;)
-[1] &quot;group&quot;</code></pre>
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">1</span> Introduction</h1>
+<p>The package <strong>agricolae</strong> offers a broad functionality in the design of experiments, especially for experiments in agriculture and improvements of plants, which can also be used for other purposes. It contains the following designs: lattice, alpha, cyclic, balanced incomplete block designs, complete randomized blocks, Latin, Graeco-Latin, augmented block designs, split plot and strip plot. It also has several procedures of experimental data analysis, such as the comparisons of treatments of Waller-Duncan, Bonferroni, Duncan, Student-Newman-Keuls, Scheffe, Ryan, Einot and Gabriel and Welsch multiple range test or the classic LSD and Tukey; and non-parametric comparisons, such as Kruskal-Wallis, Friedman, Durbin, Median and Waerden, stability analysis, and other procedures applied in genetics, as well as procedures in biodiversity and descriptive statistics, <span class="citation">Mendiburu (<a href="#ref-Mend2009" role="doc-biblioref">2009</a>)</span></p>
+<div id="installation" class="section level2">
+<h2><span class="header-section-number">1.1</span> Installation</h2>
+<p>The main program of <strong>R</strong> should be already installed in the platform of your computer <em>(Windows, Linux or MAC)</em>. If it is not installed yet, you can download it from the R project <a href="https://www.r-project.org/">https://www.r-project.org/</a> of a repository CRAN.</p>
+<pre class="r"><code>install.packages(&quot;agricolae&quot;)</code></pre>
+<p>Once the <code>agricolae</code> package is installed, it needs to be made accessible to the current <strong>R</strong> session by the command:</p>
+<pre class="r"><code>library(agricolae)</code></pre>
+<p>For online help facilities or the details of a particular command
+(such as the function <code>waller.test</code>) you can type:</p>
+<pre class="r"><code>help(package=&quot;agricolae&quot;)
+help(waller.test)</code></pre>
+<p>For a complete functionality, <code>agricolae</code> requires other packages</p>
+<!-- -->
+<table>
+<thead>
+<tr class="header">
+<th><!-- --></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://cran.r-project.org/web/packages/MASS/index.html"><code>MASS</code></a>:</td>
+<td>for the generalized inverse used in the function <code>PBIB.test</code></td>
+</tr>
+<tr class="even">
+<td><a href="https://cran.r-project.org/web/packages/nlme/index.html"><code>nlme</code></a>:</td>
+<td>for the methods REML and LM in <code>PBIB.test</code></td>
+</tr>
+<tr class="odd">
+<td><a href="https://cran.r-project.org/web/packages/klaR/index.html"><code>klaR</code></a>:</td>
+<td>for the function <code>triplot</code> used in the function <code>AMMI</code></td>
+</tr>
+<tr class="even">
+<td><a href="https://cran.r-project.org/web/packages/cluster/index.html"><code>cluster</code></a>:</td>
+<td>for the use of the function <code>consensus</code></td>
+</tr>
+<tr class="odd">
+<td><a href="https://cran.r-project.org/web/packages/AlgDesign/index.html"><code>AlgDesign</code></a>:</td>
+<td>for the balanced incomplete block design <code>design.bib</code></td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="holm-hommel-hochberg-bonferroni-bh-by-fdr" class="section level3">
-<h3><span class="header-section-number">1.0.2</span> holm, hommel, hochberg, bonferroni, BH, BY, fdr</h3>
-<p>With the function <code>LSD.test</code> we can make adjustments to the probabilities found, as for example the adjustment by Bonferroni, holm and other options see Adjust P-values for Multiple Comparisons, function p.adjust(stats), .</p>
-<pre class="r"><code>LSD.test(model, &quot;virus&quot;, group=FALSE, p.adj= &quot;bon&quot;,console=TRUE)</code></pre>
+<div id="use-in-r" class="section level2">
+<h2><span class="header-section-number">1.2</span> Use in <strong>R</strong></h2>
+<p>Since <strong>agricolae </strong> is a package of functions, these are operational when they are called directly from the console of <strong>R</strong> and are integrated to all the base functions of <strong>R</strong>.
+The following orders are frequent:</p>
+<pre class="r"><code>detach(package:agricolae) # detach package agricole
+library(agricolae) # Load the package to the memory</code></pre>
 <pre><code>
-Study: model ~ &quot;virus&quot;
+Attaching package: &#39;agricolae&#39;</code></pre>
+<pre><code>The following object is masked _by_ &#39;.GlobalEnv&#39;:
 
-LSD t Test for yield 
-P value adjustment method: bonferroni 
+    potato</code></pre>
+<pre><code>The following object is masked from &#39;package:tidytable&#39;:
 
-Mean Square Error:  22 
+    dt</code></pre>
+<pre><code>The following objects are masked from &#39;package:base&#39;:
 
-virus,  means and individual ( 95 %) CI
+    library.dynam.unload, system.file</code></pre>
+<pre class="r"><code>designs&lt;-apropos(&quot;design&quot;)
+print(designs[substr(designs,1,6)==&quot;design&quot;], row.names=FALSE)</code></pre>
+<pre><code> [1] &quot;design.ab&quot;      &quot;design.alpha&quot;   &quot;design.bib&quot;     &quot;design.crd&quot;    
+ [5] &quot;design.cyclic&quot;  &quot;design.dau&quot;     &quot;design.graeco&quot;  &quot;design.lattice&quot;
+ [9] &quot;design.lsd&quot;     &quot;design.rcbd&quot;    &quot;design.split&quot;   &quot;design.strip&quot;  
+[13] &quot;design.youden&quot; </code></pre>
+<pre class="r"><code>For the use of symbols that do not appear in the keyboard in Spanish, such as:
 
-   yield std r  LCL UCL Min Max
-cc    24 3.6 3 18.1  31  22  28
-fc    13 2.2 3  6.6  19  11  15
-ff    36 7.3 3 30.0  43  28  42
-oo    37 4.3 3 30.6  43  32  40
-
-Alpha: 0.05 ; DF Error: 8
-Critical Value of t: 3.5 
-
-Comparison between treatments means
-
-        difference pvalue signif.   LCL    UCL
-cc - fc      11.53 0.1058          -1.9  25.00
-cc - ff     -11.93 0.0904       . -25.4   1.54
-cc - oo     -12.50 0.0725       . -26.0   0.97
-fc - ff     -23.47 0.0018      ** -36.9 -10.00
-fc - oo     -24.03 0.0015      ** -37.5 -10.56
-ff - oo      -0.57 1.0000         -14.0  12.90</code></pre>
-<pre class="r"><code>out&lt;-LSD.test(model, &quot;virus&quot;, group=TRUE, p.adj= &quot;holm&quot;)
-print(out$group)</code></pre>
-<pre><code>   yield groups
-oo    37      a
-ff    36      a
-cc    24      b
-fc    13      c</code></pre>
-<pre class="r"><code>out&lt;-LSD.test(model, &quot;virus&quot;, group=FALSE, p.adj= &quot;holm&quot;)
-print(out$comparison)</code></pre>
-<pre><code>        difference pvalue signif.
-cc - fc      11.53 0.0484       *
-cc - ff     -11.93 0.0484       *
-cc - oo     -12.50 0.0484       *
-fc - ff     -23.47 0.0015      **
-fc - oo     -24.03 0.0015      **
-ff - oo      -0.57 0.8873        </code></pre>
-<p>Other comparison tests can be applied, such as <em>duncan, Student-Newman-Keuls, tukey and waller-duncan</em></p>
-<p>For <strong>Duncan</strong>, use the function <code>duncan.test</code>; for <strong>Student-Newman-Keuls</strong>, the function <code>SNK.test</code>; for <strong>Tukey</strong>, the function <code>HSD.test</code>; for <strong>Scheffe</strong>, the function <code>scheffe.test</code> and for <strong>Waller-Duncan</strong>, the function <code>waller.test</code>. The arguments are the same. <code>Waller</code> also requires the value of F-calculated of the ANOVA treatments. If the model is used as a parameter, this is no longer necessary.</p>
+~, [, ], &amp;, ^, |. &lt;, &gt;, {, }, \% or others, use the table ASCII code.</code></pre>
+<pre class="r"><code>library(agricolae) # Load the package to the memory: </code></pre>
+<p>In order to continue with the command line, do not forget to close the open windows with any R order.
+For help:</p>
+<pre class="r"><code>help(graph.freq)
+? (graph.freq)
+str(normal.freq)
+example(join.freq)</code></pre>
 </div>
-<div id="duncans-new-multiple-range-test" class="section level3">
-<h3><span class="header-section-number">1.0.3</span> Duncan’s New Multiple-Range Test</h3>
-<p>It corresponds to the Duncan’s Test <span class="citation">(Steel et al., <a href="#ref-SteeTorrDick:1997" role="doc-biblioref">1997</a>)</span>.</p>
-<pre class="r"><code>duncan.test(model, &quot;virus&quot;,console=TRUE)</code></pre>
-<pre><code>
-Study: model ~ &quot;virus&quot;
-
-Duncan&#39;s new multiple range test
-for yield 
-
-Mean Square Error:  22 
-
-virus,  means
-
-   yield std r Min Max
-cc    24 3.6 3  22  28
-fc    13 2.2 3  11  15
-ff    36 7.3 3  28  42
-oo    37 4.3 3  32  40
-
-Alpha: 0.05 ; DF Error: 8 
-
-Critical Range
-  2   3   4 
-8.9 9.3 9.5 
-
-Means with the same letter are not significantly different.
-
-   yield groups
-oo    37      a
-ff    36      a
-cc    24      b
-fc    13      c</code></pre>
-</div>
-<div id="student-newman-keuls" class="section level3">
-<h3><span class="header-section-number">1.0.4</span> Student-Newman-Keuls</h3>
-<p>Student, Newman and Keuls helped to improve the Newman-Keuls test of 1939, which was known as the Keuls method <span class="citation">(Steel et al., <a href="#ref-SteeTorrDick:1997" role="doc-biblioref">1997</a>)</span>.</p>
-<pre class="r"><code># SNK.test(model, &quot;virus&quot;, alpha=0.05,console=TRUE)
-SNK.test(model, &quot;virus&quot;, group=FALSE,console=TRUE)</code></pre>
-<pre><code>
-Study: model ~ &quot;virus&quot;
-
-Student Newman Keuls Test
-for yield 
-
-Mean Square Error:  22 
-
-virus,  means
-
-   yield std r Min Max
-cc    24 3.6 3  22  28
-fc    13 2.2 3  11  15
-ff    36 7.3 3  28  42
-oo    37 4.3 3  32  40
-
-Comparison between treatments means
-
-        difference pvalue signif.   LCL   UCL
-cc - fc      11.53 0.0176       *   2.6  20.5
-cc - ff     -11.93 0.0151       * -20.9  -3.0
-cc - oo     -12.50 0.0291       * -23.6  -1.4
-fc - ff     -23.47 0.0008     *** -34.5 -12.4
-fc - oo     -24.03 0.0012      ** -36.4 -11.6
-ff - oo      -0.57 0.8873          -9.5   8.4</code></pre>
-</div>
-<div id="ryan-einot-and-gabriel-and-welsch" class="section level3">
-<h3><span class="header-section-number">1.0.5</span> Ryan, Einot and Gabriel and Welsch</h3>
-<p>Multiple range tests for all pairwise comparisons, to obtain a confident inequalities multiple range tests <span class="citation">(Hsu, <a href="#ref-Hsu:1996" role="doc-biblioref">1996</a>)</span>.</p>
-<pre class="r"><code># REGW.test(model, &quot;virus&quot;, alpha=0.05,console=TRUE)
-REGW.test(model, &quot;virus&quot;, group=FALSE,console=TRUE)</code></pre>
-<pre><code>
-Study: model ~ &quot;virus&quot;
-
-Ryan, Einot and Gabriel and Welsch multiple range test
-for yield 
-
-Mean Square Error:  22 
-
-virus,  means
-
-   yield std r Min Max
-cc    24 3.6 3  22  28
-fc    13 2.2 3  11  15
-ff    36 7.3 3  28  42
-oo    37 4.3 3  32  40
-
-Comparison between treatments means
-
-        difference pvalue signif.    LCL    UCL
-cc - fc      11.53 0.0350       *   0.91  22.16
-cc - ff     -11.93 0.0360       * -23.00  -0.87
-cc - oo     -12.50 0.0482       * -24.90  -0.10
-fc - ff     -23.47 0.0006     *** -34.09 -12.84
-fc - oo     -24.03 0.0007     *** -35.10 -12.97
-ff - oo      -0.57 0.9873         -11.19  10.06</code></pre>
-</div>
-<div id="tukeys-w-procedure-hsd" class="section level3">
-<h3><span class="header-section-number">1.0.6</span> Tukey’s W Procedure (HSD)</h3>
-<p>This studentized range test, created by Tukey in 1953, is known as the Tukey’s HSD (Honestly Significant Differences) <span class="citation">(Steel et al., <a href="#ref-SteeTorrDick:1997" role="doc-biblioref">1997</a>)</span>.</p>
-<pre class="r"><code>outHSD&lt;- HSD.test(model, &quot;virus&quot;,console=TRUE)</code></pre>
-<pre><code>
-Study: model ~ &quot;virus&quot;
-
-HSD Test for yield 
-
-Mean Square Error:  22 
-
-virus,  means
-
-   yield std r Min Max
-cc    24 3.6 3  22  28
-fc    13 2.2 3  11  15
-ff    36 7.3 3  28  42
-oo    37 4.3 3  32  40
-
-Alpha: 0.05 ; DF Error: 8 
-Critical Value of Studentized Range: 4.5 
-
-Minimun Significant Difference: 12 
-
-Treatments with the same letter are not significantly different.
-
-   yield groups
-oo    37      a
-ff    36     ab
-cc    24     bc
-fc    13      c</code></pre>
-<pre class="r"><code>outHSD</code></pre>
-<pre><code>$statistics
-  MSerror Df Mean CV MSD
-       22  8   28 17  12
-
-$parameters
-   test name.t ntr StudentizedRange alpha
-  Tukey  virus   4              4.5  0.05
-
-$means
-   yield std r Min Max Q25 Q50 Q75
-cc    24 3.6 3  22  28  22  23  26
-fc    13 2.2 3  11  15  12  13  14
-ff    36 7.3 3  28  42  34  39  40
-oo    37 4.3 3  32  40  35  38  39
-
-$comparison
-NULL
-
-$groups
-   yield groups
-oo    37      a
-ff    36     ab
-cc    24     bc
-fc    13      c
-
-attr(,&quot;class&quot;)
-[1] &quot;group&quot;</code></pre>
-</div>
-<div id="tukey-hsd-for-different-repetition" class="section level3">
-<h3><span class="header-section-number">1.0.7</span> Tukey (HSD) for different repetition</h3>
-<p>Include the argument <strong>unbalanced = TRUE</strong> in the function. Valid for group = TRUE/FALSE</p>
-<pre class="r"><code>A&lt;-sweetpotato[-c(4,5,7),]
-modelUnbalanced &lt;- aov(yield ~ virus, data=A)
-outUn &lt;-HSD.test(modelUnbalanced, &quot;virus&quot;,group=FALSE, unbalanced = TRUE)
-print(outUn$comparison)</code></pre>
-<pre><code>        difference pvalue signif. LCL  UCL
-cc - fc       11.3  0.252          -8 30.6
-cc - ff       -9.2  0.386         -28 10.1
-cc - oo      -12.5  0.196         -32  6.8
-fc - ff      -20.5  0.040       * -40 -1.2
-fc - oo      -23.8  0.022       * -43 -4.5
-ff - oo       -3.3  0.917         -23 16.0</code></pre>
-<pre class="r"><code>outUn &lt;-HSD.test(modelUnbalanced, &quot;virus&quot;,group=TRUE, unbalanced = TRUE)
-print(outUn$groups)</code></pre>
-<pre><code>   yield groups
-oo    37      a
-ff    34      a
-cc    24     ab
-fc    13      b</code></pre>
-<p>If this argument is not included, the probabilities of significance will not be consistent with the choice of groups.</p>
-<p>Illustrative example of this inconsistency:</p>
-<pre class="r"><code>outUn &lt;-HSD.test(modelUnbalanced, &quot;virus&quot;,group=FALSE)
-print(outUn$comparison[,1:2])</code></pre>
-<pre><code>        difference pvalue
-cc - fc       11.3  0.317
-cc - ff       -9.2  0.297
-cc - oo      -12.5  0.096
-fc - ff      -20.5  0.071
-fc - oo      -23.8  0.033
-ff - oo       -3.3  0.885</code></pre>
-<pre class="r"><code>outUn &lt;-HSD.test(modelUnbalanced, &quot;virus&quot;,group=TRUE)
-print(outUn$groups)</code></pre>
-<pre><code>   yield groups
-oo    37      a
-ff    34     ab
-cc    24     ab
-fc    13      b</code></pre>
-</div>
-<div id="waller-duncans-bayesian-k-ratio-t-test" class="section level3">
-<h3><span class="header-section-number">1.0.8</span> Waller-Duncan’s Bayesian K-Ratio T-Test</h3>
-<p>Duncan continued the multiple comparison procedures, introducing the criterion of minimizing both experimental errors; for this, he used the Bayes’ theorem, obtaining one new test called Waller-Duncan, ; .</p>
-<pre class="r"><code># variance analysis:
-anova(model)</code></pre>
-<pre><code>Analysis of Variance Table
-
-Response: yield
-          Df Sum Sq Mean Sq F value  Pr(&gt;F)    
-virus      3   1170     390    17.3 0.00073 ***
-Residuals  8    180      22                    
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<pre class="r"><code>with(sweetpotato,waller.test(yield,virus,df,MSerror,Fc= 17.345, group=FALSE,console=TRUE))</code></pre>
-<pre><code>
-Study: yield ~ virus 
-
-Waller-Duncan K-ratio t Test for yield 
-
-This test minimizes the Bayes risk under additive loss and certain other assumptions
-                         ......
-K ratio                   100.0
-Error Degrees of Freedom    8.0
-Error Mean Square          22.5
-F value                    17.3
-Critical Value of Waller    2.2
-
-virus,  means
-
-   yield std r Min Max
-cc    24 3.6 3  22  28
-fc    13 2.2 3  11  15
-ff    36 7.3 3  28  42
-oo    37 4.3 3  32  40
-
-Comparison between treatments means
-
-        Difference significant
-cc - fc      11.53        TRUE
-cc - ff     -11.93        TRUE
-cc - oo     -12.50        TRUE
-fc - ff     -23.47        TRUE
-fc - oo     -24.03        TRUE
-ff - oo      -0.57       FALSE</code></pre>
-<p>In another case with only invoking the model object:</p>
-<pre class="r"><code>outWaller &lt;- waller.test(model, &quot;virus&quot;, group=FALSE,console=FALSE)</code></pre>
-<p>The found object <em>outWaller</em> has information to make other procedures.</p>
-<pre class="r"><code>names(outWaller)</code></pre>
-<pre><code>[1] &quot;statistics&quot; &quot;parameters&quot; &quot;means&quot;      &quot;comparison&quot; &quot;groups&quot;    </code></pre>
-<pre class="r"><code>print(outWaller$comparison)</code></pre>
-<pre><code>        Difference significant
-cc - fc      11.53        TRUE
-cc - ff     -11.93        TRUE
-cc - oo     -12.50        TRUE
-fc - ff     -23.47        TRUE
-fc - oo     -24.03        TRUE
-ff - oo      -0.57       FALSE</code></pre>
-<p>It is indicated that the virus effect “ff” is not significant to the control “oo”.</p>
-<pre class="r"><code>outWaller$statistics</code></pre>
-<pre><code>  Mean Df CV MSerror F.Value Waller CriticalDifference
-    28  8 17      22      17    2.2                8.7</code></pre>
-</div>
-<div id="scheffes-test" class="section level2">
-<h2><span class="header-section-number">1.1</span> Scheffe’s Test</h2>
-<p>This method, created by Scheffe in 1959, is very general for all the possible contrasts and their confidence intervals. The confidence intervals for the averages are very broad, resulting in a very conservative test for the comparison between treatment averages, .</p>
-<pre class="r"><code># analysis of variance: 
-scheffe.test(model,&quot;virus&quot;, group=TRUE,console=TRUE,
-main=&quot;Yield of sweetpotato\nDealt with different virus&quot;)</code></pre>
-<pre><code>
-Study: Yield of sweetpotato
-Dealt with different virus
-
-Scheffe Test for yield 
-
-Mean Square Error  : 22 
-
-virus,  means
-
-   yield std r Min Max
-cc    24 3.6 3  22  28
-fc    13 2.2 3  11  15
-ff    36 7.3 3  28  42
-oo    37 4.3 3  32  40
-
-Alpha: 0.05 ; DF Error: 8 
-Critical Value of F: 4.1 
-
-Minimum Significant Difference: 14 
-
-Means with the same letter are not significantly different.
-
-   yield groups
-oo    37      a
-ff    36      a
-cc    24     ab
-fc    13      b</code></pre>
-<p>The minimum significant value is very high.
-If you require the approximate probabilities of comparison, you can use the option <em>group=FALSE</em>.</p>
-<pre class="r"><code>outScheffe &lt;- scheffe.test(model,&quot;virus&quot;, group=FALSE, console=TRUE)</code></pre>
-<pre><code>
-Study: model ~ &quot;virus&quot;
-
-Scheffe Test for yield 
-
-Mean Square Error  : 22 
-
-virus,  means
-
-   yield std r Min Max
-cc    24 3.6 3  22  28
-fc    13 2.2 3  11  15
-ff    36 7.3 3  28  42
-oo    37 4.3 3  32  40
-
-Alpha: 0.05 ; DF Error: 8 
-Critical Value of F: 4.1 
-
-Comparison between treatments means
-
-        Difference pvalue sig LCL   UCL
-cc - fc      11.53 0.0978   .  -2  25.1
-cc - ff     -11.93 0.0855   . -25   1.6
-cc - oo     -12.50 0.0706   . -26   1.0
-fc - ff     -23.47 0.0023  ** -37  -9.9
-fc - oo     -24.03 0.0020  ** -38 -10.5
-ff - oo      -0.57 0.9991     -14  13.0</code></pre>
-</div>
-<div id="multiple-comparison-in-factorial-treatments" class="section level2">
-<h2><span class="header-section-number">1.2</span> Multiple comparison in factorial treatments</h2>
-<p>In a factorial combined effects of the treatments. Comparetive tests: <code>LSD, HSD, Waller-Duncan, Duncan, Scheff\&#39;e, SNK</code> can be applied.</p>
-<pre class="r"><code># modelABC &lt;-aov (y ~ A * B * C, data)
-# compare &lt;-LSD.test (modelABC, c (&quot;A&quot;, &quot;B&quot;, &quot;C&quot;),console=TRUE)</code></pre>
-<p><strong>The comparison is the combination of A:B:C.</strong></p>
-<p>Data RCBD design with a factorial clone x nitrogen. The response variable yield.</p>
-<pre class="r"><code>yield &lt;-scan (text =
- &quot;6 7 9 13 16 20 8 8 9
-  7 8 8 12 17 18 10 9 12
-  9 9 9 14 18 21 11 12 11
-  8 10 10 15 16 22 9 9 9 &quot;
- )
-block &lt;-gl (4, 9)
-clone &lt;-rep (gl (3, 3, labels = c (&quot;c1&quot;, &quot;c2&quot;, &quot;c3&quot;)), 4)
-nitrogen &lt;-rep (gl (3, 1, labels = c (&quot;n1&quot;, &quot;n2&quot;, &quot;n3&quot;)), 12)
-A &lt;-data.frame (block, clone, nitrogen, yield)
-head (A)</code></pre>
-<pre><code>  block clone nitrogen yield
-1     1    c1       n1     6
-2     1    c1       n2     7
-3     1    c1       n3     9
-4     1    c2       n1    13
-5     1    c2       n2    16
-6     1    c2       n3    20</code></pre>
-<pre class="r"><code>outAOV &lt;-aov (yield ~ block + clone * nitrogen, data = A)</code></pre>
-<pre class="r"><code>anova (outAOV)</code></pre>
-<pre><code>Analysis of Variance Table
-
-Response: yield
-               Df Sum Sq Mean Sq F value  Pr(&gt;F)    
-block           3     21     6.9    5.82 0.00387 ** 
-clone           2    498   248.9  209.57 6.4e-16 ***
-nitrogen        2     54    27.0   22.76 2.9e-06 ***
-clone:nitrogen  4     43    10.8    9.11 0.00013 ***
-Residuals      24     29     1.2                    
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<pre class="r"><code>outFactorial &lt;-LSD.test (outAOV, c(&quot;clone&quot;, &quot;nitrogen&quot;), 
-main = &quot;Yield ~ block + nitrogen + clone + clone:nitrogen&quot;,console=TRUE)</code></pre>
-<pre><code>
-Study: Yield ~ block + nitrogen + clone + clone:nitrogen
-
-LSD t Test for yield 
-
-Mean Square Error:  1.2 
-
-clone:nitrogen,  means and individual ( 95 %) CI
-
-      yield  std r  LCL  UCL Min Max
-c1:n1   7.5 1.29 4  6.4  8.6   6   9
-c1:n2   8.5 1.29 4  7.4  9.6   7  10
-c1:n3   9.0 0.82 4  7.9 10.1   8  10
-c2:n1  13.5 1.29 4 12.4 14.6  12  15
-c2:n2  16.8 0.96 4 15.6 17.9  16  18
-c2:n3  20.2 1.71 4 19.1 21.4  18  22
-c3:n1   9.5 1.29 4  8.4 10.6   8  11
-c3:n2   9.5 1.73 4  8.4 10.6   8  12
-c3:n3  10.2 1.50 4  9.1 11.4   9  12
-
-Alpha: 0.05 ; DF Error: 24
-Critical Value of t: 2.1 
-
-least Significant Difference: 1.6 
-
-Treatments with the same letter are not significantly different.
-
-      yield groups
-c2:n3  20.2      a
-c2:n2  16.8      b
-c2:n1  13.5      c
-c3:n3  10.2      d
-c3:n1   9.5     de
-c3:n2   9.5     de
-c1:n3   9.0    def
-c1:n2   8.5     ef
-c1:n1   7.5      f</code></pre>
-<pre class="r"><code>oldpar&lt;-par(mar=c(3,3,2,0))
-pic1&lt;-bar.err(outFactorial$means,variation=&quot;range&quot;,ylim=c(5,25), bar=FALSE,col=0,las=1)
-points(pic1$index,pic1$means,pch=18,cex=1.5,col=&quot;blue&quot;)
-axis(1,pic1$index,labels=FALSE)
-title(main=&quot;average and range\nclon:nitrogen&quot;)
-par(oldpar)</code></pre>
-</div>
-<div id="analysis-of-balanced-incomplete-blocks" class="section level2">
-<h2><span class="header-section-number">1.3</span> Analysis of Balanced Incomplete Blocks</h2>
-<p>This analysis can come from balanced or partially balanced designs. The function <code>BIB.test</code> is for balanced designs, and <code>BIB.test</code>, for partially balanced designs. In the following example, the <strong>agricolae</strong> data will be used, .</p>
-<pre class="r"><code># Example linear estimation and design of experiments. (Joshi)
-# Institute of Social Sciences Agra, India
-# 6 varieties of wheat in 10 blocks of 3 plots each.
-block&lt;-gl(10,3)
-variety&lt;-c(1,2,3,1,2,4,1,3,5,1,4,6,1,5,6,2,3,6,2,4,5,2,5,6,3,4,5,3, 4,6)
-Y&lt;-c(69,54,50,77,65,38,72,45,54,63,60,39,70,65,54,65,68,67,57,60,62, 
-59,65,63,75,62,61,59,55,56)
-head(cbind(block,variety,Y))</code></pre>
-<pre><code>     block variety  Y
-[1,]     1       1 69
-[2,]     1       2 54
-[3,]     1       3 50
-[4,]     2       1 77
-[5,]     2       2 65
-[6,]     2       4 38</code></pre>
-<pre class="r"><code>BIB.test(block, variety, Y,console=TRUE)</code></pre>
-<pre><code>
-ANALYSIS BIB:  Y 
-Class level information
-
-Block:  1 2 3 4 5 6 7 8 9 10
-Trt  :  1 2 3 4 5 6
-
-Number of observations:  30 
-
-Analysis of Variance Table
-
-Response: Y
-            Df Sum Sq Mean Sq F value Pr(&gt;F)  
-block.unadj  9    467    51.9    0.90  0.547  
-trt.adj      5   1156   231.3    4.02  0.016 *
-Residuals   15    863    57.5                 
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-
-coefficient of variation: 13 %
-Y Means: 60 
-
-variety,  statistics
-
-   Y mean.adj  SE r  std Min Max
-1 70       75 3.7 5  5.1  63  77
-2 60       59 3.7 5  4.9  54  65
-3 59       59 3.7 5 12.4  45  75
-4 55       55 3.7 5  9.8  38  62
-5 61       60 3.7 5  4.5  54  65
-6 56       54 3.7 5 10.8  39  67
-
-LSD test
-Std.diff   : 5.4
-Alpha      : 0.05
-LSD        : 11
-Parameters BIB
-Lambda     : 2
-treatmeans : 6
-Block size : 3
-Blocks     : 10
-Replication: 5 
-
-Efficiency factor 0.8 
-
-&lt;&lt;&lt; Book &gt;&gt;&gt;
-
-Comparison between treatments means
-      Difference pvalue sig.
-1 - 2      16.42 0.0080   **
-1 - 3      16.58 0.0074   **
-1 - 4      20.17 0.0018   **
-1 - 5      15.08 0.0132    *
-1 - 6      20.75 0.0016   **
-2 - 3       0.17 0.9756     
-2 - 4       3.75 0.4952     
-2 - 5      -1.33 0.8070     
-2 - 6       4.33 0.4318     
-3 - 4       3.58 0.5142     
-3 - 5      -1.50 0.7836     
-3 - 6       4.17 0.4492     
-4 - 5      -5.08 0.3582     
-4 - 6       0.58 0.9148     
-5 - 6       5.67 0.3074     
-
-Treatments with the same letter are not significantly different.
-
-   Y groups
-1 75      a
-5 60      b
-2 59      b
-3 59      b
-4 55      b
-6 54      b</code></pre>
-<p><strong>function (block, trt, Y, test = c(“lsd”, “tukey”, “duncan”, “waller”, “snk”), alpha = 0.05, group = TRUE)</strong> LSD, Tukey Duncan, Waller-Duncan and SNK, can be used. The probabilities of the comparison can also be obtained. It should only be indicated: group=FALSE, thus:</p>
-<pre class="r"><code>out &lt;-BIB.test(block, trt=variety, Y, test=&quot;tukey&quot;, group=FALSE, console=TRUE)</code></pre>
-<pre><code>
-ANALYSIS BIB:  Y 
-Class level information
-
-Block:  1 2 3 4 5 6 7 8 9 10
-Trt  :  1 2 3 4 5 6
-
-Number of observations:  30 
-
-Analysis of Variance Table
-
-Response: Y
-            Df Sum Sq Mean Sq F value Pr(&gt;F)  
-block.unadj  9    467    51.9    0.90  0.547  
-trt.adj      5   1156   231.3    4.02  0.016 *
-Residuals   15    863    57.5                 
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-
-coefficient of variation: 13 %
-Y Means: 60 
-
-variety,  statistics
-
-   Y mean.adj  SE r  std Min Max
-1 70       75 3.7 5  5.1  63  77
-2 60       59 3.7 5  4.9  54  65
-3 59       59 3.7 5 12.4  45  75
-4 55       55 3.7 5  9.8  38  62
-5 61       60 3.7 5  4.5  54  65
-6 56       54 3.7 5 10.8  39  67
-
-Tukey
-Alpha      : 0.05
-Std.err    : 3.8
-HSD        : 17
-Parameters BIB
-Lambda     : 2
-treatmeans : 6
-Block size : 3
-Blocks     : 10
-Replication: 5 
-
-Efficiency factor 0.8 
-
-&lt;&lt;&lt; Book &gt;&gt;&gt;
-
-Comparison between treatments means
-      Difference pvalue sig.
-1 - 2      16.42  0.070    .
-1 - 3      16.58  0.067    .
-1 - 4      20.17  0.019    *
-1 - 5      15.08  0.110     
-1 - 6      20.75  0.015    *
-2 - 3       0.17  1.000     
-2 - 4       3.75  0.979     
-2 - 5      -1.33  1.000     
-2 - 6       4.33  0.962     
-3 - 4       3.58  0.983     
-3 - 5      -1.50  1.000     
-3 - 6       4.17  0.967     
-4 - 5      -5.08  0.927     
-4 - 6       0.58  1.000     
-5 - 6       5.67  0.891     </code></pre>
-<pre class="r"><code>names(out)</code></pre>
-<pre><code>[1] &quot;parameters&quot; &quot;statistics&quot; &quot;comparison&quot; &quot;means&quot;      &quot;groups&quot;    </code></pre>
-<pre class="r"><code>rm(block,variety)</code></pre>
-<p><strong>bar.group:</strong> out$groups</p>
-<p><strong>bar.err:</strong> out$means</p>
-</div>
-<div id="partially-balanced-incomplete-blocks" class="section level2">
-<h2><span class="header-section-number">1.4</span> Partially Balanced Incomplete Blocks</h2>
-<p>The function <code>PBIB.test</code> <span class="citation">(Joshi, <a href="#ref-Josh:1987" role="doc-biblioref">1987</a>)</span>, can be used for the lattice and alpha designs.</p>
-<p>Consider the following case: Construct the alpha design with 30 treatments, 2 repetitions, and a block size equal to 3.</p>
-<pre class="r"><code># alpha design 
-Genotype&lt;-paste(&quot;geno&quot;,1:30,sep=&quot;&quot;)
-r&lt;-2
-k&lt;-3
-plan&lt;-design.alpha(Genotype,k,r,seed=5)</code></pre>
-<pre><code>
-Alpha Design (0,1) - Serie  I 
-
-Parameters Alpha Design
-=======================
-Treatmeans : 30
-Block size : 3
-Blocks     : 10
-Replication: 2 
-
-Efficiency factor
-(E ) 0.62 
-
-&lt;&lt;&lt; Book &gt;&gt;&gt;</code></pre>
-<p>The generated plan is plan$book.
-Suppose that the corresponding observation to each experimental unit is:</p>
-<pre class="r"><code>yield &lt;-c(5,2,7,6,4,9,7,6,7,9,6,2,1,1,3,2,4,6,7,9,8,7,6,4,3,2,2,1,1, 
-          2,1,1,2,4,5,6,7,8,6,5,4,3,1,1,2,5,4,2,7,6,6,5,6,4,5,7,6,5,5,4)</code></pre>
-<p>The data table is constructed for the analysis. In theory, it is presumed that a design is applied and the experiment is carried out; subsequently, the study variables are observed from each experimental unit.</p>
-<pre class="r"><code>data&lt;-data.frame(plan$book,yield)
-# The analysis: 
-modelPBIB &lt;- with(data,PBIB.test(block, Genotype, replication, yield, k=3, group=TRUE, console=TRUE))</code></pre>
-<pre><code>
-ANALYSIS PBIB:  yield 
-
-Class level information
-block : 20 
-Genotype : 30
-
-Number of observations:  60 
-
-Estimation Method:  Residual (restricted) maximum likelihood 
-
-Parameter Estimates
-                  Variance
-block:replication  3.8e+00
-replication        6.1e-09
-Residual           1.7e+00
-
-                      Fit Statistics
-AIC                              214
-BIC                              260
--2 Res Log Likelihood            -74
-
-Analysis of Variance Table
-
-Response: yield
-          Df Sum Sq Mean Sq F value Pr(&gt;F)
-Genotype  29   69.2    2.39     1.4   0.28
-Residuals 11   18.7    1.70               
-
-Coefficient of variation: 29 %
-yield Means: 4.5 
-
-Parameters PBIB
-                   .
-Genotype          30
-block size         3
-block/replication 10
-replication        2
-
-Efficiency factor 0.62 
-
-Comparison test lsd 
-
-Treatments with the same letter are not significantly different.
-
-       yield.adj groups
-geno10       7.7      a
-geno19       6.7     ab
-geno1        6.7     ab
-geno9        6.4    abc
-geno18       6.1    abc
-geno16       5.7   abcd
-geno26       5.2   abcd
-geno8        5.2   abcd
-geno17       5.2   abcd
-geno29       4.9   abcd
-geno27       4.9   abcd
-geno11       4.9   abcd
-geno30       4.8   abcd
-geno22       4.5   abcd
-geno28       4.5   abcd
-geno5        4.2   abcd
-geno14       4.1   abcd
-geno23       4.0   abcd
-geno15       3.9   abcd
-geno2        3.8    bcd
-geno4        3.8    bcd
-geno3        3.7    bcd
-geno25       3.6    bcd
-geno12       3.6    bcd
-geno6        3.6    bcd
-geno21       3.4    bcd
-geno24       3.0    bcd
-geno13       2.8     cd
-geno20       2.7     cd
-geno7        2.3      d
-
-&lt;&lt;&lt; to see the objects: means, comparison and groups. &gt;&gt;&gt;</code></pre>
-<p><strong>The adjusted averages can be extracted from the modelPBIB.</strong></p>
-<p>head(modelPBIB$means)</p>
-<p><strong>The comparisons:</strong></p>
-<p>head(modelPBIB$comparison)</p>
-<p>The data on the adjusted averages and their variation can be illustrated with the functions plot.group and bar.err. Since the created object is very similar to the objects generated by the multiple comparisons.</p>
-<p>Analysis of balanced lattice 3x3, 9 treatments, 4 repetitions.</p>
-<p>Create the data in a text file: latice3x3.txt and read with R:</p>
-
-<pre class="r"><code>trt&lt;-c(1,8,5,5,2,9,2,7,3,6,4,9,4,6,9,8,7,6,1,5,8,3,2,7,3,7,2,1,3,4,6,4,9,5,8,1)
-yield&lt;-c(48.76,10.83,12.54,11.07,22,47.43,27.67,30,13.78,37,42.37,39,14.46,30.69,42.01,
-22,42.8,28.28,50,24,24,15.42,30,23.8,19.68,31,23,41,12.9,49.95,25,45.57,30,20,18,43.81)
-sqr&lt;-rep(gl(4,3),3)
-block&lt;-rep(1:12,3)
-modelLattice&lt;-PBIB.test(block,trt,sqr,yield,k=3,console=TRUE, method=&quot;VC&quot;)</code></pre>
-<pre><code>
-ANALYSIS PBIB:  yield 
-
-Class level information
-block : 12 
-trt : 9
-
-Number of observations:  36 
-
-Estimation Method:  Variances component model 
-
-    Fit Statistics
-AIC            265
-BIC            298
-
-Analysis of Variance Table
-
-Response: yield
-          Df Sum Sq Mean Sq F value  Pr(&gt;F)    
-sqr        3    133      44    0.69 0.57361    
-trt.unadj  8   3749     469    7.24 0.00042 ***
-block/sqr  8    368      46    0.71 0.67917    
-Residual  16   1036      65                    
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-
-Coefficient of variation: 28 %
-yield Means: 29 
-
-Parameters PBIB
-           .
-trt        9
-block size 3
-block/sqr  3
-sqr        4
-
-Efficiency factor 0.75 
-
-Comparison test lsd 
-
-Treatments with the same letter are not significantly different.
-
-  yield.adj groups
-1        44      a
-9        39     ab
-4        39     ab
-7        32     bc
-6        31     bc
-2        26     cd
-8        18      d
-5        17      d
-3        15      d
-
-&lt;&lt;&lt; to see the objects: means, comparison and groups. &gt;&gt;&gt;</code></pre>
-<p><strong>The adjusted averages can be extracted from the modelLattice.</strong></p>
-<p>print(modelLattice$means)</p>
-<p><strong>The comparisons:</strong></p>
-<p>head(modelLattice$comparison)</p>
-</div>
-<div id="augmented-blocks" class="section level2">
-<h2><span class="header-section-number">1.5</span> Augmented Blocks</h2>
-<p>The function <code>DAU.test</code> can be used for the analysis of the augmented block design.
-The data should be organized in a table, containing the blocks, treatments, and the response.</p>
-<pre class="r"><code>block&lt;-c(rep(&quot;I&quot;,7),rep(&quot;II&quot;,6),rep(&quot;III&quot;,7))
-trt&lt;-c(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;g&quot;,&quot;k&quot;,&quot;l&quot;,&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;e&quot;,&quot;i&quot;,&quot;A&quot;,&quot;B&quot;, &quot;C&quot;,
-&quot;D&quot;,&quot;f&quot;,&quot;h&quot;,&quot;j&quot;)
-yield&lt;-c(83,77,78,78,70,75,74,79,81,81,91,79,78,92,79,87,81,89,96, 82)
-head(data.frame(block, trt, yield))</code></pre>
-<pre><code>  block trt yield
-1     I   A    83
-2     I   B    77
-3     I   C    78
-4     I   D    78
-5     I   g    70
-6     I   k    75</code></pre>
-<p><strong>The treatments are in each block:</strong></p>
-<pre class="r"><code>by(trt,block,as.character)</code></pre>
-<pre><code>block: I
-[1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;g&quot; &quot;k&quot; &quot;l&quot;
------------------------------------------------------------- 
-block: II
-[1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;e&quot; &quot;i&quot;
------------------------------------------------------------- 
-block: III
-[1] &quot;A&quot; &quot;B&quot; &quot;C&quot; &quot;D&quot; &quot;f&quot; &quot;h&quot; &quot;j&quot;</code></pre>
-<p><strong>With their respective responses:</strong></p>
-<pre class="r"><code>by(yield,block,as.character)</code></pre>
-<pre><code>block: I
-[1] &quot;83&quot; &quot;77&quot; &quot;78&quot; &quot;78&quot; &quot;70&quot; &quot;75&quot; &quot;74&quot;
------------------------------------------------------------- 
-block: II
-[1] &quot;79&quot; &quot;81&quot; &quot;81&quot; &quot;91&quot; &quot;79&quot; &quot;78&quot;
------------------------------------------------------------- 
-block: III
-[1] &quot;92&quot; &quot;79&quot; &quot;87&quot; &quot;81&quot; &quot;89&quot; &quot;96&quot; &quot;82&quot;</code></pre>
-<p><strong>Analysis:</strong></p>
-<pre class="r"><code>modelDAU&lt;- DAU.test(block,trt,yield,method=&quot;lsd&quot;,console=TRUE)</code></pre>
-<pre><code>
-ANALYSIS DAU:  yield 
-Class level information
-
-Block:  I II III
-Trt  :  A B C D e f g h i j k l
-
-Number of observations:  20 
-
-ANOVA, Treatment Adjusted
-Analysis of Variance Table
-
-Response: yield
-                          Df Sum Sq Mean Sq F value Pr(&gt;F)
-block.unadj                2    360   180.0               
-trt.adj                   11    285    25.9    0.96   0.55
-Control                    3     53    17.6    0.65   0.61
-Control + control.VS.aug.  8    232    29.0    1.08   0.48
-Residuals                  6    162    27.0               
-
-ANOVA, Block Adjusted
-Analysis of Variance Table
-
-Response: yield
-                     Df Sum Sq Mean Sq F value Pr(&gt;F)
-trt.unadj            11    576    52.3               
-block.adj             2     70    34.8    1.29   0.34
-Control               3     53    17.6    0.65   0.61
-Augmented             7    506    72.3    2.68   0.13
-Control vs augmented  1     17    16.9    0.63   0.46
-Residuals             6    162    27.0               
-
-coefficient of variation: 6.4 %
-yield Means: 82 
-
-Critical Differences (Between)
-                                              Std Error Diff.
-Two Control Treatments                                    4.2
-Two Augmented Treatments (Same Block)                     7.3
-Two Augmented Treatments(Different Blocks)                8.2
-A Augmented Treatment and A Control Treatment             6.4
-
-
-Treatments with the same letter are not significantly different.
-
-  yield groups
-h    94      a
-f    86     ab
-A    85     ab
-D    83     ab
-C    82     ab
-j    80     ab
-B    79     ab
-e    78     ab
-k    78     ab
-i    77     ab
-l    77     ab
-g    73      b
-
-Comparison between treatments means
-
-&lt;&lt;&lt; to see the objects: comparison and means  &gt;&gt;&gt;</code></pre>
-<pre class="r"><code>options(digits = 2)
-modelDAU$means</code></pre>
-<pre><code>  yield std r Min Max Q25 Q50 Q75 mean.adj  SE block
-A    85 6.7 3  79  92  81  83  88       85 3.0      
-B    79 2.0 3  77  81  78  79  80       79 3.0      
-C    82 4.6 3  78  87  80  81  84       82 3.0      
-D    83 6.8 3  78  91  80  81  86       83 3.0      
-e    79  NA 1  79  79  79  79  79       78 5.2    II
-f    89  NA 1  89  89  89  89  89       86 5.2   III
-g    70  NA 1  70  70  70  70  70       73 5.2     I
-h    96  NA 1  96  96  96  96  96       94 5.2   III
-i    78  NA 1  78  78  78  78  78       77 5.2    II
-j    82  NA 1  82  82  82  82  82       80 5.2   III
-k    75  NA 1  75  75  75  75  75       78 5.2     I
-l    74  NA 1  74  74  74  74  74       77 5.2     I</code></pre>
-<pre class="r"><code>modelDAU&lt;- DAU.test(block,trt,yield,method=&quot;lsd&quot;,group=FALSE,console=FALSE)
-head(modelDAU$comparison,8)</code></pre>
-<pre><code>      Difference pvalue sig.
-A - B        5.7   0.23     
-A - C        2.7   0.55     
-A - D        1.3   0.76     
-A - e        6.4   0.35     
-A - f       -1.8   0.78     
-A - g       11.4   0.12     
-A - h       -8.8   0.21     
-A - i        7.4   0.29     </code></pre>
+<div id="data-set-in-agricolae" class="section level2">
+<h2><span class="header-section-number">1.3</span> Data set in <strong>agricolae </strong></h2>
+<pre class="r"><code>A&lt;-as.data.frame(data(package=&quot;agricolae&quot;)$results[,3:4])
+A[,2]&lt;-paste(substr(A[,2],1,35),&quot;..&quot;,sep=&quot;.&quot;)
+head(A)</code></pre>
+<pre><code>           Item Title
+1       Chz2006   ...
+2           CIC   ...
+3          clay   ...
+4 ComasOxapampa   ...
+5          corn   ...
+6        cotton   ...</code></pre>
 </div>
 </div>
 <div id="references" class="section level1 unnumbered">
 <h1>References</h1>
 <div id="refs" class="references">
-<div id="ref-Hsu:1996">
-<p>Hsu, J. C. (1996). <em>Multiple Comparisons: Theory and Methods</em>. Chapman; Hall/CRC.</p>
-</div>
-<div id="ref-Josh:1987">
-<p>Joshi, D. D. (1987). <em>Linear Estimation and Design of Experiments</em>. Wiley Eastern Limited, New Delhi, India.</p>
-</div>
-<div id="ref-SteeTorrDick:1997">
-<p>Steel, Torry, and Dickey (1997). <em>Principles and Procedures of Statistic a Biometrical Approach</em>. The McGraw Hill Companies, Inc.</p>
+<div id="ref-Mend2009">
+<p>Mendiburu, F. de (2009). Una herramienta de análisis estadístico para la investigación agrícola.</p>
 </div>
 </div>
 </div>

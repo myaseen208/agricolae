@@ -5,13 +5,21 @@
 \alias{potato}
 \title{Data of cutting}
 \format{
-A data frame with 18 observations on the following 4 variables.
-\describe{ \item{list("date")}{a numeric vector} \item{list("variety")}{a
-factor with levels \code{Canchan} \code{Unica}} \item{list("harvest")}{a
-numeric vector} \item{list("cutting")}{a numeric vector} }
+A \code{data.frame} with 18 observations on the following 4 variables.
+
+ @details
+        \itemize{
+        \item{\strong{date}} date
+        \item{\strong{variety}} a factor with levels Canchan, and Unica
+        \item{\strong{harvest}} harvest
+        \item{\strong{cutting}} cutting
+        }
 }
 \source{
 Experimental data.
+}
+\usage{
+data(potato)
 }
 \description{
 A study on the yield of two potato varieties performed at the CIP

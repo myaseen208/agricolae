@@ -5,22 +5,30 @@
 \alias{Hco2006}
 \title{Data amendment Huanuco 2006}
 \format{
-The format is: List of 2 \describe{ \item{list("amendment")}{a
-factor} \item{list("crop")}{a factor} \item{list("block")}{a numeric vector,
-replications} \item{list("plant")}{a numeric vector, number plant}
-\item{list("wilt_percent")}{a numeric vector, wilt percentage at 60 days}
-\item{list("health")}{a numeric vector, kg/8m2, 20 plants}
-\item{list("rot")}{a numeric vector, kg/8m2, 20 plants} }
+An object of class \code{list} with two elements: wilt and yield
+
+ @details
+        \itemize{
+        \item{\strong{amendment}} amendment
+        \item{\strong{crop}} crop
+        \item{\strong{block}} block
+        \item{\strong{plant}} number platn
+        \item{\strong{wilt_percent}} wilt percentage at 60 days
+        \item{\strong{health}}     kg/8m2, 20 plants
+        \item{\strong{rot}}     kg/8m2, 20 plants
+        }
 }
 \source{
 Experimental field, 2006. Data Kindly provided by Pedro Aley.
+}
+\usage{
+data(Hco2006)
 }
 \description{
 Incidents and performance of healthy tubers and rotten potato field infested
 with naturally Ralstonia solanacearum Race 3/Bv 2A, after application of
 inorganic amendments and a rotation crop in Huanuco Peru, 2006.
-}
-\details{
+
 Application of inorganic amendment and crop rotation to control bacterial
 wilt of the potato (MBP).
 }

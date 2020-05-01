@@ -1,30 +1,52 @@
-#' Data of molecular markers
-#' 
+#' @title Data of molecular markers
+#' @name   markers
+#' @docType data
+#' @keywords datasets
+#' @usage data(markers)
+#' @description
 #' A partial study on 27 molecular markers.
 #' 
+
+#' @format 
+#' A \code{data.frame} with 23 observations on the following 27 variables.
 #' 
-#' @name markers
-#' @docType data
-#' @format A data frame with 23 observations on the following 27 variables.
-#' \describe{ \item{list("marker1")}{a numeric vector} \item{list("marker2")}{a
-#' numeric vector} \item{list("marker3")}{a numeric vector}
-#' \item{list("marker4")}{a numeric vector} \item{list("marker5")}{a numeric
-#' vector} \item{list("marker6")}{a numeric vector} \item{list("marker7")}{a
-#' numeric vector} \item{list("marker8")}{a numeric vector}
-#' \item{list("marker9")}{a numeric vector} \item{list("marker10")}{a numeric
-#' vector} \item{list("marker11")}{a numeric vector} \item{list("marker12")}{a
-#' numeric vector} \item{list("marker13")}{a numeric vector}
-#' \item{list("marker14")}{a numeric vector} \item{list("marker15")}{a numeric
-#' vector} \item{list("marker16")}{a numeric vector} \item{list("marker17")}{a
-#' numeric vector} \item{list("marker18")}{a numeric vector}
-#' \item{list("marker19")}{a numeric vector} \item{list("marker20")}{a numeric
-#' vector} \item{list("marker21")}{a numeric vector} \item{list("marker22")}{a
-#' numeric vector} \item{list("marker23")}{a numeric vector}
-#' \item{list("marker24")}{a numeric vector} \item{list("marker25")}{a numeric
-#' vector} \item{list("marker26")}{a numeric vector} \item{list("marker27")}{a
-#' numeric vector} }
-#' @references International Potato Center Lima-Peru.
-#' @source International Potato Center Lima-Peru.
+#'  @details
+#'         \itemize{
+#'         \item{\strong{marker1}} marker1
+#'         \item{\strong{marker2}} marker2
+#'         \item{\strong{marker3}} marker3
+#'         \item{\strong{marker4}} marker4
+#'         \item{\strong{marker5}} marker5
+#'         \item{\strong{marker6}} marker6
+#'         \item{\strong{marker7}} marker7
+#'         \item{\strong{marker8}} marker8
+#'         \item{\strong{marker9}} marker9
+#'         \item{\strong{marker10}} marker10
+#'         \item{\strong{marker11}} marker11
+#'         \item{\strong{marker12}} marker12
+#'         \item{\strong{marker13}} marker13
+#'         \item{\strong{marker14}} marker14
+#'         \item{\strong{marker15}} marker15
+#'         \item{\strong{marker16}} marker16
+#'         \item{\strong{marker17}} marker17
+#'         \item{\strong{marker18}} marker18
+#'         \item{\strong{marker19}} marker19
+#'         \item{\strong{marker20}} marker20
+#'         \item{\strong{marker21}} marker21
+#'         \item{\strong{marker22}} marker22
+#'         \item{\strong{marker23}} marker23
+#'         \item{\strong{marker24}} marker24
+#'         \item{\strong{marker25}} marker25
+#'         \item{\strong{marker26}} marker26
+#'         \item{\strong{marker27}} marker27
+#'         }
+#' 
+#' @references 
+#' International Potato Center Lima-Peru.
+#' 
+#' @source 
+#' International Potato Center Lima-Peru.
+#' 
 #' @keywords datasets
 #' @examples
 #' 

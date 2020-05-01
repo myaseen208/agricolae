@@ -5,13 +5,21 @@
 \alias{natives}
 \title{Data of native potato}
 \format{
-A data frame with 876 observations on the following 4 variables.
-\describe{ \item{list("variety")}{a numeric vector} \item{list("number")}{a
-numeric vector} \item{list("weight")}{a numeric vector}
-\item{list("size")}{a numeric vector} }
+A \code{data.frame} with 876 observations on the following 4 variables.
+
+ @details
+        \itemize{
+        \item{\strong{variety}} variety
+        \item{\strong{number}} number
+        \item{\strong{weight}} weight
+        \item{\strong{size}} size
+        }
 }
 \source{
 International Potato Center. CIP - Lima Peru.
+}
+\usage{
+data(natives)
 }
 \description{
 An evaluation of the number, weight and size of 24 native potatoes
