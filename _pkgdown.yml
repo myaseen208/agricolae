@@ -39,6 +39,9 @@ navbar:
       text: Tutorial
       menu:
       - text: "Introduction to agricolae"
+        href: articles/Intro_agricolae.html
+      - text: "--------------------"
+      - text: "Introduction to agricolae"
         href: articles/Introduction.html
       - text: "Descriptive Statistics with agricolae"
         href: articles/DescriptiveStats.html
@@ -64,5 +67,165 @@ navbar:
       href: https://www.researchgate.net/profile/Muhammad_Yaseen10
     - icon: "fab fa-twitter"
       href: https://twitter.com/myaseen208
-    
+
 reference:
+  - title: "Functions"
+    desc: "Functions in agrocolae package to perform Analysis"
+    contents:
+       - AMMI            
+       - AMMI.contour    
+       - audpc           
+       - audps           
+       - bar.err         
+       - bar.group       
+       - BIB.test        
+       - carolina        
+       - Chz2006         
+       - CIC             
+       - clay            
+       - ComasOxapampa   
+       - consensus       
+       - corn            
+       - correl          
+       - correlation     
+       - cotton          
+       - cv.model        
+       - cv.similarity   
+       - DAU.test        
+       - DC              
+       - delete.na       
+       - design.ab       
+       - design.alpha    
+       - design.bib      
+       - design.crd      
+       - design.cyclic   
+       - design.dau      
+       - design.graeco   
+       - design.lattice  
+       - design.lsd      
+       - design.rcbd     
+       - design.split    
+       - design.strip    
+       - design.youden   
+       - diffograph      
+       - disease         
+       - duncan.test     
+       - durbin.test     
+       - friedman        
+       - frijol          
+       - genxenv         
+       - Glycoalkaloids  
+       - graph.freq      
+       - grass           
+       - greenhouse      
+       - growth          
+       - haynes          
+       - Hco2006         
+       - hcut            
+       - heterosis       
+       - hgroups         
+       - HSD.test        
+       - huasahuasi      
+       - index.AMMI      
+       - index.bio       
+       - index.smith     
+       - intervals.freq  
+       - join.freq       
+       - kendall         
+       - kruskal         
+       - kurtosis        
+       - lastC           
+       - lateblight      
+       - lineXtester     
+       - LSD.test        
+       - LxT             
+       - markers         
+       - Median.test     
+       - melon           
+       - montecarlo      
+       - natives         
+       - nonadditivity   
+       - normal.freq     
+       - ogive.freq      
+       - order.group     
+       - orderPvalue     
+       - pamCIP          
+       - paracsho        
+       - path.analysis   
+       - PBIB.test       
+       - plots           
+       - plrv            
+       - polygon.freq    
+       - potato          
+       - ralstonia       
+       - reg.homog       
+       - REGW.test       
+       - resampling.cv   
+       - resampling.model
+       - rice            
+       - RioChillon      
+       - scheffe.test    
+       - similarity      
+       - simulation.model
+       - sinRepAmmi      
+       - skewness        
+       - SNK.test        
+       - soil            
+       - sp.plot         
+       - ssp.plot        
+       - stability.nonpar
+       - stability.par   
+       - stat.freq       
+       - strip.plot      
+       - sturges.freq    
+       - sweetpotato     
+       - table.freq      
+       - tapply.stat     
+       - vark            
+       - waerden.test    
+       - waller          
+       - waller.test     
+       - weatherSeverity 
+       - wilt            
+       - yacon           
+       - zigzag
+  
+  
+  - title: "Datasets"
+    desc: "Data for Reproducible Examples"
+    contents:
+       - CIC           
+       - Chz2006       
+       - ComasOxapampa 
+       - DC            
+       - Glycoalkaloids
+       - Hco2006       
+       - LxT           
+       - RioChillon    
+       - clay          
+       - corn          
+       - cotton        
+       - disease       
+       - frijol        
+       - genxenv       
+       - grass         
+       - greenhouse    
+       - growth        
+       - haynes        
+       - heterosis     
+       - huasahuasi    
+       - markers       
+       - melon         
+       - natives       
+       - pamCIP        
+       - paracsho      
+       - plots         
+       - plrv          
+       - potato        
+       - ralstonia     
+       - rice          
+       - sinRepAmmi    
+       - soil          
+       - sweetpotato   
+       - wilt          
+       - yacon

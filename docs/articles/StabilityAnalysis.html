@@ -69,6 +69,10 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="../articles/Intro_agricolae.html">Introduction to agricolae</a>
+    </li>
+    <li class="divider">
+    <li>
       <a href="../articles/Introduction.html">Introduction to agricolae</a>
     </li>
     <li>
@@ -142,7 +146,7 @@
                         <h4 class="author">Felipe de Mendiburu<sup>1</sup>, Muhammad Yaseen<sup>2</sup>
 </h4>
             
-            <h4 class="date">2020-04-27</h4>
+            <h4 class="date">2020-05-01</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/myaseen208/agricolae/blob/master/vignettes/StabilityAnalysis.Rmd"><code>vignettes/StabilityAnalysis.Rmd</code></a></small>
       <div class="hidden name"><code>StabilityAnalysis.Rmd</code></div>
@@ -166,12 +170,12 @@
 <div id="stability-analysis" class="section level1">
 <h1 class="hasAnchor">
 <a href="#stability-analysis" class="anchor"></a>Stability Analysis</h1>
-<p>In <strong>agricolae</strong> there are two methods for the study of stability and the AMMI model. These are: a parametric model for a simultaneous selection in yield and stability “SHUKLA’S STABILITY VARIANCE AND KANG’S”,  and a non-parametric method of Haynes, based on the data range.</p>
+<p>In <strong>agricolae</strong> there are two methods for the study of stability and the AMMI model. These are: a parametric model for a simultaneous selection in yield and stability “SHUKLA’S STABILITY VARIANCE AND KANG’S”, <span class="citation">(Kang, <a href="#ref-Kang:1993" role="doc-biblioref">1993</a>)</span> and a non-parametric method of Haynes, based on the data range.</p>
 <div id="parametric-stability" class="section level2">
 <h2 class="hasAnchor">
 <a href="#parametric-stability" class="anchor"></a>Parametric Stability</h2>
-<p>Use the parametric model, function <em>stability.par</em>.</p>
-<p>Prepare a data table where the rows and the columns are the genotypes and the environments, respectively. The data should correspond to yield averages or to another measured variable. Determine the variance of the common error for all the environments and the number of repetitions that was evaluated for every genotype. If the repetitions are different, find a harmonious average that will represent the set. Finally, assign a name to each row that will represent the genotype, . We will consider five environments in the following example:</p>
+<p>Use the parametric model, function <code>stability.par</code>.</p>
+<p>Prepare a data table where the rows and the columns are the genotypes and the environments, respectively. The data should correspond to yield averages or to another measured variable. Determine the variance of the common error for all the environments and the number of repetitions that was evaluated for every genotype. If the repetitions are different, find a harmonious average that will represent the set. Finally, assign a name to each row that will represent the genotype <span class="citation">(Kang, <a href="#ref-Kang:1993" role="doc-biblioref">1993</a>)</span>. We will consider five environments in the following example:</p>
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span>(<span class="kw">digit</span><span class="kw">=</span><span class="fl">2</span>)
 <span class="no">f</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"external/dataStb.csv"</span>, <span class="kw">package</span><span class="kw">=</span><span class="st">"agricolae"</span>)
 <span class="no">dataStb</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span>(<span class="no">f</span>)
@@ -246,7 +250,9 @@ Q 6.158333    1       -3       -2 3.531232          -4  -6
  ++  Reference: Kang, M. S. 1993. Simultaneous selection for yield
  and stability: Consequences for growers. Agron. J. 85:754-757.</code></pre>
 <p>For 17 genotypes, the identification is made by letters. An error variance of 2 and 4 repetitions is assumed.</p>
-<p><strong>Analysis</strong></p>
+<div id="analysis" class="section level3">
+<h3 class="hasAnchor">
+<a href="#analysis" class="anchor"></a>Analysis</h3>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="no">output</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/stability.par.html">stability.par</a></span>(<span class="no">dataStb</span>, <span class="kw">rep</span><span class="kw">=</span><span class="fl">4</span>, <span class="kw">MSerror</span><span class="kw">=</span><span class="fl">2</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span>(<span class="no">output</span>)</pre></body></html></div>
 <pre><code>[1] "analysis"   "statistics" "stability" </code></pre>
@@ -276,11 +282,14 @@ Q 6.158333    1       -2       -1 3.531232          -2  -3    </code></pre>
 <span class="no">stability</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/stability.par.html">stability.par</a></span>(<span class="no">data5</span>,<span class="kw">rep</span><span class="kw">=</span><span class="fl">4</span>,<span class="kw">MSerror</span><span class="kw">=</span><span class="fl">2</span>, <span class="kw">cova</span><span class="kw">=</span><span class="fl">TRUE</span>, <span class="kw">name.cov</span><span class="kw">=</span> <span class="st">"altitude"</span>,
 <span class="kw">file.cov</span><span class="kw">=</span><span class="no">altitude</span>)</pre></body></html></div>
 </div>
+</div>
 <div id="non-parametric-stability" class="section level2">
 <h2 class="hasAnchor">
 <a href="#non-parametric-stability" class="anchor"></a>Non-parametric Stability</h2>
-<p>For non-parametric stability, the function in ‘agricolae’ is stability.nonpar(). The names of the genotypes should be included in the first column, and in the other columns, the response by environments, .</p>
-<p><strong>Analysis</strong></p>
+<p>For non-parametric stability, the function in <strong>agricolae</strong> is <code><a href="../reference/stability.nonpar.html">stability.nonpar()</a></code>. The names of the genotypes should be included in the first column, and in the other columns, the response by environments <span class="citation">(Haynes et al., <a href="#ref-HaynLambChriWeinDoucBackSecoFryStev:1998" role="doc-biblioref">1998</a>)</span>.</p>
+<div id="analysis-1" class="section level3">
+<h3 class="hasAnchor">
+<a href="#analysis-1" class="anchor"></a>Analysis</h3>
 <div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="no">data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(<span class="kw">name</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/row.names.html">row.names</a></span>(<span class="no">dataStb</span>), <span class="no">dataStb</span>)
 <span class="no">output</span><span class="kw">&lt;-</span><span class="fu"><a href="../reference/stability.nonpar.html">stability.nonpar</a></span>(<span class="no">data</span>, <span class="st">"YIELD"</span>, <span class="kw">ranking</span><span class="kw">=</span><span class="fl">TRUE</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span>(<span class="no">output</span>)</pre></body></html></div>
@@ -289,21 +298,26 @@ Q 6.158333    1       -2       -1 3.531232          -2  -3    </code></pre>
 <pre><code>      MEAN      es1 es2       vs1      vs2  chi.ind  chi.sum
 1 7.065196 5.647059  24 0.7247475 46.72727 8.843605 27.58711</code></pre>
 </div>
+</div>
 <div id="ammi" class="section level2">
 <h2 class="hasAnchor">
 <a href="#ammi" class="anchor"></a>AMMI</h2>
-<p>The model AMMI uses the biplot constructed through the principal components generated by the interaction environment-genotype. If there is such interaction, the percentage of the two principal components would explain more than the 50% of the total variation; in such case, the biplot would be a good alternative to study the interaction environment-genotype, .</p>
+<p>The model AMMI uses the biplot constructed through the principal components generated by the interaction environment-genotype. If there is such interaction, the percentage of the two principal components would explain more than the 50% of the total variation; in such case, the biplot would be a good alternative to study the interaction environment-genotype <span class="citation">(Crossa, <a href="#ref-Cros:1990" role="doc-biblioref">1990</a>)</span>.</p>
 <p>The data for AMMI should come from similar experiments conducted in different environments. Homogeneity of variance of the experimental error, produced in the different environments, is required. The analysis is done by combining the experiments.</p>
 <p>The data can be organized in columns, thus: environment, genotype, repetition, and variable.</p>
 <p>The data can also be the averages of the genotypes in each environment, but it is necessary to consider a harmonious average for the repetitions and a common variance of the error. The data should be organized in columns: environment, genotype, and variable.</p>
 <p>When performing AMMI, this generates the Biplot, Triplot and Influence graphics, see Figure @ref(fig:f6).</p>
 <p>For the application, we consider the data used in the example of parametric stability (study):</p>
-<p><strong>AMMI structure</strong></p>
+<div id="ammi-structure" class="section level3">
+<h3 class="hasAnchor">
+<a href="#ammi-structure" class="anchor"></a>AMMI structure</h3>
 <div class="sourceCode" id="cb12"><html><body><pre class="r">  <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">AMMI</span>)</pre></body></html></div>
 <pre><code>function (ENV, GEN, REP, Y, MSE = 0, console = FALSE, PC = FALSE)  </code></pre>
-<p><strong>plot.AMMI structure, plot()</strong></p>
+</div>
+<div id="plot-ammi-structure-plot" class="section level3">
+<h3 class="hasAnchor">
+<a href="#plot-ammi-structure-plot" class="anchor"></a>plot.AMMI structure, plot()</h3>
 <div class="sourceCode" id="cb14"><html><body><pre class="r">  <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">plot.AMMI</span>)</pre></body></html></div>
-<p><strong>type: 1=biplot, 2= triplot</strong></p>
 <div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">plrv</span>)
 <span class="no">model</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span>(<span class="no">plrv</span>,<span class="fu"><a href="../reference/AMMI.html">AMMI</a></span>(<span class="no">Locality</span>, <span class="no">Genotype</span>, <span class="no">Rep</span>, <span class="no">Yield</span>, <span class="kw">console</span><span class="kw">=</span><span class="fl">FALSE</span>))
 <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span>(<span class="no">model</span>)</pre></body></html></div>
@@ -330,22 +344,24 @@ PC5     2.9 100.0 23   696.1012  30.26527    0.82 0.7059</code></pre>
 <div class="sourceCode" id="cb21"><html><body><pre class="r"><span class="no">pc</span> <span class="kw">&lt;-</span> <span class="no">model</span>$<span class="no">analysis</span>[, <span class="fl">1</span>]
 <span class="no">pc12</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="no">pc</span>[<span class="fl">1</span>:<span class="fl">2</span>])
 <span class="no">pc123</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="no">pc</span>[<span class="fl">1</span>:<span class="fl">3</span>])</pre></body></html></div>
-<p>\begin{figure} \begin{center}</p>
 <div class="sourceCode" id="cb22"><html><body><pre class="r"><span class="no">oldpar</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="kw">cex</span><span class="kw">=</span><span class="fl">0.4</span>,<span class="kw">mar</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">4</span>,<span class="fl">4</span>,<span class="fl">1</span>,<span class="fl">2</span>))
 <span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="no">model</span>,<span class="kw">type</span><span class="kw">=</span><span class="fl">1</span>,<span class="kw">las</span><span class="kw">=</span><span class="fl">1</span>,<span class="kw">xlim</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(-<span class="fl">5</span>,<span class="fl">6</span>))</pre></body></html></div>
-<p><img src="StabilityAnalysis_files/figure-html/f6-1.png" width="700"></p>
+<div class="figure">
+<img src="StabilityAnalysis_files/figure-html/f6-1.png" alt="Biplot" width="700"><p class="caption">
+Biplot
+</p>
+</div>
 <div class="sourceCode" id="cb23"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="no">oldpar</span>)</pre></body></html></div>
-
-<p>\end{center} \end{figure}</p>
 <p>In this case, the interaction is significant. The first two components explain 83.4 %; then the biplot can provide information about the interaction genotype-environment. With the triplot, 92.8% would be explained.</p>
 <p><strong>To triplot require klaR package. in R execute:</strong></p>
-<p>plot(model,type=2,las=1)</p>
+<div class="sourceCode" id="cb24"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="no">model</span>,<span class="kw">type</span><span class="kw">=</span><span class="fl">2</span>,<span class="kw">las</span><span class="kw">=</span><span class="fl">1</span>)</pre></body></html></div>
+</div>
 </div>
 <div id="ammi-index-and-yield-stability" class="section level2">
 <h2 class="hasAnchor">
 <a href="#ammi-index-and-yield-stability" class="anchor"></a>AMMI index and yield stability</h2>
-<p>Calculate AMMI stability value (ASV) and Yield stability index (YSI), ; .</p>
-<div class="sourceCode" id="cb24"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">plrv</span>)
+<p>Calculate AMMI stability value (ASV) and Yield stability index (YSI) <span class="citation">(Purchase, <a href="#ref-Purc:1997" role="doc-biblioref">1997</a>; N. et al., <a href="#ref-SabaDehg:2008" role="doc-biblioref">2008</a>)</span>.</p>
+<div class="sourceCode" id="cb25"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">plrv</span>)
 <span class="no">model</span><span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span>(<span class="no">plrv</span>,<span class="fu"><a href="../reference/AMMI.html">AMMI</a></span>(<span class="no">Locality</span>, <span class="no">Genotype</span>, <span class="no">Rep</span>, <span class="no">Yield</span>, <span class="kw">console</span><span class="kw">=</span><span class="fl">FALSE</span>))
 <span class="no">index</span><span class="kw">&lt;-</span><span class="fu"><a href="../reference/index.AMMI.html">index.AMMI</a></span>(<span class="no">model</span>)
 <span class="co"># Crops with improved stability according AMMI.</span>
@@ -379,7 +395,7 @@ Unica   3.8380782  24   22    2 39.10400
 346.2   5.1827747  51   26   25 23.84175
 319.20  6.7164864  30   27    3 38.75767
 Desiree 7.7833445  56   28   28 16.15569</code></pre>
-<div class="sourceCode" id="cb26"><html><body><pre class="r"><span class="co"># Crops with better response and improved stability according AMMI.</span>
+<div class="sourceCode" id="cb27"><html><body><pre class="r"><span class="co"># Crops with better response and improved stability according AMMI.</span>
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">index</span>[<span class="fu"><a href="https://rdrr.io/r/base/order.html">order</a></span>(<span class="no">index</span>[,<span class="fl">4</span>]),])</pre></body></html></div>
 <pre><code>              ASV YSI rASV rYSI    means
 141.28  4.4672401  26   25    1 39.75624
@@ -412,9 +428,26 @@ Canchan 3.0975884  35   15   20 27.00126
 Desiree 7.7833445  56   28   28 16.15569</code></pre>
 </div>
 </div>
-<div id="references" class="section level1">
+<div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h1>
+<div id="refs" class="references">
+<div id="ref-Cros:1990">
+<p>Crossa, J. (1990). “Statistical Analyses of Multilocation Trials,” in <em>Advances in agronomy</em> (Elsevier), 55–85.</p>
+</div>
+<div id="ref-HaynLambChriWeinDoucBackSecoFryStev:1998">
+<p>Haynes, K. G., Lambert, D. H., Christ, B. J., Weingartner, D. P., Douches, D. S., Backlund, J. E., et al. (1998). Phenotypic stability of resistance to late blight in potato clones evaluated at eight sites in the United Stated. 75, 211–217.</p>
+</div>
+<div id="ref-Kang:1993">
+<p>Kang, M. S. (1993). Phenotypic stability of resistance to late blight in potato clones evaluated at eight sites in the United Stated. <em>Agronomy Journal</em> 85, 754–757.</p>
+</div>
+<div id="ref-SabaDehg:2008">
+<p>N., S., H.Sabaghpour, S., and Dehghani, H. (2008). The use of an AMMI model and its parameters to analyse yield stability in multienvironment trials. <em>Journal of Agricultural Science</em> 146, 571–581.</p>
+</div>
+<div id="ref-Purc:1997">
+<p>Purchase, J. L. (1997). Parametric analysis to describe genotype environment interaction and yield stability in winter wheat.</p>
+</div>
+</div>
 </div>
   </div>
 

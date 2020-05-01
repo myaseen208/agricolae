@@ -3,14 +3,12 @@ title: "Experimental Designs with **agricolae**"
 author: "Felipe de Mendiburu^1^, Muhammad Yaseen^2^"
 date: "`r Sys.Date()`"
 output:
-  bookdown::html_document2:
+  bookdown::pdf_document2:
+    dev: cairo_pdf
     fig_caption: yes
     number_sections: yes
     toc: yes
-  pdf_document:
-    toc: yes
-  bookdown::pdf_document2:
-    dev: cairo_pdf
+  bookdown::html_document2:
     fig_caption: yes
     number_sections: yes
     toc: yes
@@ -60,12 +58,11 @@ switch(out_type,
     html = {cat("<p>1. Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.</p>
     
 <p>2. Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.</p>")},
-    latex = cat("\\begin{center}
+    latex = cat("
 1. Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.
 
 2. Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.
-
-\\end{center}" )
+" )
 )
 ```
 

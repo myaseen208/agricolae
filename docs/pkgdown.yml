@@ -5,12 +5,13 @@ articles:
   DescriptiveStats: DescriptiveStats.html
   ExperimentalDesign: ExperimentalDesign.html
   GraphicsMultipleComparisons: GraphicsMultipleComparisons.html
+  Intro_agricolae: Intro_agricolae.html
   Introduction: Introduction.html
   MultipleComparisons: MultipleComparisons.html
   Non-parametricComparisons: Non-parametricComparisons.html
   SpecialFunctions: SpecialFunctions.html
   StabilityAnalysis: StabilityAnalysis.html
-last_built: 2020-04-27T12:06Z
+last_built: 2020-05-01T11:35Z
 urls:
   reference: https://myaseen208.github.io/agricolae//reference
   article: https://myaseen208.github.io/agricolae//articles

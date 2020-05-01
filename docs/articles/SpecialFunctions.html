@@ -69,6 +69,10 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="../articles/Intro_agricolae.html">Introduction to agricolae</a>
+    </li>
+    <li class="divider">
+    <li>
       <a href="../articles/Introduction.html">Introduction to agricolae</a>
     </li>
     <li>
@@ -142,7 +146,7 @@
                         <h4 class="author">Felipe de Mendiburu<sup>1</sup>, Muhammad Yaseen<sup>2</sup>
 </h4>
             
-            <h4 class="date">2020-04-27</h4>
+            <h4 class="date">2020-05-01</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/myaseen208/agricolae/blob/master/vignettes/SpecialFunctions.Rmd"><code>vignettes/SpecialFunctions.Rmd</code></a></small>
       <div class="hidden name"><code>SpecialFunctions.Rmd</code></div>
@@ -169,10 +173,9 @@
 <div id="consensus-of-dendrogram" class="section level2">
 <h2 class="hasAnchor">
 <a href="#consensus-of-dendrogram" class="anchor"></a>Consensus of dendrogram</h2>
-<p>Consensus is the degree or similarity of the vertexes of a tree regarding its branches of the constructed dendrogram. The function to apply is consensus().</p>
-<p>The data correspond to a table, with the name of the individuals and the variables in the rows and columns respectively. For the demonstration, we will use the “pamCIP” data of ‘agricolae’, which correspond to molecular markers of 43 entries of a germplasm bank (rows) and 107 markers (columns).</p>
+<p>Consensus is the degree or similarity of the vertexes of a tree regarding its branches of the constructed dendrogram. The function to apply is <code><a href="../reference/consensus.html">consensus()</a></code>.</p>
+<p>The data correspond to a table, with the name of the individuals and the variables in the rows and columns respectively. For the demonstration, we will use the <code>pamCIP</code> data of <strong>agricolae</strong>, which correspond to molecular markers of 43 entries of a germplasm bank (rows) and 107 markers (columns).</p>
 <p>The program identifies duplicates in the rows and can operate in both cases. The result is a dendrogram, in which the consensus percentage is included, see Figure @ref(fig:f7).</p>
-<p>\begin{figure} \begin{center}</p>
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="no">oldpar</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="kw">cex</span><span class="kw">=</span><span class="fl">0.6</span>,<span class="kw">mar</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">3</span>,<span class="fl">2</span>,<span class="fl">1</span>))
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">pamCIP</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span>(<span class="no">pamCIP</span>)<span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/substr.html">substr</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/colnames.html">rownames</a></span>(<span class="no">pamCIP</span>),<span class="fl">1</span>,<span class="fl">6</span>)
@@ -187,19 +190,23 @@ Method distance: binary
 Method cluster : complete
 rows and cols  : 25 107
 n-bootstrap    : 5
-Run time       : 0.6307547 secs </code></pre>
-<p><img src="SpecialFunctions_files/figure-html/f7-1.png" width="700"></p>
+Run time       : 0.601563 secs </code></pre>
+<div class="figure">
+<img src="SpecialFunctions_files/figure-html/f7-1.png" alt="Dendrogram, production by `consensus`" width="700"><p class="caption">
+Dendrogram, production by <code>consensus</code>
+</p>
+</div>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="no">oldpar</span>)</pre></body></html></div>
-
-<p>\end{center} \end{figure} When the dendrogram is complex, it is convenient to extract part of it with the function hcut(), see Figure @ref(fig:f8).</p>
-<p>\begin{figure} \begin{center}</p>
+<p>When the dendrogram is complex, it is convenient to extract part of it with the function <code><a href="../reference/hcut.html">hcut()</a></code>, see Figure @ref(fig:f8).</p>
 <div class="sourceCode" id="cb4"><html><body><pre class="r"><span class="no">oldpar</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="kw">cex</span><span class="kw">=</span><span class="fl">0.6</span>,<span class="kw">mar</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">3</span>,<span class="fl">1.5</span>,<span class="fl">1</span>))
 <span class="no">out1</span><span class="kw">&lt;-</span> <span class="fu"><a href="../reference/hcut.html">hcut</a></span>(<span class="no">output</span>,<span class="kw">h</span><span class="kw">=</span><span class="fl">0.4</span>,<span class="kw">group</span><span class="kw">=</span><span class="fl">8</span>,<span class="kw">type</span><span class="kw">=</span><span class="st">"t"</span>,<span class="kw">edgePar</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">lty</span><span class="kw">=</span><span class="fl">1</span>:<span class="fl">2</span>, <span class="kw">col</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/grDevices/colors.html">colors</a></span>()[<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">42</span>,<span class="fl">84</span>)]),
 <span class="kw">main</span><span class="kw">=</span><span class="st">"group 8"</span> ,<span class="kw">col.text</span><span class="kw">=</span><span class="st">"blue"</span>,<span class="kw">cex.text</span><span class="kw">=</span><span class="fl">1</span>,<span class="kw">las</span><span class="kw">=</span><span class="fl">1</span>)</pre></body></html></div>
-<p><img src="SpecialFunctions_files/figure-html/f8-1.png" width="700"></p>
+<div class="figure">
+<img src="SpecialFunctions_files/figure-html/f8-1.png" alt="Dendrogram, production by `hcut()`" width="700"><p class="caption">
+Dendrogram, production by <code><a href="../reference/hcut.html">hcut()</a></code>
+</p>
+</div>
 <div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="no">oldpar</span>)</pre></body></html></div>
-
-<p>\end{center} \end{figure}</p>
 <p>The obtained object “output” contains information about the process:</p>
 <div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span>(<span class="no">output</span>)</pre></body></html></div>
 <pre><code>[1] "table.dend" "dendrogram" "duplicates"</code></pre>
@@ -209,59 +216,63 @@ Run time       : 0.6307547 secs </code></pre>
 <span class="no">data</span> <span class="kw">&lt;-</span> <span class="no">output</span>$<span class="no">table.dend</span>
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">output</span>$<span class="no">table.dend</span>)</pre></body></html></div>
 <pre><code>   X1  X2 xaxis     height percentage groups
-1  -6 -24  7.50 0.02857143         60   6-24
-2  -3  -4 19.50 0.03571429         80    3-4
-3  -2  -8 22.50 0.03846154         60    2-8
-4  -7 -10 10.50 0.03846154        100   7-10
-5 -21   2 18.75 0.07142857         80 3-4-21
-6 -16   3 21.75 0.07407407         20 2-8-16</code></pre>
+1  -6 -24  7.50 0.02857143         80   6-24
+2  -3  -4 19.50 0.03571429         40    3-4
+3  -2  -8 22.50 0.03846154         80    2-8
+4  -7 -10 10.50 0.03846154         60   7-10
+5 -21   2 18.75 0.07142857         40 3-4-21
+6 -16   3 21.75 0.07407407         80 2-8-16</code></pre>
 <div class="sourceCode" id="cb10"><html><body><pre class="r"><span class="no">oldpar</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="kw">mar</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">3</span>,<span class="fl">1</span>,<span class="fl">1</span>),<span class="kw">cex</span><span class="kw">=</span><span class="fl">0.6</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="no">dend</span>,<span class="kw">type</span><span class="kw">=</span><span class="st">"r"</span>,<span class="kw">edgePar</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="kw">lty</span><span class="kw">=</span><span class="fl">1</span>:<span class="fl">2</span>, <span class="kw">col</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/grDevices/colors.html">colors</a></span>()[<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">42</span>,<span class="fl">84</span>)]) ,<span class="kw">las</span><span class="kw">=</span><span class="fl">1</span>)
-<span class="fu"><a href="https://rdrr.io/r/graphics/text.html">text</a></span>(<span class="no">data</span>[,<span class="fl">3</span>],<span class="no">data</span>[,<span class="fl">4</span>],<span class="no">data</span>[,<span class="fl">5</span>],<span class="kw">col</span><span class="kw">=</span><span class="st">"blue"</span>,<span class="kw">cex</span><span class="kw">=</span><span class="fl">1</span>)
-<span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="no">oldpar</span>)</pre></body></html></div>
+<span class="fu"><a href="https://rdrr.io/r/graphics/text.html">text</a></span>(<span class="no">data</span>[,<span class="fl">3</span>],<span class="no">data</span>[,<span class="fl">4</span>],<span class="no">data</span>[,<span class="fl">5</span>],<span class="kw">col</span><span class="kw">=</span><span class="st">"blue"</span>,<span class="kw">cex</span><span class="kw">=</span><span class="fl">1</span>)</pre></body></html></div>
+<p><img src="SpecialFunctions_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
+<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="no">oldpar</span>)</pre></body></html></div>
 </div>
 <div id="montecarlo" class="section level2">
 <h2 class="hasAnchor">
 <a href="#montecarlo" class="anchor"></a>Montecarlo</h2>
 <p>It is a method for generating random numbers of an unknown distribution. It uses a data set and, through the cumulative behavior of its relative frequency, generates the possible random values that follow the data distribution. These new numbers are used in some simulation process.</p>
 <p>The probability density of the original and simulated data can be compared, see Figure @ref(fig:f9).</p>
-<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">soil</span>)
+<div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">soil</span>)
 <span class="co"># set.seed(9473)</span>
 <span class="no">simulated</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/montecarlo.html">montecarlo</a></span>(<span class="no">soil</span>$<span class="no">pH</span>,<span class="fl">1000</span>)
 <span class="no">h</span><span class="kw">&lt;-</span><span class="fu"><a href="../reference/graph.freq.html">graph.freq</a></span>(<span class="no">simulated</span>,<span class="kw">nclass</span><span class="kw">=</span><span class="fl">7</span>,<span class="kw">plot</span><span class="kw">=</span><span class="fl">FALSE</span>)</pre></body></html></div>
-<div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="no">oldpar</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="kw">mar</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">2</span>,<span class="fl">0</span>,<span class="fl">2</span>,<span class="fl">1</span>),<span class="kw">cex</span><span class="kw">=</span><span class="fl">0.6</span>)
+<div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="no">oldpar</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="kw">mar</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">2</span>,<span class="fl">0</span>,<span class="fl">2</span>,<span class="fl">1</span>),<span class="kw">cex</span><span class="kw">=</span><span class="fl">0.6</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="fu"><a href="https://rdrr.io/r/stats/density.html">density</a></span>(<span class="no">soil</span>$<span class="no">pH</span>),<span class="kw">axes</span><span class="kw">=</span><span class="fl">FALSE</span>,<span class="kw">main</span><span class="kw">=</span><span class="st">"pH density of the soil\ncon Ralstonia"</span>,<span class="kw">xlab</span><span class="kw">=</span><span class="st">""</span>,<span class="kw">lwd</span><span class="kw">=</span><span class="fl">4</span>)
 <span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span>(<span class="fu"><a href="https://rdrr.io/r/stats/density.html">density</a></span>(<span class="no">simulated</span>), <span class="kw">col</span><span class="kw">=</span><span class="st">"blue"</span>, <span class="kw">lty</span><span class="kw">=</span><span class="fl">4</span>,<span class="kw">lwd</span><span class="kw">=</span><span class="fl">4</span>)
 <span class="fu"><a href="https://rdrr.io/r/graphics/axis.html">axis</a></span>(<span class="fl">1</span>,<span class="fl">0</span>:<span class="fl">12</span>)
 <span class="fu"><a href="https://rdrr.io/r/graphics/legend.html">legend</a></span>(<span class="st">"topright"</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Original"</span>,<span class="st">"Simulated"</span>),<span class="kw">lty</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>,<span class="fl">4</span>),<span class="kw">col</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"black"</span>, <span class="st">"blue"</span>), <span class="kw">lwd</span><span class="kw">=</span><span class="fl">4</span>)</pre></body></html></div>
-<p><img src="SpecialFunctions_files/figure-html/f9-1.png" width="700"></p>
-<div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="no">oldpar</span>)</pre></body></html></div>
-
+<div class="figure">
+<img src="SpecialFunctions_files/figure-html/f9-1.png" alt="Distribution of the simulated and the original data" width="700"><p class="caption">
+Distribution of the simulated and the original data
+</p>
+</div>
+<div class="sourceCode" id="cb14"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="no">oldpar</span>)</pre></body></html></div>
 <p>1000 data was simulated, being the frequency table:</p>
-<div class="sourceCode" id="cb14"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span>(<span class="fu"><a href="../reference/table.freq.html">table.freq</a></span>(<span class="no">h</span>),<span class="fl">2</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span>(<span class="fu"><a href="../reference/table.freq.html">table.freq</a></span>(<span class="no">h</span>),<span class="fl">2</span>)</pre></body></html></div>
 <pre><code>  Lower Upper  Main Frequency Percentage   CF   CPF
-1   1.6   2.9  2.25        22        2.2   22   2.2
-2   2.9   4.2  3.55       139       13.9  161  16.1
-3   4.2   5.5  4.85       211       21.1  372  37.2
-4   5.5   6.8  6.15       235       23.5  607  60.7
-5   6.8   8.1  7.45       193       19.3  800  80.0
-6   8.1   9.4  8.75       164       16.4  964  96.4
-7   9.4  10.7 10.05        36        3.6 1000 100.0</code></pre>
+1  1.40  2.76  2.08        13        1.3   13   1.3
+2  2.76  4.12  3.44       127       12.7  140  14.0
+3  4.12  5.48  4.80       250       25.0  390  39.0
+4  5.48  6.84  6.16       227       22.7  617  61.7
+5  6.84  8.20  7.52       237       23.7  854  85.4
+6  8.20  9.56  8.88       122       12.2  976  97.6
+7  9.56 10.92 10.24        24        2.4 1000 100.0</code></pre>
 <p><strong>Some statistics, original data:</strong></p>
-<div class="sourceCode" id="cb16"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(<span class="no">soil</span>$<span class="no">pH</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb17"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(<span class="no">soil</span>$<span class="no">pH</span>)</pre></body></html></div>
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
   3.800   4.700   6.100   6.154   7.600   8.400 </code></pre>
 <p><strong>Some statistics, montecarlo simulate data:</strong></p>
-<div class="sourceCode" id="cb18"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(<span class="no">simulated</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb19"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span>(<span class="no">simulated</span>)</pre></body></html></div>
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  1.658   4.678   6.110   6.229   7.718  10.620 </code></pre>
+  1.423   4.718   6.090   6.183   7.639  10.895 </code></pre>
 </div>
 <div id="re-sampling-in-linear-model" class="section level2">
 <h2 class="hasAnchor">
 <a href="#re-sampling-in-linear-model" class="anchor"></a>Re-Sampling in linear model</h2>
 <p>It uses the permutation method for the calculation of the probabilities of the sources of variation of ANOVA according to the linear regression model or the design used. The principle is that the Y response does not depend on the averages proposed in the model; hence, the Y values can be permutated and many model estimates can be constructed. On the basis of the patterns of the random variables of the elements under study, the probability is calculated in order to measure the significance.</p>
-<p>For a variance analysis, the data should be prepared similarly. The function to use is: resampling.model()</p>
-<div class="sourceCode" id="cb20"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">potato</span>)
+<p>For a variance analysis, the data should be prepared similarly. The function to use is: <code><a href="../reference/resampling.model.html">resampling.model()</a></code>.</p>
+<div class="sourceCode" id="cb21"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">potato</span>)
 <span class="no">potato</span>[,<span class="fl">1</span>]<span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span>(<span class="no">potato</span>[,<span class="fl">1</span>])
 <span class="no">potato</span>[,<span class="fl">2</span>]<span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span>(<span class="no">potato</span>[,<span class="fl">2</span>])
 <span class="no">model</span><span class="kw">&lt;-</span><span class="st">"cutting~variety + date + variety:date"</span>
@@ -269,19 +280,19 @@ Run time       : 0.6307547 secs </code></pre>
 <span class="no">Xsol</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/matrix.html">as.matrix</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span>(<span class="no">analysis</span>$<span class="no">solution</span>,<span class="fl">2</span>))
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">Xsol</span>,<span class="kw">na.print</span> <span class="kw">=</span> <span class="st">""</span>)</pre></body></html></div>
 <pre><code>             Df Sum Sq Mean Sq F value Pr(&gt;F) Resampling
-variety       1  25.09   25.09    7.26   0.02       0.03
-date          2  13.89    6.95    2.01   0.18       0.20
-variety:date  2   4.85    2.43    0.70   0.51       0.52
+variety       1  25.09   25.09    7.26   0.02       0.01
+date          2  13.89    6.95    2.01   0.18       0.22
+variety:date  2   4.85    2.43    0.70   0.51       0.54
 Residuals    12  41.48    3.46                          </code></pre>
-<p>The function resampling.model() can be used when the errors have a different distribution from normal</p>
+<p>The function <code><a href="../reference/resampling.model.html">resampling.model()</a></code> can be used when the errors have a different distribution from normal.</p>
 </div>
 <div id="simulation-in-linear-model" class="section level2">
 <h2 class="hasAnchor">
 <a href="#simulation-in-linear-model" class="anchor"></a>Simulation in linear model</h2>
 <p>Under the assumption of normality, the function generates pseudo experimental errors under the proposed model, and determines the proportion of valid results according to the analysis of variance found.</p>
-<p>The function is: simulation.model(). The data are prepared in a table, similarly to an analysis of variance.</p>
+<p>The function is: <code><a href="../reference/simulation.model.html">simulation.model()</a></code>. The data are prepared in a table, similarly to an analysis of variance.</p>
 <p>Considering the example proposed in the previous procedure:</p>
-<div class="sourceCode" id="cb22"><html><body><pre class="r"><span class="no">simModel</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/simulation.model.html">simulation.model</a></span>(<span class="no">model</span>, <span class="no">potato</span>, <span class="kw">k</span><span class="kw">=</span><span class="fl">100</span>,<span class="kw">console</span><span class="kw">=</span><span class="fl">TRUE</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb23"><html><body><pre class="r"><span class="no">simModel</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/simulation.model.html">simulation.model</a></span>(<span class="no">model</span>, <span class="no">potato</span>, <span class="kw">k</span><span class="kw">=</span><span class="fl">100</span>,<span class="kw">console</span><span class="kw">=</span><span class="fl">TRUE</span>)</pre></body></html></div>
 <pre><code>
 Simulation of experiments
 Under the normality assumption
@@ -302,18 +313,18 @@ Validation of the analysis of variancia for the proposed model
 Simulations: 100 
 
              Df   F value % Acceptance % Rejection  Criterion
-variety       1 7.2580377           51          49 acceptable
-date          2 2.0095604           50          50  uncertain
-variety:date  2 0.7020312           65          35 acceptable
+variety       1 7.2580377           53          47 acceptable
+date          2 2.0095604           63          37 acceptable
+variety:date  2 0.7020312           70          30 acceptable
 ---</code></pre>
-<p>The validation is referred to the percentage of decision results equal to the result of the ANOVA decision. Thus, 65% of the results simulated on the interaction variety*date gave the same result of acceptance or rejection obtained in the ANOVA.</p>
+<p>The validation is referred to the percentage of decision results equal to the result of the ANOVA decision. Thus, 70% of the results simulated on the interaction variety*date gave the same result of acceptance or rejection obtained in the ANOVA.</p>
 </div>
 <div id="path-analysis" class="section level2">
 <h2 class="hasAnchor">
 <a href="#path-analysis" class="anchor"></a>Path Analysis</h2>
 <p>It corresponds to the “path analysis” method. The data correspond to correlation matrices of the independent ones with the dependent matrix (XY) and between the independent ones (XX).</p>
 <p>It is necessary to assign names to the rows and columns in order to identify the direct and indirect effects.</p>
-<div class="sourceCode" id="cb24"><html><body><pre class="r"><span class="no">corr.x</span><span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">1</span>),<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">2</span>,<span class="fl">2</span>))
+<div class="sourceCode" id="cb25"><html><body><pre class="r"><span class="no">corr.x</span><span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>,<span class="fl">0.5</span>,<span class="fl">0.5</span>,<span class="fl">1</span>),<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">2</span>,<span class="fl">2</span>))
 <span class="no">corr.y</span><span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/cbind.html">rbind</a></span>(<span class="fl">0.6</span>,<span class="fl">0.7</span>)
 <span class="no">names</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"X1"</span>,<span class="st">"X2"</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/dimnames.html">dimnames</a></span>(<span class="no">corr.x</span>)<span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="no">names</span>,<span class="no">names</span>)
@@ -326,7 +337,7 @@ X1 0.3333333 0.2666667
 X2 0.1666667 0.5333333
 
 Residual Effect^2 =  0.4266667 </code></pre>
-<div class="sourceCode" id="cb26"><html><body><pre class="r"><span class="no">output</span></pre></body></html></div>
+<div class="sourceCode" id="cb27"><html><body><pre class="r"><span class="no">output</span></pre></body></html></div>
 <pre><code>$Coeff
           X1        X2
 X1 0.3333333 0.2666667
@@ -338,15 +349,26 @@ $Residual
 <div id="line-x-tester" class="section level2">
 <h2 class="hasAnchor">
 <a href="#line-x-tester" class="anchor"></a>Line X Tester</h2>
-<p>It corresponds to a crossbreeding analysis of a genetic design. The data should be organized in a table. Only four columns are required: repetition, females, males, and response. In case it corresponds to progenitors, the females or males field will only be filled with the corresponding one. See the heterosis data, .</p>
-<p><strong>Example with the heterosis data, locality 2.</strong></p>
-
-<p>where <na> is empty.</na></p>
+<p>It corresponds to a crossbreeding analysis of a genetic design. The data should be organized in a table. Only four columns are required: repetition, females, males, and response. In case it corresponds to progenitors, the females or males field will only be filled with the corresponding one. See the heterosis data <span class="citation">(Singh and Chaudhary, <a href="#ref-SingChau:1979" role="doc-biblioref">1979</a>)</span>.</p>
+<div id="example-with-the-heterosis-data-locality-2" class="section level3">
+<h3 class="hasAnchor">
+<a href="#example-with-the-heterosis-data-locality-2" class="anchor"></a>Example with the heterosis data, locality 2</h3>
+<div class="sourceCode" id="cb29"><html><body><pre class="r">     Replication   Female   Male   v2
+     109           1     LT-8  TS-15 2.65s
+     110           1     LT-8 TPS-13 2.26
+     ...
+     131           1 Achirana TPS-13 3.55
+     132           1 Achirana TPS-67 3.05
+     ...
+     140           1 Achirana   &lt;NA&gt; 3.35
+     ...
+     215           3     &lt;NA&gt; TPS-67 2.91</pre></body></html></div>
+<p>where <code>&lt;NA&gt;</code> is empty.</p>
 <p>If it is a progeny, it comes from a “Female” and a “Male.” If it is a progenitor, it will only be “Female” or “Male.”</p>
 <p>The following example corresponds to data of the locality 2:</p>
 <p>24 progenies 8 females 3 males 3 repetitions</p>
 <p>They are 35 treatments (24, 8, 3) applied to three blocks.</p>
-<div class="sourceCode" id="cb28"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span>(<span class="kw">list</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span>())
+<div class="sourceCode" id="cb30"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span>(<span class="kw">list</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span>())
 <span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span>(<span class="kw">digits</span> <span class="kw">=</span> <span class="fl">2</span>)
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">heterosis</span>)
 <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">heterosis</span>)</pre></body></html></div>
@@ -362,7 +384,7 @@ $Residual
  $ v3         : num  17.2 17.8 15.6 16 16.5 ...
  $ v4         : num  9.93 12.45 9.3 12.77 14.13 ...
  $ v5         : num  102.6 107.4 120.5 83.8 90.4 ...</code></pre>
-<div class="sourceCode" id="cb30"><html><body><pre class="r"><span class="no">site2</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span>(<span class="no">heterosis</span>,<span class="no">heterosis</span>[,<span class="fl">1</span>]<span class="kw">==</span><span class="fl">2</span>)
+<div class="sourceCode" id="cb32"><html><body><pre class="r"><span class="no">site2</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span>(<span class="no">heterosis</span>,<span class="no">heterosis</span>[,<span class="fl">1</span>]<span class="kw">==</span><span class="fl">2</span>)
 <span class="no">site2</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span>(<span class="no">site2</span>[,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">2</span>,<span class="fl">5</span>,<span class="fl">6</span>,<span class="fl">8</span>)],<span class="no">site2</span>[,<span class="fl">4</span>]<span class="kw">!=</span><span class="st">"Control"</span>)
 <span class="no">output1</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span>(<span class="no">site2</span>,<span class="fu"><a href="../reference/lineXtester.html">lineXtester</a></span>(<span class="no">Replication</span>, <span class="no">Female</span>, <span class="no">Male</span>, <span class="no">v2</span>))</pre></body></html></div>
 <pre><code>
@@ -450,21 +472,25 @@ Proportional contribution of lines, testers
 Contributions of lines  : 59
 Contributions of testers: 7.8
 Contributions of lxt    : 33 </code></pre>
-<div class="sourceCode" id="cb32"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span>(<span class="kw">digits</span> <span class="kw">=</span> <span class="fl">7</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb34"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span>(<span class="kw">digits</span> <span class="kw">=</span> <span class="fl">7</span>)</pre></body></html></div>
+</div>
 </div>
 <div id="soil-uniformity" class="section level2">
 <h2 class="hasAnchor">
 <a href="#soil-uniformity" class="anchor"></a>Soil Uniformity</h2>
 <p>The Smith index is an indicator of the uniformity, used to determine the parcel size for research purposes. The data correspond to a matrix or table that contains the response per basic unit, a number of n rows x m columns, and a total of n*m basic units.</p>
 <p>For the test, we will use the rice file. The graphic is a result with the adjustment of a model for the plot size and the coefficient of variation, see Figure @ref(fig:f10).</p>
-<div class="sourceCode" id="cb33"><html><body><pre class="r"><span class="no">oldpar</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="kw">mar</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">1</span>),<span class="kw">cex</span><span class="kw">=</span><span class="fl">0.7</span>)
+<div class="sourceCode" id="cb35"><html><body><pre class="r"><span class="no">oldpar</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="kw">mar</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">1</span>),<span class="kw">cex</span><span class="kw">=</span><span class="fl">0.7</span>)
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">rice</span>)
 <span class="no">table</span><span class="kw">&lt;-</span><span class="fu"><a href="../reference/index.smith.html">index.smith</a></span>(<span class="no">rice</span>, <span class="kw">col</span><span class="kw">=</span><span class="st">"blue"</span>,
  <span class="kw">main</span><span class="kw">=</span><span class="st">"Interaction between the CV and the plot size"</span>,<span class="kw">type</span><span class="kw">=</span><span class="st">"l"</span>,<span class="kw">xlab</span><span class="kw">=</span><span class="st">"Size"</span>)</pre></body></html></div>
-<p><img src="SpecialFunctions_files/figure-html/f10-1.png" width="700"></p>
-<div class="sourceCode" id="cb34"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="no">oldpar</span>)</pre></body></html></div>
-
-<div class="sourceCode" id="cb35"><html><body><pre class="r"><span class="no">uniformity</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(<span class="no">table</span>$<span class="no">uniformity</span>)
+<div class="figure">
+<img src="SpecialFunctions_files/figure-html/f10-1.png" alt="Adjustment curve for the optimal size of plot" width="700"><p class="caption">
+Adjustment curve for the optimal size of plot
+</p>
+</div>
+<div class="sourceCode" id="cb36"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="no">oldpar</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb37"><html><body><pre class="r"><span class="no">uniformity</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(<span class="no">table</span>$<span class="no">uniformity</span>)
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">uniformity</span>)</pre></body></html></div>
 <pre><code>  Size Width Length plots       Vx   CV
 1    1     1      1   648 9044.539 13.0
@@ -477,10 +503,10 @@ Contributions of lxt    : 33 </code></pre>
 <div id="confidence-limits-in-biodiversity-indices" class="section level2">
 <h2 class="hasAnchor">
 <a href="#confidence-limits-in-biodiversity-indices" class="anchor"></a>Confidence Limits In Biodiversity Indices</h2>
-<p>The biodiversity indices are widely used for measuring the presence of living things in an ecological area. Many programs indicate their value. The function of ‘agricolae’ is also to show the confidence intervals, which can be used for a statistical comparison. Use the bootstrap procedure. The data are organized in a table; the species are placed in a column; and in another one, the number of individuals. The indices that can be calculated with the function index.bio() of ‘agricolae’ are: “Margalef”, “Simpson.Dom”, “Simpson.Div”, “Berger.Parker”, “McIntosh”, and “Shannon.”</p>
+<p>The biodiversity indices are widely used for measuring the presence of living things in an ecological area. Many programs indicate their value. The function of <strong>agricolae</strong> is also to show the confidence intervals, which can be used for a statistical comparison. Use the bootstrap procedure. The data are organized in a table; the species are placed in a column; and in another one, the number of individuals. The indices that can be calculated with the function <code><a href="../reference/index.bio.html">index.bio()</a></code> of <strong>agricolae</strong> are: <code>Margalef</code>, <code>Simpson.Dom</code>, <code>Simpson.Div</code>, <code>Berger.Parker</code>, <code>McIntosh</code>, and <code>Shannon</code>.</p>
 <p>In the example below, we will use the data obtained in the locality of Paracsho, district of Huasahuasi, province of Tarma in the department of Junin.</p>
 <p>The evaluation was carried out in the parcels on 17 November 2005, without insecticide application. The counted specimens were the following:</p>
-<div class="sourceCode" id="cb37"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">paracsho</span>)
+<div class="sourceCode" id="cb39"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">paracsho</span>)
 <span class="no">species</span> <span class="kw">&lt;-</span> <span class="no">paracsho</span>[<span class="fl">79</span>:<span class="fl">87</span>,<span class="fl">4</span>:<span class="fl">6</span>]
 <span class="no">species</span></pre></body></html></div>
 <pre><code>         Orden        Family Number.of.specimens
@@ -494,21 +520,21 @@ Contributions of lxt    : 33 </code></pre>
 86     DIPTERA     SYRPHIDAE                   1
 87     DIPTERA      MUSCIDAE                   3</code></pre>
 <p><strong>The Shannon index is:</strong></p>
-<div class="sourceCode" id="cb39"><html><body><pre class="r"><span class="no">output</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/index.bio.html">index.bio</a></span>(<span class="no">species</span>[,<span class="fl">3</span>],<span class="kw">method</span><span class="kw">=</span><span class="st">"Shannon"</span>,<span class="kw">level</span><span class="kw">=</span><span class="fl">95</span>,<span class="kw">nboot</span><span class="kw">=</span><span class="fl">200</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb41"><html><body><pre class="r"><span class="no">output</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/index.bio.html">index.bio</a></span>(<span class="no">species</span>[,<span class="fl">3</span>],<span class="kw">method</span><span class="kw">=</span><span class="st">"Shannon"</span>,<span class="kw">level</span><span class="kw">=</span><span class="fl">95</span>,<span class="kw">nboot</span><span class="kw">=</span><span class="fl">200</span>)</pre></body></html></div>
 <pre><code>
 Method: Shannon 
 
 The index: 2.541336 
 
 95 percent confidence interval:
- 2.228363 ; 3.07635 </code></pre>
+ 2.283752 ; 3.07635 </code></pre>
 </div>
 <div id="correlation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#correlation" class="anchor"></a>Correlation</h2>
-<p>The function correlation() of ‘agricolae’ makes the correlations through the methods of Pearson, Spearman and Kendall for vectors and/or matrices. If they are two vectors, the test is carried out for one or two lines; if it is a matrix one, it determines the probabilities for a difference, whether it is greater or smaller.</p>
-<p>For its application, consider the soil data: data(soil)</p>
-<div class="sourceCode" id="cb41"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">soil</span>)
+<p>The function <code><a href="../reference/correlation.html">correlation()</a></code> of <strong>agricolae</strong> makes the correlations through the methods of Pearson, Spearman and Kendall for vectors and/or matrices. If they are two vectors, the test is carried out for one or two lines; if it is a matrix one, it determines the probabilities for a difference, whether it is greater or smaller.</p>
+<p>For its application, consider the soil data: <code><a href="https://rdrr.io/r/utils/data.html">data(soil)</a></code>.</p>
+<div class="sourceCode" id="cb43"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">soil</span>)
 <span class="fu"><a href="../reference/correlation.html">correlation</a></span>(<span class="no">soil</span>[,<span class="fl">2</span>:<span class="fl">4</span>],<span class="kw">method</span><span class="kw">=</span><span class="st">"pearson"</span>)</pre></body></html></div>
 <pre><code>$correlation
         pH   EC CaCO3
@@ -524,7 +550,7 @@ CaCO3 0.004797027 0.2941598 1.000000000
 
 $n.obs
 [1] 13</code></pre>
-<div class="sourceCode" id="cb43"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span>(<span class="no">soil</span>,<span class="fu"><a href="../reference/correlation.html">correlation</a></span>(<span class="no">pH</span>,<span class="no">soil</span>[,<span class="fl">3</span>:<span class="fl">4</span>],<span class="kw">method</span><span class="kw">=</span><span class="st">"pearson"</span>))</pre></body></html></div>
+<div class="sourceCode" id="cb45"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span>(<span class="no">soil</span>,<span class="fu"><a href="../reference/correlation.html">correlation</a></span>(<span class="no">pH</span>,<span class="no">soil</span>[,<span class="fl">3</span>:<span class="fl">4</span>],<span class="kw">method</span><span class="kw">=</span><span class="st">"pearson"</span>))</pre></body></html></div>
 <pre><code>$correlation
      EC CaCO3
 pH 0.55  0.73
@@ -540,9 +566,11 @@ $n.obs
 <h2 class="hasAnchor">
 <a href="#tapply-stat" class="anchor"></a>tapply.stat()</h2>
 <p>Gets a functional calculation of variables grouped by study factors.</p>
-<p><strong>Application with ‘agricolae’ data:</strong></p>
-<p>max(yield)-min(yield) by farmer</p>
-<div class="sourceCode" id="cb45"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">RioChillon</span>)
+<div id="application-with-agricolae-data" class="section level3">
+<h3 class="hasAnchor">
+<a href="#application-with-agricolae-data" class="anchor"></a>Application with <strong>agricolae</strong> data</h3>
+<p><code>max(yield)-min(yield)</code> by farmer</p>
+<div class="sourceCode" id="cb47"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">RioChillon</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span>(<span class="no">RioChillon</span>$<span class="no">babies</span>,<span class="fu"><a href="../reference/tapply.stat.html">tapply.stat</a></span>(<span class="no">yield</span>,<span class="no">farmer</span>,<span class="kw">function</span>(<span class="no">x</span>) <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span>(<span class="no">x</span>)-<span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span>(<span class="no">x</span>)))</pre></body></html></div>
 <pre><code>            farmer yield
 1  AugustoZambrano   7.5
@@ -555,17 +583,18 @@ $n.obs
 8         Huatocay  19.4
 9 IgnacioPolinario  13.1</code></pre>
 <p>It corresponds to the range of variation in the farmers’ yield.</p>
-<p>The function “tapply” can be used directly or with function.</p>
+<p>The function <code>tapply</code> can be used directly or with function.</p>
 <p>If A is a table with columns 1,2 and 3 as category, and 5,6 and 7 as variables, then the following procedures are valid:</p>
-<p>tapply.stat(A[,5:7], A[,1:3],mean)</p>
-<p>tapply.stat(A[,5:7], A[,1:3],function(x) mean(x,na.rm=TRUE))</p>
-<p>tapply.stat(A[,c(7,6)], A[,1:2],function(x) sd(x)*100/mean(x))</p>
+<div class="sourceCode" id="cb49"><html><body><pre class="r"><span class="fu"><a href="../reference/tapply.stat.html">tapply.stat</a></span>(<span class="no">A</span>[,<span class="fl">5</span>:<span class="fl">7</span>], <span class="no">A</span>[,<span class="fl">1</span>:<span class="fl">3</span>],<span class="no">mean</span>)
+<span class="fu"><a href="../reference/tapply.stat.html">tapply.stat</a></span>(<span class="no">A</span>[,<span class="fl">5</span>:<span class="fl">7</span>], <span class="no">A</span>[,<span class="fl">1</span>:<span class="fl">3</span>],<span class="kw">function</span>(<span class="no">x</span>) <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(<span class="no">x</span>,<span class="kw">na.rm</span><span class="kw">=</span><span class="fl">TRUE</span>))
+<span class="fu"><a href="../reference/tapply.stat.html">tapply.stat</a></span>(<span class="no">A</span>[,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">7</span>,<span class="fl">6</span>)], <span class="no">A</span>[,<span class="fl">1</span>:<span class="fl">2</span>],<span class="kw">function</span>(<span class="no">x</span>) <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span>(<span class="no">x</span>)*<span class="fl">100</span>/<span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span>(<span class="no">x</span>))</pre></body></html></div>
+</div>
 </div>
 <div id="coefficient-of-variation-of-an-experiment" class="section level2">
 <h2 class="hasAnchor">
 <a href="#coefficient-of-variation-of-an-experiment" class="anchor"></a>Coefficient of variation of an experiment</h2>
-<p>If “model” is the object resulting from an analysis of variance of the function aov() or lm() of R, then the function cv.model() calculates the </p>
-<div class="sourceCode" id="cb47"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">sweetpotato</span>)
+<p>If <code>model</code> is the object resulting from an analysis of variance of the function <code><a href="https://rdrr.io/r/stats/aov.html">aov()</a></code> or <code><a href="https://rdrr.io/r/stats/lm.html">lm()</a></code> of <strong>R</strong>, then the function <code><a href="../reference/cv.model.html">cv.model()</a></code> calculates the <strong>coefficient of variation</strong>.</p>
+<div class="sourceCode" id="cb50"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">sweetpotato</span>)
 <span class="no">model</span> <span class="kw">&lt;-</span> <span class="no">model</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/aov.html">aov</a></span>(<span class="no">yield</span> ~ <span class="no">virus</span>, <span class="kw">data</span><span class="kw">=</span><span class="no">sweetpotato</span>)
 <span class="fu"><a href="../reference/cv.model.html">cv.model</a></span>(<span class="no">model</span>)</pre></body></html></div>
 <pre><code>[1] 17.1666</code></pre>
@@ -573,21 +602,27 @@ $n.obs
 <div id="skewness-and-kurtosis" class="section level2">
 <h2 class="hasAnchor">
 <a href="#skewness-and-kurtosis" class="anchor"></a>Skewness and kurtosis</h2>
-<p>The skewness and kurtosis results, obtained by ‘agricolae’, are equal to the ones obtained by SAS, MiniTab, SPSS, InfoStat, and Excel.</p>
+<p>The skewness and kurtosis results, obtained by <strong>agricolae</strong>, are equal to the ones obtained by SAS, MiniTab, SPSS, InfoStat, and Excel.</p>
 <p>If x represents a data set:</p>
-<div class="sourceCode" id="cb49"><html><body><pre class="r"><span class="no">x</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">6</span>,<span class="fl">4</span>,<span class="fl">NA</span>,<span class="fl">7</span>)</pre></body></html></div>
-<p><strong>skewness is calculated with:</strong></p>
-<div class="sourceCode" id="cb50"><html><body><pre class="r"><span class="fu"><a href="../reference/skewness.html">skewness</a></span>(<span class="no">x</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb52"><html><body><pre class="r"><span class="no">x</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">2</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">5</span>,<span class="fl">6</span>,<span class="fl">4</span>,<span class="fl">NA</span>,<span class="fl">7</span>)</pre></body></html></div>
+<div id="skewness" class="section level3">
+<h3 class="hasAnchor">
+<a href="#skewness" class="anchor"></a>Skewness</h3>
+<div class="sourceCode" id="cb53"><html><body><pre class="r"><span class="fu"><a href="../reference/skewness.html">skewness</a></span>(<span class="no">x</span>)</pre></body></html></div>
 <pre><code>[1] 0.3595431</code></pre>
-<p><strong>and kurtosis with:</strong></p>
-<div class="sourceCode" id="cb52"><html><body><pre class="r"><span class="fu"><a href="../reference/kurtosis.html">kurtosis</a></span>(<span class="no">x</span>)</pre></body></html></div>
+</div>
+<div id="kurtosis" class="section level3">
+<h3 class="hasAnchor">
+<a href="#kurtosis" class="anchor"></a>Kurtosis</h3>
+<div class="sourceCode" id="cb55"><html><body><pre class="r"><span class="fu"><a href="../reference/kurtosis.html">kurtosis</a></span>(<span class="no">x</span>)</pre></body></html></div>
 <pre><code>[1] -0.1517996</code></pre>
+</div>
 </div>
 <div id="tabular-value-of-waller-duncan" class="section level2">
 <h2 class="hasAnchor">
 <a href="#tabular-value-of-waller-duncan" class="anchor"></a>Tabular value of Waller-Duncan</h2>
 <p>The function Waller determines the tabular value of Waller-Duncan. For the calculation, value F is necessary, calculated from the analysis of variance of the study factor, with its freedom degrees and the estimate of the variance of the experimental error. Value K, parameter of the function is the ratio between the two types of errors (I and II). To use it, a value associated with the alpha level is assigned. When the alpha level is 0.10, 50 is assigned to K; for 0.05, K=100; and for 0.01, K=500. K can take any value.</p>
-<div class="sourceCode" id="cb54"><html><body><pre class="r"><span class="no">q</span><span class="kw">&lt;-</span><span class="fl">5</span>
+<div class="sourceCode" id="cb57"><html><body><pre class="r"><span class="no">q</span><span class="kw">&lt;-</span><span class="fl">5</span>
 <span class="no">f</span><span class="kw">&lt;-</span><span class="fl">15</span>
 <span class="no">K</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fl">10</span>,<span class="fl">1000</span>,<span class="fl">100</span>)
 <span class="no">n</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span>(<span class="no">K</span>)
@@ -596,8 +631,11 @@ $n.obs
 <span class="kw">for</span>(<span class="no">i</span> <span class="kw">in</span> <span class="fl">1</span>:<span class="no">n</span>) <span class="no">y</span>[<span class="no">i</span>,<span class="fl">1</span>]<span class="kw">&lt;-</span><span class="fu"><a href="../reference/waller.html">waller</a></span>(<span class="no">K</span>[<span class="no">i</span>],<span class="no">q</span>,<span class="no">f</span>,<span class="kw">Fc</span><span class="kw">=</span><span class="fl">2</span>)
 <span class="kw">for</span>(<span class="no">i</span> <span class="kw">in</span> <span class="fl">1</span>:<span class="no">n</span>) <span class="no">y</span>[<span class="no">i</span>,<span class="fl">2</span>]<span class="kw">&lt;-</span><span class="fu"><a href="../reference/waller.html">waller</a></span>(<span class="no">K</span>[<span class="no">i</span>],<span class="no">q</span>,<span class="no">f</span>,<span class="kw">Fc</span><span class="kw">=</span><span class="fl">4</span>)
 <span class="kw">for</span>(<span class="no">i</span> <span class="kw">in</span> <span class="fl">1</span>:<span class="no">n</span>) <span class="no">y</span>[<span class="no">i</span>,<span class="fl">3</span>]<span class="kw">&lt;-</span><span class="fu"><a href="../reference/waller.html">waller</a></span>(<span class="no">K</span>[<span class="no">i</span>],<span class="no">q</span>,<span class="no">f</span>,<span class="kw">Fc</span><span class="kw">=</span><span class="fl">8</span>)</pre></body></html></div>
-<p><strong>Function of Waller to different value of parameters K and Fc</strong> The next procedure illustrates the function for different values of K with freedom degrees of 5 for the numerator and 15 for the denominator, and values of calculated F, equal to 2, 4, and 8.</p>
-<div class="sourceCode" id="cb55"><html><body><pre class="r"><span class="no">oldpar</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="kw">mar</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">1</span>),<span class="kw">cex</span><span class="kw">=</span><span class="fl">0.7</span>)
+<div id="function-of-waller-to-different-value-of-parameters-k-and-fc" class="section level3">
+<h3 class="hasAnchor">
+<a href="#function-of-waller-to-different-value-of-parameters-k-and-fc" class="anchor"></a>Function of Waller to different value of parameters K and Fc</h3>
+<p>The next procedure illustrates the function for different values of K with freedom degrees of 5 for the numerator and 15 for the denominator, and values of calculated F, equal to 2, 4, and 8.</p>
+<div class="sourceCode" id="cb58"><html><body><pre class="r"><span class="no">oldpar</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="kw">mar</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">1</span>),<span class="kw">cex</span><span class="kw">=</span><span class="fl">0.7</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="no">K</span>,<span class="no">y</span>[,<span class="fl">1</span>],<span class="kw">type</span><span class="kw">=</span><span class="st">"l"</span>,<span class="kw">col</span><span class="kw">=</span><span class="st">"blue"</span>,<span class="kw">ylab</span><span class="kw">=</span><span class="st">"waller"</span>,<span class="kw">bty</span><span class="kw">=</span><span class="st">"l"</span>)
 <span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span>(<span class="no">K</span>,<span class="no">y</span>[,<span class="fl">2</span>],<span class="kw">type</span><span class="kw">=</span><span class="st">"l"</span>,<span class="kw">col</span><span class="kw">=</span><span class="st">"brown"</span>,<span class="kw">lty</span><span class="kw">=</span><span class="fl">2</span>,<span class="kw">lwd</span><span class="kw">=</span><span class="fl">2</span>)
 <span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span>(<span class="no">K</span>,<span class="no">y</span>[,<span class="fl">3</span>],<span class="kw">type</span><span class="kw">=</span><span class="st">"l"</span>,<span class="kw">col</span><span class="kw">=</span><span class="st">"green"</span>,<span class="kw">lty</span><span class="kw">=</span><span class="fl">4</span>,<span class="kw">lwd</span><span class="kw">=</span><span class="fl">2</span>)
@@ -605,8 +643,12 @@ $n.obs
 <span class="kw">lwd</span><span class="kw">=</span><span class="fl">2</span>,<span class="kw">title</span><span class="kw">=</span><span class="st">"Fc"</span>)
 <span class="fu"><a href="https://rdrr.io/r/graphics/title.html">title</a></span>(<span class="kw">main</span><span class="kw">=</span><span class="st">"Waller in function of K"</span>)
 <span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="no">oldpar</span>)</pre></body></html></div>
-<p><strong>Generating table Waller-Duncan</strong></p>
-<div class="sourceCode" id="cb56"><html><body><pre class="r"><span class="no">K</span><span class="kw">&lt;-</span><span class="fl">100</span>
+</div>
+</div>
+<div id="generating-table-waller-duncan" class="section level2">
+<h2 class="hasAnchor">
+<a href="#generating-table-waller-duncan" class="anchor"></a>Generating table Waller-Duncan</h2>
+<div class="sourceCode" id="cb59"><html><body><pre class="r"><span class="no">K</span><span class="kw">&lt;-</span><span class="fl">100</span>
 <span class="no">Fc</span><span class="kw">&lt;-</span><span class="fl">1.2</span>
 <span class="no">q</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fl">6</span>,<span class="fl">20</span>,<span class="fl">1</span>),<span class="fl">30</span>,<span class="fl">40</span>,<span class="fl">100</span>)
 <span class="no">f</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span>(<span class="fl">4</span>,<span class="fl">20</span>,<span class="fl">2</span>),<span class="fl">24</span>,<span class="fl">30</span>)
@@ -622,7 +664,7 @@ $n.obs
 <span class="fu"><a href="https://rdrr.io/r/base/dimnames.html">dimnames</a></span>(<span class="no">W.D</span>)<span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span>(<span class="no">q</span>,<span class="no">f</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span>(<span class="st">"table: Waller Duncan k=100, F=1.2"</span>)</pre></body></html></div>
 <pre><code>table: Waller Duncan k=100, F=1.2</code></pre>
-<div class="sourceCode" id="cb58"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">W.D</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb61"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">W.D</span>)</pre></body></html></div>
 <pre><code>       4    6    8   10   12   14   16   18   20   24   30
 6   2.85 2.87 2.88 2.89 2.89 2.89 2.89 2.88 2.88 2.88 2.88
 7   2.85 2.89 2.92 2.93 2.94 2.94 2.94 2.94 2.94 2.94 2.94
@@ -647,30 +689,33 @@ $n.obs
 <h2 class="hasAnchor">
 <a href="#audpc" class="anchor"></a>AUDPC</h2>
 <p>The area under the disease progress curve (AUDPC), see Figure @ref(fig:f11) calculates the absolute and relative progress of the disease. It is required to measure the disease in percentage terms during several dates, preferably equidistantly.</p>
-<div class="sourceCode" id="cb60"><html><body><pre class="r"><span class="no">days</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">7</span>,<span class="fl">14</span>,<span class="fl">21</span>,<span class="fl">28</span>,<span class="fl">35</span>,<span class="fl">42</span>)
+<div class="sourceCode" id="cb63"><html><body><pre class="r"><span class="no">days</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">7</span>,<span class="fl">14</span>,<span class="fl">21</span>,<span class="fl">28</span>,<span class="fl">35</span>,<span class="fl">42</span>)
 <span class="no">evaluation</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(<span class="kw">E1</span><span class="kw">=</span><span class="fl">10</span>,<span class="kw">E2</span><span class="kw">=</span><span class="fl">40</span>,<span class="kw">E3</span><span class="kw">=</span><span class="fl">50</span>,<span class="kw">E4</span><span class="kw">=</span><span class="fl">70</span>,<span class="kw">E5</span><span class="kw">=</span><span class="fl">80</span>,<span class="kw">E6</span><span class="kw">=</span><span class="fl">90</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">evaluation</span>)</pre></body></html></div>
 <pre><code>  E1 E2 E3 E4 E5 E6
 1 10 40 50 70 80 90</code></pre>
-<div class="sourceCode" id="cb62"><html><body><pre class="r"><span class="no">absolute1</span> <span class="kw">&lt;-</span><span class="fu"><a href="../reference/audpc.html">audpc</a></span>(<span class="no">evaluation</span>,<span class="no">days</span>)
+<div class="sourceCode" id="cb65"><html><body><pre class="r"><span class="no">absolute1</span> <span class="kw">&lt;-</span><span class="fu"><a href="../reference/audpc.html">audpc</a></span>(<span class="no">evaluation</span>,<span class="no">days</span>)
 <span class="no">relative1</span> <span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span>(<span class="fu"><a href="../reference/audpc.html">audpc</a></span>(<span class="no">evaluation</span>,<span class="no">days</span>,<span class="st">"relative"</span>),<span class="fl">2</span>)</pre></body></html></div>
 </div>
 <div id="audps" class="section level2">
 <h2 class="hasAnchor">
 <a href="#audps" class="anchor"></a>AUDPS</h2>
 <p>The Area Under the Disease Progress Stairs (AUDPS), see Figure @ref(fig:f11). A better estimate of disease progress is the area under the disease progress stairs (AUDPS). The AUDPS approach improves the estimation of disease progress by giving a weight closer to optimal to the first and last observations..</p>
-<div class="sourceCode" id="cb63"><html><body><pre class="r"><span class="no">absolute2</span> <span class="kw">&lt;-</span><span class="fu"><a href="../reference/audps.html">audps</a></span>(<span class="no">evaluation</span>,<span class="no">days</span>)
+<div class="sourceCode" id="cb66"><html><body><pre class="r"><span class="no">absolute2</span> <span class="kw">&lt;-</span><span class="fu"><a href="../reference/audps.html">audps</a></span>(<span class="no">evaluation</span>,<span class="no">days</span>)
 <span class="no">relative2</span> <span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span>(<span class="fu"><a href="../reference/audps.html">audps</a></span>(<span class="no">evaluation</span>,<span class="no">days</span>,<span class="st">"relative"</span>),<span class="fl">2</span>)</pre></body></html></div>
-<p><img src="SpecialFunctions_files/figure-html/f11-1.png" width="700"></p>
-
+<div class="figure">
+<img src="SpecialFunctions_files/figure-html/f11-1.png" alt="Area under the curve (AUDPC) and Area under the Stairs (AUDPS)" width="700"><p class="caption">
+Area under the curve (AUDPC) and Area under the Stairs (AUDPS)
+</p>
+</div>
 </div>
 <div id="non-additivity" class="section level2">
 <h2 class="hasAnchor">
 <a href="#non-additivity" class="anchor"></a>Non-Additivity</h2>
 <p>Tukey’s test for non-additivity is used when there are doubts about the additivity veracity of a model. This test confirms such assumption and it is expected to accept the null hypothesis of the non-additive effect of the model.</p>
 <p>For this test, all the experimental data used in the estimation of the linear additive model are required.</p>
-<p>Use the function nonadditivity() of ‘agricolae’. For its demonstration, the experimental data “potato”, of the package ‘agricolae’, will be used. In this case, the model corresponds to the randomized complete block design, where the treatments are the varieties.</p>
-<div class="sourceCode" id="cb64"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">potato</span>)
+<p>Use the function <code><a href="../reference/nonadditivity.html">nonadditivity()</a></code> of <strong>agricolae</strong>. For its demonstration, the experimental data “potato”, of the package <strong>agricolae</strong>, will be used. In this case, the model corresponds to the randomized complete block design, where the treatments are the varieties.</p>
+<div class="sourceCode" id="cb67"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">potato</span>)
 <span class="no">potato</span>[,<span class="fl">1</span>]<span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span>(<span class="no">potato</span>[,<span class="fl">1</span>])
 <span class="no">model</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/lm.html">lm</a></span>(<span class="no">cutting</span> ~ <span class="no">date</span> + <span class="no">variety</span>,<span class="no">potato</span>)
 <span class="no">df</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/df.residual.html">df.residual</a></span>(<span class="no">model</span>)
@@ -696,7 +741,7 @@ Residuals     14 46.330  3.3093               </code></pre>
 <a href="#lateblight" class="anchor"></a>LATEBLIGHT</h2>
 <p>LATEBLIGHT is a mathematical model that simulates the effect of weather, host growth and resistance, and fungicide use on asexual development and growth of Phytophthora infestans on potato foliage, see Figure @ref(fig:f12)</p>
 <p>LATEBLIGHT Version LB2004 was created in October 2004 (Andrade-Piedra et al., 2005a, b and c), based on the C-version written by B.E. Ticknor (‘BET 21191 modification of cbm8d29.c’), reported by Doster et al. (1990) and described in detail by Fry et al. (1991) (This version is referred as LB1990 by Andrade-Piedra et al. [2005a]). The first version of LATEBLIGHT was developed by Bruhn and Fry (1981) and described in detail by Bruhn et al. (1980).</p>
-<div class="sourceCode" id="cb66"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span>(<span class="kw">digits</span><span class="kw">=</span><span class="fl">2</span>)
+<div class="sourceCode" id="cb69"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span>(<span class="kw">digits</span><span class="kw">=</span><span class="fl">2</span>)
 <span class="no">f</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"external/weather.csv"</span>, <span class="kw">package</span><span class="kw">=</span><span class="st">"agricolae"</span>)
 <span class="no">weather</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span>(<span class="no">f</span>,<span class="kw">header</span><span class="kw">=</span><span class="fl">FALSE</span>)
 <span class="no">f</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"external/severity.csv"</span>, <span class="kw">package</span><span class="kw">=</span><span class="st">"agricolae"</span>)
@@ -723,22 +768,25 @@ Residuals     14 46.330  3.3093               </code></pre>
 <span class="no">Cultivar</span> <span class="kw">&lt;-</span> <span class="st">"NICOLA"</span>
 <span class="no">ApplSys</span> <span class="kw">&lt;-</span> <span class="st">"NOFUNGICIDE"</span>
 <span class="no">main</span><span class="kw">&lt;-</span><span class="st">"Cultivar: NICOLA"</span></pre></body></html></div>
-<div class="sourceCode" id="cb67"><html><body><pre class="r"><span class="no">oldpar</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="kw">mar</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">1</span>),<span class="kw">cex</span><span class="kw">=</span><span class="fl">0.7</span>)
+<div class="sourceCode" id="cb70"><html><body><pre class="r"><span class="no">oldpar</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="kw">mar</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">3</span>,<span class="fl">4</span>,<span class="fl">1</span>),<span class="kw">cex</span><span class="kw">=</span><span class="fl">0.7</span>)
 <span class="co">#--------------------------</span>
 <span class="no">model</span><span class="kw">&lt;-</span><span class="fu"><a href="../reference/lateblight.html">lateblight</a></span>(<span class="no">WS</span>, <span class="no">Cultivar</span>,<span class="no">ApplSys</span>, <span class="no">InocDate</span>, <span class="no">LGR</span>,<span class="no">IniSpor</span>,<span class="no">SR</span>,<span class="no">IE</span>,
 <span class="no">LP</span>,<span class="kw">MatTime</span><span class="kw">=</span><span class="st">'LATESEASON'</span>,<span class="no">InMicCol</span>,<span class="kw">main</span><span class="kw">=</span><span class="no">main</span>,<span class="kw">type</span><span class="kw">=</span><span class="st">"l"</span>,<span class="kw">xlim</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">65</span>,<span class="fl">95</span>),<span class="kw">lwd</span><span class="kw">=</span><span class="fl">1.5</span>,
 <span class="kw">xlab</span><span class="kw">=</span><span class="st">"Time (days after emergence)"</span>, <span class="kw">ylab</span><span class="kw">=</span><span class="st">"Severity (Percentage)"</span>)</pre></body></html></div>
-<p><img src="SpecialFunctions_files/figure-html/f12-1.png" width="700"></p>
-<div class="sourceCode" id="cb68"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="no">oldpar</span>)</pre></body></html></div>
-
-<div class="sourceCode" id="cb69"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">model</span>$<span class="no">Gfile</span>)</pre></body></html></div>
+<div class="figure">
+<img src="SpecialFunctions_files/figure-html/f12-1.png" alt="LATESEASON" width="700"><p class="caption">
+LATESEASON
+</p>
+</div>
+<div class="sourceCode" id="cb71"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="no">oldpar</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb72"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">model</span>$<span class="no">Gfile</span>)</pre></body></html></div>
 <pre><code>           dates nday MeanSeverity StDevSeverity MinObs MaxObs
 Eval1 2000-03-25   66          0.1             0    0.1    0.1
 Eval2 2000-04-09   81         20.8            25   -3.9   45.5
 Eval3 2000-04-12   84         57.0            33   24.3   89.7
 Eval4 2000-04-16   88         94.0             8   86.0  102.0
 Eval5 2000-04-22   94         97.0             4   93.0  101.0</code></pre>
-<div class="sourceCode" id="cb71"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">model</span>$<span class="no">Ofile</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb74"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">model</span>$<span class="no">Ofile</span>)</pre></body></html></div>
 <pre><code>'data.frame':   94 obs. of  13 variables:
  $ Date       : Date, format: "2000-01-20" "2000-01-21" ...
  $ nday       : num  1 2 3 4 5 6 7 8 9 10 ...
@@ -753,7 +801,7 @@ Eval5 2000-04-22   94         97.0             4   93.0  101.0</code></pre>
  $ InvrLP     : num  0 0 0 0 0 0 0 0 0 0 ...
  $ BlPr       : num  0 0 0 0 0 0 0 0 0 0 ...
  $ Defol      : num  0 0 0 0 0 0 0 0 0 0 ...</code></pre>
-<div class="sourceCode" id="cb73"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">model</span>$<span class="no">Ofile</span>[,<span class="fl">1</span>:<span class="fl">7</span>])</pre></body></html></div>
+<div class="sourceCode" id="cb76"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">model</span>$<span class="no">Ofile</span>[,<span class="fl">1</span>:<span class="fl">7</span>])</pre></body></html></div>
 <pre><code>        Date nday MicCol SimSeverity   LAI LatPer LesExInc
 1 2000-01-20    1      0           0 0.010      0        0
 2 2000-01-21    2      0           0 0.028      2        0
@@ -762,13 +810,13 @@ Eval5 2000-04-22   94         97.0             4   93.0  101.0</code></pre>
 5 2000-01-24    5      0           0 0.060      2        0
 6 2000-01-25    6      0           0 0.086      2        0</code></pre>
 <p><strong>Repeating graphic</strong></p>
-<div class="sourceCode" id="cb75"><html><body><pre class="r"><span class="no">x</span><span class="kw">&lt;-</span> <span class="no">model</span>$<span class="no">Ofile</span>$<span class="no">nday</span>
+<div class="sourceCode" id="cb78"><html><body><pre class="r"><span class="no">x</span><span class="kw">&lt;-</span> <span class="no">model</span>$<span class="no">Ofile</span>$<span class="no">nday</span>
 <span class="no">y</span><span class="kw">&lt;-</span> <span class="no">model</span>$<span class="no">Ofile</span>$<span class="no">SimSeverity</span>
 <span class="no">w</span><span class="kw">&lt;-</span> <span class="no">model</span>$<span class="no">Gfile</span>$<span class="no">nday</span>
 <span class="no">z</span><span class="kw">&lt;-</span> <span class="no">model</span>$<span class="no">Gfile</span>$<span class="no">MeanSeverity</span>
 <span class="no">Min</span><span class="kw">&lt;-</span><span class="no">model</span>$<span class="no">Gfile</span>$<span class="no">MinObs</span>
 <span class="no">Max</span><span class="kw">&lt;-</span><span class="no">model</span>$<span class="no">Gfile</span>$<span class="no">MaxObs</span></pre></body></html></div>
-<div class="sourceCode" id="cb76"><html><body><pre class="r"><span class="no">oldpar</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="kw">mar</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">2.5</span>,<span class="fl">1</span>,<span class="fl">1</span>),<span class="kw">cex</span><span class="kw">=</span><span class="fl">0.7</span>)
+<div class="sourceCode" id="cb79"><html><body><pre class="r"><span class="no">oldpar</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="kw">mar</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">2.5</span>,<span class="fl">1</span>,<span class="fl">1</span>),<span class="kw">cex</span><span class="kw">=</span><span class="fl">0.7</span>)
 <span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="no">x</span>,<span class="no">y</span>,<span class="kw">type</span><span class="kw">=</span><span class="st">"l"</span>,<span class="kw">xlim</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">65</span>,<span class="fl">95</span>),<span class="kw">lwd</span><span class="kw">=</span><span class="fl">1.5</span>,<span class="kw">xlab</span><span class="kw">=</span><span class="st">"Time (days after emergence)"</span>,
 <span class="kw">ylab</span><span class="kw">=</span><span class="st">"Severity (Percentage)"</span>)
 <span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span>(<span class="no">w</span>,<span class="no">z</span>,<span class="kw">col</span><span class="kw">=</span><span class="st">"red"</span>,<span class="kw">cex</span><span class="kw">=</span><span class="fl">1</span>,<span class="kw">pch</span><span class="kw">=</span><span class="fl">19</span>); <span class="no">npoints</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span>(<span class="no">w</span>)
@@ -776,254 +824,16 @@ Eval5 2000-04-22   94         97.0             4   93.0  101.0</code></pre>
 <span class="fu"><a href="https://rdrr.io/r/graphics/legend.html">legend</a></span>(<span class="st">"topleft"</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Disease progress curves"</span>,<span class="st">"Weather-Severity"</span>),
 <span class="kw">title</span><span class="kw">=</span><span class="st">"Description"</span>,<span class="kw">lty</span><span class="kw">=</span><span class="fl">1</span>,<span class="kw">pch</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">19</span>),<span class="kw">col</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"black"</span>,<span class="st">"red"</span>))
 <span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="no">oldpar</span>)</pre></body></html></div>
-<p>In <strong>agricolae</strong> there are two methods for the study of stability and the AMMI model. These are: a parametric model for a simultaneous selection in yield and stability “SHUKLA’S STABILITY VARIANCE AND KANG’S”,  and a non-parametric method of Haynes, based on the data range.</p>
-</div>
-<div id="parametric-stability" class="section level2">
-<h2 class="hasAnchor">
-<a href="#parametric-stability" class="anchor"></a>Parametric Stability</h2>
-<p>Use the parametric model, function <em>stability.par</em>.</p>
-<p>Prepare a data table where the rows and the columns are the genotypes and the environments, respectively. The data should correspond to yield averages or to another measured variable. Determine the variance of the common error for all the environments and the number of repetitions that was evaluated for every genotype. If the repetitions are different, find a harmonious average that will represent the set. Finally, assign a name to each row that will represent the genotype, . We will consider five environments in the following example:</p>
-<div class="sourceCode" id="cb77"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span>(<span class="kw">digit</span><span class="kw">=</span><span class="fl">2</span>)
-<span class="no">f</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html">system.file</a></span>(<span class="st">"external/dataStb.csv"</span>, <span class="kw">package</span><span class="kw">=</span><span class="st">"agricolae"</span>)
-<span class="no">dataStb</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.csv</a></span>(<span class="no">f</span>)
-<span class="fu"><a href="../reference/stability.par.html">stability.par</a></span>(<span class="no">dataStb</span>, <span class="kw">rep</span><span class="kw">=</span><span class="fl">4</span>, <span class="kw">MSerror</span><span class="kw">=</span><span class="fl">1.8</span>, <span class="kw">alpha</span><span class="kw">=</span><span class="fl">0.1</span>, <span class="kw">main</span><span class="kw">=</span><span class="st">"Genotype"</span>,<span class="kw">console</span><span class="kw">=</span><span class="fl">TRUE</span>)</pre></body></html></div>
-<pre><code>
- INTERACTIVE PROGRAM FOR CALCULATING SHUKLA'S STABILITY VARIANCE AND KANG'S
-                        YIELD - STABILITY (YSi) STATISTICS
- Genotype 
- Environmental index  - covariate 
-
- Analysis of Variance
-
-               Df    Sum Sq  Mean Sq F value Pr(&gt;F)
-Total         203 2964.1716                        
-Genotypes      16  186.9082  11.6818    4.17 &lt;0.001
-Environments   11 2284.0116 207.6374  115.35 &lt;0.001
-Interaction   176  493.2518   2.8026    1.56 &lt;0.001
-Heterogeneity  16   44.8576   2.8036       1  0.459
-Residual      160  448.3942   2.8025    1.56 &lt;0.001
-Pooled Error  576                1.8               
-
- Genotype. Stability statistics
-
-  Mean Sigma-square  . s-square  . Ecovalence
-A  7.4         2.47 ns     2.45 ns       25.8
-B  6.8         1.60 ns     1.43 ns       17.4
-C  7.2         0.57 ns     0.63 ns        7.3
-D  6.8         2.61 ns     2.13 ns       27.2
-E  7.1         1.86 ns     2.05 ns       19.9
-F  6.9         3.58  *     3.95  *       36.5
-G  7.8         3.58  *     3.96  *       36.6
-H  7.9         2.72 ns     2.12 ns       28.2
-I  7.3         4.25 **     3.94  *       43.0
-J  7.1         2.27 ns     2.51 ns       23.9
-K  6.4         2.56 ns     2.55 ns       26.7
-L  6.9         1.56 ns     1.73 ns       16.9
-M  6.8         3.48  *     3.28 ns       35.6
-N  7.5         5.16 **     4.88 **       51.9
-O  7.7         2.38 ns     2.64 ns       24.9
-P  6.4         3.45  *     3.71  *       35.3
-Q  6.2         3.53  *     3.69  *       36.1
-
-
-Signif. codes:  0 '**' 0.01 '*' 0.05 'ns' 1
-
-Simultaneous selection for yield and stability  (++)
-
-  Yield Rank Adj.rank Adjusted Stab.var Stab.rating YSi ...
-A   7.4   13        1       14     2.47           0  14   +
-B   6.8    4       -1        3     1.60           0   3    
-C   7.2   11        1       12     0.57           0  12   +
-D   6.8    4       -1        3     2.61           0   3    
-E   7.1    9        1       10     1.86           0  10   +
-F   6.9    8       -1        7     3.58          -4   3    
-G   7.8   16        2       18     3.58          -4  14   +
-H   7.9   17        2       19     2.72           0  19   +
-I   7.3   12        1       13     4.25          -8   5    
-J   7.1   10        1       11     2.27           0  11   +
-K   6.4    3       -2        1     2.56           0   1    
-L   6.9    7       -1        6     1.56           0   6    
-M   6.8    6       -1        5     3.48          -4   1    
-N   7.5   14        1       15     5.16          -8   7   +
-O   7.7   15        2       17     2.38           0  17   +
-P   6.4    2       -2        0     3.45          -4  -4    
-Q   6.2    1       -3       -2     3.53          -4  -6    
-
- Yield Mean: 7.1
- YS    Mean: 6.8
- LSD (0.05): 0.45
- - - - - - - - - - - -
- +   selected genotype
- ++  Reference: Kang, M. S. 1993. Simultaneous selection for yield
- and stability: Consequences for growers. Agron. J. 85:754-757.</code></pre>
-<p>For 17 genotypes, the identification is made by letters. An error variance of 2 and 4 repetitions is assumed.</p>
-<p><strong>Analysis</strong></p>
-<div class="sourceCode" id="cb79"><html><body><pre class="r"><span class="no">output</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/stability.par.html">stability.par</a></span>(<span class="no">dataStb</span>, <span class="kw">rep</span><span class="kw">=</span><span class="fl">4</span>, <span class="kw">MSerror</span><span class="kw">=</span><span class="fl">2</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span>(<span class="no">output</span>)</pre></body></html></div>
-<pre><code>[1] "analysis"   "statistics" "stability" </code></pre>
-<div class="sourceCode" id="cb81"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">output</span>$<span class="no">stability</span>)</pre></body></html></div>
-<pre><code>  Yield Rank Adj.rank Adjusted Stab.var Stab.rating YSi ...
-A   7.4   13        1       14     2.47           0  14   +
-B   6.8    4       -1        3     1.60           0   3    
-C   7.2   11        1       12     0.57           0  12   +
-D   6.8    4       -1        3     2.61           0   3    
-E   7.1    9        1       10     1.86           0  10   +
-F   6.9    8       -1        7     3.58          -2   5    
-G   7.8   16        2       18     3.58          -2  16   +
-H   7.9   17        2       19     2.72           0  19   +
-I   7.3   12        1       13     4.25          -4   9   +
-J   7.1   10        1       11     2.27           0  11   +
-K   6.4    3       -2        1     2.56           0   1    
-L   6.9    7       -1        6     1.56           0   6    
-M   6.8    6       -1        5     3.48          -2   3    
-N   7.5   14        1       15     5.16          -8   7    
-O   7.7   15        2       17     2.38           0  17   +
-P   6.4    2       -2        0     3.45          -2  -2    
-Q   6.2    1       -2       -1     3.53          -2  -3    </code></pre>
-<p>The selected genotypes are: A, C, E, G, H, I, J and O. These genotypes have a higher yield and a lower variation. to see output$analysis, the interaction is significant.</p>
-<p>If for example there is an environmental index, it can be added as a covariate In the first five locations. For this case, the altitude of the localities is included.</p>
-<div class="sourceCode" id="cb83"><html><body><pre class="r"><span class="no">data5</span><span class="kw">&lt;-</span><span class="no">dataStb</span>[,<span class="fl">1</span>:<span class="fl">5</span>]
-<span class="no">altitude</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1200</span>, <span class="fl">1300</span>, <span class="fl">800</span>, <span class="fl">1600</span>, <span class="fl">2400</span>)
-<span class="no">stability</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/stability.par.html">stability.par</a></span>(<span class="no">data5</span>,<span class="kw">rep</span><span class="kw">=</span><span class="fl">4</span>,<span class="kw">MSerror</span><span class="kw">=</span><span class="fl">2</span>, <span class="kw">cova</span><span class="kw">=</span><span class="fl">TRUE</span>, <span class="kw">name.cov</span><span class="kw">=</span> <span class="st">"altitude"</span>,
-<span class="kw">file.cov</span><span class="kw">=</span><span class="no">altitude</span>)</pre></body></html></div>
-</div>
-<div id="non-parametric-stability" class="section level2">
-<h2 class="hasAnchor">
-<a href="#non-parametric-stability" class="anchor"></a>Non-parametric Stability</h2>
-<p>For non-parametric stability, the function in ‘agricolae’ is stability.nonpar(). The names of the genotypes should be included in the first column, and in the other columns, the response by environments, .</p>
-<p><strong>Analysis</strong></p>
-<div class="sourceCode" id="cb84"><html><body><pre class="r"><span class="no">data</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span>(<span class="kw">name</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/row.names.html">row.names</a></span>(<span class="no">dataStb</span>), <span class="no">dataStb</span>)
-<span class="no">output</span><span class="kw">&lt;-</span><span class="fu"><a href="../reference/stability.nonpar.html">stability.nonpar</a></span>(<span class="no">data</span>, <span class="st">"YIELD"</span>, <span class="kw">ranking</span><span class="kw">=</span><span class="fl">TRUE</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span>(<span class="no">output</span>)</pre></body></html></div>
-<pre><code>[1] "ranking"    "statistics"</code></pre>
-<div class="sourceCode" id="cb86"><html><body><pre class="r"><span class="no">output</span>$<span class="no">statistics</span></pre></body></html></div>
-<pre><code>  MEAN es1 es2  vs1 vs2 chi.ind chi.sum
-1  7.1 5.6  24 0.72  47     8.8      28</code></pre>
-</div>
-<div id="ammi" class="section level2">
-<h2 class="hasAnchor">
-<a href="#ammi" class="anchor"></a>AMMI</h2>
-<p>The model AMMI uses the biplot constructed through the principal components generated by the interaction environment-genotype. If there is such interaction, the percentage of the two principal components would explain more than the 50% of the total variation; in such case, the biplot would be a good alternative to study the interaction environment-genotype, .</p>
-<p>The data for AMMI should come from similar experiments conducted in different environments. Homogeneity of variance of the experimental error, produced in the different environments, is required. The analysis is done by combining the experiments.</p>
-<p>The data can be organized in columns, thus: environment, genotype, repetition, and variable.</p>
-<p>The data can also be the averages of the genotypes in each environment, but it is necessary to consider a harmonious average for the repetitions and a common variance of the error. The data should be organized in columns: environment, genotype, and variable.</p>
-<p>When performing AMMI, this generates the Biplot, Triplot and Influence graphics, see Figure @ref(fig:f6).</p>
-<p>For the application, we consider the data used in the example of parametric stability (study):</p>
-<p><strong>AMMI structure</strong></p>
-<div class="sourceCode" id="cb88"><html><body><pre class="r">  <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">AMMI</span>)</pre></body></html></div>
-<pre><code>function (ENV, GEN, REP, Y, MSE = 0, console = FALSE, PC = FALSE)  </code></pre>
-<p><strong>plot.AMMI structure, plot()</strong></p>
-<div class="sourceCode" id="cb90"><html><body><pre class="r">  <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">plot.AMMI</span>)</pre></body></html></div>
-<p><strong>type: 1=biplot, 2= triplot</strong></p>
-<div class="sourceCode" id="cb91"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">plrv</span>)
-<span class="no">model</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span>(<span class="no">plrv</span>,<span class="fu"><a href="../reference/AMMI.html">AMMI</a></span>(<span class="no">Locality</span>, <span class="no">Genotype</span>, <span class="no">Rep</span>, <span class="no">Yield</span>, <span class="kw">console</span><span class="kw">=</span><span class="fl">FALSE</span>))
-<span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span>(<span class="no">model</span>)</pre></body></html></div>
-<pre><code>[1] "ANOVA"    "genXenv"  "analysis" "means"    "biplot"   "PC"      </code></pre>
-<div class="sourceCode" id="cb93"><html><body><pre class="r"><span class="no">model</span>$<span class="no">ANOVA</span></pre></body></html></div>
-<pre><code>Analysis of Variance Table
-
-Response: Y
-           Df Sum Sq Mean Sq F value  Pr(&gt;F)    
-ENV         5 122284   24457  257.04 9.1e-12 ***
-REP(ENV)   12   1142      95    2.57  0.0029 ** 
-GEN        27  17533     649   17.54 &lt; 2e-16 ***
-ENV:GEN   135  23762     176    4.75 &lt; 2e-16 ***
-Residuals 324  11998      37                    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
-<div class="sourceCode" id="cb95"><html><body><pre class="r"><span class="no">model</span>$<span class="no">analysis</span></pre></body></html></div>
-<pre><code>    percent acum Df Sum.Sq Mean.Sq F.value   Pr.F
-PC1    56.3   56 31  13369     431   11.65 0.0000
-PC2    27.1   83 29   6428     222    5.99 0.0000
-PC3     9.4   93 27   2242      83    2.24 0.0005
-PC4     4.3   97 25   1028      41    1.11 0.3286
-PC5     2.9  100 23    696      30    0.82 0.7059</code></pre>
-<div class="sourceCode" id="cb97"><html><body><pre class="r"><span class="no">pc</span> <span class="kw">&lt;-</span> <span class="no">model</span>$<span class="no">analysis</span>[, <span class="fl">1</span>]
-<span class="no">pc12</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="no">pc</span>[<span class="fl">1</span>:<span class="fl">2</span>])
-<span class="no">pc123</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span>(<span class="no">pc</span>[<span class="fl">1</span>:<span class="fl">3</span>])</pre></body></html></div>
-<div class="sourceCode" id="cb98"><html><body><pre class="r"><span class="no">oldpar</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="kw">cex</span><span class="kw">=</span><span class="fl">0.4</span>,<span class="kw">mar</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">4</span>,<span class="fl">4</span>,<span class="fl">1</span>,<span class="fl">2</span>))
-<span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="no">model</span>,<span class="kw">type</span><span class="kw">=</span><span class="fl">1</span>,<span class="kw">las</span><span class="kw">=</span><span class="fl">1</span>,<span class="kw">xlim</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(-<span class="fl">5</span>,<span class="fl">6</span>))</pre></body></html></div>
-<p><img src="SpecialFunctions_files/figure-html/f6-1.png" width="700"></p>
-<div class="sourceCode" id="cb99"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="no">oldpar</span>)</pre></body></html></div>
-
-<p>In this case, the interaction is significant. The first two components explain 83.4 %; then the biplot can provide information about the interaction genotype-environment. With the triplot, 92.8% would be explained.</p>
-<p><strong>To triplot require klaR package. in R execute:</strong></p>
-<p>plot(model,type=2,las=1)</p>
-</div>
-<div id="ammi-index-and-yield-stability" class="section level2">
-<h2 class="hasAnchor">
-<a href="#ammi-index-and-yield-stability" class="anchor"></a>AMMI index and yield stability</h2>
-<p>Calculate AMMI stability value (ASV) and Yield stability index (YSI), ; .</p>
-<div class="sourceCode" id="cb100"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">plrv</span>)
-<span class="no">model</span><span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span>(<span class="no">plrv</span>,<span class="fu"><a href="../reference/AMMI.html">AMMI</a></span>(<span class="no">Locality</span>, <span class="no">Genotype</span>, <span class="no">Rep</span>, <span class="no">Yield</span>, <span class="kw">console</span><span class="kw">=</span><span class="fl">FALSE</span>))
-<span class="no">index</span><span class="kw">&lt;-</span><span class="fu"><a href="../reference/index.AMMI.html">index.AMMI</a></span>(<span class="no">model</span>)
-<span class="co"># Crops with improved stability according AMMI.</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">index</span>[<span class="fu"><a href="https://rdrr.io/r/base/order.html">order</a></span>(<span class="no">index</span>[,<span class="fl">3</span>]),])</pre></body></html></div>
-<pre><code>         ASV YSI rASV rYSI means
-402.7   0.28  20    1   19    27
-364.21  0.72  12    2   10    34
-506.2   0.75  14    3   11    33
-233.11  1.06  21    4   17    29
-427.7   1.15  12    5    7    36
-104.22  1.46  19    6   13    31
-241.2   1.68  29    7   22    26
-221.19  1.80  34    8   26    23
-317.6   2.19  18    9    9    35
-121.31  2.29  25   10   15    30
-406.12  2.56  23   11   12    33
-314.12  2.92  30   12   18    28
-342.15  2.92  37   13   24    26
-351.26  2.98  22   14    8    36
-Canchan 3.10  35   15   20    27
-450.3   3.14  22   16    6    36
-157.26  3.29  22   17    5    37
-320.16  3.32  39   18   21    26
-255.7   3.33  33   19   14    31
-102.18  3.38  43   20   23    26
-235.6   3.76  25   21    4    39
-Unica   3.84  24   22    2    39
-405.2   3.98  39   23   16    29
-163.9   4.43  51   24   27    21
-141.28  4.47  26   25    1    40
-346.2   5.18  51   26   25    24
-319.20  6.72  30   27    3    39
-Desiree 7.78  56   28   28    16</code></pre>
-<div class="sourceCode" id="cb102"><html><body><pre class="r"><span class="co"># Crops with better response and improved stability according AMMI.</span>
-<span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">index</span>[<span class="fu"><a href="https://rdrr.io/r/base/order.html">order</a></span>(<span class="no">index</span>[,<span class="fl">4</span>]),])</pre></body></html></div>
-<pre><code>         ASV YSI rASV rYSI means
-141.28  4.47  26   25    1    40
-Unica   3.84  24   22    2    39
-319.20  6.72  30   27    3    39
-235.6   3.76  25   21    4    39
-157.26  3.29  22   17    5    37
-450.3   3.14  22   16    6    36
-427.7   1.15  12    5    7    36
-351.26  2.98  22   14    8    36
-317.6   2.19  18    9    9    35
-364.21  0.72  12    2   10    34
-506.2   0.75  14    3   11    33
-406.12  2.56  23   11   12    33
-104.22  1.46  19    6   13    31
-255.7   3.33  33   19   14    31
-121.31  2.29  25   10   15    30
-405.2   3.98  39   23   16    29
-233.11  1.06  21    4   17    29
-314.12  2.92  30   12   18    28
-402.7   0.28  20    1   19    27
-Canchan 3.10  35   15   20    27
-320.16  3.32  39   18   21    26
-241.2   1.68  29    7   22    26
-102.18  3.38  43   20   23    26
-342.15  2.92  37   13   24    26
-346.2   5.18  51   26   25    24
-221.19  1.80  34    8   26    23
-163.9   4.43  51   24   27    21
-Desiree 7.78  56   28   28    16</code></pre>
 </div>
 </div>
-<div id="references" class="section level1">
+<div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h1>
+<div id="refs" class="references">
+<div id="ref-SingChau:1979">
+<p>Singh, R. K., and Chaudhary, B. D. (1979). <em>Biometrical Methods in Quantitative Genetic Analysis</em>. Kalyani Publishers.</p>
+</div>
+</div>
 </div>
   </div>
 

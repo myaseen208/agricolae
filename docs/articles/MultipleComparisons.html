@@ -69,6 +69,10 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="../articles/Intro_agricolae.html">Introduction to agricolae</a>
+    </li>
+    <li class="divider">
+    <li>
       <a href="../articles/Introduction.html">Introduction to agricolae</a>
     </li>
     <li>
@@ -142,7 +146,7 @@
                         <h4 class="author">Felipe de Mendiburu<sup>1</sup>, Muhammad Yaseen<sup>2</sup>
 </h4>
             
-            <h4 class="date">2020-04-27</h4>
+            <h4 class="date">2020-05-01</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/myaseen208/agricolae/blob/master/vignettes/MultipleComparisons.Rmd"><code>vignettes/MultipleComparisons.Rmd</code></a></small>
       <div class="hidden name"><code>MultipleComparisons.Rmd</code></div>
@@ -166,7 +170,7 @@
 <div id="multiple-comparisons" class="section level1">
 <h1 class="hasAnchor">
 <a href="#multiple-comparisons" class="anchor"></a>Multiple Comparisons</h1>
-<p>For the analyses, the following functions of <strong>agricolae</strong> are used: <code>LSD.test</code>, <code>HSD.test</code>, <code>duncan.test</code>, <code>scheffe.test</code>, <code>waller.test</code>, <code>SNK.test</code>, <code>REGW.test</code>, ;  and <code>durbin.test</code>, <code>kruskal</code>, <code>friedman</code>, <code>waerden.test</code> and <code>Median.test</code>, .</p>
+<p>For the analyses, the following functions of <strong>agricolae</strong> are used: <code>LSD.test</code>, <code>HSD.test</code>, <code>duncan.test</code>, <code>scheffe.test</code>, <code>waller.test</code>, <code>SNK.test</code>, <code>REGW.test</code> <span class="citation">(Hsu, <a href="#ref-Hsu:1996" role="doc-biblioref">1996</a>; Steel et al., <a href="#ref-SteeTorrDick:1997" role="doc-biblioref">1997</a>)</span> and <code>durbin.test</code>, <code>kruskal</code>, <code>friedman</code>, <code>waerden.test</code> and <code>Median.test</code> <span class="citation">(Conover, <a href="#ref-Cono:1999" role="doc-biblioref">1999</a>)</span>.</p>
 <p>For every statistical analysis, the data should be organized in columns. For the demonstration, the <strong>agricolae</strong> database will be used.</p>
 <p>The <code>sweetpotato</code> data correspond to a completely random experiment in field with plots of 50 sweet potato plants, subjected to the virus effect and to a control without virus (See the reference manual of the package).</p>
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">sweetpotato</span>)
@@ -181,7 +185,7 @@
 <div id="the-least-significant-difference-lsd" class="section level3">
 <h3 class="hasAnchor">
 <a href="#the-least-significant-difference-lsd" class="anchor"></a>The Least Significant Difference (LSD)</h3>
-<p>It includes the multiple comparison through the method of the minimum significant difference (Least Significant Difference), .</p>
+<p>It includes the multiple comparison through the method of the minimum significant difference (Least Significant Difference), <span class="citation">(Steel et al., <a href="#ref-SteeTorrDick:1997" role="doc-biblioref">1997</a>)</span>.</p>
 <div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="co"># comparison &lt;- LSD.test(yield,virus,df,MSerror)</span>
 <span class="fu"><a href="../reference/LSD.test.html">LSD.test</a></span>(<span class="no">model</span>, <span class="st">"virus"</span>,<span class="kw">console</span><span class="kw">=</span><span class="fl">TRUE</span>)</pre></body></html></div>
 <pre><code>
@@ -278,7 +282,7 @@ attr(,"class")
 <div id="holm-hommel-hochberg-bonferroni-bh-by-fdr" class="section level3">
 <h3 class="hasAnchor">
 <a href="#holm-hommel-hochberg-bonferroni-bh-by-fdr" class="anchor"></a>holm, hommel, hochberg, bonferroni, BH, BY, fdr</h3>
-<p>With the function <code>LSD.test</code> we can make adjustments to the probabilities found, as for example the adjustment by Bonferroni, holm and other options see Adjust P-values for Multiple Comparisons, function p.adjust(stats), .</p>
+<p>With the function <code>LSD.test</code> we can make adjustments to the probabilities found, as for example the adjustment by Bonferroni, holm and other options see Adjust P-values for Multiple Comparisons, function ‘p.adjust(stats)’ <span class="citation">(R Core Team, <a href="#ref-R2020" role="doc-biblioref">2020</a>)</span>.</p>
 <div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="fu"><a href="../reference/LSD.test.html">LSD.test</a></span>(<span class="no">model</span>, <span class="st">"virus"</span>, <span class="kw">group</span><span class="kw">=</span><span class="fl">FALSE</span>, <span class="kw">p.adj</span><span class="kw">=</span> <span class="st">"bon"</span>,<span class="kw">console</span><span class="kw">=</span><span class="fl">TRUE</span>)</pre></body></html></div>
 <pre><code>
 Study: model ~ "virus"
@@ -330,7 +334,7 @@ ff - oo      -0.57 0.8873        </code></pre>
 <div id="duncans-new-multiple-range-test" class="section level3">
 <h3 class="hasAnchor">
 <a href="#duncans-new-multiple-range-test" class="anchor"></a>Duncan’s New Multiple-Range Test</h3>
-<p>It corresponds to the Duncan’s Test, .</p>
+<p>It corresponds to the Duncan’s Test <span class="citation">(Steel et al., <a href="#ref-SteeTorrDick:1997" role="doc-biblioref">1997</a>)</span>.</p>
 <div class="sourceCode" id="cb18"><html><body><pre class="r"><span class="fu"><a href="../reference/duncan.test.html">duncan.test</a></span>(<span class="no">model</span>, <span class="st">"virus"</span>,<span class="kw">console</span><span class="kw">=</span><span class="fl">TRUE</span>)</pre></body></html></div>
 <pre><code>
 Study: model ~ "virus"
@@ -365,7 +369,7 @@ fc    13      c</code></pre>
 <div id="student-newman-keuls" class="section level3">
 <h3 class="hasAnchor">
 <a href="#student-newman-keuls" class="anchor"></a>Student-Newman-Keuls</h3>
-<p>Student, Newman and Keuls helped to improve the Newman-Keuls test of 1939, which was known as the Keuls method, .</p>
+<p>Student, Newman and Keuls helped to improve the Newman-Keuls test of 1939, which was known as the Keuls method <span class="citation">(Steel et al., <a href="#ref-SteeTorrDick:1997" role="doc-biblioref">1997</a>)</span>.</p>
 <div class="sourceCode" id="cb20"><html><body><pre class="r"><span class="co"># SNK.test(model, "virus", alpha=0.05,console=TRUE)</span>
 <span class="fu"><a href="../reference/SNK.test.html">SNK.test</a></span>(<span class="no">model</span>, <span class="st">"virus"</span>, <span class="kw">group</span><span class="kw">=</span><span class="fl">FALSE</span>,<span class="kw">console</span><span class="kw">=</span><span class="fl">TRUE</span>)</pre></body></html></div>
 <pre><code>
@@ -397,7 +401,7 @@ ff - oo      -0.57 0.8873          -9.5   8.4</code></pre>
 <div id="ryan-einot-and-gabriel-and-welsch" class="section level3">
 <h3 class="hasAnchor">
 <a href="#ryan-einot-and-gabriel-and-welsch" class="anchor"></a>Ryan, Einot and Gabriel and Welsch</h3>
-<p>Multiple range tests for all pairwise comparisons, to obtain a confident inequalities multiple range tests, .</p>
+<p>Multiple range tests for all pairwise comparisons, to obtain a confident inequalities multiple range tests <span class="citation">(Hsu, <a href="#ref-Hsu:1996" role="doc-biblioref">1996</a>)</span>.</p>
 <div class="sourceCode" id="cb22"><html><body><pre class="r"><span class="co"># REGW.test(model, "virus", alpha=0.05,console=TRUE)</span>
 <span class="fu"><a href="../reference/REGW.test.html">REGW.test</a></span>(<span class="no">model</span>, <span class="st">"virus"</span>, <span class="kw">group</span><span class="kw">=</span><span class="fl">FALSE</span>,<span class="kw">console</span><span class="kw">=</span><span class="fl">TRUE</span>)</pre></body></html></div>
 <pre><code>
@@ -429,7 +433,7 @@ ff - oo      -0.57 0.9873         -11.19  10.06</code></pre>
 <div id="tukeys-w-procedure-hsd" class="section level3">
 <h3 class="hasAnchor">
 <a href="#tukeys-w-procedure-hsd" class="anchor"></a>Tukey’s W Procedure (HSD)</h3>
-<p>This studentized range test, created by Tukey in 1953, is known as the Tukey’s HSD (Honestly Significant Differences), .</p>
+<p>This studentized range test, created by Tukey in 1953, is known as the Tukey’s HSD (Honestly Significant Differences) <span class="citation">(Steel et al., <a href="#ref-SteeTorrDick:1997" role="doc-biblioref">1997</a>)</span>.</p>
 <div class="sourceCode" id="cb24"><html><body><pre class="r"><span class="no">outHSD</span><span class="kw">&lt;-</span> <span class="fu"><a href="../reference/HSD.test.html">HSD.test</a></span>(<span class="no">model</span>, <span class="st">"virus"</span>,<span class="kw">console</span><span class="kw">=</span><span class="fl">TRUE</span>)</pre></body></html></div>
 <pre><code>
 Study: model ~ "virus"
@@ -531,7 +535,7 @@ fc    13      b</code></pre>
 <div id="waller-duncans-bayesian-k-ratio-t-test" class="section level3">
 <h3 class="hasAnchor">
 <a href="#waller-duncans-bayesian-k-ratio-t-test" class="anchor"></a>Waller-Duncan’s Bayesian K-Ratio T-Test</h3>
-<p>Duncan continued the multiple comparison procedures, introducing the criterion of minimizing both experimental errors; for this, he used the Bayes’ theorem, obtaining one new test called Waller-Duncan, ; .</p>
+<p>Duncan continued the multiple comparison procedures, introducing the criterion of minimizing both experimental errors; for this, he used the Bayes’ theorem, obtaining one new test called Waller-Duncan <span class="citation">(Waller and Duncan, <a href="#ref-WallDunc:1969" role="doc-biblioref">1969</a>; Steel et al., <a href="#ref-SteeTorrDick:1997" role="doc-biblioref">1997</a>)</span>.</p>
 <div class="sourceCode" id="cb36"><html><body><pre class="r"><span class="co"># variance analysis:</span>
 <span class="fu"><a href="https://rdrr.io/r/stats/anova.html">anova</a></span>(<span class="no">model</span>)</pre></body></html></div>
 <pre><code>Analysis of Variance Table
@@ -594,7 +598,7 @@ ff - oo      -0.57       FALSE</code></pre>
 <div id="scheffes-test" class="section level2">
 <h2 class="hasAnchor">
 <a href="#scheffes-test" class="anchor"></a>Scheffe’s Test</h2>
-<p>This method, created by Scheffe in 1959, is very general for all the possible contrasts and their confidence intervals. The confidence intervals for the averages are very broad, resulting in a very conservative test for the comparison between treatment averages, .</p>
+<p>This method, created by Scheffe in 1959, is very general for all the possible contrasts and their confidence intervals. The confidence intervals for the averages are very broad, resulting in a very conservative test for the comparison between treatment averages <span class="citation">(Steel et al., <a href="#ref-SteeTorrDick:1997" role="doc-biblioref">1997</a>)</span>.</p>
 <div class="sourceCode" id="cb47"><html><body><pre class="r"><span class="co"># analysis of variance: </span>
 <span class="fu"><a href="../reference/scheffe.test.html">scheffe.test</a></span>(<span class="no">model</span>,<span class="st">"virus"</span>, <span class="kw">group</span><span class="kw">=</span><span class="fl">TRUE</span>,<span class="kw">console</span><span class="kw">=</span><span class="fl">TRUE</span>,
 <span class="kw">main</span><span class="kw">=</span><span class="st">"Yield of sweetpotato\nDealt with different virus"</span>)</pre></body></html></div>
@@ -744,7 +748,7 @@ c1:n1   7.5      f</code></pre>
 <div id="analysis-of-balanced-incomplete-blocks" class="section level2">
 <h2 class="hasAnchor">
 <a href="#analysis-of-balanced-incomplete-blocks" class="anchor"></a>Analysis of Balanced Incomplete Blocks</h2>
-<p>This analysis can come from balanced or partially balanced designs. The function <code>BIB.test</code> is for balanced designs, and <code>BIB.test</code>, for partially balanced designs. In the following example, the <strong>agricolae</strong> data will be used, .</p>
+<p>This analysis can come from balanced or partially balanced designs. The function <code>BIB.test</code> is for balanced designs, and <code>BIB.test</code>, for partially balanced designs. In the following example, the <strong>agricolae</strong> data will be used <span class="citation">(Joshi, <a href="#ref-Josh:1987" role="doc-biblioref">1987</a>)</span>.</p>
 <div class="sourceCode" id="cb60"><html><body><pre class="r"><span class="co"># Example linear estimation and design of experiments. (Joshi)</span>
 <span class="co"># Institute of Social Sciences Agra, India</span>
 <span class="co"># 6 varieties of wheat in 10 blocks of 3 plots each.</span>
@@ -910,7 +914,7 @@ Comparison between treatments means
 <div id="partially-balanced-incomplete-blocks" class="section level2">
 <h2 class="hasAnchor">
 <a href="#partially-balanced-incomplete-blocks" class="anchor"></a>Partially Balanced Incomplete Blocks</h2>
-<p>The function <code>PBIB.test</code> , can be used for the lattice and alpha designs.</p>
+<p>The function <code>PBIB.test</code> <span class="citation">(Joshi, <a href="#ref-Josh:1987" role="doc-biblioref">1987</a>)</span>, can be used for the lattice and alpha designs.</p>
 <p>Consider the following case: Construct the alpha design with 30 treatments, 2 repetitions, and a block size equal to 3.</p>
 <div class="sourceCode" id="cb69"><html><body><pre class="r"><span class="co"># alpha design </span>
 <span class="no">Genotype</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="st">"geno"</span>,<span class="fl">1</span>:<span class="fl">30</span>,<span class="kw">sep</span><span class="kw">=</span><span class="st">""</span>)
@@ -1217,9 +1221,29 @@ A - h       -8.8   0.21
 A - i        7.4   0.29     </code></pre>
 </div>
 </div>
-<div id="references" class="section level1">
+<div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h1>
+<div id="refs" class="references">
+<div id="ref-Cono:1999">
+<p>Conover, W. J. (1999). Practical Nonparametric Statistics.</p>
+</div>
+<div id="ref-Hsu:1996">
+<p>Hsu, J. C. (1996). <em>Multiple Comparisons: Theory and Methods</em>. Chapman; Hall/CRC.</p>
+</div>
+<div id="ref-Josh:1987">
+<p>Joshi, D. D. (1987). <em>Linear Estimation and Design of Experiments</em>. Wiley Eastern Limited, New Delhi, India.</p>
+</div>
+<div id="ref-R2020">
+<p>R Core Team (2020). <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing Available at: <a href="https://www.R-project.org/">https://www.R-project.org/</a>.</p>
+</div>
+<div id="ref-SteeTorrDick:1997">
+<p>Steel, Torry, and Dickey (1997). <em>Principles and Procedures of Statistic a Biometrical Approach</em>. The McGraw Hill Companies, Inc.</p>
+</div>
+<div id="ref-WallDunc:1969">
+<p>Waller, R. A., and Duncan, D. B. (1969). A Bayes Rule for the Symmetric Multiple Comparisons Problem. <em>Journal of the American Statistical Association</em> 64, 1484–1503.</p>
+</div>
+</div>
 </div>
   </div>
 

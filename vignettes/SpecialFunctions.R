@@ -12,12 +12,11 @@ switch(out_type,
     html = {cat("<p>1. Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.</p>
     
 <p>2. Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.</p>")},
-    latex = cat("\\begin{center}
+    latex = cat("
 1. Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.
 
 2. Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.
-
-\\end{center}" )
+" )
 )
 
 ## ----include = FALSE---------------------------------------------------
@@ -28,14 +27,14 @@ knitr::opts_chunk$set(
   )
 library(agricolae)
 
-## ----f7, fig=TRUE,width=5, height=2------------------------------------
+## ----f7, fig=TRUE, fig.cap = "Dendrogram, production by `consensus`", width=5, height=2----
 oldpar<-par(cex=0.6,mar=c(3,3,2,1))
 data(pamCIP)
 rownames(pamCIP)<-substr(rownames(pamCIP),1,6)
 output<-consensus(pamCIP,distance="binary", method="complete", nboot=5)
 par(oldpar)
 
-## ----f8, fig=TRUE,width=5, height=2------------------------------------
+## ----f8, fig=TRUE, fig.cap = "Dendrogram, production by `hcut()`", width=5, height=2----
 oldpar<-par(cex=0.6,mar=c(3,3,1.5,1))
 out1<- hcut(output,h=0.4,group=8,type="t",edgePar = list(lty=1:2, col=colors()[c(42,84)]),
 main="group 8" ,col.text="blue",cex.text=1,las=1)
@@ -49,11 +48,11 @@ dend <- as.dendrogram(output$dendrogram)
 data <- output$table.dend
 head(output$table.dend)
 
-## ----eval=FALSE--------------------------------------------------------
-#  oldpar<-par(mar=c(3,3,1,1),cex=0.6)
-#  plot(dend,type="r",edgePar = list(lty=1:2, col=colors()[c(42,84)]) ,las=1)
-#  text(data[,3],data[,4],data[,5],col="blue",cex=1)
-#  par(oldpar)
+## ----eval=TRUE---------------------------------------------------------
+oldpar<-par(mar=c(3,3,1,1),cex=0.6)
+plot(dend,type="r",edgePar = list(lty=1:2, col=colors()[c(42,84)]) ,las=1)
+text(data[,3],data[,4],data[,5],col="blue",cex=1)
+par(oldpar)
 
 ## ----------------------------------------------------------------------
 data(soil)
@@ -61,7 +60,7 @@ data(soil)
 simulated <- montecarlo(soil$pH,1000)
 h<-graph.freq(simulated,nclass=7,plot=FALSE)
 
-## ----f9, fig=TRUE, width=4, height=1.5---------------------------------
+## ----f9, fig=TRUE, fig.cap = "Distribution of the simulated and the original data", width=4, height=1.5----
 oldpar<-par(mar=c(2,0,2,1),cex=0.6)
 plot(density(soil$pH),axes=FALSE,main="pH density of the soil\ncon Ralstonia",xlab="",lwd=4)
 lines(density(simulated), col="blue", lty=4,lwd=4)
@@ -104,6 +103,18 @@ output<-path.analysis(corr.x,corr.y)
 ## ----------------------------------------------------------------------
 output
 
+## ----eval=FALSE--------------------------------------------------------
+#       Replication   Female   Male   v2
+#       109           1     LT-8  TS-15 2.65s
+#       110           1     LT-8 TPS-13 2.26
+#       ...
+#       131           1 Achirana TPS-13 3.55
+#       132           1 Achirana TPS-67 3.05
+#       ...
+#       140           1 Achirana   <NA> 3.35
+#       ...
+#       215           3     <NA> TPS-67 2.91
+
 ## ----------------------------------------------------------------------
 rm(list=ls())
 options(digits = 2)
@@ -114,7 +125,7 @@ site2<-subset(site2[,c(2,5,6,8)],site2[,4]!="Control")
 output1<-with(site2,lineXtester(Replication, Female, Male, v2))
 options(digits = 7)
 
-## ----f10, fig=TRUE, width=4, height=2----------------------------------
+## ----f10, fig=TRUE, fig.cap = "Adjustment curve for the optimal size of plot", width=4, height=2----
 oldpar<-par(mar=c(3,3,4,1),cex=0.7)
 data(rice)
 table<-index.smith(rice, col="blue",
@@ -141,6 +152,11 @@ with(soil,correlation(pH,soil[,3:4],method="pearson"))
 ## ----------------------------------------------------------------------
 data(RioChillon)
 with(RioChillon$babies,tapply.stat(yield,farmer,function(x) max(x)-min(x)))
+
+## ----eval = FALSE------------------------------------------------------
+#  tapply.stat(A[,5:7], A[,1:3],mean)
+#  tapply.stat(A[,5:7], A[,1:3],function(x) mean(x,na.rm=TRUE))
+#  tapply.stat(A[,c(7,6)], A[,1:2],function(x) sd(x)*100/mean(x))
 
 ## ----------------------------------------------------------------------
 data(sweetpotato)
@@ -206,7 +222,7 @@ relative1 <-round(audpc(evaluation,days,"relative"),2)
 absolute2 <-audps(evaluation,days)
 relative2 <-round(audps(evaluation,days,"relative"),2)
 
-## ----f11, echo=FALSE, fig=TRUE, width=8, height=2----------------------
+## ----f11, echo=FALSE, fig=TRUE, fig.cap = "Area under the curve (AUDPC) and Area under the Stairs (AUDPS)", width=8, height=2----
 oldpar<-par(mfrow=c(1,2),mar=c(3,3,1,1),cex=0.7)
 plot(days, evaluation,type="h",ylim=c(0,100),axes=FALSE,col= colors()[42],xlab="Days", ylab="Evaluation")
 lines(days,evaluation,col= colors()[42])
@@ -264,7 +280,7 @@ Cultivar <- "NICOLA"
 ApplSys <- "NOFUNGICIDE"
 main<-"Cultivar: NICOLA"
 
-## ----f12, fig=TRUE, width=4.5, height=2.5------------------------------
+## ----f12, fig=TRUE, fig.cap = "LATESEASON", width=4.5, height=2.5------
 oldpar<-par(mar=c(3,3,4,1),cex=0.7)
 #--------------------------
 model<-lateblight(WS, Cultivar,ApplSys, InocDate, LGR,IniSpor,SR,IE, 
@@ -294,57 +310,4 @@ Max<-model$Gfile$MaxObs
 #  legend("topleft",c("Disease progress curves","Weather-Severity"),
 #  title="Description",lty=1,pch=c(3,19),col=c("black","red"))
 #  par(oldpar)
-
-## ----------------------------------------------------------------------
-options(digit=2)
-f <- system.file("external/dataStb.csv", package="agricolae")
-dataStb<-read.csv(f)
-stability.par(dataStb, rep=4, MSerror=1.8, alpha=0.1, main="Genotype",console=TRUE)
-
-## ----------------------------------------------------------------------
-output <- stability.par(dataStb, rep=4, MSerror=2)
-names(output)
-print(output$stability)
-
-## ----------------------------------------------------------------------
-data5<-dataStb[,1:5]
-altitude<-c(1200, 1300, 800, 1600, 2400)
-stability <- stability.par(data5,rep=4,MSerror=2, cova=TRUE, name.cov= "altitude",
-file.cov=altitude)
-
-## ----------------------------------------------------------------------
-data <- data.frame(name=row.names(dataStb), dataStb)
-output<-stability.nonpar(data, "YIELD", ranking=TRUE)
-names(output)
-output$statistics
-
-## ----------------------------------------------------------------------
-  str(AMMI)
-
-## ----eval=FALSE--------------------------------------------------------
-#    str(plot.AMMI)
-
-## ----------------------------------------------------------------------
-data(plrv)
-model<-with(plrv,AMMI(Locality, Genotype, Rep, Yield, console=FALSE))
-names(model)
-model$ANOVA
-model$analysis
-pc <- model$analysis[, 1]
-pc12<-sum(pc[1:2])
-pc123<-sum(pc[1:3])
-
-## ----f6, fig=TRUE,width=3, height=2,results="hide"---------------------
-oldpar<-par(cex=0.4,mar=c(4,4,1,2))
-plot(model,type=1,las=1,xlim=c(-5,6))
-par(oldpar)
-
-## ----------------------------------------------------------------------
-data(plrv)
-model<- with(plrv,AMMI(Locality, Genotype, Rep, Yield, console=FALSE))
-index<-index.AMMI(model)
-# Crops with improved stability according AMMI.
-print(index[order(index[,3]),])
-# Crops with better response and improved stability according AMMI.
-print(index[order(index[,4]),])
 

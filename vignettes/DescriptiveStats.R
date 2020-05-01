@@ -12,12 +12,11 @@ switch(out_type,
     html = {cat("<p>1. Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.</p>
     
 <p>2. Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.</p>")},
-    latex = cat("\\begin{center}
+    latex = cat("
 1. Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.
 
 2. Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.
-
-\\end{center}" )
+" )
 )
 
 ## ----include = FALSE---------------------------------------------------

@@ -1,3 +1,11 @@
+# agricolae 1.4.0
+## New Features 
+
+* Revised and updated package documentation
+* Revised and updated the vignettes
+* Developed package website
+
+
 # agricolae 1-3.2 (January 18, 2020)
 ## New Features 
 

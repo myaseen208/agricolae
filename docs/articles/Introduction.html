@@ -69,6 +69,10 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="../articles/Intro_agricolae.html">Introduction to agricolae</a>
+    </li>
+    <li class="divider">
+    <li>
       <a href="../articles/Introduction.html">Introduction to agricolae</a>
     </li>
     <li>
@@ -142,7 +146,7 @@
                         <h4 class="author">Felipe de Mendiburu<sup>1</sup>, Muhammad Yaseen<sup>2</sup>
 </h4>
             
-            <h4 class="date">2020-04-27</h4>
+            <h4 class="date">2020-05-01</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/myaseen208/agricolae/blob/master/vignettes/Introduction.Rmd"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="hidden name"><code>Introduction.Rmd</code></div>
@@ -231,13 +235,12 @@
  [5] "design.cyclic"  "design.dau"     "design.graeco"  "design.lattice"
  [9] "design.lsd"     "design.rcbd"    "design.split"   "design.strip"  
 [13] "design.youden" </code></pre>
-<div class="verbatim">
-<p>For the use of symbols that do not appear in the keyboard in Spanish, such as:</p>
-<p>~, [, ], &amp;, ^, |. &lt;, &gt;, {, }, % or others, use the table ASCII code.</p>
-</div>
-<div class="sourceCode" id="cb6"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">agricolae</span>) <span class="co"># Load the package to the memory: </span></pre></body></html></div>
+<div class="sourceCode" id="cb6"><html><body><pre class="r">For the use of symbols that do not appear in the keyboard in Spanish, such as:
+
+~, [, ], &amp;, ^, |. &lt;, &gt;, {, }, \% or others, use the table ASCII code.</pre></body></html></div>
+<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">agricolae</span>) <span class="co"># Load the package to the memory: </span></pre></body></html></div>
 <p>In order to continue with the command line, do not forget to close the open windows with any R order. For help:</p>
-<div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span>(<span class="no">graph.freq</span>)
+<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/help.html">help</a></span>(<span class="no">graph.freq</span>)
 ? (<span class="no">graph.freq</span>)
 <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">normal.freq</span>)
 <span class="fu"><a href="https://rdrr.io/r/utils/example.html">example</a></span>(<span class="no">join.freq</span>)</pre></body></html></div>
@@ -246,7 +249,7 @@
 <h2 class="hasAnchor">
 <a href="#data-set-in-agricolae" class="anchor"></a>Data set in <strong>agricolae </strong>
 </h2>
-<div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="no">A</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span>(<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="kw">package</span><span class="kw">=</span><span class="st">"agricolae"</span>)$<span class="no">results</span>[,<span class="fl">3</span>:<span class="fl">4</span>])
+<div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="no">A</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html">as.data.frame</a></span>(<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="kw">package</span><span class="kw">=</span><span class="st">"agricolae"</span>)$<span class="no">results</span>[,<span class="fl">3</span>:<span class="fl">4</span>])
 <span class="no">A</span>[,<span class="fl">2</span>]<span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/substr.html">substr</a></span>(<span class="no">A</span>[,<span class="fl">2</span>],<span class="fl">1</span>,<span class="fl">35</span>),<span class="st">".."</span>,<span class="kw">sep</span><span class="kw">=</span><span class="st">"."</span>)
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">A</span>)</pre></body></html></div>
 <pre><code>            Item                                  Title

@@ -3,14 +3,12 @@ title: "Multiple Comparisons with **agricolae**"
 author: "Felipe de Mendiburu^1^, Muhammad Yaseen^2^"
 date: "`r Sys.Date()`"
 output:
-  bookdown::html_document2:
+  bookdown::pdf_document2:
+    dev: cairo_pdf
     fig_caption: yes
     number_sections: yes
     toc: yes
-  pdf_document:
-    toc: yes
-  bookdown::pdf_document2:
-    dev: cairo_pdf
+  bookdown::html_document2:
     fig_caption: yes
     number_sections: yes
     toc: yes
@@ -60,12 +58,11 @@ switch(out_type,
     html = {cat("<p>1. Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.</p>
     
 <p>2. Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.</p>")},
-    latex = cat("\\begin{center}
+    latex = cat("
 1. Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.
 
 2. Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.
-
-\\end{center}" )
+" )
 )
 ```
 
@@ -89,7 +86,7 @@ library(agricolae)
 
 # Multiple Comparisons
 
-For the analyses, the following functions of **agricolae** are used: `LSD.test`,  `HSD.test`, `duncan.test`, `scheffe.test`,  `waller.test`, `SNK.test`, `REGW.test`, \citet{SteeTorrDick:1997}; \citet{Hsu:1996} and  `durbin.test`, `kruskal`, `friedman`,  `waerden.test` and `Median.test`, \citet{Cono:1999}.
+For the analyses, the following functions of **agricolae** are used: `LSD.test`,  `HSD.test`, `duncan.test`, `scheffe.test`,  `waller.test`, `SNK.test`, `REGW.test` [@SteeTorrDick:1997; @Hsu:1996] and  `durbin.test`, `kruskal`, `friedman`,  `waerden.test` and `Median.test` [@Cono:1999].
 
 For every statistical analysis, the data should be organized in columns. For the demonstration, the **agricolae**  database will be used.
 
@@ -111,7 +108,7 @@ MSerror<-deviance(model)/df
 
 ### The Least Significant Difference (LSD)
 
-It includes the multiple comparison through the method of the minimum significant difference (Least Significant Difference), \citet{SteeTorrDick:1997}.
+It includes the multiple comparison through the method of the minimum significant difference (Least Significant Difference), [@SteeTorrDick:1997].
 
 ```{r }
 # comparison <- LSD.test(yield,virus,df,MSerror)
@@ -135,7 +132,7 @@ print(outLSD)
 ```
 
 ### holm, hommel, hochberg, bonferroni, BH, BY, fdr
-With the function `LSD.test` we can make adjustments to the probabilities found, as for example the adjustment by Bonferroni, holm and other options see Adjust P-values for Multiple Comparisons, function p.adjust(stats), \citet{Rcore:2018}.
+With the function `LSD.test` we can make adjustments to the probabilities found, as for example the adjustment by Bonferroni, holm and other options see Adjust P-values for Multiple Comparisons, function 'p.adjust(stats)' [@R2020].
 
 ```{r }
 LSD.test(model, "virus", group=FALSE, p.adj= "bon",console=TRUE)
@@ -151,7 +148,7 @@ For **Duncan**, use the function `duncan.test`; for **Student-Newman-Keuls**, th
 
 ### Duncan's New Multiple-Range Test
 
-It corresponds to the Duncan's Test, \citet{SteeTorrDick:1997}.
+It corresponds to the Duncan's Test [@SteeTorrDick:1997].
 
 ```{r }
 duncan.test(model, "virus",console=TRUE)
@@ -159,7 +156,7 @@ duncan.test(model, "virus",console=TRUE)
 
 ### Student-Newman-Keuls
 
-Student, Newman and Keuls helped to improve the Newman-Keuls test of 1939, which was known as the Keuls method,  \citet{SteeTorrDick:1997}.
+Student, Newman and Keuls helped to improve the Newman-Keuls test of 1939, which was known as the Keuls method [@SteeTorrDick:1997].
 
 ```{r }
 # SNK.test(model, "virus", alpha=0.05,console=TRUE)
@@ -168,7 +165,7 @@ SNK.test(model, "virus", group=FALSE,console=TRUE)
 
 ### Ryan, Einot and Gabriel and Welsch
 
-Multiple range tests for all pairwise comparisons, to obtain a confident inequalities multiple range tests, \citet{Hsu:1996}.
+Multiple range tests for all pairwise comparisons, to obtain a confident inequalities multiple range tests [@Hsu:1996].
 
 ```{r }
 # REGW.test(model, "virus", alpha=0.05,console=TRUE)
@@ -177,7 +174,7 @@ REGW.test(model, "virus", group=FALSE,console=TRUE)
 
 ### Tukey's W Procedure (HSD)
 
-This studentized range test, created by Tukey in 1953, is known as the Tukey's HSD (Honestly Significant Differences), \citet{SteeTorrDick:1997}.
+This studentized range test, created by Tukey in 1953, is known as the Tukey's HSD (Honestly Significant Differences) [@SteeTorrDick:1997].
 
 ```{r }
 outHSD<- HSD.test(model, "virus",console=TRUE)
@@ -210,7 +207,7 @@ print(outUn$groups)
 
 ### Waller-Duncan's Bayesian K-Ratio T-Test
 
-Duncan continued the multiple comparison procedures, introducing the criterion of minimizing both experimental errors; for this, he used the Bayes' theorem, obtaining one new test called Waller-Duncan, \citet{WallDunc:1969}; \citet{SteeTorrDick:1997}.
+Duncan continued the multiple comparison procedures, introducing the criterion of minimizing both experimental errors; for this, he used the Bayes' theorem, obtaining one new test called Waller-Duncan [@WallDunc:1969; @SteeTorrDick:1997].
 
 ```{r }
 # variance analysis:
@@ -238,7 +235,7 @@ outWaller$statistics
 
 ## Scheffe's Test
 
-This method, created by Scheffe in 1959, is very general for all the possible contrasts and their confidence intervals. The confidence intervals for the averages are very broad, resulting in a very conservative test for the comparison between treatment averages, \citet{SteeTorrDick:1997}.
+This method, created by Scheffe in 1959, is very general for all the possible contrasts and their confidence intervals. The confidence intervals for the averages are very broad, resulting in a very conservative test for the comparison between treatment averages [@SteeTorrDick:1997].
 
 ```{r }
 # analysis of variance: 
@@ -298,7 +295,7 @@ par(oldpar)
 
 ## Analysis of Balanced Incomplete Blocks
 
-This analysis can come from balanced or partially balanced designs. The function `BIB.test` is for balanced designs, and `BIB.test`, for partially balanced designs. In the following example, the **agricolae** data will be used, \citet{Josh:1987}.
+This analysis can come from balanced or partially balanced designs. The function `BIB.test` is for balanced designs, and `BIB.test`, for partially balanced designs. In the following example, the **agricolae** data will be used [@Josh:1987].
 
 ```{r } 
 # Example linear estimation and design of experiments. (Joshi)
@@ -326,7 +323,7 @@ rm(block,variety)
 
 ## Partially Balanced Incomplete Blocks
 
-The function `PBIB.test` \citet{Josh:1987}, can be used for the lattice and alpha designs. 
+The function `PBIB.test` [@Josh:1987], can be used for the lattice and alpha designs. 
 
 Consider the following case: Construct the alpha design with 30 treatments, 2 repetitions, and a block size equal to 3.
 

@@ -69,6 +69,10 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="../articles/Intro_agricolae.html">Introduction to agricolae</a>
+    </li>
+    <li class="divider">
+    <li>
       <a href="../articles/Introduction.html">Introduction to agricolae</a>
     </li>
     <li>
@@ -142,7 +146,7 @@
                         <h4 class="author">Felipe de Mendiburu<sup>1</sup>, Muhammad Yaseen<sup>2</sup>
 </h4>
             
-            <h4 class="date">2020-04-27</h4>
+            <h4 class="date">2020-05-01</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/myaseen208/agricolae/blob/master/vignettes/Non-parametricComparisons.Rmd"><code>vignettes/Non-parametricComparisons.Rmd</code></a></small>
       <div class="hidden name"><code>Non-parametricComparisons.Rmd</code></div>
@@ -166,28 +170,31 @@
 <div id="non-parametric-comparisons" class="section level1">
 <h1 class="hasAnchor">
 <a href="#non-parametric-comparisons" class="anchor"></a>Non-parametric Comparisons</h1>
-
-<p>The functions for non-parametric multiple comparisons included in <strong>agricolae</strong> are: <em>kruskal, waerden.test, friedman and durbin.test</em>, .</p>
+<p>The functions for non-parametric multiple comparisons included in <strong>agricolae</strong> are: <code>kruskal</code>, <code>waerden.test</code>, <code>friedman</code> and <code>durbin.test</code> <span class="citation">(Conover, <a href="#ref-Cono:1999" role="doc-biblioref">1999</a>)</span>.</p>
 <p>The post hoc nonparametrics tests (kruskal, friedman, durbin and waerden) are using the criterium Fisher’s least significant difference (LSD).</p>
-<p>The function <em>kruskal</em> is used for N samples (N&gt;2), populations or data coming from a completely random experiment (populations = treatments).</p>
-<p>The function <em>waerden.test</em>, similar to kruskal-wallis, uses a normal score instead of ranges as kruskal does.</p>
-<p>The function <em>friedman</em> is used for organoleptic evaluations of different products, made by judges (every judge evaluates all the products). It can also be used for the analysis of treatments of the randomized complete block design, where the response cannot be treated through the analysis of variance.</p>
-<p>The function <em>durbin.test</em> for the analysis of balanced incomplete block designs is very used for sampling tests, where the judges only evaluate a part of the treatments.</p>
-<p>The function <em>Median.test</em> for the analysis the distribution is approximate with chi-squared ditribution with degree free number of groups minus one. In each comparison a table of 2x2 (pair of groups) and the criterion of greater or lesser value than the median of both are formed, the chi-square test is applied for the calculation of the probability of error that both are independent. This value is compared to the alpha level for group formation.</p>
-<p>Montgomery book data, . Included in the <strong>agricolae</strong> package</p>
+<p>The function <code>kruskal</code> is used for N samples (N&gt;2), populations or data coming from a completely random experiment (populations = treatments).</p>
+<p>The function <code>waerden.test</code>, similar to kruskal-wallis, uses a normal score instead of ranges as kruskal does.</p>
+<p>The function <code>friedman</code> is used for organoleptic evaluations of different products, made by judges (every judge evaluates all the products). It can also be used for the analysis of treatments of the randomized complete block design, where the response cannot be treated through the analysis of variance.</p>
+<p>The function <code>durbin.test</code> for the analysis of balanced incomplete block designs is very used for sampling tests, where the judges only evaluate a part of the treatments.</p>
+<p>The function <code>Median.test</code> for the analysis the distribution is approximate with chi-squared ditribution with degree free number of groups minus one. In each comparison a table of <span class="math inline">\(2 \times 2\)</span> (pair of groups) and the criterion of greater or lesser value than the median of both are formed, the chi-square test is applied for the calculation of the probability of error that both are independent. This value is compared to the alpha level for group formation.</p>
+<p>Montgomery book data <span class="citation">(Montgomery, <a href="#ref-Mont:2002" role="doc-biblioref">2002</a>)</span>. Included in the <strong>agricolae</strong> package</p>
 <div class="sourceCode" id="cb1"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">corn</span>)
 <span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">corn</span>)</pre></body></html></div>
 <pre><code>'data.frame':   34 obs. of  3 variables:
  $ method     : int  1 1 1 1 1 1 1 1 1 2 ...
  $ observation: int  83 91 94 89 89 96 91 92 90 91 ...
  $ rx         : num  11 23 28.5 17 17 31.5 23 26 19.5 23 ...</code></pre>
-
-
+<p><strong>For the examples, the </strong>agricolae** package data will be used**</p>
+<div id="kruskal-wallis" class="section level2">
+<h2 class="hasAnchor">
+<a href="#kruskal-wallis" class="anchor"></a>Kruskal-Wallis</h2>
 <p>It makes the multiple comparison with Kruskal-Wallis. The parameters by default are alpha = 0.05.</p>
 <div class="sourceCode" id="cb3"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">kruskal</span>)</pre></body></html></div>
 <pre><code>function (y, trt, alpha = 0.05, p.adj = c("none", "holm", "hommel", "hochberg", 
     "bonferroni", "BH", "BY", "fdr"), group = TRUE, main = NULL, console = FALSE)  </code></pre>
-<p><strong>Analysis</strong></p>
+<div id="analysis" class="section level3">
+<h3 class="hasAnchor">
+<a href="#analysis" class="anchor"></a>Analysis</h3>
 <div class="sourceCode" id="cb5"><html><body><pre class="r"><span class="no">outKruskal</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span>(<span class="no">corn</span>,<span class="fu"><a href="../reference/kruskal.html">kruskal</a></span>(<span class="no">observation</span>,<span class="no">method</span>,<span class="kw">group</span><span class="kw">=</span><span class="fl">TRUE</span>, <span class="kw">main</span><span class="kw">=</span><span class="st">"corn"</span>, <span class="kw">console</span><span class="kw">=</span><span class="fl">TRUE</span>))</pre></body></html></div>
 <pre><code>
 Study: corn
@@ -220,8 +227,11 @@ Treatments with the same letter are not significantly different.
 2    15.30000      c
 4     4.81250      d</code></pre>
 <p>The object output has the same structure of the comparisons see the functions plot.group(agricolae), bar.err(agricolae) and bar.group(agricolae).</p>
-
-<p>To see p.adjust.methods()</p>
+</div>
+<div id="kruskal-wallis-adjust-p-values" class="section level3">
+<h3 class="hasAnchor">
+<a href="#kruskal-wallis-adjust-p-values" class="anchor"></a>Kruskal-Wallis: adjust P-values</h3>
+<p>To see <code><a href="https://rdrr.io/r/stats/p.adjust.html">p.adjust.methods()</a></code></p>
 <div class="sourceCode" id="cb7"><html><body><pre class="r"><span class="no">out</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span>(<span class="no">corn</span>,<span class="fu"><a href="../reference/kruskal.html">kruskal</a></span>(<span class="no">observation</span>,<span class="no">method</span>,<span class="kw">group</span><span class="kw">=</span><span class="fl">TRUE</span>, <span class="kw">main</span><span class="kw">=</span><span class="st">"corn"</span>, <span class="kw">p.adj</span><span class="kw">=</span><span class="st">"holm"</span>))
 <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span>(<span class="no">out</span>$<span class="no">group</span>)</pre></body></html></div>
 <pre><code>  observation groups
@@ -238,12 +248,18 @@ Treatments with the same letter are not significantly different.
 2 - 3 -14.271429 0.0000     ***
 2 - 4  10.487500 0.0003     ***
 3 - 4  24.758929 0.0000     ***</code></pre>
-
-<p>The data consist of b mutually independent k-variate random variables called b blocks. The random variable is in a block and is associated with treatment. It makes the multiple comparison of the Friedman test with or without ties. A first result is obtained by friedman.test of R.</p>
+</div>
+</div>
+<div id="friedman" class="section level2">
+<h2 class="hasAnchor">
+<a href="#friedman" class="anchor"></a>Friedman</h2>
+<p>The data consist of b mutually independent k-variate random variables called b blocks. The random variable is in a block and is associated with treatment. It makes the multiple comparison of the Friedman test with or without ties. A first result is obtained by <code>friedman.test</code> of R.</p>
 <div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">friedman</span>)</pre></body></html></div>
 <pre><code>function (judge, trt, evaluation, alpha = 0.05, group = TRUE, main = NULL, 
     console = FALSE)  </code></pre>
-<p><strong>Analysis</strong></p>
+<div id="analysis-1" class="section level3">
+<h3 class="hasAnchor">
+<a href="#analysis-1" class="anchor"></a>Analysis</h3>
 <div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">grass</span>)
 <span class="no">out</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span>(<span class="no">grass</span>,<span class="fu"><a href="../reference/friedman.html">friedman</a></span>(<span class="no">judge</span>,<span class="no">trt</span>, <span class="no">evaluation</span>,<span class="kw">alpha</span><span class="kw">=</span><span class="fl">0.05</span>, <span class="kw">group</span><span class="kw">=</span><span class="fl">FALSE</span>,
 <span class="kw">main</span><span class="kw">=</span><span class="st">"Data of the book of Conover"</span>,<span class="kw">console</span><span class="kw">=</span><span class="fl">TRUE</span>))</pre></body></html></div>
@@ -278,11 +294,17 @@ t1 - t4        4.0 0.4834          -7.48 15.48
 t2 - t3       -1.0 0.8604         -12.48 10.48
 t2 - t4      -10.5 0.0717       . -21.98  0.98
 t3 - t4       -9.5 0.1017         -20.98  1.98</code></pre>
-
+</div>
+</div>
+<div id="waerden" class="section level2">
+<h2 class="hasAnchor">
+<a href="#waerden" class="anchor"></a>Waerden</h2>
 <p>A nonparametric test for several independent samples. Example applied with the sweet potato data in the <strong>agricolae</strong> basis.</p>
 <div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">waerden.test</span>)</pre></body></html></div>
 <pre><code>function (y, trt, alpha = 0.05, group = TRUE, main = NULL, console = FALSE)  </code></pre>
-<p><strong>Analysis</strong></p>
+<div id="analysis-2" class="section level3">
+<h3 class="hasAnchor">
+<a href="#analysis-2" class="anchor"></a>Analysis</h3>
 <div class="sourceCode" id="cb17"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">sweetpotato</span>)
 <span class="no">outWaerden</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span>(<span class="no">sweetpotato</span>,<span class="fu"><a href="../reference/waerden.test.html">waerden.test</a></span>(<span class="no">yield</span>,<span class="no">virus</span>,<span class="kw">alpha</span><span class="kw">=</span><span class="fl">0.01</span>,<span class="kw">group</span><span class="kw">=</span><span class="fl">TRUE</span>,<span class="kw">console</span><span class="kw">=</span><span class="fl">TRUE</span>))</pre></body></html></div>
 <pre><code>
@@ -316,10 +338,10 @@ ff  0.6885684      a
 oo  0.6044433      a
 cc -0.2328353     ab
 fc -1.0601764      b</code></pre>
-<p>The comparison probabilities are obtained with the parameter group = <strong>FALSE</strong></p>
+<p>The comparison probabilities are obtained with the parameter group = <strong>FALSE</strong>.</p>
 <div class="sourceCode" id="cb19"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span>(<span class="no">outWaerden</span>)</pre></body></html></div>
 <pre><code>[1] "statistics" "parameters" "means"      "comparison" "groups"    </code></pre>
-<p></p>
+<p><strong>To see outWaerden$comparison</strong></p>
 <div class="sourceCode" id="cb21"><html><body><pre class="r"><span class="no">out</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span>(<span class="no">sweetpotato</span>,<span class="fu"><a href="../reference/waerden.test.html">waerden.test</a></span>(<span class="no">yield</span>,<span class="no">virus</span>,<span class="kw">group</span><span class="kw">=</span><span class="fl">FALSE</span>,<span class="kw">console</span><span class="kw">=</span><span class="fl">TRUE</span>))</pre></body></html></div>
 <pre><code>
 Study: yield ~ virus
@@ -349,8 +371,12 @@ cc - oo -0.8372786 0.0664       . -1.74616316  0.07160593
 fc - ff -1.7487448 0.0022      ** -2.65762936 -0.83986026
 fc - oo -1.6646197 0.0029      ** -2.57350426 -0.75573516
 ff - oo  0.0841251 0.8363         -0.82475944  0.99300965</code></pre>
-
-<p>A nonparametric test for several independent samples. The median test is designed to examine whether several samples came from populations having the same median, . See also Figure @ref(fig:f14).</p>
+</div>
+</div>
+<div id="median-test" class="section level2">
+<h2 class="hasAnchor">
+<a href="#median-test" class="anchor"></a>Median test</h2>
+<p>A nonparametric test for several independent samples. The median test is designed to examine whether several samples came from populations having the same median <span class="citation">(Conover, <a href="#ref-Cono:1999" role="doc-biblioref">1999</a>)</span>. See also Figure @ref(fig:f14).</p>
 <p>In each comparison a table of 2x2 (pair of groups) and the criterion of greater or lesser value than the median of both are formed, the chi-square test is applied for the calculation of the probability of error that both are independent. This value is compared to the alpha level for group formation.</p>
 <div class="sourceCode" id="cb23"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">Median.test</span>)</pre></body></html></div>
 <pre><code>function (y, trt, alpha = 0.05, correct = TRUE, simulate.p.value = FALSE, 
@@ -358,7 +384,9 @@ ff - oo  0.0841251 0.8363         -0.82475944  0.99300965</code></pre>
 <div class="sourceCode" id="cb25"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">Median.test</span>)</pre></body></html></div>
 <pre><code>function (y, trt, alpha = 0.05, correct = TRUE, simulate.p.value = FALSE, 
     group = TRUE, main = NULL, console = TRUE)  </code></pre>
-<p><strong>Analysis</strong></p>
+<div id="analysis-3" class="section level3">
+<h3 class="hasAnchor">
+<a href="#analysis-3" class="anchor"></a>Analysis</h3>
 <div class="sourceCode" id="cb27"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">sweetpotato</span>)
 <span class="no">outMedian</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span>(<span class="no">sweetpotato</span>,<span class="fu"><a href="../reference/Median.test.html">Median.test</a></span>(<span class="no">yield</span>,<span class="no">virus</span>,<span class="kw">console</span><span class="kw">=</span><span class="fl">TRUE</span>))</pre></body></html></div>
 <pre><code>
@@ -395,7 +423,6 @@ cc   23.0 3 21.7 28.5 22.35 25.75
 fc   13.1 3 10.6 14.9 11.85 14.00
 ff   39.2 3 28.0 41.8 33.60 40.50
 oo   38.2 3 32.1 40.4 35.15 39.30</code></pre>
-<p>\begin{figure} \begin{center}</p>
 <div class="sourceCode" id="cb35"><html><body><pre class="r"><span class="no">oldpar</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="kw">mfrow</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">2</span>,<span class="fl">2</span>),<span class="kw">mar</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">3</span>,<span class="fl">3</span>,<span class="fl">1</span>,<span class="fl">1</span>),<span class="kw">cex</span><span class="kw">=</span><span class="fl">0.8</span>)
 <span class="co"># Graphics</span>
 <span class="fu"><a href="../reference/bar.group.html">bar.group</a></span>(<span class="no">outMedian</span>$<span class="no">groups</span>,<span class="kw">ylim</span><span class="kw">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">0</span>,<span class="fl">50</span>))
@@ -405,16 +432,24 @@ oo   38.2 3 32.1 40.4 35.15 39.30</code></pre>
 <div class="sourceCode" id="cb37"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="no">outMedian</span>,<span class="kw">variation</span><span class="kw">=</span><span class="st">"IQR"</span>,<span class="kw">horiz</span> <span class="kw">=</span> <span class="fl">TRUE</span>)</pre></body></html></div>
 <pre><code>Warning in plot.group(outMedian, variation = "IQR", horiz = TRUE): NAs
 introduced by coercion</code></pre>
-<p><img src="Non-parametricComparisons_files/figure-html/f14-1.png" width="700"></p>
+<div class="figure">
+<img src="Non-parametricComparisons_files/figure-html/f14-1.png" alt="Grouping of treatments and its variation, Median method" width="700"><p class="caption">
+Grouping of treatments and its variation, Median method
+</p>
+</div>
 <div class="sourceCode" id="cb39"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/graphics/par.html">par</a></span>(<span class="no">oldpar</span>)</pre></body></html></div>
-
-<p>\end{center} \end{figure}</p>
-
-<p><em>durbin.test</em>; example: Myles Hollander (p. 311) Source: W. Moore and C.I. Bliss. (1942) A multiple comparison of the Durbin test for the balanced incomplete blocks for sensorial or categorical evaluation. It forms groups according to the demanded ones for level of significance (alpha); by default, 0.05.</p>
+</div>
+</div>
+<div id="durbin" class="section level2">
+<h2 class="hasAnchor">
+<a href="#durbin" class="anchor"></a>Durbin</h2>
+<p><code>durbin.test</code>; example: Myles Hollander (p. 311) Source: W. Moore and C.I. Bliss. (1942) A multiple comparison of the Durbin test for the balanced incomplete blocks for sensorial or categorical evaluation. It forms groups according to the demanded ones for level of significance (alpha); by default, 0.05.</p>
 <div class="sourceCode" id="cb40"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span>(<span class="no">durbin.test</span>)</pre></body></html></div>
 <pre><code>function (judge, trt, evaluation, alpha = 0.05, group = TRUE, main = NULL, 
     console = FALSE)  </code></pre>
-<p><strong>Analysis</strong></p>
+<div id="analysis-4" class="section level3">
+<h3 class="hasAnchor">
+<a href="#analysis-4" class="anchor"></a>Analysis</h3>
 <div class="sourceCode" id="cb42"><html><body><pre class="r"><span class="no">days</span> <span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/gl.html">gl</a></span>(<span class="fl">7</span>,<span class="fl">3</span>)
 <span class="no">chemical</span><span class="kw">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"A"</span>,<span class="st">"B"</span>,<span class="st">"D"</span>,<span class="st">"A"</span>,<span class="st">"C"</span>,<span class="st">"E"</span>,<span class="st">"C"</span>,<span class="st">"D"</span>,<span class="st">"G"</span>,<span class="st">"A"</span>,<span class="st">"F"</span>,<span class="st">"G"</span>, <span class="st">"B"</span>,<span class="st">"C"</span>,<span class="st">"F"</span>,
 <span class="st">"B"</span>,<span class="st">"E"</span>,<span class="st">"G"</span>,<span class="st">"D"</span>,<span class="st">"E"</span>,<span class="st">"F"</span>)
@@ -494,9 +529,19 @@ F - G          3 0.2044        </code></pre>
 <pre><code>  chisq.value   p.value  t.value     LSD
      7.714286 0.2597916 2.306004 5.00689</code></pre>
 </div>
-<div id="references" class="section level1">
+</div>
+</div>
+<div id="references" class="section level1 unnumbered">
 <h1 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h1>
+<div id="refs" class="references">
+<div id="ref-Cono:1999">
+<p>Conover, W. J. (1999). Practical Nonparametric Statistics.</p>
+</div>
+<div id="ref-Mont:2002">
+<p>Montgomery, D. C. (2002). <em>Design and Analysis of Experiments</em>. John Wiley &amp; Sons, New York.</p>
+</div>
+</div>
 </div>
   </div>
 

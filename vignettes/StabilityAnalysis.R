@@ -12,12 +12,11 @@ switch(out_type,
     html = {cat("<p>1. Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.</p>
     
 <p>2. Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.</p>")},
-    latex = cat("\\begin{center}
+    latex = cat("
 1. Professor of the Academic Department of Statistics and Informatics of the Faculty of Economics and Planning.National University Agraria La Molina-PERU.
 
 2. Department of Mathematics and Statistics, University of Agriculture Faisalabad, Pakistan.
-
-\\end{center}" )
+" )
 )
 
 ## ----include = FALSE---------------------------------------------------
@@ -67,10 +66,13 @@ pc <- model$analysis[, 1]
 pc12<-sum(pc[1:2])
 pc123<-sum(pc[1:3])
 
-## ----f6, fig=TRUE,width=3, height=2,results="hide"---------------------
+## ----f6, fig=TRUE, fig.cap = "Biplot", width=3, height=2,results="hide"----
 oldpar<-par(cex=0.4,mar=c(4,4,1,2))
 plot(model,type=1,las=1,xlim=c(-5,6))
 par(oldpar)
+
+## ----eval=FALSE--------------------------------------------------------
+#  plot(model,type=2,las=1)
 
 ## ----------------------------------------------------------------------
 data(plrv)

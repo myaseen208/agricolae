@@ -11,7 +11,7 @@
 
 <meta name="author" content="Felipe de Mendiburu1, Muhammad Yaseen2" />
 
-<meta name="date" content="2020-04-27" />
+<meta name="date" content="2020-05-01" />
 
 <title>Multiple Comparisons with agricolae</title>
 
@@ -365,7 +365,7 @@ summary {
 
 <h1 class="title toc-ignore">Multiple Comparisons with <strong>agricolae</strong></h1>
 <h4 class="author">Felipe de Mendiburu<sup>1</sup>, Muhammad Yaseen<sup>2</sup></h4>
-<h4 class="date">2020-04-27</h4>
+<h4 class="date">2020-05-01</h4>
 
 </div>
 
@@ -386,7 +386,7 @@ summary {
 <li><a href="#partially-balanced-incomplete-blocks"><span class="toc-section-number">1.4</span> Partially Balanced Incomplete Blocks</a></li>
 <li><a href="#augmented-blocks"><span class="toc-section-number">1.5</span> Augmented Blocks</a></li>
 </ul></li>
-<li><a href="#references"><span class="toc-section-number">2</span> References</a></li>
+<li><a href="#references">References</a></li>
 </ul>
 </div>
 
@@ -564,7 +564,7 @@ ff - oo      -0.57 0.8873        </code></pre>
 </div>
 <div id="duncans-new-multiple-range-test" class="section level3">
 <h3><span class="header-section-number">1.0.3</span> Duncan’s New Multiple-Range Test</h3>
-<p>It corresponds to the Duncan’s Test, .</p>
+<p>It corresponds to the Duncan’s Test <span class="citation">(Steel et al., <a href="#ref-SteeTorrDick:1997" role="doc-biblioref">1997</a>)</span>.</p>
 <pre class="r"><code>duncan.test(model, &quot;virus&quot;,console=TRUE)</code></pre>
 <pre><code>
 Study: model ~ &quot;virus&quot;
@@ -598,7 +598,7 @@ fc    13      c</code></pre>
 </div>
 <div id="student-newman-keuls" class="section level3">
 <h3><span class="header-section-number">1.0.4</span> Student-Newman-Keuls</h3>
-<p>Student, Newman and Keuls helped to improve the Newman-Keuls test of 1939, which was known as the Keuls method, .</p>
+<p>Student, Newman and Keuls helped to improve the Newman-Keuls test of 1939, which was known as the Keuls method <span class="citation">(Steel et al., <a href="#ref-SteeTorrDick:1997" role="doc-biblioref">1997</a>)</span>.</p>
 <pre class="r"><code># SNK.test(model, &quot;virus&quot;, alpha=0.05,console=TRUE)
 SNK.test(model, &quot;virus&quot;, group=FALSE,console=TRUE)</code></pre>
 <pre><code>
@@ -629,7 +629,7 @@ ff - oo      -0.57 0.8873          -9.5   8.4</code></pre>
 </div>
 <div id="ryan-einot-and-gabriel-and-welsch" class="section level3">
 <h3><span class="header-section-number">1.0.5</span> Ryan, Einot and Gabriel and Welsch</h3>
-<p>Multiple range tests for all pairwise comparisons, to obtain a confident inequalities multiple range tests, .</p>
+<p>Multiple range tests for all pairwise comparisons, to obtain a confident inequalities multiple range tests <span class="citation">(Hsu, <a href="#ref-Hsu:1996" role="doc-biblioref">1996</a>)</span>.</p>
 <pre class="r"><code># REGW.test(model, &quot;virus&quot;, alpha=0.05,console=TRUE)
 REGW.test(model, &quot;virus&quot;, group=FALSE,console=TRUE)</code></pre>
 <pre><code>
@@ -660,7 +660,7 @@ ff - oo      -0.57 0.9873         -11.19  10.06</code></pre>
 </div>
 <div id="tukeys-w-procedure-hsd" class="section level3">
 <h3><span class="header-section-number">1.0.6</span> Tukey’s W Procedure (HSD)</h3>
-<p>This studentized range test, created by Tukey in 1953, is known as the Tukey’s HSD (Honestly Significant Differences), .</p>
+<p>This studentized range test, created by Tukey in 1953, is known as the Tukey’s HSD (Honestly Significant Differences) <span class="citation">(Steel et al., <a href="#ref-SteeTorrDick:1997" role="doc-biblioref">1997</a>)</span>.</p>
 <pre class="r"><code>outHSD&lt;- HSD.test(model, &quot;virus&quot;,console=TRUE)</code></pre>
 <pre><code>
 Study: model ~ &quot;virus&quot;
@@ -1136,7 +1136,7 @@ Comparison between treatments means
 </div>
 <div id="partially-balanced-incomplete-blocks" class="section level2">
 <h2><span class="header-section-number">1.4</span> Partially Balanced Incomplete Blocks</h2>
-<p>The function <code>PBIB.test</code> , can be used for the lattice and alpha designs.</p>
+<p>The function <code>PBIB.test</code> <span class="citation">(Joshi, <a href="#ref-Josh:1987" role="doc-biblioref">1987</a>)</span>, can be used for the lattice and alpha designs.</p>
 <p>Consider the following case: Construct the alpha design with 30 treatments, 2 repetitions, and a block size equal to 3.</p>
 <pre class="r"><code># alpha design 
 Genotype&lt;-paste(&quot;geno&quot;,1:30,sep=&quot;&quot;)
@@ -1444,8 +1444,19 @@ A - h       -8.8   0.21
 A - i        7.4   0.29     </code></pre>
 </div>
 </div>
-<div id="references" class="section level1">
-<h1><span class="header-section-number">2</span> References</h1>
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+<div id="refs" class="references">
+<div id="ref-Hsu:1996">
+<p>Hsu, J. C. (1996). <em>Multiple Comparisons: Theory and Methods</em>. Chapman; Hall/CRC.</p>
+</div>
+<div id="ref-Josh:1987">
+<p>Joshi, D. D. (1987). <em>Linear Estimation and Design of Experiments</em>. Wiley Eastern Limited, New Delhi, India.</p>
+</div>
+<div id="ref-SteeTorrDick:1997">
+<p>Steel, Torry, and Dickey (1997). <em>Principles and Procedures of Statistic a Biometrical Approach</em>. The McGraw Hill Companies, Inc.</p>
+</div>
+</div>
 </div>
 
 
