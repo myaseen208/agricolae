@@ -17,6 +17,7 @@
 #' @param las numeric in 0,1,2,3; the style of axis labels. see plot()
 #' @param axes TRUE or FALSE
 #' @param \dots other parameters of plot
+#' 
 #' @return \item{breaks}{ a vector giving the breakpoints between histogram
 #' cells } \item{counts}{ frequency and x is class intervals} \item{mids}{
 #' center point in class } \item{relative}{ Relative frequency, height }

@@ -41,7 +41,7 @@ navbar:
       - text: "Introduction to agricolae"
         href: articles/Intro_agricolae.html
       - text: "--------------------"
-      - text: "Introduction to agricolae"
+      - text: "The Not So Short Introduction to agricolae"
         href: articles/Introduction.html
       - text: "Descriptive Statistics with agricolae"
         href: articles/DescriptiveStats.html

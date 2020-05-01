@@ -34,7 +34,7 @@ print(summary(weight))
 
 ## ----DescriptStats2, fig=TRUE, width=6, height=2, fig.cap="Absolute and relative frequency with polygon"----
 oldpar<-par(mfrow=c(1,2),mar=c(4,4,0,1),cex=0.6)
-h1<- graph.freq(weight,col=colors()[84],frequency=1,las=2,density=20,ylim=c(0,12),ylab="Frequency") 
+h1<- graph.freq(weight,col=colors()[84],frequency=1,las=2, ylim=c(0,12),ylab="Frequency") 
 x<-h1$breaks
 h2<- plot(h1, frequency =2, axes= FALSE,ylim=c(0,0.4),xlab="weight",ylab="Relative (%)")
 polygon.freq(h2, col=colors()[84], lwd=2, frequency =2)
@@ -57,7 +57,7 @@ print(summary(h3))
 
 ## ----DescriptStats6,fig=TRUE  ,width=6, height=2, fig.cap="Join frequency and relative frequency with normal and Ogive"----
 oldpar<-par(mfrow=c(1,2),mar=c(4,4,0,1),cex=0.8)
-plot(h3, frequency=2,col=colors()[84],ylim=c(0,0.6),axes=FALSE,xlab="weight",ylab="%",border=0)
+plot(h3, frequency=2,col=colors()[84],ylim=c(0,0.6),axes=FALSE,xlab="weight",ylab="%")
 y<-seq(0,0.6,0.2)
 axis(2,y,y*100,las=2)
 axis(1,h3$breaks)

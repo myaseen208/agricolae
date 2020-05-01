@@ -15,6 +15,7 @@
 #' \code{\link{hgroups}}
 #' @keywords cluster
 #' @importFrom stats as.dendrogram
+#' @importFrom graphics plot
 #' @export
 #' @examples
 #' 

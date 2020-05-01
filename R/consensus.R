@@ -27,7 +27,7 @@
 #' 
 #' @importFrom stats as.dist dist  cutree hclust
 #' @importFrom cluster daisy
-#' @importFrom graphics text
+#' @importFrom graphics plot text
 #' @export
 #' @examples
 #' 

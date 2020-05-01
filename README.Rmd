@@ -52,6 +52,10 @@ cat(paste("[![develVersion](https://img.shields.io/badge/devel%20version-", dver
 ## Description
 `r gsub("(<doi:)(.+)(>)", "[doi:\\2](https://doi.org/\\2)", gsub("\\n", " ", packageDescription("agricolae", fields = "Description")))`
 
+&nbsp;
+&nbsp;
+
+
 ## Installation
 The package can be installed from CRAN as follows:
 
@@ -59,6 +63,8 @@ The package can be installed from CRAN as follows:
 install.packages("agricolae", dependencies = TRUE)
 ```
 
+
+&nbsp;
 
 
 The development version can be installed from github as follows:
@@ -68,12 +74,37 @@ if (!require("remotes")) install.packages("remotes")
 remotes::install_github("myaseen208/agricolae")
 ```
 
-## Detailed tutorial
-For a detailed tutorial (vignette) on how to used this package type:
+&nbsp;
+&nbsp;
 
-```{r, eval=FALSE}
-browseVignettes(package = "agricolae")
-```
+## Detailed tutorial
+* [Introduction to **agricolae**](https://myaseen208.github.io/agricolae/articles/Intro_agricolae.html)
+
+* [The Not So Short Introduction to **agricolae**](https://myaseen208.github.io/agricolae/articles/Introduction.html)
+
+* [Descriptive Statistics with **agricolae**](https://myaseen208.github.io/agricolae/articles/DescriptiveStats.html)
+
+
+* [Experimental Designs with **agricolae**](https://myaseen208.github.io/agricolae/articles/ExperimentalDesign.html)
+
+
+
+* [Multiple Comparisons with **agricolae**](https://myaseen208.github.io/agricolae/articles/MultipleComparisons.html)
+
+
+* [Non-parametric Comparisons with **agricolae**](https://myaseen208.github.io/agricolae/articles/Non-parametricComparisons.html)
+
+
+* [Graphics of the Multiple Comparisons with **agricolae**](https://myaseen208.github.io/agricolae/articles/GraphicsMultipleComparisons.html)
+
+
+* [Stability Analysis with **agricolae**](https://myaseen208.github.io/agricolae/articles/StabilityAnalysis.html)
+
+
+* [Special Functions in **agricolae**](https://myaseen208.github.io/agricolae/articles/SpecialFunctions.html)
+
+&nbsp;
+&nbsp;
 
 
 ## What's new
@@ -94,7 +125,7 @@ news(package = "agricolae")
 
 
 ## Citing `agricolae`
-To cite the methods in the package use:
+To cite the R package `agricolae` in publications use:
 
 ```{r, eval = FALSE}
 citation("agricolae")

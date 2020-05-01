@@ -20,6 +20,7 @@
 #' Kwanchai A. Gomez and Arturo A. Gomez. 1976. USA
 #' @keywords design
 #' @importFrom stats coef
+#' @importFrom graphics plot
 #' @export
 #' @examples
 #' 

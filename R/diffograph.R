@@ -32,7 +32,7 @@
 #' statistics the Ohio State University. USA, 1996. Jason C. Hsu. Chapman
 #' Hall/CRC
 #' @keywords aplot
-#' @importFrom graphics segments points abline text legend
+#' @importFrom graphics plot segments points abline text legend
 #' @export
 #' @examples
 #' 

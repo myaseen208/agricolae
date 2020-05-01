@@ -61,6 +61,7 @@
 #' Adaptation by B. E. Ticknor, and P. A. Arneson.  Ithaca, Cornell University,
 #' Department of Plant Pathology, Ithaca, NY, USA.
 #' @keywords models
+#' @importFrom graphics plot
 #' @export
 #' @examples
 #' 

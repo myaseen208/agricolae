@@ -3,12 +3,12 @@ title: "Stability Analysis with **agricolae**"
 author: "Felipe de Mendiburu^1^, Muhammad Yaseen^2^"
 date: "`r Sys.Date()`"
 output:
-  bookdown::pdf_document2:
-    dev: cairo_pdf
+  bookdown::html_document2:
     fig_caption: yes
     number_sections: yes
     toc: yes
-  bookdown::html_document2:
+  bookdown::pdf_document2:
+    dev: cairo_pdf
     fig_caption: yes
     number_sections: yes
     toc: yes

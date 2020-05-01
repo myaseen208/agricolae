@@ -23,14 +23,14 @@ v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/agricolae?color=green)](https://CRAN.R-project.org/package=agricolae)
 <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/myaseen208/agricolae) -->
 
-[![develVersion](https://img.shields.io/badge/devel%20version-1.3.3-orange.svg)](https://github.com/myaseen208/agricolae)
+[![develVersion](https://img.shields.io/badge/devel%20version-1.4.0-orange.svg)](https://github.com/myaseen208/agricolae)
 
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/myaseen208/agricolae/total.svg)] -->
 
 [![Project Status:
 WIP](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2020--04--27-yellowgreen.svg)](https://github.com/myaseen208/agricolae)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2020--05--02-yellowgreen.svg)](https://github.com/myaseen208/agricolae)
 [![Rdoc](http://www.rdocumentation.org/badges/version/agricolae)](http://www.rdocumentation.org/packages/agricolae)
 
 -----
@@ -50,6 +50,8 @@ facilities for experimental data, e.g. treatment comparison procedures
 and several non-parametric tests comparison, biodiversity indexes and
 consensus cluster.
 
+   
+
 ## Installation
 
 The package can be installed from CRAN as follows:
@@ -58,6 +60,8 @@ The package can be installed from CRAN as follows:
 install.packages("agricolae", dependencies = TRUE)
 ```
 
+ 
+
 The development version can be installed from github as follows:
 
 ``` r
@@ -65,13 +69,38 @@ if (!require("remotes")) install.packages("remotes")
 remotes::install_github("myaseen208/agricolae")
 ```
 
+   
+
 ## Detailed tutorial
 
-For a detailed tutorial (vignette) on how to used this package type:
+  - [Introduction to
+    **agricolae**](https://myaseen208.github.io/agricolae/articles/Intro_agricolae.html)
 
-``` r
-browseVignettes(package = "agricolae")
-```
+  - [The Not So Short Introduction to
+    **agricolae**](https://myaseen208.github.io/agricolae/articles/Introduction.html)
+
+  - [Descriptive Statistics with
+    **agricolae**](https://myaseen208.github.io/agricolae/articles/DescriptiveStats.html)
+
+  - [Experimental Designs with
+    **agricolae**](https://myaseen208.github.io/agricolae/articles/ExperimentalDesign.html)
+
+  - [Multiple Comparisons with
+    **agricolae**](https://myaseen208.github.io/agricolae/articles/MultipleComparisons.html)
+
+  - [Non-parametric Comparisons with
+    **agricolae**](https://myaseen208.github.io/agricolae/articles/Non-parametricComparisons.html)
+
+  - [Graphics of the Multiple Comparisons with
+    **agricolae**](https://myaseen208.github.io/agricolae/articles/GraphicsMultipleComparisons.html)
+
+  - [Stability Analysis with
+    **agricolae**](https://myaseen208.github.io/agricolae/articles/StabilityAnalysis.html)
+
+  - [Special Functions in
+    **agricolae**](https://myaseen208.github.io/agricolae/articles/SpecialFunctions.html)
+
+   
 
 ## What’s new
 
@@ -91,7 +120,7 @@ news(package = "agricolae")
 
 ## Citing `agricolae`
 
-To cite the methods in the package use:
+To cite the R package `agricolae` in publications use:
 
 ``` r
 citation("agricolae")
@@ -99,23 +128,25 @@ citation("agricolae")
 
 ``` 
 
-To cite package 'agricolae' in publications use:
+To cite the R package 'agricolae' in publications use:
 
-  Felipe de Mendiburu (2020). agricolae: Statistical Procedures for
-  Agricultural Research. R package version 1.3-2.
-  https://CRAN.R-project.org/package=agricolae
+  Felipe de Mendiburu and Muhammad Yaseen(2020).  agricolae:
+  Statistical Procedures for Agricultural Research.R package version
+  1.4.0 ,
+  https://myaseen208.github.io/agricolae/https://cran.r-project.org/package=agricolae.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {agricolae: Statistical Procedures for Agricultural Research},
-    author = {Felipe {de Mendiburu}},
+    author = {{Felipe de Mendiburu} and {Muhammad Yaseen}},
     year = {2020},
-    note = {R package version 1.3-2},
-    url = {https://CRAN.R-project.org/package=agricolae},
+    note = {R package version 1.4.0},
+    note = {https://myaseen208.github.io/agricolae/ },
+    note = {https://cran.r-project.org/package=agricolae},
   }
 
-ATTENTION: This citation information has been auto-generated from the
-package DESCRIPTION file and may need manual editing, see
-'help("citation")'.
+This free and open-source software implements academic research by the
+authors and co-workers. If you use it, please support the project by
+citing the package.
 ```

@@ -18,7 +18,7 @@
 #' \code{\link{sturges.freq}}, \code{\link{join.freq}},
 #' \code{\link{graph.freq}}, \code{\link{normal.freq} }
 #' @keywords aplot
-#' @importFrom graphics axis
+#' @importFrom graphics plot axis
 #' @export
 #' @examples
 #' 

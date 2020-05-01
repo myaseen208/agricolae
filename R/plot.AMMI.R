@@ -24,7 +24,7 @@
 #' @author Felipe de Mendiburu
 #' @seealso \code{\link{AMMI}}
 #' @keywords aplot
-#' @importFrom graphics arrows
+#' @importFrom graphics plot arrows
 #' @export
 #' @examples
 #' 
