@@ -1,3 +1,8 @@
+# agricolae 1.5.0
+## New Feature
+
+* New function design.aug.alpha(). Augmented alpha lattice design: Add controls in each block created by alpha lattice design.
+
 # agricolae 1.4.0
 ## New Features 
 
