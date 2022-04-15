@@ -14,8 +14,8 @@ zigzag(outdesign)
 }
 \description{
 applied to designs: complete block, latin square, graeco, split plot, strip
-plot, lattice, alpha lattice, Augmented block, cyclic, Balanced Incomplete
-Block and factorial.
+plot, lattice, alpha lattice, augmented alpha lattice, Augmented block, cyclic,
+Balanced Incomplete Block and factorial.
 }
 \examples{
 
@@ -27,8 +27,8 @@ fieldbook <- zigzag(outdesign)
 
 }
 \seealso{
-\code{\link{design.ab}},
-\code{\link{design.alpha}},\code{\link{design.bib}},
+\code{\link{design.ab}},\code{\link{design.alpha}},
+\code{\link{design.aug.alpha}},\code{\link{design.bib}},
 \code{\link{design.split} }, \code{\link{design.cyclic} },
 \code{\link{design.dau} }, \code{\link{design.graeco}},
 \code{\link{design.lattice}}, \code{\link{design.lsd}},

@@ -1,7 +1,7 @@
 Package: agricolae
 Type: Package
 Title: Statistical Procedures for Agricultural Research
-Version: 1.4.0
+Version: 1.5.0
 Authors@R: 
     c(
         person(
@@ -15,6 +15,12 @@ Authors@R:
         , email = "myaseen208@gmail.com"
         , role = c("aut", "ctb")
         , comment = c(ORCID = "0000-0002-5923-1714")
+        )
+    , person(
+          c("Yuhang", "Guo")
+        , email = "dev1271803144@163.com"
+        , role = c("aut", "ctb")
+        , comment = c(ORCID = "0000-0002-4078-2006")
         )
         )
 Maintainer: Felipe de Mendiburu <fmendiburu@lamolina.edu.pe>
@@ -32,7 +38,7 @@ License: GPL-2 | GPL-3
 Encoding: UTF-8
 LazyData: true
 VignetteBuilder: knitr
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 URL: https://github.com/myaseen208/agricolae
      https://CRAN.R-project.org/package=agricolae
      https://myaseen208.github.io/agricolae/
