@@ -12,7 +12,7 @@
 #' @param splot Factor subplot
 #' @param ssplot Factor sub-subplot
 #' @param Y Variable, response
-#' @return ANOVA: Splip Split plot analysis
+#' @return ANOVA: Split Split plot analysis
 #' @author Felipe de Mendiburu
 #' @seealso \code{\link{sp.plot}}, \code{\link{strip.plot}},
 #' \code{\link{design.split}}, \code{\link{design.strip} }
