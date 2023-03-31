@@ -1,4 +1,4 @@
-#' Splip-Plot analysis
+#' Split-Plot analysis
 #' 
 #' The variance analysis of a split plot design is divided into two parts: the
 #' plot-factor analysis and the sub-plot factor analysis.
@@ -11,7 +11,7 @@
 #' @param pplot main-plot Factor
 #' @param splot sub-plot Factor
 #' @param Y Variable, response
-#' @return ANOVA: Splip plot analysis
+#' @return ANOVA: Split plot analysis
 #' @author Felipe de Mendiburu
 #' @seealso \code{\link{ssp.plot}}, \code{\link{strip.plot}},
 #' \code{\link{design.split}}, \code{\link{design.strip} }
