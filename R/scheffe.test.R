@@ -52,7 +52,7 @@
 #' print(out)
 #' 
 scheffe.test <-
-function (y, trt, DFerror, MSerror, Fc, alpha=0.05, group=TRUE,main = NULL,console=FALSE)
+function (y, trt, DFerror, MSerror, Fc, alpha=0.05, group=TRUE,main = NULL,console=FALSE, mixm=FALSE)
 {
 	name.y <- paste(deparse(substitute(y)))
 	name.t <- paste(deparse(substitute(trt)))
@@ -63,7 +63,11 @@ function (y, trt, DFerror, MSerror, Fc, alpha=0.05, group=TRUE,main = NULL,conso
 		A<-y$model
 		DFerror<-df.residual(y)
 		MSerror<-deviance(y)/DFerror
-		Fc<-anova(y)[trt,4]
+		if (mixm == FALSE){
+			Fc<-anova(y)[trt,4]
+		}else{
+			anova(y)$anova[trt, 4]
+		}
 		y<-A[,1]
 		ipch<-pmatch(trt,names(A))
 		nipch<- length(ipch)
