@@ -171,7 +171,6 @@ if ( length(nr) == 1 & p.adj!="none") statistics<-data.frame(statistics, t.value
     }
     if (p.adj != "none")
       pvalue <- p.adjust(pvalue, p.adj)
-    pvalue <- round(pvalue,4)
     for (k in 1:nn) {
       if (pvalue[k] <= 0.001)
         sig[k] <- "***"
